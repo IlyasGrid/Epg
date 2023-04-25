@@ -1,4 +1,4 @@
-<x-layout>
+<x-layoutlangues>
     <aside class="Kaoutar">
         <div class="container">
             <div class="row">
@@ -84,4 +84,4 @@
         </div>
     </div>
     <section class="blog"></section>
-</x-layout>
+</x-layoutlangues>

@@ -1,4 +1,5 @@
 <x-layout>
+    <link rel="stylesheet" href="../Diplome/style.css">
     <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s"
         style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
         <div class="container py-5">
@@ -12,7 +13,7 @@
                     <div
                         class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
                         <div class="">
-                            <img class="service-icon mod" src="Pic/qualification.jpg" alt="Technicien">
+                            <img class="service-icon mod" src="../Diplome/Pic/qualification.jpg" alt="Technicien">
                         </div>
                         <h4 class="mb-3">Qualification</h4>
                         <p class="m-0">cliquez ici pour voir les diplôme de Qualification... <a class="strong"
@@ -29,7 +30,7 @@
                     <div
                         class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
                         <div class="">
-                            <img class="service-icon mod" src="Pic/technicien.jpg" alt="Technicien">
+                            <img class="service-icon mod" src="../Diplome/Pic/technicien.jpg" alt="Technicien">
                         </div>
                         <h4 class="mb-3">Technicien</h4>
                         <p class="m-0">cliquez ici pour voir les diplôme de Technicien... <a class="strong"
@@ -46,7 +47,7 @@
                     <div
                         class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
                         <div class="">
-                            <img class="service-icon mod" src="Pic/technicien-specialise.jpg"
+                            <img class="service-icon mod" src="../Diplome/Pic/technicien-specialise.jpg"
                                 alt="Technicien Spécialisé">
                         </div>
                         <h4 class="mb-3">Technicien Spécialisé</h4>
@@ -66,7 +67,7 @@
                     <div
                         class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
                         <div class="">
-                            <img class="service-icon mod" src="Pic/technicien-superieur.jpg" alt="Technicien Superieur">
+                            <img class="service-icon mod" src="../Diplome/Pic/technicien-superieur.jpg" alt="Technicien Superieur">
                         </div>
                         <h4 class="mb-3">Technicien Supérieur</h4>
                         <p class="m-0">cliquez ici pour voir les diplôme de Technicien Superieur... <a class="strong"
@@ -84,7 +85,7 @@
                         class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
                         <div class="">
                             <!--<i class="fa fa-shield-alt text-white"></i>-->
-                            <img class="service-icon mod" src="Pic/licence.jpg" alt="licence professionnelle">
+                            <img class="service-icon mod" src="../Diplome/Pic/licence.jpg" alt="licence professionnelle">
                         </div>
                         <h4 class="mb-3">Licence Professionnelle</h4>
                         <p class="m-0">cliquez ici pour voir les diplôme de Licence professionnelle... <a
@@ -102,7 +103,7 @@
                         class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
                         <div class="service-icon mod">
                             <!--<i class="fa fa-shield-alt text-white"></i>-->
-                            <img class="" src="Pic/master.jpg" alt="master proffesionnel">
+                            <img class="" src="../Diplome/Pic/master.jpg" alt="master proffesionnel">
                         </div>
                         <h4 class="mb-3">Master Professionnel</h4>
                         <p class="m-0">cliquez ici pour voir les diplôme de Master proffesionnel... <a class="strong"

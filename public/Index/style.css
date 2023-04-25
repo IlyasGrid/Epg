@@ -1,0 +1,85 @@
+.bac2Img{
+	width: 20px;
+}
+/* Sliders */
+/* Images Slides + content */
+#slides {
+    height: 96vh;
+}
+
+section .gradient {
+    height: 96vh;
+}
+
+.slide:nth-of-type(1) {
+    background: url('Img/Seo.jpg') no-repeat;
+	background-size: cover;
+}
+.slide:nth-of-type(2) {
+    background: url('Img/formation.jpg') no-repeat;
+	background-size: cover;
+}
+.slide:nth-of-type(3) {
+    background: url('Img/graduate.jpg') no-repeat;
+	background-size: cover;
+}
+.slide:nth-of-type(4) {
+    background: url('Img/cisco.jpg') no-repeat;
+	background-size: cover;
+}
+.slide:nth-of-type(5) {
+    background: url('Img/application.png') no-repeat;
+}
+.slide:nth-of-type(6) {
+    background: url('Img/template.jpg') no-repeat;
+}
+
+.social {
+    top: 15vh;
+}
+
+.triangle-up:after {
+  height: 10px;
+  background: url(Img/triangle_bg.png) repeat-x;
+  background-size: 15.2px 10px;
+}
+/* End Images Slides + Content */
+/* End Sliders */
+
+/* services */
+.coco img {
+  max-width: 45%;
+}
+/* End services */
+
+/* Footer */
+.blog:after {
+    height: 10px;
+    background: url("Img/triangle_bg.png") repeat-x;
+	background-size: 15.5px 10px;
+}
+/* End Footer */
+
+/* Video */
+#ads {
+	height:400px;
+	width:100%;
+	background: black url('Img/Its.jpg') no-repeat center;
+	background-size: cover;
+	overflow:hidden;
+	margin: 45px 0 25px;
+	border-radius: 12px;
+	box-shadow: 2px 2px 5px #000;
+	position: relative; }
+	
+.ads iframe {
+	box-shadow: 2px 2px 20px #000;
+	border-radius: 12px; }
+	
+.Play { 
+	width: 75px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	cursor:pointer;
+	transform: translate(-50%, -50%); }

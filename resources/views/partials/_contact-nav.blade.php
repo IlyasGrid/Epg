@@ -107,16 +107,16 @@
                 </div>
             </li>
             <li class="nav-item btn-group">
-                <a class="nav-link" href="https://epg.ma/langues/" id="navbarDropdown" role="button">Langues</a>
+                <a class="nav-link" href="/Languages/" id="navbarDropdown" role="button">Langues</a>
                 <a type="button"
                     class="btn dropdown-toggle dropdown-toggle-split d-flex align-items-center justify-content-center"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <span class="more">Plus </span><span class="sr-only">Toggle Dropdown</span>
                 </a>
                 <div class="dropdown-menu" id="navDrop" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="https://epg.ma/langues/allemand.php">Allemand</a>
-                    <a class="dropdown-item" href="https://epg.ma/langues/anglais.php">Anglais</a>
-                    <a class="dropdown-item" href="https://epg.ma/langues/francais.php">Français</a>
+                    <a class="dropdown-item" href="/Languages/allemand.php">Allemand</a>
+                    <a class="dropdown-item" href="/Languages/anglais.php">Anglais</a>
+                    <a class="dropdown-item" href="/Languages/francais.php">Français</a>
                 </div>
             </li>
             <li class="nav-item">

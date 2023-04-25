@@ -1,0 +1,365 @@
+/* Contact */
+/* Modal */
+.modal-header {
+    padding: 10px 10px 5px !important;
+    border-bottom: none !important;
+  }
+        
+  .modal-header h4 {
+    font: 20px boogaloo !important;
+    color: #bf925b !important;
+    text-transform: uppercase !important;
+    border-bottom: 3px double #bf925b !important;
+    margin: 0 !important;
+  }
+        
+  .close {
+    color: #bf925b !important;
+  }
+        
+  .modal-body {
+    padding: 10px !important;
+    font: 18px Acme !important;
+    color: #000 !important;
+  }
+  /* End Modal */
+  .coco img {
+    max-width: 35%;
+  }
+  
+  .coco a i {
+      width: 20px;
+      font-weight: bold;
+      font-size: 15px;
+  }
+  
+  .coco .fb {
+      background: #3b5998;
+  }
+  
+  .coco .whatsapp {
+      background: #15f571;
+  }
+  
+  #nom {
+      margin: 5px 0 12px;
+  }
+  
+  input.input, textarea.textarea {
+      width: 100%;
+      margin: 6px 0;
+      padding: 7px 8px;
+      border: 1px solid rgb(255, 102, 0);
+      font: 15px Baloo;
+      outline: none;
+  }
+  
+  input[type=button].input {
+      background: rgb(255, 102, 0);
+      border: 3px double #fff;
+      color: #fff;
+      font-size: 17px;
+      padding: 4px 8px;
+  }
+  
+  textarea.textarea { height: 144px; }
+  
+  i.fa-exclamation {
+      background: red;
+      padding: 2px 0;
+      border-radius: 50%;
+      color: #fff;
+      margin: 2px 4px 0;
+      font-size: 13px;
+      width: 18px;
+      height: 18px;
+      text-align: center;
+      display: none;
+      line-height: 16px;
+  }
+  
+  span.A, span.B, span.C, span.D {
+      color: red;
+      font: 15px Baloo;
+  } 
+  
+  .tret {
+      display: flex;
+  }
+  /* End Contact */
+  
+  /* Images Slides + content */
+  #slides {
+      height: 95vh;
+  }
+  
+  section .gradient {
+      height: 95vh;
+  }
+  
+  /* Creation web */
+  .slide:nth-of-type(1) {
+      background: url('/Index/Img/site.jpg') no-repeat;
+  }
+  .slide:nth-of-type(2) {
+      background: url('/Index/Img/template.jpg') no-repeat;
+  }
+  .slide:nth-of-type(3) {
+      background: url('/Index/Img/optimisation.jpg') no-repeat;
+  }
+  .slide:nth-of-type(4) {
+      background: url('/Index/Img/Seo.jpg') no-repeat;
+  }
+  
+  .louez:nth-of-type(1) { 
+      background: url('/Index/Img/etude.jpg') no-repeat;
+  }
+  .louez:nth-of-type(2) {
+      background: url('/Index/Img/location.jpg') no-repeat;
+  }
+  .louez:nth-of-type(3) {
+      background: url('/Index/Img/louez.jpg') no-repeat;
+  }
+  
+  .langage:nth-of-type(1) { 
+      background: url('/Index/Img/langues.jpg') no-repeat;
+  }
+  
+  .soutien:nth-of-type(1) { 
+      background: url('/Index/Img/soutien.jpg') no-repeat;
+  }
+  
+  .app:nth-of-type(1) { 
+      background: url('/Index/Img/application.png') no-repeat;
+  }
+  
+  .about:nth-of-type(1) { 
+      background: url('/Index/Img/comepete.jpg') no-repeat;
+  }
+  .social {
+      top: 85vh;
+  }
+  
+  .triangle-up:after {
+    height: 15px;
+    background: url(Img/slider-clouds.png) repeat-x;
+    background-size: 25px 15px;
+  }
+  /* End Images Slides + Content */
+  /* End Sliders */
+  /* Images */
+  .bee {
+      position: relative;
+  }
+  
+  .bee:before, .bee:after {
+      content: '';
+      position: absolute;
+      border: 3px solid rgba(255, 102, 0, .9);
+      width: 100%;
+      height: 100%;
+      transition: .5s;
+      z-index: -1;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, .1);
+  }
+  
+  .bee:before {
+      right: -6px;
+      top: 6px;
+  }
+  
+  .bee:after {
+      left: -6px;
+      bottom: 6px;
+  }
+  
+  .bee img {
+      width: 100%;
+      height: 340px;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+  }
+  
+  .y {
+      margin: 25px 0 30px;
+  }
+  
+  .y:before, .y:after {
+      border: 3px solid #ffc845;
+  }
+  
+  .x {
+      margin: 50px 0 30px;
+  }
+  
+  .x:before, .x:after {
+      border: 3px solid #000;
+  }
+  
+  .content {
+      margin: 30px 0 25px;
+  }
+  
+  .content h2 {
+      text-align: center;
+      font: 700 56px Tahu;
+      color: rgba(255, 102, 0, .9);
+  }
+  
+  .content h2 span {
+      color: #ffc845;
+  }
+  
+  .content h4 {
+      text-transform: uppercase;
+      font: 700 20px Yatra One;
+      color: #ffc845;
+      margin: 50px 0 5px;
+  }
+  
+  .content .packs {
+      margin: 10px 0;
+      
+  }
+  
+  .content p {
+      font: 18px De Luxe Bold;
+      line-height: 24px;
+      text-align: justify;
+      margin-bottom: .5rem !important;
+  }
+  
+  .content a {
+      text-decoration: none;
+      text-transform: uppercase;
+      font: 700 17px Yatra One;
+      color: #ffc845;
+      transition: .5s;
+  }
+  
+  .content a:hover {
+      color: rgba(255, 102, 0, .9);
+      text-decoration: none;
+      transition: .5s;
+  }
+  /* End Images */
+  
+  /* Packs */
+  table { 
+    border-collapse: collapse;
+    table-layout: fixed;
+    width: 100%;
+    margin: 20px 0 30px;
+  }
+  
+  td, th { 
+    border: 3px dashed #fff;
+    text-align: center !important;
+    background: rgba(230, 230, 230, .7);
+  }
+  
+  th { 
+    font: 700 18px Yatra One;
+    padding: 8px 6px;
+    text-transform: uppercase;
+    color: #fff;
+  }
+  
+  td { 
+    font: 18px Baloo;
+    padding: 8px 4px;
+  }
+  
+  td span {
+      color: #269900;
+      font: 700 19px Baloo;
+  }
+  
+  .hide {
+      background: none;
+  }
+  
+  .inclus {
+      font-size: 15px;
+      background: rgba(255, 102, 0, .8);
+  }
+  
+  .inc {
+      transition: .5s;
+  }
+  
+  .inc:hover {
+      background: rgba(0, 0, 0, .8) !important;
+      transition: .5s;
+  }
+  
+  .inc a {
+      color: #fff;
+      font-size: 16px;
+  }
+  
+  .inc a:hover {
+      color: #fff;
+      text-decoration: none;
+  }
+  /* End Packs */
+  /* End Content */
+  
+  /* Footer */
+  .blog:after {
+      height: 15px;
+      background: url("Img/slider-clouds.png") repeat-x;
+      background-size: 25px 15px;
+  }
+  /* End Footer */
+  
+  /* Location de salle */
+  blockquote {
+      position: relative;
+      z-index: 1;
+      background-color: rgba(255, 102, 0, 0.8);
+      padding: 15px 65px 15px 25px;
+      margin: 20px 0 30px !important;
+  }
+  blockquote::after {
+      content: '\f10e';
+      font-family: "FontAwesome";
+      color: #fff;
+      font-size: 28px;
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      z-index: 1;
+  }
+  
+  blockquote h5 {
+      font: 20px Baloo !important;
+      line-height: 1.6 !important;
+      font-style: italic;
+      margin-bottom: 0 !important;
+      color: #fff;
+      text-align: center !important;
+  }
+  
+  .ntr {
+      margin: 0 !important;
+  }
+  
+  .fax, .phone, .map, .faceb {
+      width: 40px;
+      height: 40px;
+      text-align: center;
+      margin: 4px 0;
+      border-radius: 100%;
+  }
+  
+  .fax a, .phone a, .map a, .faceb a {
+      line-height: 35px;
+      font-size: 20px;
+      color: #fff;
+  }
+  
+  .fax a:hover, .phone a:hover, .map a:hover, .faceb a:hover {
+      color: #fff;
+      text-decoration: none;
+  }
+  /* End Location de salle */

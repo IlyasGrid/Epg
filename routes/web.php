@@ -40,16 +40,31 @@ Route::get('//Documentations/Minha.pdf', function () {
 });
 
 
+Route::group(['prefix' => 'Languages'], function () {
 
-
-Route::get('/', function () {
-    return view('index');
+    Route::get('/', function () {
+        return view('Languages.index');
+    });
+    Route::get('/anglais.php', function () {
+        return view('Languages.anglais');
+    });
+    Route::get('/allemand.php', function () {
+        return view('Languages.allemand');
+    });
+    Route::get('/francais.php', function () {
+        return view('Languages.francais');
+    });
 });
-Route::prefix('Diplomes')->group(function () {
+
+Route::group(['prefix' => 'Diplomes'], function () {
     Route::get('/', function () {
         return view('Diplomes.index');
     });
     Route::get('/{diplome}', function ($diplome) {
         return 'hi to ' . $diplome;
     });
+});
+
+Route::get('/', function () {
+    return view('index');
 });

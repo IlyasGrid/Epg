@@ -9,14 +9,14 @@
                         <strong>L'Ecole Polytechnique des Génies</strong> vous offre des <em>formations
                             diplômantes</em> de qualité en présentiel à <strong>Fès</strong> ou à distance.
                         <span class='Mel'></span>
-                        <a href='https://epg.ma/Diplomes/qualification/'>Qualification</a>,
-                        <a href='https://epg.ma/Diplomes/technicien/'>Technicien</a>,
+                        <a href='/Diplomes/qualification/'>Qualification</a>,
+                        <a href='/Diplomes/technicien/'>Technicien</a>,
                         <a
-                            href='https://epg.ma/Diplomes/technicienSpecialise/Technicien-Sp%C3%A9cialis%C3%A9-D%C3%A9veloppement-Informatique.php'>Technicien
+                            href='/Diplomes/technicienSpecialise/Technicien-Sp%C3%A9cialis%C3%A9-D%C3%A9veloppement-Informatique.php'>Technicien
                             Spécialisé</a>,
-                        <a href='https://epg.ma/Diplomes/technicienSuperieur/'>Technicien supérieur</a>,
-                        <a href='https://epg.ma/Diplomes/licenceProfessionel/'>Licence</a>,
-                        <a href='https://epg.ma/Diplomes/masterProfessionel/'>Master</a>
+                        <a href='/Diplomes/technicienSuperieur/'>Technicien supérieur</a>,
+                        <a href='/Diplomes/licenceProfessionel/'>Licence</a>,
+                        <a href='/Diplomes/masterProfessionel/'>Master</a>
                     </p>
                 </div>
             </div>

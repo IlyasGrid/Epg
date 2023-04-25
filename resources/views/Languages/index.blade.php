@@ -1,105 +1,59 @@
 <!DOCTYPE html>
-<html lang="fr-MA">
+<html lang="fr">
 
 <head>
-    <!-- Titre -->
-    <title>Cours de soutien Informatique : universitaire, stage ou PFE</title>
-    <!-- Déscription : -->
+    <title>Centre de communication en langues étrangères : Formation, cours et soutien</title>
+
     <meta name="description"
-        content="Cours de Soutien en toutes matières informatique, à distance ou présentiel à FES, en groupe ou individuel. Soutien projet(PFE ou stage) et soutien universitaire" />
-
-    <!-- Meta 1 : -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#007bff" />
+        content="Formation en communication en langue française, allemande et anglais. Centre de langues étrangères à Fès. Cours, soutien et formation de communication au Maroc" />
+    <meta name="title" content="Apprendre une langue étrangère facilement : Formation professionnelle Fés" />
+    <meta name="keywords"
+        content="communication, langage, apprendre, langues, littérature,anglais, francaise, allemande, formation, cours, soutien, parler, linguistique, leçons" />
     <meta charset="UTF-8" />
-    <!-- Meta 2 : -->
-    <meta name="robots" content="index" />
-    <!-- Meta 3 : -->
-    <meta property="og:title" content="Cours de soutien Informatique : universitaire, stage ou PFE" />
-    <meta property="og:image" content="https://epg.ma/portail/favicon.ico" />
-    <meta property="og:url" content="https://epg.ma/cours-soutien-informatique.php" />
-    <meta property="og:type" content="website" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta property="og:description"
-        content="Cours de Soutien en toutes matières informatique, à distance ou présentiel à FES, en groupe ou individuel. Soutien projet(PFE ou stage) et soutien universitaire" />
+        content="Formation en communication en langue française et allemande. Centre de langues étrangères à Fès. Cours, soutien et formation de communication au Maroc" />
+    <meta property="og:title" content="Apprendre à communiquer couramment : Formation continue en langues étrangères" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Ecole Polytechnique des Genies" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:image" content="/portail/images/logow.png" />
 
-    <!-- Link 1 : -->
-    <link rel="canonical" href="https://epg.ma/cours-soutien-informatique.php" />
+    <link rel="alternate" href="" hreflang="fr" />
+    <link rel="stylesheet" href="../Index/service.css" />
+    <link rel="stylesheet" href="../Index/Biblo.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-    <!-- Favicon -->
-    <link rel="icon" href="/portail/favicon.ico" />
-
-    <!-- Customized Bootstrap Stylesheet -->
-    <link rel="stylesheet" href="Index/service.css" />
-    <link rel="stylesheet" href="Index/service.css" />
-    <link rel="stylesheet" href="Index/Biblo.css" />
-
-    <!-- Font google -->
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Amaranth|Baloo+Bhai|Cookie|Yatra+One|Acme|Boogaloo|Lobster&display=swap" />
-
-    <!-- Global site tag (gtag.js) - Google Ads: 740202360 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-740202360"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
+    <link rel="icon" href="../portail/favicon.ico" />
+    <style>
+        button.btn {
+            position: absolute;
+            background-color: #97c9bd;
+            border-radius: 16px;
+            bottom: 1px;
+            left: 65%;
+            width: 100px;
         }
-        gtag('js', new Date());
-        gtag('config', 'AW-740202360');
-    </script>
-    <script>
-        gtag('config', 'AW-740202360/nsKlCL7H_KIBEPiu-uAC', {
-            'phone_conversion_number': '0619086666'
-        });
-    </script>
 
-    <!-- Event snippet for Inscription conversion page -->
-    <script>
-        gtag('event', 'conversion', {
-            'send_to': 'AW-740202360/aqE7CLDMm4wCEPiu-uAC'
-        });
-    </script>
-    <script>
-        gtag('event', 'page_view', {
-            'send_to': 'AW-740202360',
-            'value': 'replace with value',
-            'items': [{
-                'id': 'replace with value',
-                'location_id': 'replace with value',
-                'google_business_vertical': 'education'
-            }]
-        });
-    </script>
+        .bee {
+            position: relative;
+            width: 100%;
+            border: 2px solid blue;
+        }
 
-    <!-- Facebook Pixel Code -->
-    <script>
-        ! function(f, b, e, v, n, t, s) {
-            if (f.fbq) return;
-            n = f.fbq = function() {
-                n.callMethod ?
-                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-            };
-            if (!f._fbq) f._fbq = n;
-            n.push = n;
-            n.loaded = !0;
-            n.version = '2.0';
-            n.queue = [];
-            t = b.createElement(e);
-            t.async = !0;
-            t.src = v;
-            s = b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t, s)
-        }(window, document, 'script',
-            'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '688607894649334');
-        fbq('track', 'PageView');
-    </script>
+        .showing {
+            background: url('../langues/langues/Img/langues.jpg') no-repeat center;
+            background-size: 100% 100%;
+        }
+    </style>
+
+
+
+
 
     <noscript><img height="1" width="1" style="display:none"
             src="https://www.facebook.com/tr?id=688607894649334&ev=PageView&noscript=1" /></noscript>
     <!-- End Facebook Pixel Code -->
-
 </head>
 
 <body>
@@ -140,18 +94,23 @@
                     }
                 }
             </style>
+
             @include('partials._contact-nav')
 
+
             @include('partials._social-media')
+
+            <!-- fixed button end -->
             <!-- Images Slides + Content -->
-            <div class="soutien showing"></div>
+            <div class="langage showing"></div>
 
             <div class="notice">
-                <h5>Cours de soutien en informatique !</h5>
-                <h3>Vous voulez réussir vos examens, vos projets informatique de stage ou de fin d’étude ?</h3>
+                <h5>Formation professionnelle en communication !</h5>
+                <h3>Vous voulez développer et améliorer vos connaissances et vos compétences de communication ?</h3>
 
                 <div class="discut">
-                    <a href="tel:+212660777382" style="color: #fff;">(+212) 06 60 77 73 82 / (+212) 05 35 62 18 65</a>
+                    <a href="tel:+212-619-086-666" style="color: #fff;">(+212) 06 19 08 66 66 / (+212) 05 35 62 18
+                        65</a>
                     <span> | </span>
                     <a href="#">Plus d'info</a>
                 </div>
@@ -169,96 +128,71 @@
         </div>
         <div class="triangle-up"></div>
     </section>
-
     <!-- Content -->
     <div class="container">
         <div class="content">
             <h2>
-                <span>Soutien </span>
-                en tout matière
-                <span>Informatique</span>
+                <span>Communication</span>
+                en Langues Etrangères
             </h2>
         </div>
+
         <!-- Info -->
         <div class="row">
-            <div class="col-lg-7">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="bee">
-                            <div class="about-img">
-                                <img src="Index/Img/tutoriel.jpg" alt="">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="bee y">
-                            <div class="about-img">
-                                <img src="Index/Img/informatique.jpg" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-5">
+            <div class="col-lg-12">
                 <div class="content">
+                    <h4 class="packs">Maîtrise des langues étrangères</h4>
                     <p>
                         <i class="fa fa-quote-left"></i>
-                        Vous voulez réussir vos examens, vos projets informatique (de stage ou de fin d’étude), l'Ecole
-                        polytechnique des Génies vous propose des formules de soutien en tout matière Informatique avec
-                        des prix très convenables, plus avantageux et abordable.
+                        Les langues étrangères sont un véritable plus sur votre CV et dans votre vie. Si vous voulez
+                        approfondir, développer et améliorer vos compétences et vos connaissances de la langue, de la
+                        culture et de la littérature... Ecole Polytechnique des Genies donne à ses élèves la possibilité
+                        de s’ouvrir à une diversité de cultures et de langues étrangères avec des prix très convenables,
+                        plus avantageux et abordable.
                     </p>
                     <p>
                         <i class="fa fa-long-arrow-right"></i>
-                        Projet de fin d'étude (PFE)
+                        <a href="allemand.php">langue Allemand</a>
                     </p>
                     <p>
                         <i class="fa fa-long-arrow-right"></i>
-                        Préparation d'examens
+                        <a href="anglais.php">langue Anglaise</a>
                     </p>
                     <p>
                         <i class="fa fa-long-arrow-right"></i>
-                        Préparer un doctorat
-                    </p>
-                    <h4 class="packs">Tarification</h4>
-                    <p>
-                        <i class="fa fa-quote-left"></i>
-                        Trouver des personnes qui seront intéressées pour démarrer un groupe de 2, 3 ou 4 personnes avec
-                        vous, afin que le soutien soit orienté vers vos besoins spécifiques.
+                        <a href="francais.php">langue Française</a>
                     </p>
                 </div>
             </div>
         </div>
-
-        <!-- Packs -->
         <div class="row">
             <div class="col-lg-12">
-                <table>
-                    <tr>
-                        <th class="hide"></th>
-                        <th class="inclus">Nombre de personne</th>
-                        <th class="inclus">Volume horaire</th>
-                        <th class="inclus">Prix / mois</th>
-                    </tr>
-                    <tr>
-                        <th class="inclus" rowspan="3">En groupe</th>
-                        <td>4</td>
-                        <td rowspan="4">2h par semaine</td>
-                        <td>200 Dh</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>300 Dh</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>400 Dh</td>
-                    </tr>
-                    <tr>
-                        <th class="inclus">Individuel</th>
-                        <td>1</td>
-                        <td>800 Dh</td>
-                    </tr>
-                </table>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="bee">
+                            <div class="about-img">
+                                <a href="allemand.php"><img src="../langues/Img/allemand.jpg" alt="">
+                                    <button class="btn">Voir Detail</button></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="bee y">
+                            <div class="about-img">
+                                <a href="anglais.php"><img src="../langues/Img/english.jpg" alt="">
+                                    <button class="btn">Voir Detail</button></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="bee">
+                            <div class="about-img">
+                                <a href="francais.php"><img src="../langues/Img/francais.jpg" alt="">
+                                    <button class="btn">Voir Detail</button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -418,14 +352,6 @@
 
                     </div>
 
-                    <!--<div>
-
-          <i class="fa fa-long-arrow-right"></i>
-
-          <a href="/Certifications/Certificats.php">Certifications</a>
-
-        </div>-->
-
                     <div>
 
 
@@ -513,28 +439,7 @@
         </div>
 
     </footer>
-
-    <!-- ./Footer -->
-
-
-
-    <!-- Font icon -->
-
     <script src="https://kit.fontawesome.com/873e4afb32.js" crossorigin="anonymous"></script>
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
-    </script>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
-        integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous">
-    </script>
-
-
-
-    <script src="Index/Js.js"></script>
 </body>
 
 </html>
