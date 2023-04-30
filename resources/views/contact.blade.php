@@ -32,12 +32,12 @@
     <!-- origin Stylesheet -->
     <link rel="stylesheet" href="Index/service.css" />
     <link rel="stylesheet" href="Index/Biblo.css" />
-
+    <script  defer src="js/main2.js"></script>
 
     <!-- Global site tag (gtag.js) - Google Ads: 740202360 -->
-   
 
-   
+
+
     <noscript><img height="1" width="1" style="display:none"
             src="https://www.facebook.com/tr?id=688607894649334&ev=PageView&noscript=1" /></noscript>
     <!-- End Facebook Pixel Code -->
@@ -58,32 +58,6 @@
                 crossorigin="anonymous" />
             <link rel="stylesheet" href="/Index/Biblo.css" />
             <!-- Nav Bar -->
-            <style>
-                .clignote {
-                    color: #9ac1e3;
-                    animation-duration: 2s;
-                    animation-name: clignoter;
-                    animation-iteration-count: infinite;
-                    transition: none;
-                    font-weight: bold;
-                    font-size: 17px;
-                    width: 450px;
-                }
-
-                @keyframes clignoter {
-                    0% {
-                        opacity: 1;
-                    }
-
-                    40% {
-                        opacity: 0;
-                    }
-
-                    100% {
-                        opacity: 1;
-                    }
-                }
-            </style>
             @include('partials._contact-nav')
 
             @include('partials._social-media')
@@ -164,8 +138,7 @@
             <div class="col-lg-6">
                 <form name="send" method="GET" margin="25px 0">
                     <div>
-                        <input class="input" type="text" name="nom" placeholder="Votre nom"
-                            id="zo1" />
+                        <input class="input" type="text" name="nom" placeholder="Votre nom" id="zo1" />
                         <div class="tret">
                             <i class="fa fa-exclamation" id="a"></i>
                             <span class="A" id="A"></span>
@@ -201,85 +174,7 @@
                 <input class="input" type="button" value="Envoyer" onclick="myFunc()" />
             </div>
 
-            <script>
-                var nom = document.getElementById('zo1');
-                var mail = document.getElementById('zo2');
-                var phone = document.getElementById('zo3');
-                var msg = document.getElementById('zo4');
 
-
-                function myFunc() {
-                    var tst = true;
-                    if (nom.value == "") {
-                        nom.style.border = "1px solid red";
-                        document.getElementById('a').style.display = "block";
-                        document.getElementById('A').innerHTML = "Veuillez remplir ce champ";
-                        tst = false;
-                    } else {
-                        nom.style.border = "1px solid rgb(255, 102, 0)";
-                        document.getElementById('a').style.display = "none";
-                        document.getElementById('A').innerHTML = "";
-                    }
-
-                    if (mail.value == "") {
-                        mail.style.border = "1px solid red";
-                        document.getElementById('b').style.display = "block";
-                        document.getElementById('B').innerHTML = "Veuillez remplir ce champ";
-                        tst = false;
-                    } else {
-                        mail.style.border = "1px solid rgb(255, 102, 0)";
-                        document.getElementById('b').style.display = "none";
-                        document.getElementById('B').innerHTML = "";
-                    }
-
-                    if (phone.value == "") {
-                        phone.style.border = "1px solid red";
-                        document.getElementById('c').style.display = "block";
-                        document.getElementById('C').innerHTML = "Veuillez remplir ce champ";
-                        tst = false;
-                    } else {
-                        phone.style.border = "1px solid rgb(255, 102, 0)";
-                        document.getElementById('c').style.display = "none";
-                        document.getElementById('C').innerHTML = "";
-                    }
-
-                    if (msg.value == "") {
-                        msg.style.border = "1px solid red";
-                        document.getElementById('d').style.display = "block";
-                        document.getElementById('D').innerHTML = "Veuillez remplir ce champ";
-                        tst = false;
-                    } else {
-                        msg.style.border = "1px solid rgb(255, 102, 0)";
-                        document.getElementById('d').style.display = "none";
-                        document.getElementById('D').innerHTML = "";
-                    }
-                    if (tst) {
-                        var xmlhttp = new XMLHttpRequest();
-
-                        xmlhttp.onreadystatechange = function() {
-                            show();
-                        };
-
-                        xmlhttp.open("GET", "Index/send.php?nom=" + nom.value + "&mail=" + mail.value + "&phone=" + phone.value +
-                            "&msg=" + msg.value, true);
-                        xmlhttp.send();
-                    }
-                }
-
-                function show() {
-                    $('#myModal').modal('show');
-                    setTimeout("stop()", 2000);
-                }
-
-                function stop() {
-                    $('#myModal').modal('hide');
-
-                    nom.value = "";
-                    mail.value = "";
-                    phone.value = "";
-                    msg.value = "";
-                }
-            </script>
             <!-- Modal -->
             <div class="modal fade" id="myModal">
                 <div class="modal-dialog">
@@ -455,21 +350,13 @@
 
                     </div>
 
-                    <!--<div>
-
-          <i class="fa fa-long-arrow-right"></i>
-
-          <a href="/Certifications/Certificats.php">Certifications</a>
-
-        </div>-->
-
                     <div>
 
 
 
                         <i class="fa fa-long-arrow-right"></i>
 
-                        <a href="/Formation/formations.php">Formations</a>
+                        <a href="/Formations/formations.php">Formations</a>
 
                     </div>
 

@@ -3,7 +3,7 @@
 
 <head>
     <!-- Titre -->
-    <title>Ecole Polytechnique des Génies - EPG</title>
+    <title>Ecole Polytechnique des Génies - EPG ilas</title>
     <!-- Déscription : -->
     <meta name="description"
         content="Notre établissement supérieur offre des formations diplômantes reconnues, en présentiel à Fès ou à distance : Qualification, Technicien, TS, Licence et Master." />
@@ -36,11 +36,10 @@
     <!-- Icon Font Stylesheet For template-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" />
-    <!-- origin Stylesheet -->
-    <link rel="stylesheet" href="/Diplome/metate.css" />
-    <link rel="stylesheet" href="/Index/Biblo.css" />
-    <link rel="stylesheet" href="css/style.css">
-    {{-- <script defer src="js/main.js"></script> --}}
+
+
+    <script defer src="js/main.js"></script>
+    <script defer src="js/main2.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
         integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous" />
 
@@ -49,8 +48,9 @@
 
     <script src="https://kit.fontawesome.com/873e4afb32.js" defer crossorigin="anonymous"></script>
 
-
-
+    <script defer src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+    </script>
 </head>
 
 <body>
@@ -61,7 +61,8 @@
 
     {{ $slot }}
 
-    <footer>
+    <footer class="contact">
+        <div class="xo"></div>
         <div class="item">
             <div class="row">
                 <div class="lg-12">
@@ -150,8 +151,15 @@
 
 
     </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+    </script>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
+        integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous">
+    </script>
 </body>
 
 

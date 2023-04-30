@@ -19,6 +19,7 @@ img {
     width: 100%;
 }
 
+
 /* Header */
 
 section,
@@ -74,24 +75,21 @@ header {
     left: 0;
     padding: 25px 100px;
 }
-
 /* midification perso*/
 
-.des {
-    color: #fff;
+.des{
+	color : #fff;
 }
 
 .strong {
     font-weight: 800;
-    color: #007bff;
+	color: #007bff;
 }
 
 .bg-light {
-    background-color: #fff !important;
+    background-color: #fff!important;
 }
-
 /* midification perso*/
-
 div.toggle {
     color: #FFF;
     float: right;
@@ -203,6 +201,7 @@ aside {
     color: #fff;
 }
 
+
 aside h1 {
     margin: 115px 0 0;
     text-align: center;
@@ -211,14 +210,14 @@ aside h1 {
 
 aside.Kaoutar h1 {
     font: 42px Boogaloo;
-    color: #FFF;
+	color: #FFF;
 }
 
 aside.Kaoutar p {
     font-size: 20px;
-    color: #FFF;
-    padding-top: 25px;
-    text-align: center;
+	color: #FFF;
+	padding-top: 25px;
+	text-align: center;
 }
 
 aside.Kaoutar p span {
@@ -236,9 +235,10 @@ aside.Kaoutar p a:hover {
     transition: .3s;
 }
 
+
 .mb-3 a {
     font-weight: 800;
-    color: #007bff;
+	color: #007bff;
 }
 
 .ads {
@@ -255,6 +255,7 @@ aside h2 {
     margin: 15px 0 0;
     font: 22px Boogaloo;
 }
+
 
 /* Mobile */
 
@@ -283,6 +284,7 @@ article ul a {
     text-decoration: none;
     font: 16px Boogaloo;
 }
+
 
 /* Content */
 
@@ -657,6 +659,7 @@ img.img {
     transform: rotate(25deg);
 }
 
+
 /* Parcours */
 
 div.share {
@@ -889,6 +892,7 @@ div.lg-9 p.tarifs {
     font-size: 21px;
 }
 
+
 /* Form */
 
 input#scroll {
@@ -1039,6 +1043,7 @@ span#Lct {
     transform: translate(-50%, -50%);
 }
 
+
 /* Footer */
 
 footer {
@@ -1110,6 +1115,7 @@ footer div span {
     font-weight: bold;
 }
 
+
 /* Color */
 
 div.clr_Orange h5,
@@ -1138,6 +1144,7 @@ table.tarifs tr td span.clr_Maroon {
 div.clr_Maroon:before {
     border-color: #a2384c;
 }
+
 
 /* Query */
 

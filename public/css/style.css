@@ -257,7 +257,7 @@ h6,
     height: 5px;
     left: 0;
     bottom: 0;
-    background: var(--primary);
+    background: #007bff;
     border-radius: 2px;
 }
 

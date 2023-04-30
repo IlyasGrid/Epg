@@ -47,33 +47,7 @@
         }
     </style>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-154922762-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
 
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'UA-154922762-1');
-    </script>
-
-    <!-- Global site tag (gtag.js) - Google Ads: 740202360 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-740202360"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-        gtag('config', 'AW-740202360');
-    </script>
-    <script>
-        gtag('config', 'AW-740202360/nsKlCL7H_KIBEPiu-uAC', {
-            'phone_conversion_number': '0619086666'
-        });
-    </script>
 
 
     <noscript><img height="1" width="1" style="display:none"
@@ -405,11 +379,11 @@
 
     <script src="https://kit.fontawesome.com/873e4afb32.js" crossorigin="anonymous"></script>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
+    {{-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> --}}
+{{-- 
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
         integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
-    </script>
+    </script> --}}
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
         integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous">

@@ -1,5 +1,5 @@
 <x-layoutlangues>
-    <link rel="stylesheet" href="../Index/style.css">
+    {{-- <link rel="stylesheet" href="../Index/style.css"> --}}
     <!-- Content -->
     <div class="container">
         <div class="content">
@@ -13,14 +13,15 @@
         </div>
         <!-- Info -->
         <div class="row">
-            <div class="col-lg-6 col-md-12 col-sm-12">
+            <div class="col-lg-6">
                 <div class="row">
-                    <div class="col-lg-1"></div>
-                    <div class="col-lg-10 ads">
-                        <div id="ads"></div>
-                        <img src="../Index/Img/play.png" {{-- onclick=play(this) --}} class="Play" />
+                    <div class="col-sm-12">
+                        <div class="bee">
+                            <div class="about-img">
+                                <img src="../langues/Img/allemand.jpg" alt="">
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-lg-1"></div>
                 </div>
             </div>
             <div class="col-lg-6 col-md-12 col-sm-12">

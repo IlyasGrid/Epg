@@ -1,0 +1,43 @@
+div.xe1 {
+    background: url('Pic/bourse.jpg') center center no-repeat;
+    /*background-size: cover;*/
+    height: 30vh;
+}
+.br,.br1 {
+    color : #e8782e;;
+}
+.br1 {
+    margin-bottom: 150px;
+}
+.minha {
+    font-size: 20px;
+    text-align : center;
+}
+.minha li {
+    list-style: none;
+    text-align : right;
+}
+.clignote {
+    color: #9ac1e3;
+    animation-duration: 2s;
+    animation-name: clignoter;
+    animation-iteration-count: infinite;
+    transition: none;
+    font-weight: bold;
+    font-size: 17px;
+    width: 450px;
+}
+
+@keyframes clignoter {
+    0% {
+        opacity: 1;
+    }
+
+    40% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

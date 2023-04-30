@@ -432,7 +432,7 @@
 
                         <i class="fa fa-long-arrow-right"></i>
 
-                        <a href="/Formation/formations.php">Formations</a>
+                        <a href="/Formations/formations.php">Formations</a>
 
                     </div>
 
