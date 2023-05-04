@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\LangueController;
+use App\Models\Langue;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::view('/', "index");
+Route::view('/test', "components.layout");
 Route::view('/contact.php', "contact");
 Route::view('/cours-soutien-informatique.php', "cours-soutien-informatique");
 Route::view('/Bourse.php', "Bourse");
@@ -82,13 +85,8 @@ Route::group(['prefix' => 'Documentations'], function () {
 Route::group(['prefix' => 'Formations'], function () {
     Route::view('/', "Formations.index");
 });
-Route::group(['prefix' => 'Languages'], function () {
 
-    Route::view('/', 'Languages.index');
-    Route::view('/anglais.php', 'Languages.anglais');
-    Route::view('/allemand.php', 'Languages.allemand');
-    Route::view('/francais.php', 'Languages.francais');
-});
+Route::resource('/Languages',LangueController::class);
 
 Route::group(['prefix' => 'Diplomes'], function () {
 

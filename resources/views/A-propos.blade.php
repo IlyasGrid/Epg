@@ -1,4 +1,25 @@
-<x-layoutlangues>
+<x-layout>
+    <div id="slides" style="background: gray; min-height: 60vh;">
+        <div class="notice">
+            <h5>Ecole Polytechnique des Génies</h5>
+            <h3>école et centre de formations, de langues et services informatiques qui constitue le leader à Fès</h3>
+
+            <div class="discut">
+                <a href="tel:+212660777382" style="color: #fff;">(+212) 06 60 77 73 82 / (+212) 05 35 62 18 65</a>
+                <span> | </span>
+                <a href="#">Contact us</a>
+            </div>
+        </div>
+        <div class="social">
+            <span class="fa fa-dot-circle-o fo" aria-hidden="true">
+                <span class="text">22, Rue Mohammed El Hayani, V.N Fès, 4éme Etage, Appt 20 Imm Hazzaz Fes -
+                    Maroc</span>
+            </span>
+            <span class="fa fa-dot-circle-o ft" aria-hidden="true">
+                <span class="text">contact@epg.ma</span>
+            </span>
+        </div>
+    </div>
     <aside class="Kaoutar">
         <div class="container">
             <div class="row">
@@ -83,5 +104,5 @@
             </div>
         </div>
     </div>
-    <section class="blog"></section>
-</x-layoutlangues>
+
+    </x-layoutlangues>

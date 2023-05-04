@@ -1,6 +1,5 @@
-<link rel="stylesheet" href="error404/style.css">
-<script src="error404/main.js" defer></script>
-<h1 class="text-center"> we still on it try later :)</h1>
+<link rel="stylesheet" href="/error404/style.css">
+<script src="/error404/main.js" defer></script>
 <a href="/" title="return home">
     <div class="wrapper" style=" width: 82%;height: auto; padding-left: 10rem;" center><svg
             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">

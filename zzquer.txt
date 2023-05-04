@@ -1,6 +1,4 @@
-<div>
-    <!-- Francais query -->
-    INSERT INTO `langues`(`Name`, `Subtitle`, `Motivation`, `Raisons`) VALUES
+   INSERT INTO `langues`(`Name`, `Subtitle`, `Motivation`, `Raisons`) VALUES
     ('français','la langue Française - اللغـــة الفرنسيـــة',' le français est
     parmis les langue la plus parlée au monde , et pour les francophones tel que
     les marocain et les africains, la langue française est indisponsable..','
@@ -44,11 +42,8 @@
     après avoir contacté les entreprises allemandes ', 'Diplômes académiques
     (licence ou Master) &Qualifications professionnelles (Diplôme de formation
     professionnelle) &Expériences professionnelles &Compte bancaire fermé
-    &Diplôme d\'allemand B1 &Adresse initiale (réservation d\'hôtel)')
-</div>
-<div>
-    <!-- tarification Francais -->
-    INSERT INTO `tarification__langues`( `Type`, `Volume_Horraire`, `Temps`, `Price`, `langue_id`) VALUES ('COURS NORMALE','1 Séance par semaine','2h','200 dh',1);
+    &Diplôme d\'allemand B1 &Adresse initiale (réservation d\'hôtel)');
+       INSERT INTO `tarification__langues`( `Type`, `Volume_Horraire`, `Temps`, `Price`, `langue_id`) VALUES ('COURS NORMALE','1 Séance par semaine','2h','200 dh',1);
 INSERT INTO `tarification__langues`( `Type`, `Volume_Horraire`, `Temps`, `Price`, `langue_id`) VALUES ('COURS DU SOIR','1 Séance par semaine','2h','200 dh',1);
 INSERT INTO `tarification__langues`( `Type`, `Volume_Horraire`, `Temps`, `Price`, `langue_id`) VALUES ('COURS ACCÉLÉRÉ','3 Séances par semaine','2h','500 dh',1);
 INSERT INTO `tarification__langues`( `Type`, `Volume_Horraire`, `Temps`, `Price`, `langue_id`) VALUES ('COURS DU SOIR ACCÉLÉRÉ','3 Séances par semaine','2h','500 dh',1);
@@ -62,4 +57,9 @@ INSERT INTO `tarification__langues`( `Type`, `Volume_Horraire`, `Temps`, `Price`
 INSERT INTO `tarification__langues`( `Type`, `Volume_Horraire`, `Temps`, `Price`, `langue_id`) VALUES ('COURS DU SOIR','3 Séances par semaine','2h','500 dh',3);
 INSERT INTO `tarification__langues`( `Type`, `Volume_Horraire`, `Temps`, `Price`, `langue_id`) VALUES ('COURS ACCÉLÉRÉ','5 Séances par semaine','1h30','600 dh',3);
 INSERT INTO `tarification__langues`( `Type`, `Volume_Horraire`, `Temps`, `Price`, `langue_id`) VALUES ('COURS DU SOIR ACCÉLÉRÉ','10 Séances par semaine','1h30','1200 dh',3);
-</div>
+
+
+INSERT INTO `niveau__langues`( `Niveau`, `Duree_Cours_Normal`, `Duree_Cours_Soir`, `Duree_Cours_Accelerer`, `Duree_Cours_Rapide`, `langue_id`) VALUES ('A1','6 Mois','4 Mois','3 Mois','2 Mois', 3);
+INSERT INTO `niveau__langues`( `Niveau`, `Duree_Cours_Normal`, `Duree_Cours_Soir`, `Duree_Cours_Accelerer`, `Duree_Cours_Rapide`, `langue_id`) VALUES ('A2','12 Mois','8 Mois','6 Mois','2 Mois', 3);
+INSERT INTO `niveau__langues`( `Niveau`, `Duree_Cours_Normal`, `Duree_Cours_Soir`, `Duree_Cours_Accelerer`, `Duree_Cours_Rapide`, `langue_id`) VALUES ('B1','19 Mois','13 Mois','10 Mois','5 Mois', 3);
+INSERT INTO `niveau__langues`( `Niveau`, `Duree_Cours_Normal`, `Duree_Cours_Soir`, `Duree_Cours_Accelerer`, `Duree_Cours_Rapide`, `langue_id`) VALUES ('B2','27 Mois','18 Mois','15 Mois','7 Mois', 3);

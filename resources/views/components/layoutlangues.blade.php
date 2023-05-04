@@ -67,62 +67,12 @@
                 crossorigin="anonymous" />
             <link rel="stylesheet" href="/Index/Biblo.css" />
             <!-- Nav Bar -->
-            <style>
-                .clignote {
-                    color: #9ac1e3;
-                    animation-duration: 2s;
-                    animation-name: clignoter;
-                    animation-iteration-count: infinite;
-                    transition: none;
-                    font-weight: bold;
-                    font-size: 17px;
-                    width: 450px;
-                }
-
-                @keyframes clignoter {
-                    0% {
-                        opacity: 1;
-                    }
-
-                    40% {
-                        opacity: 0;
-                    }
-
-                    100% {
-                        opacity: 1;
-                    }
-                }
-            </style>
+ 
 
             @include('partials._contact-nav')
 
             @include('partials._social-media')
-            <div class="langage showing"></div>
-
-            <div class="notice">
-                <h5>Formation professionnelle en communication !</h5>
-                <h3>Vous voulez développer et améliorer vos connaissances et vos compétences de communication ?</h3>
-
-                <div class="discut">
-                    <a href="tel:+212-619-086-666" style="color: #fff;">(+212) 06 19 08 66 66 / (+212) 05 35 62 18
-                        65</a>
-                    <span> | </span>
-                    <a href="#">Plus d'info</a>
-                </div>
-            </div>
-
-            <div class="social">
-                <span class="fa fa-dot-circle-o fo">
-                    <span class="text">22, Rue Mohammed El Hayani, V.N Fès, 4éme Etage, Appt 20 Imm Hazzaz Fes -
-                        Maroc</span>
-                </span>
-                <span class="fa fa-dot-circle-o ft">
-                    <span class="text">contact@epg.ma</span>
-                </span>
-            </div>
-        </div>
-        <div class="triangle-up"></div>
-    </section>
+        
 
     {{ $slot }}
 
@@ -380,7 +330,7 @@
     <script src="https://kit.fontawesome.com/873e4afb32.js" crossorigin="anonymous"></script>
 
     {{-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> --}}
-{{-- 
+    {{-- 
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
         integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
     </script> --}}

@@ -6,16 +6,17 @@
     <section>
         <div class="xe"></div>
         <div class="xo"></div>
+
+        <aside>
+            <h1 class="des">
+                Obtenez Votre Diplôme :<br>
+                Qualification, Technicien, Technicien Spécialisé, Technicien supérieur, Licence, Master.. <br>
+                <span>🖝</span> à distance ou Présentiel <span>🖜 </span><br>
+                <br>
+                Faites Votre choix, et créer votre avenir
+            </h1>
+        </aside>
     </section>
-    <aside>
-        <h1 class="des">
-            Obtenez Votre Diplôme :<br>
-            Qualification, Technicien, Technicien Spécialisé, Technicien supérieur, Licence, Master.. <br>
-            <span>🖝</span> à distance ou Présentiel <span>🖜 </span><br>
-            <br>
-            Faites Votre choix, et créer votre avenir
-        </h1>
-    </aside>
     <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s"
         style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
         <div class="container py-5">
