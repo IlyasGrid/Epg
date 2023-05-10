@@ -13,4 +13,5 @@ class Niveau_Langue extends Model
     {
         $this->belongsTo(Langue::class);
     }
+    public $timestamps = false;
 }

@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Tarification_Langue extends Model
 {
     use HasFactory;
-
+    public $timestamps = false;
     public function Langue()
     {
         $this->belongsTo(Langue::class);

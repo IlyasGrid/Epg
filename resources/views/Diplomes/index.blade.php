@@ -1,9 +1,24 @@
 <x-layout>
-    <!-- origin Stylesheet -->
-    <link rel="stylesheet" href="/Diplome/metate.css" />
-    <link rel="stylesheet" href="/Index/Biblo.css" />
-    <link rel="stylesheet" href="/css/style.css">
     <section>
+        <style>
+            section>section:after {
+                content: "";
+                width: 100%;
+                height: 99px;
+                background: url('/Diplome/Pic/Bottom.png');
+                bottom: 0px;
+                left: 0;
+                padding-bottom: 10%;
+                position: absolute;
+            }
+
+            div.xe {
+                background: url('/Diplome/Pic/bg_car.jpg') center center no-repeat;
+                background-size: cover;
+                height: 75vh;
+            }
+        </style>
+
         <div class="xe"></div>
         <div class="xo"></div>
 
@@ -25,124 +40,43 @@
 
             </div>
             <div class="row g-5">
-                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s"
-                    style="visibility: visible; animation-delay: 0.3s; animation-name: zoomIn;">
-                    <div
-                        class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
-                        <div class="">
-                            <img class="service-icon mod" src="../Diplome/Pic/qualification.jpg" alt="Technicien">
+                <div class=" wow zoomIn d-flex flex-wrap align-items-center justify-content-center  "
+                    data-wow-delay="0.3s"
+                    style="visibility: visible; animation-delay: 0.3s; animation-name: zoomIn; width=100%;">
+
+                    @foreach ($diplomes as $diplome)
+                        <div class=" col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s"
+                            style="visibility: visible; animation-delay: 0.6s; animation-name: zoomIn; min-width: 10vw;">
+                            <div
+                                class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+                                <div class="service-icon mod">
+                                    <img class="" src="../Diplome/Pic/{{ $diplome->Name }}.jpg"
+                                        alt="master proffesionnel">
+                                </div>
+                                <h4 class="mb-3" style="text-transform: capitalize">{{ $diplome->Name }}</h4>
+                                <p class="m-0">cliquez ici pour voir les diplôme de <span
+                                        style="text-transform: capitalize">{{ $diplome->Name }}</span>... <a
+                                        class="strong" href="/Diplomes/{{ $diplome->Name }}/">plus details</a></p>
+                                <div class="requis">
+                                    Pré-requis <span>➨</span> {{ $diplome->Prerequis }}
+                                    <br>
+                                    Durée <span>➨</span> {{ $diplome->Duree }}
+                                </div>
+                            </div>
                         </div>
-                        <h4 class="mb-3">Qualification</h4>
-                        <p class="m-0">cliquez ici pour voir les diplôme de Qualification... <a class="strong"
-                                href="/Diplomes/qualification/">plus details</a></p>
-                        <div class="requis">
-                            Pré-requis <span>➨</span> Niveau Collége
-                            <br>
-                            Durée <span>➨</span> 2 ans
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s"
-                    style="visibility: visible; animation-delay: 0.3s; animation-name: zoomIn;">
-                    <div
-                        class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
-                        <div class="">
-                            <img class="service-icon mod" src="../Diplome/Pic/technicien.jpg" alt="Technicien">
-                        </div>
-                        <h4 class="mb-3">Technicien</h4>
-                        <p class="m-0">cliquez ici pour voir les diplôme de Technicien... <a class="strong"
-                                href="/Diplomes/technicien">plus details</a></p>
-                        <div class="requis">
-                            Pré-requis <span>➨</span> Niveau Bac
-                            <br>
-                            Durée <span>➨</span> 2 ans
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s"
-                    style="visibility: visible; animation-delay: 0.6s; animation-name: zoomIn;">
-                    <div
-                        class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
-                        <div class="">
-                            <img class="service-icon mod" src="../Diplome/Pic/technicien-specialise.jpg"
-                                alt="Technicien Spécialisé">
-                        </div>
-                        <h4 class="mb-3">Technicien Spécialisé</h4>
-                        <p class="m-0">cliquez ici pour voir les diplôme de Technicien Spécialisé... <a
-                                class="strong"
-                                href="/Diplomes/technicienSpecialise/Technicien-Spécialisé-Développement-Informatique.php">plus
-                                details</a></p>
-                        <div class="requis">
-                            Pré-requis <span>➨</span> Bac
-                            <br>
-                            Durée <span>➨</span> 2 ans
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s"
-                    style="visibility: visible; animation-delay: 0.6s; animation-name: zoomIn;">
-                    <div
-                        class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
-                        <div class="">
-                            <img class="service-icon mod" src="../Diplome/Pic/technicien-superieur.jpg"
-                                alt="Technicien Superieur">
-                        </div>
-                        <h4 class="mb-3">Technicien Supérieur</h4>
-                        <p class="m-0">cliquez ici pour voir les diplôme de Technicien Superieur... <a class="strong"
-                                href="/Diplomes/technicienSuperieur/">plus details</a></p>
-                        <div class="requis">
-                            Pré-requis <span>➨</span> Bac
-                            <br>
-                            Durée <span>➨</span> 2 ans
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.9s"
-                    style="visibility: visible; animation-delay: 0.9s; animation-name: zoomIn;">
-                    <div
-                        class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
-                        <div class="">
-                            <img class="service-icon mod" src="../Diplome/Pic/licence.jpg"
-                                alt="licence professionnelle">
-                        </div>
-                        <h4 class="mb-3">Licence Professionnelle</h4>
-                        <p class="m-0">cliquez ici pour voir les diplôme de Licence professionnelle... <a
-                                class="strong" href="/Diplome/licenceProfessionel/">plus details</a></p>
-                        <div class="requis">
-                            Pré-requis <span>➨</span> Bac+2
-                            <br>
-                            Durée <span>➨</span> 1 an
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s"
-                    style="visibility: visible; animation-delay: 0.6s; animation-name: zoomIn;">
-                    <div
-                        class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
-                        <div class="service-icon mod">
-                            <img class="" src="../Diplome/Pic/master.jpg" alt="master proffesionnel">
-                        </div>
-                        <h4 class="mb-3">Master Professionnel</h4>
-                        <p class="m-0">cliquez ici pour voir les diplôme de Master proffesionnel... <a class="strong"
-                                href="/Diplomes/masterProfessionel/">plus details</a></p>
-                        <div class="requis">
-                            Pré-requis <span>➨</span> Bac+3
-                            <br>
-                            Durée <span>➨</span> 2 ans
-                        </div>
-                    </div>
+                    @endforeach
+
                 </div>
             </div>
         </div>
-    </div>
-    <div class="item">
-        <div class="row">
-            <div class="col-lg-2"></div>
-            <div class="col-lg-8 ads">
-                <div id="ads"></div>
-                <img src="../Index/Img/play.png" onclick="play(this)" class="Play">
+        <div class="item">
+            <div class="row">
+                <div class="col-lg-2"></div>
+                <div class="col-lg-8 ads">
+                    <div id="ads"></div>
+                    <img src="../Index/Img/play.png" onclick="play(this)" class="Play">
+                </div>
+                <div class="col-lg-2"></div>
             </div>
-            <div class="col-lg-2"></div>
         </div>
-    </div>
 </x-layout>

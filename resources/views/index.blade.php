@@ -1,35 +1,51 @@
 <x-layout>
-    <!-- origin Stylesheet -->
-    <link rel="stylesheet" href="/Diplome/metate.css" />
-    <link rel="stylesheet" href="/Index/Biblo.css" />
-    <link rel="stylesheet" href="css/style.css">
     <section>
+        <style>
+            section>section:after {
+                content: "";
+                width: 100%;
+                height: 99px;
+                background: url('/Diplome/Pic/Bottom.png');
+                bottom: 0px;
+                left: 0;
+                padding-bottom: 10%;
+                position: absolute;
+            }
+            div.xe {
+                background: url('/Diplome/Pic/bg_car.jpg') center center no-repeat;
+                background-size: cover;
+                height: 75vh;
+            }
+        </style>
+
         <div class="xe"></div>
         <div class="xo"></div>
-    </section>
-    <!-- fixed button end -->
-    <aside class='Kaoutar'>
-        <div class='container'>
-            <div class='row'>
-                <div class='col-lg-12'>
-                    <h1>Découvrez nos parcours diplômantes</h1>
-                    <p>
-                        <strong>L'Ecole Polytechnique des Génies</strong> vous offre des <em>formations
-                            diplômantes</em> de qualité en présentiel à <strong>Fès</strong> ou à distance.
-                        <span class='Mel'></span>
-                        <a href='/Diplomes/qualification/'>Qualification</a>,
-                        <a href='/Diplomes/technicien/'>Technicien</a>,
-                        <a
-                            href='/Diplomes/technicienSpecialise/Technicien-Sp%C3%A9cialis%C3%A9-D%C3%A9veloppement-Informatique.php'>Technicien
-                            Spécialisé</a>,
-                        <a href='/Diplomes/technicienSuperieur/'>Technicien supérieur</a>,
-                        <a href='/Diplomes/licenceProfessionel/'>Licence</a>,
-                        <a href='/Diplomes/masterProfessionel/'>Master</a>
-                    </p>
+
+
+        <aside class='Kaoutar'>
+            <div class='container'>
+                <div class='row'>
+                    <div class='col-lg-12'>
+                        <h1>Découvrez nos parcours diplômantes</h1>
+                        <p>
+                            <strong>L'Ecole Polytechnique des Génies</strong> vous offre des <em>formations
+                                diplômantes</em> de qualité en présentiel à <strong>Fès</strong> ou à distance.
+                            <span class='Mel'></span>
+                            <a href='/Diplomes/qualification/'>Qualification</a>,
+                            <a href='/Diplomes/technicien/'>Technicien</a>,
+                            <a
+                                href='/Diplomes/technicienSpecialise/Technicien-Sp%C3%A9cialis%C3%A9-D%C3%A9veloppement-Informatique.php'>Technicien
+                                Spécialisé</a>,
+                            <a href='/Diplomes/technicienSuperieur/'>Technicien supérieur</a>,
+                            <a href='/Diplomes/licenceProfessionel/'>Licence</a>,
+                            <a href='/Diplomes/masterProfessionel/'>Master</a>
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </aside>
+        </aside>
+
+    </section>
 
 
     </section>
@@ -48,7 +64,8 @@
                         <h3 class="mb-3">Qualification</h3>
                         <p class="m-0">les diplômes de Qualification (DQ) permettent à tous les salariés (nouveaux ou
                             déjà en poste) d'apprendre, de se perfectionner et d'accroître leurs capacités dans leur
-                            métier et donc d’évoluer...<a class="strong" href="/Diplomes/qualification/">plus details</a>
+                            métier et donc d’évoluer...<a class="strong" href="/Diplomes/qualification/">plus
+                                details</a>
                         </p>
                         <div class="requis">
                             Pré-requis <span>➨</span> Niveau Collége

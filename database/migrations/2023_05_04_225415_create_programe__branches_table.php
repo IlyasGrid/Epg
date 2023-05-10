@@ -13,7 +13,13 @@ return new class extends Migration
     {
         Schema::create('programe__branches', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->integer('Num_module');
+            $table->char('Name_module',50);
+            $table->char('Annee',20);   
+            $table->foreignId('branche__diplomes_id')
+            ->constrained()
+            ->onDelete('cascade')
+            ->onUpdate('cascade');
         });
     }
 

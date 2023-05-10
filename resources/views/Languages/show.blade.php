@@ -1,6 +1,15 @@
 <x-layout>
     <link rel="stylesheet" href="../Index/service.css" />
-    <section>
+    <section class="background-image">
+        <style>
+            .background-image {
+                background-image: url('/langues/Img/langues.jpg');
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+            
+        </style>
         <div class="gradient"></div>
         <div id="slides">
 
@@ -61,7 +70,7 @@
                     @php
                         $reasons = explode('&', $langue->Raisons);
                     @endphp
-                    @unless (count($reasons) > 0)
+                    @unless (count($reasons) <= 0)
                         @foreach ($reasons as $reason)
                             <p>
                                 <i class="fa fa-long-arrow-right"></i>
@@ -90,33 +99,13 @@
                     </tr>
                     @foreach ($courses as $cours)
                         <tr>
-                            <th class="inclus">{{ $cours->Type}}</th>
-                            <td>{{$cours->Volume_Horraire}}</td>
-                            <td >{{$cours->Temps}}</td>
-                            <td>{{$cours->Price}}</td>
+                            <th class="inclus">{{ $cours->Type }}</th>
+                            <td>{{ $cours->Volume_Horraire }}</td>
+                            <td>{{ $cours->Temps }}</td>
+                            <td>{{ $cours->Price }}</td>
                         </tr>
                     @endforeach
-                    {{-- <tr>
-                        <th class="inclus"> Cours Normale</th>
-                        <td>1 Séances par semaine</td>
-                        <td rowspan="4">2h par séance</td>
-                        <td>200 Dh</td>
-                    </tr>
-                    <tr>
-                        <th class="inclus"> Cours du Soir</th>
-                        <td>1 Séances par semaine</td>
-                        <td>200 Dh</td>
-                    </tr>
-                    <tr>
-                        <th class="inclus"> Cours Accéléré </th>
-                        <td>3 Séances par semaine</td>
-                        <td>500 Dh</td>
-                    </tr>
-                    <tr>
-                        <th class="inclus"> Cours du soir Accéléré</th>
-                        <td>3 Séances par semaine</td>
-                        <td>500 Dh</td>
-                    </tr> --}}
+                    
 
                 </table>
             </div>
@@ -134,35 +123,15 @@
                                     <th class="inclus">Cours Accéléré et Rapide</th>
                                 </tr>
                                 @foreach ($niveaux as $niv)
-                                <tr>
-                                    <th class="inclus"> {{$niv->Niveau}}</th>
-                                    <td>{{$niv->Duree_Cours_Normal}}</td>
-                                    <td>{{$niv->Duree_Cours_Soir}}</td>
-                                    <td>{{$niv->Duree_Cours_Accelerer}}</td>
-                                    <td>{{$niv->Duree_Cours_Rapide}}</td>
-                                </tr>
+                                    <tr>
+                                        <th class="inclus"> {{ $niv->Niveau }}</th>
+                                        <td>{{ $niv->Duree_Cours_Normal }}</td>
+                                        <td>{{ $niv->Duree_Cours_Soir }}</td>
+                                        <td>{{ $niv->Duree_Cours_Accelerer }}</td>
+                                        <td>{{ $niv->Duree_Cours_Rapide }}</td>
+                                    </tr>
                                 @endforeach
-                                {{-- <tr>
-                                    <th class="inclus"> A2</th>
-                                    <td>12 Mois</td>
-                                    <td>8 Mois</td>
-                                    <td>6 Mois</td>
-                                    <td>3 Mois</td>
-                                </tr>
-                                <tr>
-                                    <th class="inclus"> B1</th>
-                                    <td>19 Mois</td>
-                                    <td>13 Mois</td>
-                                    <td>10 Mois</td>
-                                    <td>5 Mois</td>
-                                </tr>
-                                <tr>
-                                    <th class="inclus"> B2</th>
-                                    <td>27 Mois</td>
-                                    <td>18 Mois</td>
-                                    <td>15 Mois</td>
-                                    <td>7 Mois</td>
-                                </tr> --}}
+                                
                             </tbody>
                         </table>
                     </div>

@@ -26,6 +26,7 @@ class LangueController extends Controller
         //
     }
 
+
     /**
      * Store a newly created resource in storage.
      */
@@ -55,7 +56,7 @@ class LangueController extends Controller
             $courses = [$cour_normal, $cour_soir, $cour_rapide, $cour_accelere];
 
             //  Niveau
-
+            $niveaux = null;
             if ($langue[0]->Name == 'allemand') {
                 $niveaux = Niveau_Langue::all();
             }
