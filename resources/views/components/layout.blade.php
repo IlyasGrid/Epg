@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr-MA">
 
@@ -11,7 +12,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
         integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous" />
-    <script src="https://kit.fontawesome.com/873e4afb32.js" defer crossorigin="anonymous"></script>
+    <script defer src="https://kit.fontawesome.com/873e4afb32.js"  crossorigin="anonymous"></script>
 
 
     <!-- origin Stylesheet -->
@@ -25,10 +26,11 @@
 
     @include('partials._social-media')
 
-    <section style="min-height: 100vh">
-   {{ $slot }}
+    <section>
+        {{-- <section style="min-height: 100vh"> --}}
+        {{ $slot }}
     </section>
- 
+
 
     <footer class="contact">
         <div class="xo"></div>

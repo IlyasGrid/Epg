@@ -1,7 +1,12 @@
 <?php
 
+use App\Http\Controllers\DiplomeController;
+use App\Http\Controllers\FormationController;
 use App\Http\Controllers\LangueController;
+use App\Models\Branche_Diplome;
+use App\Models\Diplome;
 use App\Models\Langue;
+use App\Models\Tarification_Langue;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,91 +20,82 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-Route::view('/', "index");
+$diplomes = Diplome::all();
+Route::view('/', "index", ['diplomes' => $diplomes]);
+// Route::get('/',function(){
+//     return view('index');
+// });
 Route::view('/test', "components.layout");
 Route::view('/contact.php', "contact");
 Route::view('/cours-soutien-informatique.php', "cours-soutien-informatique");
 Route::view('/Bourse.php', "Bourse");
 Route::view('/A-propos.php', "A-propos");
-Route::view('/services.php', "services.services");
+Route::view('/services.php', "services");
 
-Route::group(['prefix' => 'Documentations'], function () {
-    Route::get('/Minha.pdf', function () {
-        $filePath = public_path('assets/Minha.pdf');
-        $file = new \SplFileInfo($filePath);
 
-        return response()->file($file->getRealPath(), [
-            'Content-Type' => 'application/pdf',
-            'Content-Disposition' => 'attachment; filename="Minha.pdf"'
-        ]);
-    });
-    Route::get('/Pieces à Fournire(Etr au maroc-1er année).pdf', function () {
-        $filePath = public_path('assets/Pieces à Fournire(Etr au maroc-1er année).pdf');
-        $file = new \SplFileInfo($filePath);
+Route::get('/Documentations/{name}', function ($name) {
 
-        return response()->file($file->getRealPath(), [
-            'Content-Type' => 'application/pdf',
-            'Content-Disposition' => 'attachment; filename="Pieces à Fournire(Etr au maroc-1er année).pdf"'
-        ]);
-    });
-    Route::get('/Réglement-Intérieur.pdf', function () {
-        $filePath = public_path('assets/Réglement-Intérieur.pdf');
-        $file = new \SplFileInfo($filePath);
+    $filePath = public_path('assets/' . $name);
+    $file = new \SplFileInfo($filePath);
 
-        return response()->file($file->getRealPath(), [
-            'Content-Type' => 'application/pdf',
-            'Content-Disposition' => 'attachment; filename="Réglement-Intérieur.pdf"'
-        ]);
-    });
-    Route::get('/Pieces à Fournire(Etr).pdf', function () {
-        $filePath = public_path('assets/Pieces à Fournire(Etr).pdf');
-        $file = new \SplFileInfo($filePath);
+    return response()->file($file->getRealPath(), [
+        'Content-Type' => 'application/pdf',
+        'Content-Disposition' => 'attachment; filename="' . $name . '"'
+    ]);
+});
 
-        return response()->file($file->getRealPath(), [
-            'Content-Type' => 'application/pdf',
-            'Content-Disposition' => 'attachment; filename="Pieces à Fournire(Etr).pdf"'
-        ]);
-    });
-    Route::get('/Pieces à Fournire(Etr au maroc-2em année).pdf', function () {
-        $filePath = public_path('assets/Pieces à Fournire(Etr au maroc-2em année).pdf');
-        $file = new \SplFileInfo($filePath);
+// Route::group(['prefix' => 'Formations'], function () {
+//     Route::view('/', "Formations.index");
+// });
 
-        return response()->file($file->getRealPath(), [
-            'Content-Type' => 'application/pdf',
-            'Content-Disposition' => 'attachment; filename="Pieces à Fournire(Etr au maroc-2em année).pdf"'
-        ]);
-    });
-    // Route::get('/.pdf', function () {
-    //     $filePath = public_path('assets/.pdf');
-    //     $file = new \SplFileInfo($filePath);
+Route::resource('/Languages', LangueController::class);
 
-    //     return response()->file($file->getRealPath(), [
-    //         'Content-Type' => 'application/pdf',
-    //         'Content-Disposition' => 'attachment; filename=".pdf"'
-    //     ]);
-    // });
+
+Route::resource('/Diplomes', DiplomeController::class);
+Route::resource('/Formations', FormationController::class);
+
+// Route::get('/Diplome/{diplome_name?}/{branche_name?}', [LangueController::class,'ilyas'])->name('hhhhhh');
+
+
+
+Route::get('/Diplome/{diplome_name}/{branche_name}', function ($diplome_name, $branche_name) {
+
+    $branche = Branche_Diplome::where('Fullname', '=', $branche_name)->get();
+    $branche_info = $branche[0];
+    // dd($branche_info);
+
+    return view('Diplomes.branche', ['diplome_name' => $diplome_name, 'branche_info' => $branche_info]);
 });
 
 
-Route::group(['prefix' => 'Formations'], function () {
-    Route::view('/', "Formations.index");
-});
 
-Route::resource('/Languages',LangueController::class);
+Route::group(['prefix' => 'admin'], function () {
 
-Route::group(['prefix' => 'Diplomes'], function () {
-
-    Route::group(['prefix' => 'technicienSpecialise'], function () {
-        Route::view('/Technicien-Spécialisé-Développement-Informatique.php', "Diplomes.technicienSpecialise.Technicien-Spécialisé-Développement-Informatique");
+    Route::group(['prefix' => 'langues'], function () {
+        Route::get('/create', [LangueController::class, 'create']);
+        Route::get('/', [LangueController::class, 'adminShow']);
+        Route::get('/edit/{id}', [LangueController::class, 'edit']);
+        Route::put('/{id}', [LangueController::class, 'update']);
+        Route::post('/', [LangueController::class, 'store']);
+        Route::delete('/{id}', [LangueController::class, 'destroy']);
+        // Tarification_Langue
+        Route::get('/{id_langue}/tarification/create', [LangueController::class, 'createTarification']);
+        Route::get('/{id_langue}/tarification', [LangueController::class, 'showTarification']);
+        Route::get('/edit/{id_langue}/tarification/{id_tarif}', [LangueController::class, 'editTarification']);
+        Route::put('/{id_langue}/tarification/{id_tarif}', [LangueController::class, 'updateTarification']);
+        Route::post('/{id_langue}/tarification', [LangueController::class, 'storeTarification']);
+        Route::delete('/{id_langue}/tarification/{id_tarif}', [LangueController::class, 'destroyTarification']);
+        // NIveau_langue
+        Route::get('/{id_langue}/niveau/create', [LangueController::class, 'createNiveau']);
+        Route::get('/{id_langue}/niveau', [LangueController::class, 'showNiveau']);
+        Route::get('/edit/{id_langue}/niveau/{id_tarif}', [LangueController::class, 'editNiveau']);
+        Route::put('/{id_langue}/niveau/{id_tarif}', [LangueController::class, 'updateNiveau']);
+        Route::post('/{id_langue}/niveau', [LangueController::class, 'storeNiveau']);
+        Route::delete('/{id_langue}/niveau/{id_tarif}', [LangueController::class, 'destroyNiveau']);
     });
-    Route::view('/', "Diplomes.index");
-    Route::fallback(function () {
-        return view("Diplomes.workingonit");
-    });
+    Route::get('/home', [LangueController::class, 'adminHome']);
+    // Route::view('/langues', "admin.langue");
 });
-
-
 
 Route::fallback(function () {
     return view("error");

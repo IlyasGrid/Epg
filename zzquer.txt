@@ -13,7 +13,8 @@
     l’anglais est très répandu. Apprendre l\'anglais peut être une envie
     personelle ou un besoin pour les étudient et les personnes qui cherchent du
     travail.mais Il est certain que personne ne regrette jamais d\'avoir appris
-    cette langue très riche.',' est la langue de la communication
+    cette langue très riche.',
+    ' est la langue de la communication
     internationale& donne accès à davantage de contenus sur Internet et de
     divertissements& rend le voyage plus accessible& peut vous rendre « plus
     intelligent&');
@@ -43,6 +44,7 @@
     (licence ou Master) &Qualifications professionnelles (Diplôme de formation
     professionnelle) &Expériences professionnelles &Compte bancaire fermé
     &Diplôme d\'allemand B1 &Adresse initiale (réservation d\'hôtel)');
+    
        INSERT INTO `tarification__langues`( `Type`, `Volume_Horraire`, `Temps`, `Price`, `langue_id`) VALUES ('COURS NORMALE','1 Séance par semaine','2h','200 dh',1);
 INSERT INTO `tarification__langues`( `Type`, `Volume_Horraire`, `Temps`, `Price`, `langue_id`) VALUES ('COURS DU SOIR','1 Séance par semaine','2h','200 dh',1);
 INSERT INTO `tarification__langues`( `Type`, `Volume_Horraire`, `Temps`, `Price`, `langue_id`) VALUES ('COURS ACCÉLÉRÉ','3 Séances par semaine','2h','500 dh',1);

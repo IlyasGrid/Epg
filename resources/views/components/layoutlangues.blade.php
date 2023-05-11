@@ -25,27 +25,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <link rel="icon" href="../portail/favicon.ico" />
-    <style>
-        button.btn {
-            position: absolute;
-            background-color: #97c9bd;
-            border-radius: 16px;
-            bottom: 1px;
-            left: 65%;
-            width: 100px;
-        }
-
-        .bee {
-            position: relative;
-            width: 100%;
-            border: 2px solid blue;
-        }
-
-        .showing {
-            background: url('../langues/Img/langues.jpg') no-repeat center;
-            background-size: 100% 100%;
-        }
-    </style>
+  
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-154922762-1"></script>
 
 

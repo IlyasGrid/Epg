@@ -47,18 +47,13 @@
                         de s’ouvrir à une diversité de cultures et de langues étrangères avec des prix très convenables,
                         plus avantageux et abordable.
                     </p>
-                    <p>
-                        <i class="fa fa-long-arrow-right"></i>
-                        <a href="allemand">langue Allemand</a>
-                    </p>
-                    <p>
-                        <i class="fa fa-long-arrow-right"></i>
-                        <a href="anglais">langue Anglaise</a>
-                    </p>
-                    <p>
-                        <i class="fa fa-long-arrow-right"></i>
-                        <a href="francais">langue Française</a>
-                    </p>
+                    @foreach ($langues as $langue)
+                        <p>
+                            <i class="fa fa-long-arrow-right"></i>
+                            <a href="/Languages/{{ $langue->Name }}">langue <span
+                                    style="text-transform: uppercase">{{ $langue->Name }}</span></a>
+                        </p>
+                    @endforeach
                 </div>
             </div>
         </div>

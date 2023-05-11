@@ -62,12 +62,12 @@
                     <a class="dropdown-item" href="/Diplomes/qualification/">Qualification</a>
                     <a class="dropdown-item" href="/Diplomes/technicien/">Technicien</a>
                     <a class="dropdown-item"
-                        href="/Diplomes/technicienSpecialise/Technicien-Spécialisé-Développement-Informatique.php">Technicien
+                        href="/Diplome/technicien specialise/TECHNICIEN SPÉCIALISÉ EN DÉVELOPPEMENT INFORMATIQUE">Technicien
                         Spécialisé</a>
-                    <a class="dropdown-item" href="/Diplomes/technicienSuperieur/">Technicien Supérieur</a>
-                    <a class="dropdown-item dropdown-header" href="/Diplomes/licenceProfessionel/">Licence
+                    <a class="dropdown-item" href="/Diplomes/techncien superieur/">Technicien Supérieur</a>
+                    <a class="dropdown-item dropdown-header" href="/Diplomes/license professionnelle/">Licence
                         Professionnelle</a>
-                    <a class="dropdown-item dropdown-header" href="/Diplomes/masterProfessionel/">Master
+                    <a class="dropdown-item dropdown-header" href="/Diplomes/master professionnelle/">Master
                         Professionnel</a>
                 </div>
             </li>
@@ -111,7 +111,11 @@
                     <span class="more">Plus </span><span class="sr-only">Toggle Dropdown</span>
                 </a>
                 <div class="dropdown-menu" id="navDrop" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/Languages/allemand">Allemand</a>
+                    {{-- @foreach ($langues as $langue)
+                        <a class="dropdown-item" href="/Languages/{{ $langue->Name }}"><span
+                                style="text-transform: uppercase">{{ $langue->Name }}</span></a>
+                    @endforeach --}}
+                    <a class="dropdown-item" href="/Languages/allemend">Allemend</a>
                     <a class="dropdown-item" href="/Languages/anglais">Anglais</a>
                     <a class="dropdown-item" href="/Languages/francais">Français</a>
                 </div>

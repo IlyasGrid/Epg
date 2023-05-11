@@ -13,7 +13,9 @@ return new class extends Migration
     {
         Schema::create('diplomes', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->char('Name')->unique();
+            $table->char('Prerequis',50);
+            $table->char('Duree',10);
         });
     }
 
