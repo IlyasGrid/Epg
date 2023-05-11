@@ -11,7 +11,10 @@
                 padding-bottom: 10%;
                 position: absolute;
             }
+<<<<<<< HEAD
 
+=======
+>>>>>>> daa08ba1287f16321074312f463eddda67c67991
             div.xe {
                 background: url('/Diplome/Pic/bg_car.jpg') center center no-repeat;
                 background-size: cover;
