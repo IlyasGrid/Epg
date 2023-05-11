@@ -49,17 +49,11 @@ Route::get('/Documentations/{name}', function ($name) {
 // });
 
 Route::resource('/Languages', LangueController::class);
-<<<<<<< HEAD
 
 
 Route::resource('/Diplomes', DiplomeController::class);
 Route::resource('/Formations', FormationController::class);
 
-=======
-Route::resource('/Diplomes', DiplomeController::class);
-Route::resource('/Formations', FormationController::class);
-
->>>>>>> daa08ba1287f16321074312f463eddda67c67991
 // Route::get('/Diplome/{diplome_name?}/{branche_name?}', [LangueController::class,'ilyas'])->name('hhhhhh');
 
 
@@ -74,7 +68,6 @@ Route::get('/Diplome/{diplome_name}/{branche_name}', function ($diplome_name, $b
 });
 
 
-<<<<<<< HEAD
 
 Route::group(['prefix' => 'admin'], function () {
 
@@ -103,8 +96,6 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/home', [LangueController::class, 'adminHome']);
     // Route::view('/langues', "admin.langue");
 });
-=======
->>>>>>> daa08ba1287f16321074312f463eddda67c67991
 
 Route::fallback(function () {
     return view("error");

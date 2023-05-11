@@ -22,21 +22,6 @@ class LangueController extends Controller
     }
 
 
-<<<<<<< HEAD
-=======
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
->>>>>>> daa08ba1287f16321074312f463eddda67c67991
     public function show($langueName)
     {
 
