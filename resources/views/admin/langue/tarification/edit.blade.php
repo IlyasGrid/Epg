@@ -37,10 +37,9 @@
             enctype="multipart/form-data">
             @csrf
             @method('PUT')
-            <h2> Langue {{ $langue->Name }}</h2>
+            <h2> Tarification Langue {{ $langue->Name }}</h2>
 
-            <div>
-                <h3> Tarification </h2>
+            <div >
                     <div class="d-flex justify-content-around">
                         <div class=" conditions-forms conatiner m-3 border p-3">
                             <div class="mb-6 form-group">

@@ -115,116 +115,116 @@
 
                     </table>
                 </div>
-
-                @if ($niveaux != null)
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <table>
-                                <tbody>
+            @endunless
+            @if ($niveaux != null)
+                <div class="row">
+                    <div class="col-lg-12">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th class="hide"></th>
+                                    <th class="inclus">Cours Normale</th>
+                                    <th class="inclus">Cours du Soir</th>
+                                    <th class="inclus">Cours Accéléré</th>
+                                    <th class="inclus">Cours Accéléré et Rapide</th>
+                                </tr>
+                                @foreach ($niveaux as $niv)
                                     <tr>
-                                        <th class="hide"></th>
-                                        <th class="inclus">Cours Normale</th>
-                                        <th class="inclus">Cours du Soir</th>
-                                        <th class="inclus">Cours Accéléré</th>
-                                        <th class="inclus">Cours Accéléré et Rapide</th>
+                                        <th class="inclus"> {{ $niv->Niveau }} </th>
+                                        <td>{{ $niv->Duree_Cours_Normal }} Mois</td>
+                                        <td>{{ $niv->Duree_Cours_Soir }} Mois</td>
+                                        <td>{{ $niv->Duree_Cours_Accelerer }} Mois</td>
+                                        <td>{{ $niv->Duree_Cours_Rapide }} Mois</td>
                                     </tr>
-                                    @foreach ($niveaux as $niv)
-                                        <tr>
-                                            <th class="inclus"> {{ $niv->Niveau }} </th>
-                                            <td>{{ $niv->Duree_Cours_Normal }} Mois</td>
-                                            <td>{{ $niv->Duree_Cours_Soir }} Mois</td>
-                                            <td>{{ $niv->Duree_Cours_Accelerer }} Mois</td>
-                                            <td>{{ $niv->Duree_Cours_Rapide }} Mois</td>
-                                        </tr>
-                                    @endforeach
+                                @endforeach
 
-                                </tbody>
-                            </table>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="container" style="position: relative;">
+                    <style>
+                        .content h6 {
+                            font-weight: bold;
+                            color: #a73705;
+                            text-decoration: underline;
+                            font-size: 20px;
+                            margin-top: 20px;
+
+                        }
+
+                        .content p {
+                            font: 18px Bold;
+                            font-family: Arial, Helvetica, sans-serif;
+                            line-height: 24px;
+                            text-align: justify;
+                            margin-bottom: .5rem !important;
+                        }
+                    </style>
+                </div>
+            @endif
+            @if ($langue->Piece_frais != null)
+                <div class="row d">
+                    <div class="col-lg-12">
+                        <div class="content">
+                            <h4 class="packs">Pièces et Frais à Fournir</h4>
+
+                            @php
+                                $pieces = explode('&', $langue->Piece_frais);
+                            @endphp
+                            @foreach ($pieces as $piece)
+                                <p>
+                                    <i class="fa fa-long-arrow-right"></i>
+                                    {{ $piece }}
+                                </p>
+                            @endforeach
                         </div>
                     </div>
-                    <div class="container" style="position: relative;">
-                        <style>
-                            .content h6 {
-                                font-weight: bold;
-                                color: #a73705;
-                                text-decoration: underline;
-                                font-size: 20px;
-                                margin-top: 20px;
+                </div>
+            @endif
 
-                            }
+            @if (
+                $langue->Conditions_Etudes != null &&
+                    $langue->Conditions_Formations != null &&
+                    $langue->Conditions_Cherche_Emploi != null)
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="content">
+                            <h4 class="packs">Conditions d'obtention d'un visa</h4>
+                            <h6 class="">Etudes</h6>
+                            @php
+                                $etudes = explode('&', $langue->Conditions_Etudes);
+                            @endphp
+                            @foreach ($etudes as $etude)
+                                <p>
+                                    <i class="fa fa-long-arrow-right"></i> {{ $etude }}
+                                </p>
+                            @endforeach
 
-                            .content p {
-                                font: 18px Bold;
-                                font-family: Arial, Helvetica, sans-serif;
-                                line-height: 24px;
-                                text-align: justify;
-                                margin-bottom: .5rem !important;
-                            }
-                        </style>
-                    </div>
-                @endif
-                @if ($langue->Piece_frais != null)
-                    <div class="row d">
-                        <div class="col-lg-12">
-                            <div class="content">
-                                <h4 class="packs">Pièces et Frais à Fournir</h4>
-
-                                @php
-                                    $pieces = explode('&', $langue->Piece_frais);
-                                @endphp
-                                @foreach ($pieces as $piece)
-                                    <p>
-                                        <i class="fa fa-long-arrow-right"></i>
-                                        {{ $piece }}
-                                    </p>
-                                @endforeach
-                            </div>
+                            <h6 class="">formation professionnelle</h6>
+                            @php
+                                $formations = explode('&', $langue->Conditions_Formations);
+                            @endphp
+                            @foreach ($formations as $formation)
+                                <p>
+                                    <i class="fa fa-long-arrow-right"></i> {{ $formation }}
+                                </p>
+                            @endforeach
+                            <h6 class="">Recherche d'Emploi</h6>
+                            @php
+                                $cherche_emplois = explode('&', $langue->Conditions_Cherche_Emploi);
+                            @endphp
+                            @foreach ($cherche_emplois as $cherche_emploi)
+                                <p>
+                                    <i class="fa fa-long-arrow-right"></i> {{ $cherche_emploi }}
+                                </p>
+                            @endforeach
                         </div>
                     </div>
-                @endif
+                </div>
+            @endif
+        </div>
 
-                @if (
-                    $langue->Conditions_Etudes != null &&
-                        $langue->Conditions_Formations != null &&
-                        $langue->Conditions_Cherche_Emploi != null)
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="content">
-                                <h4 class="packs">Conditions d'obtention d'un visa</h4>
-                                <h6 class="">Etudes</h6>
-                                @php
-                                    $etudes = explode('&', $langue->Conditions_Etudes);
-                                @endphp
-                                @foreach ($etudes as $etude)
-                                    <p>
-                                        <i class="fa fa-long-arrow-right"></i> {{ $etude }}
-                                    </p>
-                                @endforeach
-
-                                <h6 class="">formation professionnelle</h6>
-                                @php
-                                    $formations = explode('&', $langue->Conditions_Formations);
-                                @endphp
-                                @foreach ($formations as $formation)
-                                    <p>
-                                        <i class="fa fa-long-arrow-right"></i> {{ $formation }}
-                                    </p>
-                                @endforeach
-                                <h6 class="">Recherche d'Emploi</h6>
-                                @php
-                                    $cherche_emplois = explode('&', $langue->Conditions_Cherche_Emploi);
-                                @endphp
-                                @foreach ($cherche_emplois as $cherche_emploi)
-                                    <p>
-                                        <i class="fa fa-long-arrow-right"></i> {{ $cherche_emploi }}
-                                    </p>
-                                @endforeach
-                            </div>
-                        </div>
-                    </div>
-                @endif
-            </div>
-        @endunless
     </div>
 
 </x-layout>

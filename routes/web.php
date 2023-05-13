@@ -7,6 +7,7 @@ use App\Models\Branche_Diplome;
 use App\Models\Diplome;
 use App\Models\Langue;
 use App\Models\Tarification_Langue;
+use Illuminate\Database\Eloquent\Scope;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -95,7 +96,30 @@ Route::group(['prefix' => 'admin'], function () {
         Route::post('/{id_langue}/niveau', [LangueController::class, 'storeNiveau']);
         Route::delete('/{id_langue}/niveau/{id_niveau}', [LangueController::class, 'destroyNiveau']);
     });
-    Route::get('/home', [LangueController::class, 'adminHome']);
+    Route::group(['prefix' => 'diplomes'], function () {
+        Route::get('/create', [DiplomeController::class, 'create']);
+        Route::get('/', [DiplomeController::class, 'adminShow']);
+        Route::get('/edit/{id}', [DiplomeController::class, 'edit']);
+        Route::put('/{id}', [DiplomeController::class, 'update']);
+        Route::post('/', [DiplomeController::class, 'store']);
+        Route::delete('/{id}', [DiplomeController::class, 'destroy']);
+        
+        // Tarification_Langue
+        Route::get('/{id_langue}/tarification/create', [DiplomeController::class, 'createTarification']);
+        Route::get('/{id_langue}/tarification', [DiplomeController::class, 'showTarification']);
+        Route::get('/edit/{id_langue}/tarification/{id_tarif}', [DiplomeController::class, 'editTarification']);
+        Route::put('/{id_langue}/tarification/{id_tarif}', [DiplomeController::class, 'updateTarification']);
+        Route::post('/{id_langue}/tarification', [DiplomeController::class, 'storeTarification']);
+        Route::delete('/{id_langue}/tarification/{id_tarif}', [DiplomeController::class, 'destroyTarification']);
+        // NIveau_langue
+        Route::get('/{id_langue}/niveau/create', [DiplomeController::class, 'createNiveau']);
+        Route::get('/{id_langue}/niveau', [DiplomeController::class, 'showNiveau']);
+        Route::get('/edit/{id_langue}/niveau/{id_niveau}', [DiplomeController::class, 'editNiveau']);
+        Route::put('/{id_langue}/niveau/{id_niveau}', [DiplomeController::class, 'updateNiveau']);
+        Route::post('/{id_langue}/niveau', [DiplomeController::class, 'storeNiveau']);
+        Route::delete('/{id_langue}/niveau/{id_niveau}', [DiplomeController::class, 'destroyNiveau']);
+    });
+    Route::get('/', [LangueController::class, 'adminHome']);
     // Route::view('/langues', "admin.langue");
 });
 

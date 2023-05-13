@@ -13,19 +13,20 @@ return new class extends Migration
     {
         Schema::create('branche__diplomes', function (Blueprint $table) {
             $table->id();
-            $table->char('Abreviation',10);
-            $table->char('Fullname',150);
+            $table->char('Abreviation', 10);
+            $table->char('Fullname', 150);
             $table->text('Motivation')->nullable();
             $table->integer('Price_month');
             $table->integer('Price_year');
             $table->text('Objectifs');
             $table->text('Prerequis');
             $table->text('Prespective_professionel')->nullable();
-            $table->text('Piece_a_fournis')->nullable();   
+            $table->text('Piece_a_fournis')->nullable();
+            $table->softDeletes();
             $table->foreignId('Diplome_id')
-            ->constrained()
-            ->onDelete('cascade')
-            ->onUpdate('cascade');
+                ->constrained()
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
         });
     }
 

@@ -23,7 +23,7 @@
                     <a class="nav-link" href="/admin/home">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
+                    <a class="nav-link dropdown-toggle" href="/admin/langues" id="navbarDropdownMenuLink"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Langues
                     </a>
@@ -36,12 +36,11 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Services
+                        Diplome
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Service 1</a>
-                        <a class="dropdown-item" href="#">Service 2</a>
-                        <a class="dropdown-item" href="#">Service 3</a>
+                        <a class="dropdown-item" href="/admin/diplomes">show</a>
+                        <a class="dropdown-item" href="/admin/diplomes/create">Create</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">

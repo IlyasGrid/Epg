@@ -17,6 +17,7 @@ return new class extends Migration
             $table->integer('Volume_Horraire');
             $table->char('Temps', 10);
             $table->integer('Price');
+            $table->softDeletes();
             $table->foreignId('langue_id')
                 ->constrained()
                 ->onDelete('cascade')

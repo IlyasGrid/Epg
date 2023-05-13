@@ -26,12 +26,16 @@ class LangueController extends Controller
     {
 
         $langue = Langue::where('Name', '=', $langueName)->get();
+
         if ($langue->count() > 0) {
 
+            $langue = $langue[0];
+
+
             // Tarif
-            $tarif = Tarification_Langue::where('langue_id', '=', $langue[0]->id)->get();
+            $tarif = Tarification_Langue::where('langue_id', '=', $langue->id)->get();
+
             if ($tarif->count() == 0) {
-                $langue = $langue[0];
                 $courses = null;
                 $niveaux = null;
                 return view('Languages.show', compact('langue', 'courses', 'niveaux'));
@@ -41,17 +45,17 @@ class LangueController extends Controller
 
 
             //  Niveau
-            $niveaux = null;
-            if ($langue[0]->Name == 'allemand') {
-                $niveaux = Niveau_Langue::all();
+            $niveaux = Niveau_Langue::where('langue_id', '=', $langue->id)->get();
+            if ($niveaux->count() == 0) {
+                $niveaux = null;
             }
 
-            $langue = $langue[0];
+
 
 
             return view('Languages.show', compact('langue', 'courses', 'niveaux'));
         } else {
-            return view('error',);
+            return '<h1>not found</h1>';
         }
     }
 
@@ -86,10 +90,15 @@ class LangueController extends Controller
             'Name' => ['required', Rule::unique('langues', 'Name')],
             'Subtitle' => 'required',
             'Motivation' => 'required',
+            'Raisons' => 'nullable',
+            'Piece_frais' => 'nullable',
+            'Conditions_Etudes' => 'nullable',
+            'Conditions_Formations' => 'nullable',
+            'Conditions_Cherche_Emploi' => 'nullable',
         ]);
         Langue::create($formFields);
 
-        return redirect()->action([LangueController::class, 'adminHome']);
+        return redirect()->action([LangueController::class, 'adminShow']);
     }
 
 
@@ -118,8 +127,6 @@ class LangueController extends Controller
             'Conditions_Formations' => 'nullable',
             'Conditions_Cherche_Emploi' => 'nullable'
         ]);
-        // dd($formFields);
-        // $langue->save();
         $langue->update($formFields);
 
         return redirect()->action([LangueController::class, 'adminShow']);
@@ -129,7 +136,7 @@ class LangueController extends Controller
     {
         $language = Langue::find($id);
         $language->delete();
-        return redirect()->action([LangueController::class, 'adminHome']);
+        return redirect()->action([LangueController::class, 'adminShow']);
     }
 
     //------------------------------- Tarification---------------------------------------------
@@ -188,8 +195,6 @@ class LangueController extends Controller
 
     public function showTarification($id_langue)
     {
-        // $langue = Langue::where('id', '=', $id_langue);
-        // $langue = Langue::all()->get($id_langue - 1);
         $langue = Langue::findOrFail($id_langue);
         $tarifs = Tarification_Langue::where('langue_id', '=', $id_langue)->get();
         return view("admin.langue.tarification.show", compact('langue', 'tarifs'));

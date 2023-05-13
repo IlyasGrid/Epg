@@ -18,6 +18,7 @@ return new class extends Migration
             $table->integer('Duree_Cours_Soir');
             $table->integer('Duree_Cours_Accelerer');
             $table->integer('Duree_Cours_Rapide');
+            $table->softDeletes();
             $table->foreignId('langue_id')
                 ->constrained()
                 ->onDelete('cascade')

@@ -4,8 +4,10 @@
             padding: 2em;
             border-radius: 10px;
             width: fit-content;
+            min-width: 50%;
             margin-left: 20%;
-            background-color: rgba(128, 128, 128, 0.363)
+            margin-bottom: 5em;
+            background-color: rgba(128, 128, 128, 0.120)
         }
 
         h2 {
@@ -74,7 +76,7 @@
         <div id="conditions-container">
             <h3> Conditions </h2>
                 <div class="conditions-forms row">
-                    <div class="mb-6 form-group row-auto">
+                    <div class="mb-6 form-group row-auto mr-5">
                         <label for="Conditions_Etudes" class="inline-block text-lg mb-2">
                             d' Etude
                         </label>
@@ -83,7 +85,7 @@
                             value="{{ old('Conditions_Etudes') }}" />
 
                     </div>
-                    <div class="mb-6 form-group row-auto">
+                    <div class="mb-6 form-group row-auto mr-5">
                         <label for="Conditions_Formation" class="inline-block text-lg mb-2">
                             de Formation
                         </label>
@@ -92,7 +94,7 @@
                             value="{{ old('Conditions_Formation') }}" />
 
                     </div>
-                    <div class="mb-6 form-group row-auto">
+                    <div class="mb-6 form-group row-auto mr-5">
                         <label for="Conditions_Cherche_Emploi" class="inline-block text-lg mb-2">
                             de cherche d'emploi
                         </label>
@@ -104,7 +106,7 @@
                 </div>
         </div>
 
-        <div class="mb-6 form-group">
+        <div class="mt-5 form-group d-flex justify-content-center">
             <button class="btn btn-primary">
                 Create langue
             </button>
