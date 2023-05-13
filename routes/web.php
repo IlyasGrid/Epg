@@ -20,11 +20,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-$diplomes = Diplome::all();
-Route::view('/', "index", ['diplomes' => $diplomes]);
-// Route::get('/',function(){
-//     return view('index');
-// });
+
+Route::view('/', "index");
+Route::get('/', function () {
+    $diplomes = Diplome::all();
+
+    return view('index', compact('diplomes'));
+});
 Route::view('/test', "components.layout");
 Route::view('/contact.php', "contact");
 Route::view('/cours-soutien-informatique.php', "cours-soutien-informatique");
@@ -88,10 +90,10 @@ Route::group(['prefix' => 'admin'], function () {
         // NIveau_langue
         Route::get('/{id_langue}/niveau/create', [LangueController::class, 'createNiveau']);
         Route::get('/{id_langue}/niveau', [LangueController::class, 'showNiveau']);
-        Route::get('/edit/{id_langue}/niveau/{id_tarif}', [LangueController::class, 'editNiveau']);
-        Route::put('/{id_langue}/niveau/{id_tarif}', [LangueController::class, 'updateNiveau']);
+        Route::get('/edit/{id_langue}/niveau/{id_niveau}', [LangueController::class, 'editNiveau']);
+        Route::put('/{id_langue}/niveau/{id_niveau}', [LangueController::class, 'updateNiveau']);
         Route::post('/{id_langue}/niveau', [LangueController::class, 'storeNiveau']);
-        Route::delete('/{id_langue}/niveau/{id_tarif}', [LangueController::class, 'destroyNiveau']);
+        Route::delete('/{id_langue}/niveau/{id_niveau}', [LangueController::class, 'destroyNiveau']);
     });
     Route::get('/home', [LangueController::class, 'adminHome']);
     // Route::view('/langues', "admin.langue");

@@ -115,9 +115,9 @@
                         <a class="dropdown-item" href="/Languages/{{ $langue->Name }}"><span
                                 style="text-transform: uppercase">{{ $langue->Name }}</span></a>
                     @endforeach --}}
-                    <a class="dropdown-item" href="/Languages/allemend">Allemend</a>
+                    <a class="dropdown-item" href="/Languages/allemand">Allemend</a>
                     <a class="dropdown-item" href="/Languages/anglais">Anglais</a>
-                    <a class="dropdown-item" href="/Languages/francais">Français</a>
+                    <a class="dropdown-item" href="/Languages/">+others</a>
                 </div>
             </li>
 

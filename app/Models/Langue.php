@@ -16,7 +16,7 @@ class Langue extends Model
     {
         $this->hasOne(Tarification_Langue::class);
     }
-    public $timestamps = false;
+    // public $timestamps = false;
 
-
+    protected $fillable = ['Name', 'Subtitle', 'Motivation', 'Raisons', 'Piece_frais', 'Conditions_Etudes', 'Conditions_Formations', 'Conditions_Cherche_Emploi'];
 }

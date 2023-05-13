@@ -104,56 +104,6 @@
                 </div>
         </div>
 
-        {{-- <div>
-            <h3> niveau langue </h2>
-                <div class="conditions-forms">
-                    <div class="mb-6 form-group">
-                        <label for="Niveau" class="inline-block text-lg mb-2">
-                            Niveau
-                        </label>
-                        <input type="text" maxlength="2"
-                            class="border border-gray-200 rounded p-2 w-full form-control" name="Niveau"
-                            placeholder="A1, A2, B1, B2, C1 ou C2" value="{{ old('Niveau') }}" />
-
-                    </div>
-                    <div class="mb-6 form-group">
-                        <label for="Duree_Cours_normale" class="inline-block text-lg mb-2">
-                            Duree de Cours normale
-                        </label>
-                        <input type="number" class="border border-gray-200 rounded p-2 w-full form-control"
-                            name="Duree_Cours_normale" placeholder="volume horraire  en H"
-                            value="{{ old('Duree_Cours_normale') }}" />
-
-                    </div>
-                    <div class="mb-6 form-group">
-                        <label for="Duree_Cours_Soir" class="inline-block text-lg mb-2">
-                            Duree Cours Soir
-                        </label>
-                        <input type="number" class="border border-gray-200 rounded p-2 w-full form-control"
-                            name="Duree_Cours_Soir" placeholder="prix en DH"
-                            value="{{ old('Duree_Cours_Soir') }}" />
-
-                    </div>
-                    <div class="mb-6 form-group">
-                        <label for="Duree_Cours_Accelerer" class="inline-block text-lg mb-2">
-                            Duree Cours Accelerer
-                        </label>
-                        <input type="number" class="border border-gray-200 rounded p-2 w-full form-control"
-                            name="Duree_Cours_Accelerer" placeholder="prix en DH"
-                            value="{{ old('Duree_Cours_Accelerer') }}" />
-
-                    </div>
-                    <div class="mb-6 form-group">
-                        <label for="Duree_Cours_Accelere_Rapide" class="inline-block text-lg mb-2">
-                            Duree Cours Accelere Rapide
-                        </label>
-                        <input type="number" class="border border-gray-200 rounded p-2 w-full form-control"
-                            name="Duree_Cours_Accelere_Rapide" placeholder="prix en DH"
-                            value="{{ old('Duree_Cours_Accelere_Rapide') }}" />
-
-                    </div>
-                </div>
-        </div> --}}
         <div class="mb-6 form-group">
             <button class="btn btn-primary">
                 Create langue

@@ -12,15 +12,15 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('tarification__langues', function (Blueprint $table) {
-             $table->increments('id');
-            $table->char('Type',100);
-            $table->char('Volume_Horraire',50);
-            $table->char('Temps',10);
-            $table->char('Price',10);    
+            $table->id();
+            $table->char('Type', 100);
+            $table->integer('Volume_Horraire');
+            $table->char('Temps', 10);
+            $table->integer('Price');
             $table->foreignId('langue_id')
-            ->constrained()
-            ->onDelete('cascade')
-            ->onUpdate('cascade');
+                ->constrained()
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
         });
     }
 

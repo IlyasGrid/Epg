@@ -23,10 +23,10 @@
             <div class="card-body">
                 <h5 class="card-title">{{ $niv->Niveau }}</h5>
                 <div class="d-flex justify-content-around">
-                    <p class="card-text">Duree Cours Normal: <b>{{ $niv->Duree_Cours_Normal }}</b> </p>
-                    <p class="card-text">Duree Cours Soir: <b>{{ $niv->Duree_Cours_Soir }} </b></p>
-                    <p class="card-text">Duree Cours Accelerer: <b>{{ $niv->Duree_Cours_Accelerer }} </b></p>
-                    <p class="card-text">Duree Cours Rapide: <b>{{ $niv->Duree_Cours_Rapide }} </b></p>
+                    <p class="card-text">Duree Cours Normal: <b>{{ $niv->Duree_Cours_Normal }} Mois</b> </p>
+                    <p class="card-text">Duree Cours Soir: <b>{{ $niv->Duree_Cours_Soir }} Mois</b></p>
+                    <p class="card-text">Duree Cours Accelerer: <b>{{ $niv->Duree_Cours_Accelerer }} Mois</b></p>
+                    <p class="card-text">Duree Cours Rapide: <b>{{ $niv->Duree_Cours_Rapide }} Mois</b></p>
                 </div>
                 <div class="d-flex justify-content-around">
                     <div class="d-flex justify-content-around">

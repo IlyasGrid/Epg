@@ -13,4 +13,5 @@ class Tarification_Langue extends Model
     {
         $this->belongsTo(Langue::class);
     }
+    protected $fillable =['Type', 'Volume_Horraire', 'Temps', 'Price', 'langue_id'];
 }

@@ -117,35 +117,16 @@
 
                         </div>
                     </div>
-                    {{-- <div>
-                     a ajouter dans le controller
-                    <form action="\conditions" method="POST">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="btn btn-danger">Delete conditions</button>
-                    </form>
-                </div> --}}
+ 
             </div>
             {{-- @endif --}}
             <div class="btn">
                 <div class="mb-6 form-group">
-                    <button class="btn btn-primary">
-                        Edite langue
+                    <button type="submit" class="btn btn-primary">
+                        Edit langue
                     </button>
-                </div>
-                <div>
-                    <form action="\" method="POST">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="btn btn-danger">Delete</button>
-                    </form>
                 </div>
             </div>
         </form>
-        {{-- <form action="\" method="POST">
-            @csrf
-            @method('DELETE')
-            <button type="submit" class="btn btn-danger">Delete</button>
-        </form> --}}
     </main>
 </x-adminLayout>

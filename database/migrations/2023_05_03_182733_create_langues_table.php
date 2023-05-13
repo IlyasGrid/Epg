@@ -14,13 +14,15 @@ return new class extends Migration
         Schema::create('langues', function (Blueprint $table) {
             $table->id();
             $table->char('Name')->unique();
-            $table->string('Subtitle',50);
+            $table->string('Subtitle', 50);
             $table->text('Motivation');
             $table->text('Raisons')->nullable();
             $table->text('Piece_frais')->nullable();
             $table->text('Conditions_Etudes')->nullable();
             $table->text('Conditions_Formations')->nullable();
             $table->text('Conditions_Cherche_Emploi')->nullable();
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 

@@ -78,134 +78,135 @@ class LangueSeeder extends Seeder
             professionnelle) &Expériences professionnelles &Compte bancaire fermé
             &Diplôme d\'allemand B1 &Adresse initiale (réservation d\'hôtel)',
         ]);
-// 1
+        // ==============================Tarification============================================
+
+        // 1
         Tarification_Langue::create([
-            'Type'=>'COURS NORMALE',
-            'Volume_Horraire'=>'1 Séance par semaine',
-            'Temps'=>'2h',
-            'Price'=>'200 dh',
-            'langue_id'=>1
+            'Type' => 'COURS NORMALE',
+            'Volume_Horraire' => '1 ',
+            'Temps' => '2h',
+            'Price' => 200,
+            'langue_id' => 1
         ]);
         Tarification_Langue::create([
-            'Type'=>'COURS DU SOIR',
-            'Volume_Horraire'=>'1 Séance par semaine',
-            'Temps'=>'2h',
-            'Price'=>'200 dh',
-            'langue_id'=>1
+            'Type' => 'COURS DU SOIR',
+            'Volume_Horraire' => '1 ',
+            'Temps' => '2h',
+            'Price' => 200,
+            'langue_id' => 1
         ]);
         Tarification_Langue::create([
-            'Type'=>'COURS ACCÉLÉRÉ',
-            'Volume_Horraire'=>'3 Séances par semaine',
-            'Temps'=>'2h',
-            'Price'=>'500 dh',
-            'langue_id'=>1
+            'Type' => 'COURS ACCÉLÉRÉ',
+            'Volume_Horraire' => 3,
+            'Temps' => '2h',
+            'Price' => 500,
+            'langue_id' => 1
         ]);
         Tarification_Langue::create([
-            'Type'=>'COURS DU SOIR ACCÉLÉRÉ',
-            'Volume_Horraire'=>'3 Séances par semaine',
-            'Temps'=>'2h',
-            'Price'=>'500 dh',
-            'langue_id'=>1
+            'Type' => 'COURS DU SOIR ACCÉLÉRÉ',
+            'Volume_Horraire' => 3,
+            'Temps' => '2h',
+            'Price' => 500,
+            'langue_id' => 1
         ]);
-        
-// 2
+
+        // 2
         Tarification_Langue::create([
-            'Type'=>'COURS NORMALE',
-            'Volume_Horraire'=>'1 Séance par semaine',
-            'Temps'=>'2h',
-            'Price'=>'200 dh',
-            'langue_id'=>2
-        ]);
-        Tarification_Langue::create([
-            'Type'=>'COURS DU SOIR',
-            'Volume_Horraire'=>'1 Séance par semaine',
-            'Temps'=>'2h',
-            'Price'=>'200 dh',
-            'langue_id'=>2
+            'Type' => 'COURS NORMALE',
+            'Volume_Horraire' => '1 ',
+            'Temps' => '2h',
+            'Price' => 200,
+            'langue_id' => 2
         ]);
         Tarification_Langue::create([
-            'Type'=>'COURS ACCÉLÉRÉ',
-            'Volume_Horraire'=>'3 Séances par semaine',
-            'Temps'=>'2h',
-            'Price'=>'500 dh',
-            'langue_id'=>2
+            'Type' => 'COURS DU SOIR',
+            'Volume_Horraire' => '1 ',
+            'Temps' => '2h',
+            'Price' => 200,
+            'langue_id' => 2
         ]);
         Tarification_Langue::create([
-            'Type'=>'COURS DU SOIR ACCÉLÉRÉ',
-            'Volume_Horraire'=>'3 Séances par semaine',
-            'Temps'=>'2h',
-            'Price'=>'500 dh',
-            'langue_id'=>2
+            'Type' => 'COURS ACCÉLÉRÉ',
+            'Volume_Horraire' => 3,
+            'Temps' => '2h',
+            'Price' => 500,
+            'langue_id' => 2
+        ]);
+        Tarification_Langue::create([
+            'Type' => 'COURS DU SOIR ACCÉLÉRÉ',
+            'Volume_Horraire' => 3,
+            'Temps' => '2h',
+            'Price' => 500,
+            'langue_id' => 2
         ]);
 
         // 3
         Tarification_Langue::create([
-            'Type'=>'COURS NORMALE',
-            'Volume_Horraire'=>'2 Séance par semaine',
-            'Temps'=>'2h',
-            'Price'=>'300 dh',
-            'langue_id'=>3
+            'Type' => 'COURS NORMALE',
+            'Volume_Horraire' => '2 ',
+            'Temps' => '2h',
+            'Price' => 300,
+            'langue_id' => 3
         ]);
         Tarification_Langue::create([
-            'Type'=>'COURS DU SOIR',
-            'Volume_Horraire'=>'3 Séance par semaine',
-            'Temps'=>'2h',
-            'Price'=>'500 dh',
-            'langue_id'=>3
+            'Type' => 'COURS DU SOIR',
+            'Volume_Horraire' => '3 ',
+            'Temps' => '2h',
+            'Price' => 500,
+            'langue_id' => 3
         ]);
         Tarification_Langue::create([
-            'Type'=>'COURS ACCÉLÉRÉ',
-            'Volume_Horraire'=>'5 Séances par semaine',
-            'Temps'=>'1h30',
-            'Price'=>'600 dh',
-            'langue_id'=>3
+            'Type' => 'COURS ACCÉLÉRÉ',
+            'Volume_Horraire' => 5,
+            'Temps' => '1h30',
+            'Price' => 600,
+            'langue_id' => 3
         ]);
         Tarification_Langue::create([
-            'Type'=>'COURS DU SOIR ACCÉLÉRÉ',
-            'Volume_Horraire'=>'10 Séances par semaine',
-            'Temps'=>'1h30',
-            'Price'=>'1200 dh',
-            'langue_id'=>3
+            'Type' => 'COURS DU SOIR ACCÉLÉRÉ',
+            'Volume_Horraire' => 10,
+            'Temps' => '1h30',
+            'Price' => 1200,
+            'langue_id' => 3
         ]);
 
+
+        // ==============================Niveau_Langue============================================
         //1
         Niveau_Langue::create([
-            'Niveau'=>'A1',
-            'Duree_Cours_Normal'=>'6 Mois',
-            'Duree_Cours_Soir'=>'4 Mois',
-            'Duree_Cours_Accelerer'=>'3 Mois',
-            'Duree_Cours_Rapide'=>'2 Mois',
-            'langue_id'=>3
-        ]);   
-            //  2
+            'Niveau' => 'A1',
+            'Duree_Cours_Normal' => 6,
+            'Duree_Cours_Soir' => 4,
+            'Duree_Cours_Accelerer' => 3,
+            'Duree_Cours_Rapide' => 2,
+            'langue_id' => 3
+        ]);
+        //  2
         Niveau_Langue::create([
-            'Niveau'=>'A2',
-            'Duree_Cours_Normal'=>'12 Mois',
-            'Duree_Cours_Soir'=>'8 Mois',
-            'Duree_Cours_Accelerer'=>'6 Mois',
-            'Duree_Cours_Rapide'=>'2 Mois',
-            'langue_id'=>3
-        ]);    
+            'Niveau' => 'A2',
+            'Duree_Cours_Normal' => 12,
+            'Duree_Cours_Soir' => 8,
+            'Duree_Cours_Accelerer' => 6,
+            'Duree_Cours_Rapide' => 2,
+            'langue_id' => 3
+        ]);
         // 3
-            Niveau_Langue::create([
-                'Niveau'=>'B1',
-                'Duree_Cours_Normal'=>'19 Mois',
-                'Duree_Cours_Soir'=>'13 Mois',
-                'Duree_Cours_Accelerer'=>'10 Mois',
-                'Duree_Cours_Rapide'=>'5 Mois',
-                'langue_id'=>3
-            ])  ;
+        Niveau_Langue::create([
+            'Niveau' => 'B1',
+            'Duree_Cours_Normal' => 19,
+            'Duree_Cours_Soir' => 13,
+            'Duree_Cours_Accelerer' => 10,
+            'Duree_Cours_Rapide' => 5,
+            'langue_id' => 3
+        ]);
         // 4
-            Niveau_Langue::create([
-                'Niveau'=>'B2',
-                'Duree_Cours_Normal'=>'27 Mois',
-                'Duree_Cours_Soir'=>'18 Mois',
-                'Duree_Cours_Accelerer'=>'15 Mois',
-                'Duree_Cours_Rapide'=>'7 Mois',
-                'langue_id'=>3
-            ]);
-
-
-
+        Niveau_Langue::create([
+            'Niveau' => 'B2',
+            'Duree_Cours_Normal' => 27,
+            'Duree_Cours_Soir' => 18,
+            'Duree_Cours_Accelerer' => 15,
+            'Duree_Cours_Rapide' => 7,
+            'langue_id' => 3
+        ]);
     }
 }

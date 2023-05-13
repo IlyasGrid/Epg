@@ -112,12 +112,17 @@ class LangueController extends Controller
             'Name' => 'required',
             'Subtitle' => 'required',
             'Motivation' => 'required',
+            'Raisons' => 'nullable',
+            'Piece_frais' => 'nullable',
+            'Conditions_Etudes' => 'nullable',
+            'Conditions_Formations' => 'nullable',
+            'Conditions_Cherche_Emploi' => 'nullable'
         ]);
-
+        // dd($formFields);
         // $langue->save();
         $langue->update($formFields);
 
-        return redirect()->action([LangueController::class, 'adminHome']);
+        return redirect()->action([LangueController::class, 'adminShow']);
     }
 
     public function destroy($id)
@@ -140,7 +145,7 @@ class LangueController extends Controller
             ->get();
 
         if ($tarif->isEmpty()) {
-            return redirect()->action([LangueController::class, 'adminShowTarification'], ['id_langue' => $id_langue]);
+            return redirect()->action([LangueController::class, 'showTarification'], ['id_langue' => $id_langue]);
         }
 
         $tarif = $tarif[0];
@@ -157,7 +162,7 @@ class LangueController extends Controller
 
 
         if ($tarif->isEmpty()) {
-            return redirect()->action([LangueController::class, 'adminShowTarification'], ['id_langue' => $id_langue]);
+            return redirect()->action([LangueController::class, 'showTarification'], ['id_langue' => $id_langue]);
         }
         $tarif = $tarif[0];
 
@@ -177,14 +182,15 @@ class LangueController extends Controller
         }
 
 
-        return redirect()->action([LangueController::class, 'adminShowTarification'], ['id_langue' => $id_langue]);
+        return redirect()->action([LangueController::class, 'showTarification'], ['id_langue' => $id_langue]);
     }
 
 
     public function showTarification($id_langue)
     {
         // $langue = Langue::where('id', '=', $id_langue);
-        $langue = Langue::all()->get($id_langue - 1);
+        // $langue = Langue::all()->get($id_langue - 1);
+        $langue = Langue::findOrFail($id_langue);
         $tarifs = Tarification_Langue::where('langue_id', '=', $id_langue)->get();
         return view("admin.langue.tarification.show", compact('langue', 'tarifs'));
     }
@@ -207,13 +213,13 @@ class LangueController extends Controller
 
         Tarification_Langue::create(array_merge($formFields, ['langue_id' => $id_langue]));
 
-        return redirect()->action([LangueController::class, 'adminShowTarification'], ['id_langue' => $id_langue]);
+        return redirect()->action([LangueController::class, 'showTarification'], ['id_langue' => $id_langue]);
     }
     public function destroyTarification($id_langue, $id_tarif)
     {
         $tarif = Tarification_Langue::find($id_tarif);
         $tarif->delete();
-        return redirect()->action([LangueController::class, 'ShowTarification'], ['id_langue' => $id_langue]);
+        return redirect()->action([LangueController::class, 'showTarification'], ['id_langue' => $id_langue]);
     }
 
 
@@ -222,59 +228,60 @@ class LangueController extends Controller
     public function showNiveau($id_langue)
     {
         // $langue = Langue::where('id', '=', $id_langue);
-        $langue = Langue::all()->get($id_langue - 1);
+        // $langue = Langue::all()->get($id_langue);
+        $langue = Langue::findOrFail($id_langue);
         $niveaux = Niveau_Langue::where('langue_id', '=', $id_langue)->get();
         return view("admin.langue.niveau.show", compact('langue', 'niveaux'));
     }
 
-    public function editNiveau($id_langue, $id_tarif)
+    public function editNiveau($id_langue, $id_niveau)
     {
         $langue = Langue::where('id', '=', $id_langue)->get();
         $langue = $langue[0];
 
-        $tarif = Tarification_Langue::where('id', '=', $id_tarif)
+        $niveau = Niveau_Langue::where('id', '=', $id_niveau)
             ->where('langue_id', '=', $id_langue)
             ->get();
-
-        if ($tarif->isEmpty()) {
-            return redirect()->action([LangueController::class, 'ShowNiveau'], ['id_langue' => $id_langue]);
+        if ($niveau->isEmpty()) {
+            return redirect()->action([LangueController::class, 'showNiveau'], ['id_langue' => $id_langue]);
         }
 
-        $tarif = $tarif[0];
-        return view('admin.langue.niveau.edit', compact('langue', 'tarif'));
+        $niveau = $niveau[0];
+        return view('admin.langue.niveau.edit', compact('langue', 'niveau'));
     }
 
 
-    public function updateNiveau(Request $request, $id_langue, $id_tarif)
+    public function updateNiveau(Request $request, $id_langue, $id_niveau)
     {
-        // dd($request);
-        $tarif = Tarification_Langue::where('langue_id', '=', $id_langue)
-            ->where('id', '=', $id_tarif)
+        $niveau = Niveau_Langue::where('langue_id', '=', $id_langue)
+            ->where('id', '=', $id_niveau)
             ->get();
 
 
-        if ($tarif->isEmpty()) {
-            return redirect()->action([LangueController::class, 'ShowTarification'], ['id_langue' => $id_langue]);
+        if ($niveau->isEmpty()) {
+            return redirect()->action([LangueController::class, 'showNiveau'], ['id_langue' => $id_langue]);
         }
-        $tarif = $tarif[0];
+
+        $niveau = $niveau[0];
 
         $formFields = $request;
 
-        if ($tarif) {
+        if ($niveau) {
             $formFields = $request->validate([
-                'Type' => 'required',
-                'Volume_Horraire' => 'required',
-                'Temps' => 'required',
-                'Price' => 'required',
+                'Niveau' => 'required',
+                'Duree_Cours_Normal' => 'required',
+                'Duree_Cours_Soir' => 'required',
+                'Duree_Cours_Accelerer' => 'required',
+                'Duree_Cours_Rapide' => 'required',
             ]);
 
-            // dd($tarif);
+            // dd($niveau);
 
-            $tarif->update($formFields);
+            $niveau->update($formFields);
         }
 
 
-        return redirect()->action([LangueController::class, 'ShowTarification'], ['id_langue' => $id_langue]);
+        return redirect()->action([LangueController::class, 'showNiveau'], ['id_langue' => $id_langue]);
     }
 
 
@@ -298,12 +305,12 @@ class LangueController extends Controller
 
         Niveau_Langue::create(array_merge($formFields, ['langue_id' => $id_langue]));
 
-        return redirect()->action([LangueController::class, 'ShowNiveau'], ['id_langue' => $id_langue]);
+        return redirect()->action([LangueController::class, 'showNiveau'], ['id_langue' => $id_langue]);
     }
-    public function destroyNiveau($id_langue, $id_tarif)
+    public function destroyNiveau($id_langue, $id_niveau)
     {
-        $tarif = Tarification_Langue::find($id_tarif);
-        $tarif->delete();
-        return redirect()->action([LangueController::class, 'ShowTarification'], ['id_langue' => $id_langue]);
+        $niveau = Niveau_Langue::find($id_niveau);
+        $niveau->delete();
+        return redirect()->action([LangueController::class, 'showNiveau'], ['id_langue' => $id_langue]);
     }
 }
