@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <style>
+    {{-- <style>
         /* style.css */
 
         /* Body background color */
@@ -146,7 +146,7 @@
             margin-bottom: 0.5em;
             text-align: center;
         }
-    </style>
+    </style> --}}
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg  pt-3 pb-3 navbar-dark bg-dark">
         <a class="navbar-brand" href="/">Ecole polytechnique des Genies</a>
