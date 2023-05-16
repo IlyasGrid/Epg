@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('formation_categories', function (Blueprint $table) {
             $table->id();
+            $table->string('Name');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

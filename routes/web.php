@@ -5,6 +5,7 @@ use App\Http\Controllers\FormationController;
 use App\Http\Controllers\LangueController;
 use App\Models\Branche_Diplome;
 use App\Models\Diplome;
+use App\Models\Formation;
 use App\Models\Langue;
 use App\Models\Tarification_Langue;
 use Illuminate\Database\Eloquent\Scope;
@@ -56,6 +57,8 @@ Route::resource('/Languages', LangueController::class);
 
 Route::resource('/Diplomes', DiplomeController::class);
 Route::resource('/Formations', FormationController::class);
+
+Route::get('/Formations/{category}/{sub_category}/{formation}', [FormationController::class, 'show']);
 
 Route::get('/Diplome/{diplome_name}/{branche_name}', function ($diplome_name, $branche_name) {
 
@@ -121,6 +124,29 @@ Route::group(['prefix' => 'admin'], function () {
         Route::delete('/{id_diplome}/branche/{id_branche}', [DiplomeController::class, 'destroyBranche']);
         Route::get('/{id_diplome}/branche/trashed', [DiplomeController::class, 'trashedBranche']);
         Route::get('/{id_diplome}/branche/restore/{id}', [DiplomeController::class, 'restoreBranche']);
+    });   
+
+
+
+     Route::group(['prefix' => 'formations'], function () {
+        Route::get('/', [FormationController::class, 'adminShow']);
+        Route::get('/create', [FormationController::class, 'create']);
+        Route::get('/edit/{id}', [FormationController::class, 'edit']);
+        Route::put('/{id}', [FormationController::class, 'update']);
+        Route::post('/', [FormationController::class, 'store']);
+        Route::delete('/{id}', [FormationController::class, 'destroy']);
+        Route::get('/trashed', [FormationController::class, 'trashed']);
+        Route::get('/restore/{id}', [FormationController::class, 'restore']);
+
+        // // Branche
+        // Route::get('/{id_diplome}/branche/create', [DiplomeController::class, 'createBranche']);
+        // Route::get('/{id_diplome}/branche', [DiplomeController::class, 'showBranche']);
+        // Route::get('/edit/{id_diplome}/branche/{id_branche}', [DiplomeController::class, 'editBranche']);
+        // Route::put('/{id_diplome}/branche/{id_branche}', [DiplomeController::class, 'updateBranche']);
+        // Route::post('/{id_diplome}/branche', [DiplomeController::class, 'storeBranche']);
+        // Route::delete('/{id_diplome}/branche/{id_branche}', [DiplomeController::class, 'destroyBranche']);
+        // Route::get('/{id_diplome}/branche/trashed', [DiplomeController::class, 'trashedBranche']);
+        // Route::get('/{id_diplome}/branche/restore/{id}', [DiplomeController::class, 'restoreBranche']);
     });
 });
 // });

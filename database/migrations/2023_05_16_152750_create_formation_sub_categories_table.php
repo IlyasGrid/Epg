@@ -13,7 +13,13 @@ return new class extends Migration
     {
         Schema::create('formation_sub_categories', function (Blueprint $table) {
             $table->id();
+            $table->string('Name');
+            $table->softDeletes();
             $table->timestamps();
+            $table->foreignId('formation_categories_id')
+                ->constrained()
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
         });
     }
 

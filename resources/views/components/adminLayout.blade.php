@@ -39,7 +39,7 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Diplome
+                        Diplomes
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="/admin/diplomes">show</a>
@@ -50,12 +50,12 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Services
+                        Formations
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Service 1</a>
-                        <a class="dropdown-item" href="#">Service 2</a>
-                        <a class="dropdown-item" href="#">Service 3</a>
+                        <a class="dropdown-item" href="/admin/formations">show</a>
+                        <a class="dropdown-item" href="/admin/formations/create">Create</a>
+                        <a class="dropdown-item" href="/admin/formations/trashed">show deleted</a>
                     </div>
                 </li>
             </ul>

@@ -14,4 +14,14 @@ class Formation extends Model
     {
         $this->belongsTo(FormationSubCategorie::class);
     }
+
+    public function Formation_Programme()
+    {
+        $this->hasMany(Formation_Programme::class);
+    }
+    
+    public function Formation_Tarification()
+    {
+        $this->hasMany(Formation_Tarification::class);
+    }
 }
