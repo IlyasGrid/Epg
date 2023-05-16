@@ -1,5 +1,5 @@
 <x-adminLayout>
-    <style>
+    {{-- <style>
         form {
             padding: 2em;
             border-radius: 10px;
@@ -20,10 +20,10 @@
             margin-bottom: 0.5em;
             text-align: center;
         }
-    </style>
-    <form method="POST" action="/admin/langues" enctype="multipart/form-data">
+    </style> --}}
+    <form class="form-container" method="POST" action="/admin/langues" enctype="multipart/form-data">
         @csrf
-        <h2> Langue edit</h2>
+        <h2 class="text-capitalize">  create new Langue</h2>
         <h1 class="text-danger"> </h1>
         <div class="mb-6 form-group form-group">
             <label for="Name" class="inline-block text-lg mb-2">Langue Name</label>

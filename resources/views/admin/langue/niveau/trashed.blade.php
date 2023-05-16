@@ -1,17 +1,14 @@
 <x-adminLayout>
 
 
-    <h2> <span class="text-muted text-capitalize">Langue </span><a href="/admin/langues/"
+
+    <h2 class="mb-5"><span class="text-muted text-capitalize ">Langue </span><a href="/admin/langues/"
             class="text-reset text-decoration-none">
-            {{ $langue->Name }} </a> <span class="text-muted text-lowercase">tarifications</span>
+            {{ $langue->Name }}
+        </a>
+        <br /><span class="text-muted text-capitalize "> deleted Niveaux</span>
+
     </h2>
-    <div class="d-flex justify-content-around m-5 p-3 ">
-        <a href="/admin/langues/{{ $langue->id }}/niveau/create" class="btn btn-success align-self-start">create
-            new Niveau</a>
-        <a href="/admin/langues/{{ $langue->id }}/niveau/trashed"
-            class="btn btn btn-outline-secondary align-self-start">show
-            deleted Niveaux</a>
-    </div>
     <style>
         h2 {
             color: rgb(91, 3, 91);
@@ -28,9 +25,14 @@
         <div class="container d-flex align-items-center justify-content-center w-100">
             <div class="text-center">
                 <div class="alert alert-info">
-                    No niveaux found.
+                    No trashed niveaux for found.
                 </div>
             </div>
+        </div>
+        <div class="d-flex justify-content-around  p-2 mt-3">
+            <a href="/admin/langues/{{ $langue->id }}/niveau" class="btn btn-dark pl-5 pr-5">
+                back to niveaux
+            </a>
         </div>
     @else
         @foreach ($niveaux as $niv)
@@ -44,17 +46,9 @@
                         <p class="card-text">Duree Cours Rapide: <b>{{ $niv->Duree_Cours_Rapide }} Mois</b></p>
                     </div>
                     <div class="d-flex justify-content-around">
-                        <div class="d-flex justify-content-around">
-                            <a href="/admin/langues/edit/{{ $langue->id }}/niveau/{{ $niv->id }}"
-                                class="btn btn-primary">edit</a>
-                        </div>
-                        <div>
-                            <form action="/admin/langues/{{ $langue->id }}/niveau/{{ $niv->id }}"
-                                method="POST">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger">Delete</button>
-                            </form>
+                        <div class="d-flex justify-content-around mt-5">
+                            <a href="/admin/langues/{{ $langue->id }}/niveau/restore/{{ $niv->id }}"
+                                class="btn btn-secondary">restore</a>
                         </div>
                     </div>
                 </div>

@@ -1,5 +1,5 @@
 <x-adminLayout>
-    <style>
+    {{-- <style>
         form {
             padding: 2em;
             border-radius: 10px;
@@ -20,8 +20,8 @@
             margin-bottom: 0.5em;
             text-align: center;
         }
-    </style>
-    <form method="POST" action="/admin/langues/{{ $id_langue }}/niveau" enctype="multipart/form-data">
+    </style> --}}
+    <form class="form-container" method="POST" action="/admin/langues/{{ $id_langue }}/niveau" enctype="multipart/form-data">
         @csrf
         <h2> Langue add niveau</h2>
         <h1 class="text-danger"> </h1>

@@ -1,18 +1,15 @@
 <x-adminLayout>
 
 
-    <h2> <span class="text-muted text-capitalize">Langue </span><a href="/admin/langues/"
+    <h2 class="mb-5"><span class="text-muted text-capitalize ">Langue </span><a href="/admin/langues/"
             class="text-reset text-decoration-none">
-            {{ $langue->Name }} </a> <span class="text-muted text-lowercase">tarifications</span>
+            {{ $langue->Name }}
+        </a>
+        <br /><span class="text-muted text-capitalize "> deleted Tarifications</span>
+
     </h2>
-    <div class="d-flex justify-content-around m-5 p-3 ">
-        <a href="/admin/langues/{{ $langue->id }}/tarification/create" class="btn btn-success align-self-start">create
-            new Tarification</a>
-        <a href="/admin/langues/{{ $langue->id }}/tarification/trashed"
-            class="btn btn btn-outline-secondary align-self-start">show
-            deleted Tarification</a>
-    </div>
-    {{-- <style>
+
+    <style>
         h2 {
             color: rgb(91, 3, 91);
             text-transform: uppercase;
@@ -23,14 +20,19 @@
             margin-bottom: 0.5em;
             text-align: center;
         }
-    </style> --}}
+    </style>
     @if (count($tarifs) < 1)
         <div class="container d-flex align-items-center justify-content-center w-100">
             <div class="text-center">
                 <div class="alert alert-info">
-                    No tarifs  found.
+                    No trashed tarifs for found.
                 </div>
             </div>
+        </div>
+        <div class="d-flex justify-content-around  p-2 mt-3">
+            <a href="/admin/langues/{{ $langue->id }}/tarification" class="btn btn-dark pl-5 pr-5">
+                back to tarifications
+            </a>
         </div>
     @else
         @foreach ($tarifs as $tarif)
@@ -48,16 +50,8 @@
                     {{-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> --}}
                     <div class="d-flex justify-content-around">
                         <div class="d-flex justify-content-around">
-                            <a href="/admin/langues/edit/{{ $langue->id }}/tarification/{{ $tarif->id }}"
-                                class="btn btn-primary">edit</a>
-                        </div>
-                        <div>
-                            <form action="/admin/langues/{{ $langue->id }}/tarification/{{ $tarif->id }}"
-                                method="POST">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger">Delete</button>
-                            </form>
+                            <a href="/admin/langues/{{ $langue->id }}/tarification/restore/{{ $tarif->id }}"
+                                class="btn btn-secondary">restore</a>
                         </div>
                     </div>
                 </div>

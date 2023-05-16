@@ -35,7 +35,7 @@
         <form method="POST" action="/admin/langues/{{ $langue->id }}" enctype="multipart/form-data">
             @csrf
             @method('PUT')
-            <h2> Langue edit</h2>
+            <h2> {{ $langue->Name }} <span class="text-lowercase">edit form</span></h2>
             <h1 class="text-danger"> </h1>
             <div class="mb-6 form-group form-group">
                 <label for="Name" class="inline-block text-lg mb-2">Langue Name</label>
@@ -117,7 +117,7 @@
 
                         </div>
                     </div>
- 
+
             </div>
             {{-- @endif --}}
             <div class="btn">

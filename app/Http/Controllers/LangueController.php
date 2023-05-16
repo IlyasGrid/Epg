@@ -67,7 +67,7 @@ class LangueController extends Controller
 
     public function adminHome()
     {
-        return view('admin.test');
+        return view('admin.index');
     }
 
     public function adminShow()
@@ -137,6 +137,20 @@ class LangueController extends Controller
         $language = Langue::find($id);
         $language->delete();
         return redirect()->action([LangueController::class, 'adminShow']);
+    }
+
+    public function trashed()
+    {
+        $langues = Langue::onlyTrashed()->get();
+        return view("admin.langue.trashed", compact('langues'));
+    }
+
+    public function restore($id)
+    {
+        $langue = Langue::withTrashed()->find($id);
+        $langue->restore();
+
+        return redirect()->action([LangueController::class, 'trashed']);
     }
 
     //------------------------------- Tarification---------------------------------------------
@@ -227,6 +241,29 @@ class LangueController extends Controller
         return redirect()->action([LangueController::class, 'showTarification'], ['id_langue' => $id_langue]);
     }
 
+    public function trashedTarification($id_langue)
+    {
+        $langue = Langue::findOrFail($id_langue);
+
+        $tarifs = Tarification_Langue::onlyTrashed()->where('langue_id', '=', $id_langue)->get();
+
+        // if ($tarifs->count() <= 0) {
+        //     return redirect()->action([LangueController::class, 'showTarification'],['id_langue'=>$id_langue]);
+        // }
+
+        return view("admin.langue.tarification.trashed", compact('langue', 'tarifs'));
+    }
+
+    public function restoreTarification($id_langue, $id)
+    {
+
+        $tarif = Tarification_Langue::withTrashed()->find($id);
+        $tarif->restore();
+
+
+
+        return redirect()->action([LangueController::class, 'trashedTarification'], ['id_langue' => $id_langue]);
+    }
 
     //------------------------------- Niveau---------------------------------------------
 
@@ -317,5 +354,26 @@ class LangueController extends Controller
         $niveau = Niveau_Langue::find($id_niveau);
         $niveau->delete();
         return redirect()->action([LangueController::class, 'showNiveau'], ['id_langue' => $id_langue]);
+    }
+
+    public function trashedNiveau($id_langue)
+    {
+        $langue = Langue::findOrFail($id_langue);
+
+        $niveaux = Niveau_Langue::onlyTrashed()->where('langue_id', '=', $id_langue)->get();
+
+
+        return view("admin.langue.niveau.trashed", compact('langue', 'niveaux'));
+    }
+
+    public function restoreNiveau($id_langue, $id)
+    {
+
+        $niveau = Niveau_Langue::withTrashed()->find($id);
+        $niveau->restore();
+
+
+
+        return redirect()->action([LangueController::class, 'trashedNiveau'], ['id_langue' => $id_langue]);
     }
 }

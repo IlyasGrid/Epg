@@ -4,11 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Diplome extends Model
 {
-    use HasFactory;
-    
+    use HasFactory,SoftDeletes;
+
     public $timestamps = false;
 
     public function Branche_Diplome()
@@ -16,4 +17,5 @@ class Diplome extends Model
         $this->hasMany(Branche_Diplome::class);
     }
 
+    protected $fillable = [ 'Name', 'Prerequis', 'Duree'];
 }

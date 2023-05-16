@@ -57,30 +57,29 @@ Route::resource('/Languages', LangueController::class);
 Route::resource('/Diplomes', DiplomeController::class);
 Route::resource('/Formations', FormationController::class);
 
-// Route::get('/Diplome/{diplome_name?}/{branche_name?}', [LangueController::class,'ilyas'])->name('hhhhhh');
-
-
-
 Route::get('/Diplome/{diplome_name}/{branche_name}', function ($diplome_name, $branche_name) {
 
     $branche = Branche_Diplome::where('Fullname', '=', $branche_name)->get();
     $branche_info = $branche[0];
-    // dd($branche_info);
-
     return view('Diplomes.branche', ['diplome_name' => $diplome_name, 'branche_info' => $branche_info]);
 });
 
-
+// Route::middleware(['auth'])->group(function () {
 
 Route::group(['prefix' => 'admin'], function () {
 
+    Route::get('/home', [LangueController::class, 'adminHome']);
+
     Route::group(['prefix' => 'langues'], function () {
-        Route::get('/create', [LangueController::class, 'create']);
         Route::get('/', [LangueController::class, 'adminShow']);
+        Route::get('/create', [LangueController::class, 'create']);
         Route::get('/edit/{id}', [LangueController::class, 'edit']);
         Route::put('/{id}', [LangueController::class, 'update']);
         Route::post('/', [LangueController::class, 'store']);
         Route::delete('/{id}', [LangueController::class, 'destroy']);
+        Route::get('/trashed', [LangueController::class, 'trashed']);
+        Route::get('/restore/{id}', [LangueController::class, 'restore']);
+
         // Tarification_Langue
         Route::get('/{id_langue}/tarification/create', [LangueController::class, 'createTarification']);
         Route::get('/{id_langue}/tarification', [LangueController::class, 'showTarification']);
@@ -88,6 +87,9 @@ Route::group(['prefix' => 'admin'], function () {
         Route::put('/{id_langue}/tarification/{id_tarif}', [LangueController::class, 'updateTarification']);
         Route::post('/{id_langue}/tarification', [LangueController::class, 'storeTarification']);
         Route::delete('/{id_langue}/tarification/{id_tarif}', [LangueController::class, 'destroyTarification']);
+        Route::get('/{id_langue}/tarification/trashed', [LangueController::class, 'trashedTarification']);
+        Route::get('/{id_langue}/tarification/restore/{id}', [LangueController::class, 'restoreTarification']);
+
         // NIveau_langue
         Route::get('/{id_langue}/niveau/create', [LangueController::class, 'createNiveau']);
         Route::get('/{id_langue}/niveau', [LangueController::class, 'showNiveau']);
@@ -95,7 +97,11 @@ Route::group(['prefix' => 'admin'], function () {
         Route::put('/{id_langue}/niveau/{id_niveau}', [LangueController::class, 'updateNiveau']);
         Route::post('/{id_langue}/niveau', [LangueController::class, 'storeNiveau']);
         Route::delete('/{id_langue}/niveau/{id_niveau}', [LangueController::class, 'destroyNiveau']);
+        Route::get('/{id_langue}/niveau/trashed', [LangueController::class, 'trashedNiveau']);
+        Route::get('/{id_langue}/niveau/restore/{id}', [LangueController::class, 'restoreNiveau']);
     });
+
+
     Route::group(['prefix' => 'diplomes'], function () {
         Route::get('/create', [DiplomeController::class, 'create']);
         Route::get('/', [DiplomeController::class, 'adminShow']);
@@ -103,26 +109,21 @@ Route::group(['prefix' => 'admin'], function () {
         Route::put('/{id}', [DiplomeController::class, 'update']);
         Route::post('/', [DiplomeController::class, 'store']);
         Route::delete('/{id}', [DiplomeController::class, 'destroy']);
-        
-        // Tarification_Langue
-        Route::get('/{id_langue}/tarification/create', [DiplomeController::class, 'createTarification']);
-        Route::get('/{id_langue}/tarification', [DiplomeController::class, 'showTarification']);
-        Route::get('/edit/{id_langue}/tarification/{id_tarif}', [DiplomeController::class, 'editTarification']);
-        Route::put('/{id_langue}/tarification/{id_tarif}', [DiplomeController::class, 'updateTarification']);
-        Route::post('/{id_langue}/tarification', [DiplomeController::class, 'storeTarification']);
-        Route::delete('/{id_langue}/tarification/{id_tarif}', [DiplomeController::class, 'destroyTarification']);
-        // NIveau_langue
-        Route::get('/{id_langue}/niveau/create', [DiplomeController::class, 'createNiveau']);
-        Route::get('/{id_langue}/niveau', [DiplomeController::class, 'showNiveau']);
-        Route::get('/edit/{id_langue}/niveau/{id_niveau}', [DiplomeController::class, 'editNiveau']);
-        Route::put('/{id_langue}/niveau/{id_niveau}', [DiplomeController::class, 'updateNiveau']);
-        Route::post('/{id_langue}/niveau', [DiplomeController::class, 'storeNiveau']);
-        Route::delete('/{id_langue}/niveau/{id_niveau}', [DiplomeController::class, 'destroyNiveau']);
-    });
-    Route::get('/', [LangueController::class, 'adminHome']);
-    // Route::view('/langues', "admin.langue");
-});
+        Route::get('/trashed', [DiplomeController::class, 'trashed']);
+        Route::get('/restore/{id}', [DiplomeController::class, 'restore']);
 
+        // Branche
+        Route::get('/{id_diplome}/branche/create', [DiplomeController::class, 'createBranche']);
+        Route::get('/{id_diplome}/branche', [DiplomeController::class, 'showBranche']);
+        Route::get('/edit/{id_diplome}/branche/{id_branche}', [DiplomeController::class, 'editBranche']);
+        Route::put('/{id_diplome}/branche/{id_branche}', [DiplomeController::class, 'updateBranche']);
+        Route::post('/{id_diplome}/branche', [DiplomeController::class, 'storeBranche']);
+        Route::delete('/{id_diplome}/branche/{id_branche}', [DiplomeController::class, 'destroyBranche']);
+        Route::get('/{id_diplome}/branche/trashed', [DiplomeController::class, 'trashedBranche']);
+        Route::get('/{id_diplome}/branche/restore/{id}', [DiplomeController::class, 'restoreBranche']);
+    });
+});
+// });
 Route::fallback(function () {
     return view("error");
 });
