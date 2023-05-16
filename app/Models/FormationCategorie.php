@@ -8,10 +8,12 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class FormationCategorie extends Model
 {
-    use HasFactory,SoftDeletes;
+    use HasFactory, SoftDeletes;
 
     public function FormationSubCategorie()
     {
         $this->hasMany(FormationSubCategorie::class);
     }
+
+    protected $fillable = ['Name'];
 }

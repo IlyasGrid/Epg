@@ -138,15 +138,15 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/trashed', [FormationController::class, 'trashed']);
         Route::get('/restore/{id}', [FormationController::class, 'restore']);
 
-        // // Branche
-        // Route::get('/{id_diplome}/branche/create', [DiplomeController::class, 'createBranche']);
-        // Route::get('/{id_diplome}/branche', [DiplomeController::class, 'showBranche']);
-        // Route::get('/edit/{id_diplome}/branche/{id_branche}', [DiplomeController::class, 'editBranche']);
-        // Route::put('/{id_diplome}/branche/{id_branche}', [DiplomeController::class, 'updateBranche']);
-        // Route::post('/{id_diplome}/branche', [DiplomeController::class, 'storeBranche']);
-        // Route::delete('/{id_diplome}/branche/{id_branche}', [DiplomeController::class, 'destroyBranche']);
-        // Route::get('/{id_diplome}/branche/trashed', [DiplomeController::class, 'trashedBranche']);
-        // Route::get('/{id_diplome}/branche/restore/{id}', [DiplomeController::class, 'restoreBranche']);
+        // subCategorie
+        Route::get('/{id_categorie}/subCategorie/create', [FormationController::class, 'createSubCategorie']);
+        Route::get('/{id_categorie}/subCategorie', [FormationController::class, 'showSubCategorie']);
+        Route::get('/edit/{id_categorie}/subCategorie/{id_subCategorie}', [FormationController::class, 'editSubCategorie']);
+        Route::put('/{id_categorie}/subCategorie/{id_subCategorie}', [FormationController::class, 'updateSubCategorie']);
+        Route::post('/{id_categorie}/subCategorie', [FormationController::class, 'storeSubCategorie']);
+        Route::delete('/{id_categorie}/subCategorie/{id_subCategorie}', [FormationController::class, 'destroySubCategorie']);
+        Route::get('/{id_categorie}/subCategorie/trashed', [FormationController::class, 'trashedSubCategorie']);
+        Route::get('/{id_categorie}/subCategorie/restore/{id}', [FormationController::class, 'restoreSubCategorie']);
     });
 });
 // });

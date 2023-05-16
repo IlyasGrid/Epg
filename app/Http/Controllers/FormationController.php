@@ -66,7 +66,7 @@ class FormationController extends Controller
 
     public function create()
     {
-        return view('admin.langue.create');
+        return view('admin.formation.create');
     }
 
 
@@ -75,102 +75,97 @@ class FormationController extends Controller
         $formFields = $request;
         $formFields = $request->validate([
             'Name' => ['required', Rule::unique('langues', 'Name')],
-            'Subtitle' => 'required',
-            'Motivation' => 'required',
-            'Raisons' => 'nullable',
-            'Piece_frais' => 'nullable',
-            'Conditions_Etudes' => 'nullable',
-            'Conditions_Formations' => 'nullable',
-            'Conditions_Cherche_Emploi' => 'nullable',
         ]);
-        Langue::create($formFields);
+        FormationCategorie::create($formFields);
 
-        return redirect()->action([LangueController::class, 'adminShow']);
+        return redirect()->action([FormationController::class, 'adminShow']);
     }
 
 
     public function edit($id)
     {
-        $langue = Langue::where('id', '=', $id)->get();
-        $langue = $langue[0];
-        $message = null;
+        $categorie = FormationCategorie::where('id', '=', $id)->get();
+        $categorie = $categorie[0];
 
-        return view('admin.langue.edit', ['langue' => $langue, 'message' => $message]);
+        return view('admin.formation.edit', ['categorie' => $categorie]);
     }
 
 
 
-    public function update(Request $request, Langue $langue)
+    public function update(Request $request)
     {
-        $langue = Langue::find($request->id);
+        $categorie = FormationCategorie::find($request->id);
         $formFields = $request;
         $formFields = $request->validate([
-            'Name' => 'required',
-            'Subtitle' => 'required',
-            'Motivation' => 'required',
-            'Raisons' => 'nullable',
-            'Piece_frais' => 'nullable',
-            'Conditions_Etudes' => 'nullable',
-            'Conditions_Formations' => 'nullable',
-            'Conditions_Cherche_Emploi' => 'nullable'
+            'Name' => ['required', Rule::unique('langues', 'Name')]
         ]);
-        $langue->update($formFields);
+        $categorie->update($formFields);
 
-        return redirect()->action([LangueController::class, 'adminShow']);
+        return redirect()->action([FormationController::class, 'adminShow']);
     }
 
     public function destroy($id)
     {
-        $language = Langue::find($id);
-        $language->delete();
-        return redirect()->action([LangueController::class, 'adminShow']);
+        $categorie = FormationCategorie::find($id);
+        $categorie->delete();
+        return redirect()->action([FormationController::class, 'adminShow']);
     }
 
     public function trashed()
     {
-        $langues = Langue::onlyTrashed()->get();
-        return view("admin.langue.trashed", compact('langues'));
+        $categories = FormationCategorie::onlyTrashed()->get();
+        return view("admin.formation.trashed", compact('categories'));
     }
 
     public function restore($id)
     {
-        $langue = Langue::withTrashed()->find($id);
-        $langue->restore();
+        $categorie = FormationCategorie::withTrashed()->find($id);
+        $categorie->restore();
 
-        return redirect()->action([LangueController::class, 'trashed']);
+        return redirect()->action([FormationController::class, 'trashed']);
     }
 
-    //------------------------------- Tarification---------------------------------------------
+    //------------------------------- SubCategorie---------------------------------------------
 
+    public function showSubCategorie($id_categorie)
+    {
+        $categorie = FormationCategorie::findOrFail($id_categorie);
+        $categorie->subCategories = FormationSubCategorie::where('formation_categories_id', '=', $id_categorie)->get();
+        return view("admin.formation.subCategorie.show", compact('categorie'));
+    }
 
-    public function editTarification($id_langue, $id_tarif)
+    public function editSubCategorie($id_langue, $id_tarif)
     {
         $langue = Langue::where('id', '=', $id_langue)->get();
         $langue = $langue[0];
 
-        $tarif = Tarification_Langue::where('id', '=', $id_tarif)
+        $tarif = FormationSubCategorie::where('id', '=', $id_tarif)
             ->where('langue_id', '=', $id_langue)
             ->get();
 
         if ($tarif->isEmpty()) {
-            return redirect()->action([LangueController::class, 'showTarification'], ['id_langue' => $id_langue]);
+            return redirect()->action([LangueController::class, 'showSubCategorie'], ['id_langue' => $id_langue]);
         }
 
         $tarif = $tarif[0];
-        return view('admin.langue.tarification.edit', compact('langue', 'tarif'));
+        return view('admin.langue.SubCategorie.edit', compact('langue', 'tarif'));
     }
 
+    public function createSubCategorie($id_categorie)
+    {
+        return view('admin.formation.SubCategorie.create', ['id_langue' => $id_categorie]);
+    }
 
-    public function updateTarification(Request $request, $id_langue, $id_tarif)
+    public function updateSubCategorie(Request $request, $id_langue, $id_tarif)
     {
         // dd($request);
-        $tarif = Tarification_Langue::where('langue_id', '=', $id_langue)
+        $tarif = FormationSubCategorie::where('langue_id', '=', $id_langue)
             ->where('id', '=', $id_tarif)
             ->get();
 
 
         if ($tarif->isEmpty()) {
-            return redirect()->action([LangueController::class, 'showTarification'], ['id_langue' => $id_langue]);
+            return redirect()->action([LangueController::class, 'showSubCategorie'], ['id_langue' => $id_langue]);
         }
         $tarif = $tarif[0];
 
@@ -190,23 +185,11 @@ class FormationController extends Controller
         }
 
 
-        return redirect()->action([LangueController::class, 'showTarification'], ['id_langue' => $id_langue]);
+        return redirect()->action([LangueController::class, 'showSubCategorie'], ['id_langue' => $id_langue]);
     }
 
 
-    public function showTarification($id_langue)
-    {
-        $langue = Langue::findOrFail($id_langue);
-        $tarifs = Tarification_Langue::where('langue_id', '=', $id_langue)->get();
-        return view("admin.langue.tarification.show", compact('langue', 'tarifs'));
-    }
-
-    public function createTarification($id_langue)
-    {
-        return view('admin.langue.tarification.create', ['id_langue' => $id_langue]);
-    }
-
-    public function storeTarification(Request $request, $id_langue)
+    public function storeSubCategorie(Request $request, $id_langue)
     {
 
         $formFields = $request;
@@ -217,34 +200,34 @@ class FormationController extends Controller
             'Price' => 'required'
         ]);
 
-        Tarification_Langue::create(array_merge($formFields, ['langue_id' => $id_langue]));
+        FormationSubCategorie::create(array_merge($formFields, ['langue_id' => $id_langue]));
 
-        return redirect()->action([LangueController::class, 'showTarification'], ['id_langue' => $id_langue]);
-    }
-    public function destroyTarification($id_langue, $id_tarif)
-    {
-        $tarif = Tarification_Langue::find($id_tarif);
-        $tarif->delete();
-        return redirect()->action([LangueController::class, 'showTarification'], ['id_langue' => $id_langue]);
+        return redirect()->action([LangueController::class, 'showSubCategorie'], ['id_langue' => $id_langue]);
     }
 
-    public function trashedTarification($id_langue)
+    public function destroySubCategorie($id_categorie, $id_subCategorie)
     {
-        $langue = Langue::findOrFail($id_langue);
-
-        $tarifs = Tarification_Langue::onlyTrashed()->where('langue_id', '=', $id_langue)->get();
-
-        return view("admin.langue.tarification.trashed", compact('langue', 'tarifs'));
+        $subCategory = FormationSubCategorie::find($id_subCategorie);
+        $subCategory->delete();
+        return redirect()->action([FormationController::class, 'showSubCategorie'], ['id_categorie' => $id_categorie]);
     }
 
-    public function restoreTarification($id_langue, $id)
+    public function trashedSubCategorie($id_categorie)
+    {
+        $categorie = FormationCategorie::findOrFail($id_categorie);
+
+        $categorie->subCategories = FormationSubCategorie::onlyTrashed()->where('formation_categories_id', '=', $id_categorie)->get();
+
+        return view("admin.formation.SubCategorie.trashed", compact('categorie'));
+    }
+
+    public function restoreSubCategorie($id_categorie, $id)
     {
 
-        $tarif = Tarification_Langue::withTrashed()->find($id);
-        $tarif->restore();
+        $subCategory = FormationSubCategorie::withTrashed()->find($id);
+        $subCategory->restore();
 
 
-
-        return redirect()->action([LangueController::class, 'trashedTarification'], ['id_langue' => $id_langue]);
+        return redirect()->action([FormationController::class, 'trashedSubCategorie'], ['id_categorie' => $id_categorie]);
     }
 }
