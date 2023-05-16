@@ -7,6 +7,7 @@
     <title>Bootstrap Navbar with Dropdown</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="admin/style.css">
 </head>
 
 <body>
@@ -134,15 +135,6 @@
     </style>
 
     <style>
-        form {
-            /* padding: 2em;
-            border-radius: 10px;
-            width: fit-content;
-            min-width: 66%;
-            margin-left: 20%;
-            margin-bottom: 5em;
-            background-color: rgba(128, 128, 128, 0.120) */
-        }
 
         h2 {
             color: rgb(91, 3, 91);
