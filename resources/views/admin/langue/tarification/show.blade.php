@@ -6,29 +6,19 @@
             {{ $langue->Name }} </a> <span class="text-muted text-lowercase">tarifications</span>
     </h2>
     <div class="d-flex justify-content-around m-5 p-3 ">
-        <a href="/admin/langues/{{ $langue->id }}/tarification/create" class="btn btn-success align-self-start">create
+        <a href="/admin/langues/{{ $langue->id }}/tarification/create"
+            class="btn btn-outline-success align-self-start">create
             new Tarification</a>
         <a href="/admin/langues/{{ $langue->id }}/tarification/trashed"
             class="btn btn btn-outline-secondary align-self-start">show
             deleted Tarification</a>
     </div>
-    {{-- <style>
-        h2 {
-            color: rgb(91, 3, 91);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            display: block;
-            font-weight: bold;
-            font-size: xx-large;
-            margin-bottom: 0.5em;
-            text-align: center;
-        }
-    </style> --}}
+
     @if (count($tarifs) < 1)
         <div class="container d-flex align-items-center justify-content-center w-100">
             <div class="text-center">
                 <div class="alert alert-info">
-                    No tarifs  found.
+                    No tarifs found.
                 </div>
             </div>
         </div>

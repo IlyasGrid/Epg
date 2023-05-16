@@ -258,8 +258,6 @@ class DiplomeController extends Controller
     public function restoreBranche($id_diplome, $id)
     {
 
-        // $niveau = Niveau_diplome::withTrashed()->find($id);
-        // $niveau->restore();
         $branche = Branche_Diplome::withTrashed()->find($id);
         $branche->restore();
 

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Langue;
+use App\Models\Tarification_Langue;
 use Illuminate\Http\Request;
 
 class FormationController extends Controller
@@ -12,7 +14,17 @@ class FormationController extends Controller
      */
     public function index()
     {
-        return view("Formations.index");
+
+        $langues = Langue::all();
+
+        foreach ($langues as $langue) {
+            $langue->tarifs = Tarification_Langue::where('langue_id', $langue->id)->get();
+        }
+
+        // dd($langues);
+        return view('Formations.test', ['langues' => $langues]);
+
+        // return view("Formations.index");
     }
 
     /**

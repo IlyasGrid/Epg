@@ -11,11 +11,11 @@ class Langue extends Model
     use HasFactory, SoftDeletes;
     public function Niveau_Langue()
     {
-        $this->hasOne(Niveau_Langue::class);
+        $this->hasMany(Niveau_Langue::class);
     }
     public function Tarification_Langue()
     {
-        $this->hasOne(Tarification_Langue::class);
+        $this->hasMany(Tarification_Langue::class);
     }
 
 
