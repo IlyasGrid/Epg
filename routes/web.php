@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\CategorieController;
 use App\Http\Controllers\DiplomeController;
 use App\Http\Controllers\FormationController;
 use App\Http\Controllers\LangueController;
+use App\Http\Controllers\SubCategorieController;
 use App\Models\Branche_Diplome;
 use App\Models\Diplome;
 use App\Models\Formation;
@@ -56,9 +58,9 @@ Route::resource('/Languages', LangueController::class);
 
 
 Route::resource('/Diplomes', DiplomeController::class);
-Route::resource('/Formations', FormationController::class);
+Route::resource('/Formations', CategorieController::class);
 
-Route::get('/Formations/{category}/{sub_category}/{formation}', [FormationController::class, 'show']);
+Route::get('/Formations/{category}/{sub_category}/{formation}', [CategorieController::class, 'show']);
 
 Route::get('/Diplome/{diplome_name}/{branche_name}', function ($diplome_name, $branche_name) {
 
@@ -68,6 +70,8 @@ Route::get('/Diplome/{diplome_name}/{branche_name}', function ($diplome_name, $b
 });
 
 // Route::middleware(['auth'])->group(function () {
+
+Route::get('/admin',  [LangueController::class, 'adminHome']);
 
 Route::group(['prefix' => 'admin'], function () {
 
@@ -124,29 +128,43 @@ Route::group(['prefix' => 'admin'], function () {
         Route::delete('/{id_diplome}/branche/{id_branche}', [DiplomeController::class, 'destroyBranche']);
         Route::get('/{id_diplome}/branche/trashed', [DiplomeController::class, 'trashedBranche']);
         Route::get('/{id_diplome}/branche/restore/{id}', [DiplomeController::class, 'restoreBranche']);
-    });   
+    });
 
 
 
-     Route::group(['prefix' => 'formations'], function () {
-        Route::get('/', [FormationController::class, 'adminShow']);
-        Route::get('/create', [FormationController::class, 'create']);
-        Route::get('/edit/{id}', [FormationController::class, 'edit']);
-        Route::put('/{id}', [FormationController::class, 'update']);
-        Route::post('/', [FormationController::class, 'store']);
-        Route::delete('/{id}', [FormationController::class, 'destroy']);
-        Route::get('/trashed', [FormationController::class, 'trashed']);
-        Route::get('/restore/{id}', [FormationController::class, 'restore']);
+    Route::group(['prefix' => 'categories'], function () {
+        Route::get('/', [CategorieController::class, 'adminShow']);
+        Route::get('/create', [CategorieController::class, 'create']);
+        Route::get('/edit/{id}', [CategorieController::class, 'edit']);
+        Route::put('/{id}', [CategorieController::class, 'update']);
+        Route::post('/', [CategorieController::class, 'store']);
+        Route::delete('/{id}', [CategorieController::class, 'destroy']);
+        Route::get('/trashed', [CategorieController::class, 'trashed']);
+        Route::get('/restore/{id}', [CategorieController::class, 'restore']);
 
         // subCategorie
-        Route::get('/{id_categorie}/subCategorie/create', [FormationController::class, 'createSubCategorie']);
-        Route::get('/{id_categorie}/subCategorie', [FormationController::class, 'showSubCategorie']);
-        Route::get('/edit/{id_categorie}/subCategorie/{id_subCategorie}', [FormationController::class, 'editSubCategorie']);
-        Route::put('/{id_categorie}/subCategorie/{id_subCategorie}', [FormationController::class, 'updateSubCategorie']);
-        Route::post('/{id_categorie}/subCategorie', [FormationController::class, 'storeSubCategorie']);
-        Route::delete('/{id_categorie}/subCategorie/{id_subCategorie}', [FormationController::class, 'destroySubCategorie']);
-        Route::get('/{id_categorie}/subCategorie/trashed', [FormationController::class, 'trashedSubCategorie']);
-        Route::get('/{id_categorie}/subCategorie/restore/{id}', [FormationController::class, 'restoreSubCategorie']);
+        Route::group(['prefix' => '{id_categorie}/subCategorie'], function () {
+            Route::get('/create', [SubCategorieController::class, 'create']);
+            Route::get('/', [SubCategorieController::class, 'show']);
+            Route::get('/edit/{id_subCategorie}', [SubCategorieController::class, 'edit']);
+            Route::put('/{id_subCategorie}', [SubCategorieController::class, 'update']);
+            Route::post('/', [SubCategorieController::class, 'store']);
+            Route::delete('/{id_subCategorie}', [SubCategorieController::class, 'destroy']);
+            Route::get('/trashed', [SubCategorieController::class, 'trashed']);
+            Route::get('/restore/{id}', [SubCategorieController::class, 'restore']);
+
+            // formation
+            Route::group(['prefix' => '{id_subCategorie}/formation'], function () {
+                Route::get('/create', [FormationController::class, 'create']);
+                Route::get('/', [FormationController::class, 'show']);
+                Route::get('/edit/{id_formation}', [FormationController::class, 'edit']);
+                Route::put('/{id_formation}', [FormationController::class, 'update']);
+                Route::post('/', [FormationController::class, 'store']);
+                Route::delete('/{id_formation}', [FormationController::class, 'destroy']);
+                Route::get('/trashed', [FormationController::class, 'trashed']);
+                Route::get('/restore/{id_formation}', [FormationController::class, 'restore']);
+            });
+        });
     });
 });
 // });

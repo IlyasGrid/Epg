@@ -1,15 +1,15 @@
 <x-adminLayout>
 
 
-    <h2> <span class="text-muted text-capitalize"> </span><a href="/admin/formations/"
+    <h2> <span class="text-muted text-capitalize"> </span><a href="/admin/categories/"
             class="text-reset text-decoration-none">
             {{ $categorie->Name }} </a> <span class="text-muted text-lowercase">subCategories</span>
     </h2>
     <div class="d-flex justify-content-around m-5 p-3 ">
-        <a href="/admin/formations/{{ $categorie->id }}/subCategorie/create"
+        <a href="/admin/categories/{{ $categorie->id }}/subCategorie/create"
             class="btn btn-outline-success align-self-start">create
             new subCategorie</a>
-        <a href="/admin/formations/{{ $categorie->id }}/subCategorie/trashed"
+        <a href="/admin/categories/{{ $categorie->id }}/subCategorie/trashed"
             class="btn btn btn-outline-secondary align-self-start">show
             deleted subCategories</a>
     </div>
@@ -30,15 +30,19 @@
                         {{ $subCategorie->Name }}</h5>
                     <div class="d-flex justify-content-around">
                         <div class="d-flex justify-content-around">
-                            <a href="/admin/formations/edit/{{ $categorie->id }}/subCategorie/{{ $subCategorie->id }}"
-                                class="btn btn-primary">edit</a>
+                            <a href="/admin/categories/{{ $categorie->id }}/subCategorie/edit/{{ $subCategorie->id }}"
+                                class="btn btn-outline-info">edit</a>
+                        </div>
+                        <div class="d-flex justify-content-around">
+                            <a href="/admin/categories/{{ $categorie->id }}/subCategorie/{{ $subCategorie->id }}/formation"
+                                class="btn btn-outline-primary">show formations</a>
                         </div>
                         <div>
-                            <form action="/admin/formations/{{ $categorie->id }}/subCategorie/{{ $subCategorie->id }}"
+                            <form action="/admin/categories/{{ $categorie->id }}/subCategorie/{{ $subCategorie->id }}"
                                 method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-danger">Delete</button>
+                                <button type="submit" class="btn btn-outline-danger">Delete</button>
                             </form>
                         </div>
                     </div>

@@ -10,9 +10,9 @@
             </div>
         </div>
         <div class="pl-5 pr-5 d-flex justify-content-around">
-            <a href="/admin/formations/create" class="btn btn-outline-success p-2 pl-5 pr-5  w-fit-content">
+            <a href="/admin/categories/create" class="btn btn-outline-success p-2 pl-5 pr-5  w-fit-content">
                 create </a>
-            <a href="/admin/formations/trashed" class="btn btn-outline-secondary pl-5 pr-5 p-2  w-fit-content">
+            <a href="/admin/categories/trashed" class="btn btn-outline-secondary pl-5 pr-5 p-2  w-fit-content">
                 show deleted categories </a>
         </div>
     @else
@@ -32,13 +32,13 @@
                             @endforeach
                         </ul> --}}
                         <div class="d-flex justify-content-around">
-                            <a href="/admin/formations/edit/{{ $categorie->id }}" class="btn btn-outline-primary pl-5 pr-5">
+                            <a href="/admin/categories/edit/{{ $categorie->id }}" class="btn btn-outline-primary pl-5 pr-5">
                                 edit Name
                             </a>
-                            <a href="/admin/formations/{{ $categorie->id }}/subCategorie" class="btn btn-outline-primary">show
+                            <a href="/admin/categories/{{ $categorie->id }}/subCategorie" class="btn btn-outline-primary">show
                                 subCategories</a>
                             <div>
-                                <form action="/admin/formations/{{ $categorie->id }}" method="POST">
+                                <form action="/admin/categories/{{ $categorie->id }}" method="POST">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-outline-danger">Delete</button>

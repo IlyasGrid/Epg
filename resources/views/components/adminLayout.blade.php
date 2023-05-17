@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bootstrap Navbar with Dropdown</title>
+    <title>admin</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="/admin/style.css">
@@ -53,9 +53,9 @@
                         Formations
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="/admin/formations">show</a>
-                        <a class="dropdown-item" href="/admin/formations/create">Create</a>
-                        <a class="dropdown-item" href="/admin/formations/trashed">show deleted</a>
+                        <a class="dropdown-item" href="/admin/categories">show</a>
+                        <a class="dropdown-item" href="/admin/categories/create">Create</a>
+                        <a class="dropdown-item" href="/admin/categories/trashed">show deleted</a>
                     </div>
                 </li>
             </ul>

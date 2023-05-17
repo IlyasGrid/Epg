@@ -18,4 +18,5 @@ class FormationSubCategorie extends Model
     {
         $this->hasMany(Formation::class);
     }
+    protected $fillable = ['Name','formation_categories_id'];
 }

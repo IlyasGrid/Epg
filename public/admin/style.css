@@ -95,9 +95,9 @@ body {
 .form-container {
     padding: 2em;
     border-radius: 10px;
-    width: fit-content;
+    /* width: fit-content; */
     min-width: 66%;
-    margin-left: 20%;
+    /* margin-left: 20%; */
     margin-bottom: 5em;
     /* background-color: rgba(128, 128, 128, 0.120); */
     background-color: #ffffff;
@@ -114,12 +114,12 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    max-width: 80%;
+    max-width: 98%;
     /* Adjust the value as needed */
 }
 
 h2 {
-    color: rgb(91, 3, 91);
+    color: rgb(231, 3, 3);
     text-transform: uppercase;
     letter-spacing: 2px;
     display: block;
@@ -130,7 +130,7 @@ h2 {
 }
 
 .form-group {
-    width: 40%;
+    width: 100%;
 }
 
 .custom-file-input::-webkit-file-upload-button {

@@ -10,9 +10,10 @@
                         <h3 class="soutit">{{ $subCategory->Name }}</h3>
                         <div class="row">
                             @foreach ($subCategory->formations as $formation)
-                                <div class="col-lg-3 col-md-6 visit" data-aos="fade-up">
-                                    {{-- <a href="Technologies-web/Front-end/Etat-de-l'art/Formation-les-technologies.php"><img
-                                    src="../Formation/img/tech-web.jpg" class="img-fluid"></a> --}}
+                                <div class="col-lg-3 col-md-6 mt-4 visit" data-aos="fade-up">
+                                    <a href="Technologies-web/Front-end/Etat-de-l'art/Formation-les-technologies.php"><img
+                                            src="../Formation/img/{{ $formation->Name }}.jpg"
+                                            onerror="this.src='../formation/img/default.jpg';" class="img-fluid"></a>
                                     <div>
                                         <p class="dih"><strong class="upp">{{ $formation->Name }}:
                                             </strong>{{ $formation->MotivaionBody }}</p>

@@ -1,7 +1,7 @@
 <x-adminLayout>
 
 
-    <h2 class="mb-5"><span class="text-muted text-capitalize "> </span><a href="/admin/formations/"
+    <h2 class="mb-5"><span class="text-muted text-capitalize "> </span><a href="/admin/categories/"
             class="text-reset text-decoration-none">
             {{ $categorie->Name }}
         </a>
@@ -19,7 +19,7 @@
             </div>
         </div>
         <div class="d-flex justify-content-around  p-2 mt-3">
-            <a href="/admin/formations/{{ $categorie->id }}/subCategorie" class="btn btn-dark pl-5 pr-5">
+            <a href="/admin/categories/{{ $categorie->id }}/subCategorie" class="btn btn-dark pl-5 pr-5">
                 back to categories
             </a>
         </div>
@@ -32,7 +32,7 @@
 
                     <div class="d-flex justify-content-around">
                         <div class="d-flex justify-content-around">
-                            <a href="/admin/formations/{{ $categorie->id }}/subCategorie/restore/{{ $subCategorie->id }}"
+                            <a href="/admin/categories/{{ $categorie->id }}/subCategorie/restore/{{ $subCategorie->id }}"
                                 class="btn btn-outline-secondary">restore</a>
                         </div>
                     </div>

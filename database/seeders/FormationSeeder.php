@@ -17,138 +17,9 @@ class FormationSeeder extends Seeder
      */
     public function run(): void
     {
-        FormationCategorie::create([
-            'Name' => "technologies web",
-        ]);
-        FormationCategorie::create([
-            'Name' => "développement logiciel",
-        ]);
-        FormationCategorie::create([
-            'Name' => "système de gestion de base de données",
-        ]);
-        FormationCategorie::create([
-            'Name' => "gestion de projet",
-        ]);
-        FormationCategorie::create([
-            'Name' => "cybersécurité",
-        ]);
-        FormationCategorie::create([
-            'Name' => "bureautique",
-        ]);
-        FormationCategorie::create([
-            'Name' => "PAO, CAO, graphisme, multimédia",
-        ]);
-        FormationCategorie::create([
-            'Name' => "reseaux informatiques",
-        ]);
-        FormationCategorie::create([
-            'Name' => "virtualisation, cloud, devops",
-        ]);
-        FormationCategorie::create([
-            'Name' => "systèmes d'exploitation",
-        ]);
 
+        //----------------------------------------sub-category 1 (27)  c1
 
-        //*******************************************************sub categories*****************************************************************// 
-
-
-        //----------------------------------------sub-category f1
-        FormationSubCategorie::create([
-            'Name' => 'développement front-end',
-            'formation_categories_id' => 1
-        ]);
-        FormationSubCategorie::create([
-            'Name' => 'développement back-end et php',
-            'formation_categories_id' => 1
-        ]);
-
-        //----------------------------------------sub-category f2
-
-        FormationSubCategorie::create([
-            'Name' => 'PYTHON, C, C++',
-            'formation_categories_id' => 2
-        ]);
-        FormationSubCategorie::create([
-            'Name' => 'APPLICATIONS MOBILES',
-            'formation_categories_id' => 2
-        ]);
-        //----------------------------------------sub-category f3
-
-        FormationSubCategorie::create([
-            'Name' => 'ORACLE, MYSQL, POSTGRESQL ET AUTRES SGBD',
-            'formation_categories_id' => 3
-        ]);
-        //----------------------------------------sub-category f4
-        FormationSubCategorie::create([
-            'Name' => 'GESTION DE PROJET INFORMATIQUE',
-            'formation_categories_id' => 4
-        ]);
-        //----------------------------------------sub-category f5
-        FormationSubCategorie::create([
-            'Name' => 'SYNTHÈSES ET RÉFÉRENTIELS ISO',
-            'formation_categories_id' => 5
-        ]);
-        FormationSubCategorie::create([
-            'Name' => 'CYBERSÉCURITÉ, MISE EN OEUVRE',
-            'formation_categories_id' => 5
-        ]);
-        //----------------------------------------sub-category f6 
-        FormationSubCategorie::create([
-            'Name' => 'POSTE DE TRAVAIL ET OFFICE',
-            'formation_categories_id' => 6
-        ]);
-        FormationSubCategorie::create([
-            'Name' => 'EXCEL, ACCESS',
-            'formation_categories_id' => 6
-        ]);
-        //----------------------------------------sub-category f7
-        FormationSubCategorie::create([
-            'Name' => 'CAO, ARCHITECTURE, BIM',
-            'formation_categories_id' => 7
-        ]);
-        FormationSubCategorie::create([
-            'Name' => 'IMAGE, VIDÉO, ANIMATION, RÉALITÉ VIRTUELLE',
-            'formation_categories_id' => 7
-        ]);
-        FormationSubCategorie::create([
-            'Name' => 'EDITION, PAO',
-            'formation_categories_id' => 7
-        ]);
-        //----------------------------------------sub-category f8
-        FormationSubCategorie::create([
-            'Name' => 'MISE EN OEUVRE DES RÉSEAUX',
-            'formation_categories_id' => 8
-        ]);
-        //----------------------------------------sub-category f9
-        FormationSubCategorie::create([
-            'Name' => 'VIRTUALISATION   ',
-            'formation_categories_id' => 9
-        ]);
-        //----------------------------------------sub-category f10
-        FormationSubCategorie::create([
-            'Name' => 'LINUX',
-            'formation_categories_id' => 10
-        ]);
-        FormationSubCategorie::create([
-            'Name' => 'WINDOWS-SERVEURS',
-            'formation_categories_id' => 10
-        ]);
-
-
-
-
-
-
-
-
-        //*******************************************************  formations  *****************************************************************// 
-
-
-
-
-
-
-        //----------------------------------------sub  1 f1
         Formation::create([
             'Name' => 'LES TECHNOLOGIES DU WEB',
             'MotivaionName' => 'SYNTHÈSE',
@@ -157,58 +28,58 @@ class FormationSeeder extends Seeder
             'tp' => null,
             'formation_sub_categories_id' => 1
         ]);
-        Formation_Tarification::create([
-            'Name' => 'FORMATION ACCÉLÉRÉE',
-            'Price' => 3000,
-            'Type' => 'INDIVIDUEL',
-            'Volume_Horraire' => 24,
-            'Duree_formation' => null,
-            'Debut_formation' => 'DANS UN DÉLAIS DE 24 H APRÉS LA VALIDATION DE VOTRE INSCRIPTION',
-            'Deroulement' => null,
-            'Horraire' => 'FLEXIBLE SELON VOTRE DISPONIBILITÉ ET LA DISPONIBILITÉ DE L\'ENSEIGNANT',
-            'Dernier_Delais_Inscription' => null,
-            'repartition_heures' => 'VOUS POUVEZ TERMINER DANS UN DÉLAIS DE 3 JOURS OU BIEN RÉPARTIR VOTRE HEURES SELON VOTRE RYTHME, VOTRE ENGAGEMENT',
-            'formations_id' => 1
-        ]);
-        Formation_Tarification::create([
-            'Name' => 'FORMATION CONTINUE',
-            'Price' => 1000,
-            'Type' => 'INDIVIDUEL',
-            'Volume_Horraire' => 24,
-            'Duree_formation' => '3 Mois',
-            'Debut_formation' => 'DANS UN DÉLAIS DE 24 H APRÉS LA VALIDATION DE VOTRE INSCRIPTION',
-            'Deroulement' => 'UNE SÉANCE DE 2H PAR SEMAINE',
-            'Horraire' => 'À DÉTERMINER APRÈS LA FIN DE VOTRE INSCRIPTION',
-            'Dernier_Delais_Inscription' => null,
-            'repartition_heures' => null,
-            'formations_id' => 1
-        ]);
-        Formation_Tarification::create([
-            'Name' => 'FORMATION CONTINUE',
-            'Price' => 400,
-            'Type' => 'EN GROUPE',
-            'Volume_Horraire' => 24,
-            'Duree_formation' => null,
-            'Debut_formation' => 'LE 01/06/2023',
-            'Deroulement' => 'UNE SÉANCE DE 2H PAR SEMAINE',
-            'Horraire' => 'À DÉTERMINER APRÈS LA FIN DE VOTRE INSCRIPTION POUR S\'ADAPTER AUX EMPLOIS DE TEMPS DES INSCRITS',
-            'Dernier_Delais_Inscription' => 'LE 25/05/2023',
-            'repartition_heures' => null,
-            'formations_id' => 1
-        ]);
-        Formation_Tarification::create([
-            'Name' => 'FORMATION fghjk',
-            'Price' => 3000,
-            'Type' => 'INDIVIDUEL',
-            'Volume_Horraire' => 24,
-            'Duree_formation' => null,
-            'Debut_formation' => 'DANS UN DÉLAIS DE 24 H APRÉS LA VALIDATION DE VOTRE INSCRIPTION',
-            'Deroulement' => null,
-            'Horraire' => 'FLEXIBLE SELON VOTRE DISPONIBILITÉ ET LA DISPONIBILITÉ DE L\'ENSEIGNANT',
-            'Dernier_Delais_Inscription' => null,
-            'repartition_heures' => 'VOUS POUVEZ TERMINER DANS UN DÉLAIS DE 3 JOURS OU BIEN RÉPARTIR VOTRE HEURES SELON VOTRE RYTHME, VOTRE ENGAGEMENT',
-            'formations_id' => 1
-        ]);
+        // Formation_Tarification::create([
+        //     'Name' => 'FORMATION ACCÉLÉRÉE',
+        //     'Price' => 3000,
+        //     'Type' => 'INDIVIDUEL',
+        //     'Volume_Horraire' => 24,
+        //     'Duree_formation' => null,
+        //     'Debut_formation' => 'DANS UN DÉLAIS DE 24 H APRÉS LA VALIDATION DE VOTRE INSCRIPTION',
+        //     'Deroulement' => null,
+        //     'Horraire' => 'FLEXIBLE SELON VOTRE DISPONIBILITÉ ET LA DISPONIBILITÉ DE L\'ENSEIGNANT',
+        //     'Dernier_Delais_Inscription' => null,
+        //     'repartition_heures' => 'VOUS POUVEZ TERMINER DANS UN DÉLAIS DE 3 JOURS OU BIEN RÉPARTIR VOTRE HEURES SELON VOTRE RYTHME, VOTRE ENGAGEMENT',
+        //     'formations_id' => 1
+        // ]);
+        // Formation_Tarification::create([
+        //     'Name' => 'FORMATION CONTINUE',
+        //     'Price' => 1000,
+        //     'Type' => 'INDIVIDUEL',
+        //     'Volume_Horraire' => 24,
+        //     'Duree_formation' => '3 Mois',
+        //     'Debut_formation' => 'DANS UN DÉLAIS DE 24 H APRÉS LA VALIDATION DE VOTRE INSCRIPTION',
+        //     'Deroulement' => 'UNE SÉANCE DE 2H PAR SEMAINE',
+        //     'Horraire' => 'À DÉTERMINER APRÈS LA FIN DE VOTRE INSCRIPTION',
+        //     'Dernier_Delais_Inscription' => null,
+        //     'repartition_heures' => null,
+        //     'formations_id' => 1
+        // ]);
+        // Formation_Tarification::create([
+        //     'Name' => 'FORMATION CONTINUE',
+        //     'Price' => 400,
+        //     'Type' => 'EN GROUPE',
+        //     'Volume_Horraire' => 24,
+        //     'Duree_formation' => null,
+        //     'Debut_formation' => 'LE 01/06/2023',
+        //     'Deroulement' => 'UNE SÉANCE DE 2H PAR SEMAINE',
+        //     'Horraire' => 'À DÉTERMINER APRÈS LA FIN DE VOTRE INSCRIPTION POUR S\'ADAPTER AUX EMPLOIS DE TEMPS DES INSCRITS',
+        //     'Dernier_Delais_Inscription' => 'LE 25/05/2023',
+        //     'repartition_heures' => null,
+        //     'formations_id' => 1
+        // ]);
+        // Formation_Tarification::create([
+        //     'Name' => 'FORMATION fghjk',
+        //     'Price' => 3000,
+        //     'Type' => 'INDIVIDUEL',
+        //     'Volume_Horraire' => 24,
+        //     'Duree_formation' => null,
+        //     'Debut_formation' => 'DANS UN DÉLAIS DE 24 H APRÉS LA VALIDATION DE VOTRE INSCRIPTION',
+        //     'Deroulement' => null,
+        //     'Horraire' => 'FLEXIBLE SELON VOTRE DISPONIBILITÉ ET LA DISPONIBILITÉ DE L\'ENSEIGNANT',
+        //     'Dernier_Delais_Inscription' => null,
+        //     'repartition_heures' => 'VOUS POUVEZ TERMINER DANS UN DÉLAIS DE 3 JOURS OU BIEN RÉPARTIR VOTRE HEURES SELON VOTRE RYTHME, VOTRE ENGAGEMENT',
+        //     'formations_id' => 1
+        // ]);
 
 
 
@@ -223,58 +94,58 @@ class FormationSeeder extends Seeder
             'tp' => null,
             'formation_sub_categories_id' => 1
         ]);
-        Formation_Tarification::create([
-            'Name' => 'FORMATION ACCÉLÉRÉE',
-            'Price' => 3000,
-            'Type' => 'INDIVIDUEL',
-            'Volume_Horraire' => 24,
-            'Duree_formation' => null,
-            'Debut_formation' => 'DANS UN DÉLAIS DE 24 H APRÉS LA VALIDATION DE VOTRE INSCRIPTION',
-            'Deroulement' => null,
-            'Horraire' => 'FLEXIBLE SELON VOTRE DISPONIBILITÉ ET LA DISPONIBILITÉ DE L\'ENSEIGNANT',
-            'Dernier_Delais_Inscription' => null,
-            'repartition_heures' => 'VOUS POUVEZ TERMINER DANS UN DÉLAIS DE 3 JOURS OU BIEN RÉPARTIR VOTRE HEURES SELON VOTRE RYTHME, VOTRE ENGAGEMENT',
-            'formations_id' => 2
-        ]);
-        Formation_Tarification::create([
-            'Name' => 'FORMATION CONTINUE',
-            'Price' => 1000,
-            'Type' => 'INDIVIDUEL',
-            'Volume_Horraire' => 24,
-            'Duree_formation' => '3 Mois',
-            'Debut_formation' => 'DANS UN DÉLAIS DE 24 H APRÉS LA VALIDATION DE VOTRE INSCRIPTION',
-            'Deroulement' => 'UNE SÉANCE DE 2H PAR SEMAINE',
-            'Horraire' => 'À DÉTERMINER APRÈS LA FIN DE VOTRE INSCRIPTION',
-            'Dernier_Delais_Inscription' => null,
-            'repartition_heures' => null,
-            'formations_id' => 2
-        ]);
-        Formation_Tarification::create([
-            'Name' => 'FORMATION CONTINUE',
-            'Price' => 400,
-            'Type' => 'EN GROUPE',
-            'Volume_Horraire' => 24,
-            'Duree_formation' => null,
-            'Debut_formation' => 'LE 01/06/2023',
-            'Deroulement' => 'UNE SÉANCE DE 2H PAR SEMAINE',
-            'Horraire' => 'À DÉTERMINER APRÈS LA FIN DE VOTRE INSCRIPTION POUR S\'ADAPTER AUX EMPLOIS DE TEMPS DES INSCRITS',
-            'Dernier_Delais_Inscription' => 'LE 25/05/2023',
-            'repartition_heures' => null,
-            'formations_id' => 2
-        ]);
-        Formation_Tarification::create([
-            'Name' => 'FORMATION fghjk',
-            'Price' => 3000,
-            'Type' => 'INDIVIDUEL',
-            'Volume_Horraire' => 24,
-            'Duree_formation' => null,
-            'Debut_formation' => 'DANS UN DÉLAIS DE 24 H APRÉS LA VALIDATION DE VOTRE INSCRIPTION',
-            'Deroulement' => null,
-            'Horraire' => 'FLEXIBLE SELON VOTRE DISPONIBILITÉ ET LA DISPONIBILITÉ DE L\'ENSEIGNANT',
-            'Dernier_Delais_Inscription' => null,
-            'repartition_heures' => 'VOUS POUVEZ TERMINER DANS UN DÉLAIS DE 3 JOURS OU BIEN RÉPARTIR VOTRE HEURES SELON VOTRE RYTHME, VOTRE ENGAGEMENT',
-            'formations_id' => 2
-        ]);
+        // Formation_Tarification::create([
+        //     'Name' => 'FORMATION ACCÉLÉRÉE',
+        //     'Price' => 3000,
+        //     'Type' => 'INDIVIDUEL',
+        //     'Volume_Horraire' => 24,
+        //     'Duree_formation' => null,
+        //     'Debut_formation' => 'DANS UN DÉLAIS DE 24 H APRÉS LA VALIDATION DE VOTRE INSCRIPTION',
+        //     'Deroulement' => null,
+        //     'Horraire' => 'FLEXIBLE SELON VOTRE DISPONIBILITÉ ET LA DISPONIBILITÉ DE L\'ENSEIGNANT',
+        //     'Dernier_Delais_Inscription' => null,
+        //     'repartition_heures' => 'VOUS POUVEZ TERMINER DANS UN DÉLAIS DE 3 JOURS OU BIEN RÉPARTIR VOTRE HEURES SELON VOTRE RYTHME, VOTRE ENGAGEMENT',
+        //     'formations_id' => 2
+        // ]);
+        // Formation_Tarification::create([
+        //     'Name' => 'FORMATION CONTINUE',
+        //     'Price' => 1000,
+        //     'Type' => 'INDIVIDUEL',
+        //     'Volume_Horraire' => 24,
+        //     'Duree_formation' => '3 Mois',
+        //     'Debut_formation' => 'DANS UN DÉLAIS DE 24 H APRÉS LA VALIDATION DE VOTRE INSCRIPTION',
+        //     'Deroulement' => 'UNE SÉANCE DE 2H PAR SEMAINE',
+        //     'Horraire' => 'À DÉTERMINER APRÈS LA FIN DE VOTRE INSCRIPTION',
+        //     'Dernier_Delais_Inscription' => null,
+        //     'repartition_heures' => null,
+        //     'formations_id' => 2
+        // ]);
+        // Formation_Tarification::create([
+        //     'Name' => 'FORMATION CONTINUE',
+        //     'Price' => 400,
+        //     'Type' => 'EN GROUPE',
+        //     'Volume_Horraire' => 24,
+        //     'Duree_formation' => null,
+        //     'Debut_formation' => 'LE 01/06/2023',
+        //     'Deroulement' => 'UNE SÉANCE DE 2H PAR SEMAINE',
+        //     'Horraire' => 'À DÉTERMINER APRÈS LA FIN DE VOTRE INSCRIPTION POUR S\'ADAPTER AUX EMPLOIS DE TEMPS DES INSCRITS',
+        //     'Dernier_Delais_Inscription' => 'LE 25/05/2023',
+        //     'repartition_heures' => null,
+        //     'formations_id' => 2
+        // ]);
+        // Formation_Tarification::create([
+        //     'Name' => 'FORMATION fghjk',
+        //     'Price' => 3000,
+        //     'Type' => 'INDIVIDUEL',
+        //     'Volume_Horraire' => 24,
+        //     'Duree_formation' => null,
+        //     'Debut_formation' => 'DANS UN DÉLAIS DE 24 H APRÉS LA VALIDATION DE VOTRE INSCRIPTION',
+        //     'Deroulement' => null,
+        //     'Horraire' => 'FLEXIBLE SELON VOTRE DISPONIBILITÉ ET LA DISPONIBILITÉ DE L\'ENSEIGNANT',
+        //     'Dernier_Delais_Inscription' => null,
+        //     'repartition_heures' => 'VOUS POUVEZ TERMINER DANS UN DÉLAIS DE 3 JOURS OU BIEN RÉPARTIR VOTRE HEURES SELON VOTRE RYTHME, VOTRE ENGAGEMENT',
+        //     'formations_id' => 2
+        // ]);
 
 
 
@@ -290,64 +161,6 @@ class FormationSeeder extends Seeder
             'tp' => null,
             'formation_sub_categories_id' => 1
         ]);
-        Formation_Tarification::create([
-            'Name' => 'FORMATION ACCÉLÉRÉE',
-            'Price' => 3000,
-            'Type' => 'INDIVIDUEL',
-            'Volume_Horraire' => 24,
-            'Duree_formation' => null,
-            'Debut_formation' => 'DANS UN DÉLAIS DE 24 H APRÉS LA VALIDATION DE VOTRE INSCRIPTION',
-            'Deroulement' => null,
-            'Horraire' => 'FLEXIBLE SELON VOTRE DISPONIBILITÉ ET LA DISPONIBILITÉ DE L\'ENSEIGNANT',
-            'Dernier_Delais_Inscription' => null,
-            'repartition_heures' => 'VOUS POUVEZ TERMINER DANS UN DÉLAIS DE 3 JOURS OU BIEN RÉPARTIR VOTRE HEURES SELON VOTRE RYTHME, VOTRE ENGAGEMENT',
-            'formations_id' => 3
-        ]);
-        Formation_Tarification::create([
-            'Name' => 'FORMATION CONTINUE',
-            'Price' => 1000,
-            'Type' => 'INDIVIDUEL',
-            'Volume_Horraire' => 24,
-            'Duree_formation' => '3 Mois',
-            'Debut_formation' => 'DANS UN DÉLAIS DE 24 H APRÉS LA VALIDATION DE VOTRE INSCRIPTION',
-            'Deroulement' => 'UNE SÉANCE DE 2H PAR SEMAINE',
-            'Horraire' => 'À DÉTERMINER APRÈS LA FIN DE VOTRE INSCRIPTION',
-            'Dernier_Delais_Inscription' => null,
-            'repartition_heures' => null,
-            'formations_id' => 3
-        ]);
-        Formation_Tarification::create([
-            'Name' => 'FORMATION CONTINUE',
-            'Price' => 400,
-            'Type' => 'EN GROUPE',
-            'Volume_Horraire' => 24,
-            'Duree_formation' => null,
-            'Debut_formation' => 'LE 01/06/2023',
-            'Deroulement' => 'UNE SÉANCE DE 2H PAR SEMAINE',
-            'Horraire' => 'À DÉTERMINER APRÈS LA FIN DE VOTRE INSCRIPTION POUR S\'ADAPTER AUX EMPLOIS DE TEMPS DES INSCRITS',
-            'Dernier_Delais_Inscription' => 'LE 25/05/2023',
-            'repartition_heures' => null,
-            'formations_id' => 3
-        ]);
-        Formation_Tarification::create([
-            'Name' => 'FORMATION fghjk',
-            'Price' => 3000,
-            'Type' => 'INDIVIDUEL',
-            'Volume_Horraire' => 24,
-            'Duree_formation' => null,
-            'Debut_formation' => 'DANS UN DÉLAIS DE 24 H APRÉS LA VALIDATION DE VOTRE INSCRIPTION',
-            'Deroulement' => null,
-            'Horraire' => 'FLEXIBLE SELON VOTRE DISPONIBILITÉ ET LA DISPONIBILITÉ DE L\'ENSEIGNANT',
-            'Dernier_Delais_Inscription' => null,
-            'repartition_heures' => 'VOUS POUVEZ TERMINER DANS UN DÉLAIS DE 3 JOURS OU BIEN RÉPARTIR VOTRE HEURES SELON VOTRE RYTHME, VOTRE ENGAGEMENT',
-            'formations_id' => 3
-        ]);
-
-        // Formation_Programme::create([
-        //     'ModuleName' => 'INTRODUCTION',
-        //     'ModuleChapitre' => 'Le modèle relationnel. ; Les notions de base : relation (table), attributs (colonnes), contraintes d\'intégrité. ; les contraintes d\'intégrité.',
-        //     'formations_id' => 1
-        // ]);
 
         Formation::create([
             'Name' => 'HTML5',
@@ -375,6 +188,68 @@ class FormationSeeder extends Seeder
             'tp' => null,
             'formation_sub_categories_id' => 1
         ]);
+        
+        Formation::create([
+            'Name' => 'XML',
+            'MotivaionName' => 'MODÉLISER VOS DOCUMENTS ET DONNÉES',
+            'MotivaionBody' => 'Ces dernières années ont vu une forte progression de la popularité de XML, le standard du W3C pour l\'écriture de documents structurés. A l\'issue de cette formation, le participant aura une maîtrise complète de la syntaxe du langage XML Schema et des règles de modélisation permises par ce langage.',
+            'objectifs' => 'Maîtriser la structure d’un document XML;
+            Maîtriser la syntaxe du langage XML Schema;
+            Maîtriser la rédaction d’un DTD (Définition de Type de Document);',
+            'tp' => null,
+            'formation_sub_categories_id' => 1
+        ]);
+
+        Formation::create([
+            'Name' => 'JAVASCRIPT',
+            'MotivaionName' => 'PERFECTIONNEMENT',
+            'MotivaionBody' => 'Le langage JavaScript est devenu incontournable pour le développement d\'applications client riches. Ce cours vous donnera tout le savoir-faire technologique pour mettre en oeuvre de véritables applications Web à partir de concepts avancés JavaScript ES5, tout en vous préparant à l\'utilisation de ES2015.',
+            'objectifs' => 'Découvrir les concepts avancés JavaScript ES5;
+            Mettre en pratique la Programmation Orientée Objet;
+            Mettre en œuvre le framework JavaScript jQuery;
+            Manipuler les API JavaScript HTML5;
+            Appréhender la notion de JavaScript côté serveur avec Node.js;',
+            'tp' => null,
+            'formation_sub_categories_id' => 1
+        ]);
+
+        Formation::create([
+            'Name' => 'ECMASCRIPT 6, MISE EN ŒUVRE',
+            'MotivaionName' => 'ANTICIPER LA MIGRATION DES APPLICATIONS',
+            'MotivaionBody' => 'Le langage JavaScript est devenu un langage incontournable dans les développements Web et mobiles tant côté client que côté serveur avec notamment Node.js. Cette formation vous permettra d\'utiliser en production dès aujourd\'hui les nouvelles fonctionnalités des dernières versions EcmaScript (2015, 2016, 2017).',
+            'objectifs' => 'Découvrir les nouveautés syntaxiques du JavaScript;
+            Maîtriser les nouvelles API;
+            Utiliser ES6 en production;
+            Anticiper l\'évolution des frameworks du Front-End;
+            Se préparer aux nouvelles méthodes de développement JavaScript;',
+            'tp' => 'Réalisation d\'une application et portage en modules ES6.',
+            'formation_sub_categories_id' => 1
+        ]);
+
+        Formation::create([
+            'Name' => 'AJAX',
+            'MotivaionName' => 'PROGRAMMATION CÔTÉ CLIENT',
+            'MotivaionBody' => 'Ajax est devenu une technologie incontournable du développement d\'applications riches Web 2.0. Durant ce cours, vous apprendrez la manipulation de ses composants, le CSS, le DOM, ainsi qu\'à établir des échanges client-serveur.',
+            'objectifs' => 'Manipuler les classes et d\'objets;
+            Créer des structures XML bien formée et valide;
+            Connaitre les Traitements XSLT pour gérer les flux RSS;
+            Mettre en œuvre des requêtes asynchrones et multithreads;
+            Programmer en Ajax avec HTML5',
+            'tp' => null,
+            'formation_sub_categories_id' => 1
+        ]);
+
+        // Formation::create([
+        //     'Name' => '',
+        //     'MotivaionName' => '',
+        //     'MotivaionBody' => '',
+        //     'objectifs' => '',
+        //     'tp' => null,
+        //     'formation_sub_categories_id' => 1
+        // ]);
+
+
+        //----------------------------------------sub-category 2 (11)   c1
 
         Formation::create([
             'Name' => 'PHP 7 ET 5',
@@ -418,6 +293,29 @@ class FormationSeeder extends Seeder
             'formation_sub_categories_id' => 2
         ]);
 
+        Formation::create([
+            'Name' => 'FORMATION EN PHP 7 ET 5',
+            'MotivaionName' => 'SÉCURISER VOS APPLICATIONS',
+            'MotivaionBody' => 'De par sa nature même, le service dynamique de pages Web ouvre de nombreuses portes sur le monde extérieur. Pour le développeur, il est primordial de prendre conscience des types d\'attaques auxquelles son code sera potentiellement exposé et de savoir y faire face, double objectif de ce stage.',
+            'objectifs' => 'Prendre conscience des types d\'attaques auxquelles son code peut être exposé;
+            Intégrer la sécurité dans les développements dès la conception;
+            Identifier les failles possibles au niveau des développements;
+            Développer des applications plus sécurisées',
+            'tp' => 'Des postes sous Windows équipés des serveurs Apache2 avec PHP, MySql, Oracle, LDAP, FTP et mail seront mises à la disposition des participants.',
+            'formation_sub_categories_id' => 2
+        ]);
+        Formation::create([
+            'Name' => 'ZEND FRAMEWORK 2 ET 3',
+            'MotivaionName' => 'MAÎTRISE DU DÉVELOPPEMENT WEB',
+            'MotivaionBody' => 'Ce cours vous apportera les meilleures pratiques de développement Web avec le Zend Framework version 2. Après l\'avoir installé, vous en découvrirez l\'architecture et les concepts. Vous concevrez des modules, des formulaires, aborderez l\'injection de dépendances et utiliserez les principaux composants du framework.',
+            'objectifs' => 'Installer et configurer une application Zend Framework 2 et 3;
+            Maîtriser les Design Patterns Objets en particulier le MVC;
+            Utiliser les principaux composants de Zend Framework;
+            Automatiser les tests dans Zend Framework;
+            Développer des composants métiers avec Zend\Db et Doctrine',
+            'tp' => null,
+            'formation_sub_categories_id' => 2
+        ]);
 
         Formation::create([
             'Name' => 'LARAVEL',
@@ -433,10 +331,15 @@ class FormationSeeder extends Seeder
         ]);
 
 
-
-
-        // 3
-
+        // Formation::create([
+        //     'Name' => '',
+        //     'MotivaionName' => '',
+        //     'MotivaionBody' => '',
+        //     'objectifs' => '',
+        //     'tp' => null,
+        //     'formation_sub_categories_id' => 2
+        // ]);
+        //----------------------------------------sub-category 3 (8)         c2
 
         Formation::create([
             'Name' => 'PYTHON',
@@ -450,6 +353,53 @@ class FormationSeeder extends Seeder
             'tp' => null,
             'formation_sub_categories_id' => 3
         ]);
+        Formation::create([
+            'Name' => 'PYTHON',
+            'MotivaionName' => 'PERFECTIONNEMENT',
+            'MotivaionBody' => 'Le langage Python s\'impose aujourd\'hui comme un socle technologique pour le développement de grands projets logiciels. Vous mettrez en œuvre, dans cette formation, les techniques avancées du langage Python ainsi que ses principales librairies afin de pouvoir répondre aux exigences qualité de ces projets.',
+            'objectifs' => 'Implémenter de manière rigoureuse des Design Patterns reconnus;
+            Utiliser les techniques avancées du langage Python : Context Manager, métaclasses, closures, fonctions avancées;
+           Optimiser les performances de vos programmes à l\'aide du monitoring et du parallélisme;
+           Packager et déployer ses artefacts Python;
+           Exploiter des librairies contribuant au succès du langage : calcul scientifique, Intelligence Artificielle, XML, réseau)',
+            'tp' => null,
+            'formation_sub_categories_id' => 3
+        ]);
+        Formation::create([
+            'Name' => 'DJANGO',
+            'MotivaionName' => 'DÉVELOPPEMENT WEB AVEC PYTHON',
+            'MotivaionBody' => 'Django est un framework Web MVC (Modèle-Vue-Contrôleur) basé sur le langage Python. Cette formation vous apprendra à mettre en œuvre ce framework et à utiliser avec efficacité ses différents modules dans le cadre du développement d\'applications Web.',
+            'objectifs' => 'Savoir interfacer Django avec une base de données;
+            Développer des vues dynamiques;
+            Développer des templates;
+            Gérer les formulaires Django;
+            Mettre en oeuvre les principales fonctions avancées',
+            'tp' => null,
+            'formation_sub_categories_id' => 3
+        ]);
+        Formation::create([
+            'Name' => 'PROGRAMMATION EN C',
+            'MotivaionName' => 'PROGRAMMATION EN C',
+            'MotivaionBody' => 'Cette formation intensif vous permettra d\'acquérir une connaissance réellement opérationnelle du langage. Il vous expliquera le fonctionnement des différents mécanismes et vous montrera leur mise en œuvre grâce à de nombreux exercices pratiques. A l\'issue de cette formation, vous serez en mesure d\'écrire des programmes C robustes et portables.',
+            'objectifs' => 'Maîtriser la chaîne de production d\'un programme écrit en langage C;
+            Mettre en œuvre les opérateurs, les expressions et les structures de contrôle du langage C;
+             Manipuler des structures de données, des tableaux, des pointeurs et des chaînes de caractères;
+            Organiser le code d\'un programme à l\'aide de fonctions;
+            Exploiter les principales bibliothèques standard du langage C',
+            'tp' => 'Des machines sous système Unix ou Windows (PC) seront mises à la disposition des participants de manière à mettre en pratique les notions présentées.',
+            'formation_sub_categories_id' => 3
+        ]);
+        Formation::create([
+            'Name' => 'PROGRAMMATION EN C',
+            'MotivaionName' => 'PERFECTIONNEMENT',
+            'MotivaionBody' => 'Cette formation vous permettra d\'approfondir vos connaissances en langage C. Vous manipulerez les aspects avancés des pointeurs et intégrerez des algorithmes récursifs dans vos développements. Vous découvrirez les évolutions apportées par la programmation orientée objet ainsi que les ajouts majeurs de la norme C11.',
+            'objectifs' => 'Manipuler les pointeurs, les pointeurs de fonctions et les bibliothèques intégrées au langage;
+            Maîtriser les structures de données récursives et leurs algorithmes intrinsèques;
+            Utiliser les outils de développement associés au langage C;
+            Maîtriser les évolutions orientées objets et les ajouts majeurs de la norme C11',
+            'tp' => null,
+            'formation_sub_categories_id' => 3
+        ]);
 
         // Formation::create([
         //     'Name' => '',
@@ -460,11 +410,86 @@ class FormationSeeder extends Seeder
         //     'formation_sub_categories_id' => 3
         // ]);
 
-        // Formation_Programme::create([
-        //     'ModuleName' => '',
-        //     'ModuleChapitre' => '',
-        //     'formations_id' => 1
+        //----------------------------------------sub-category 4 (13)         c2
+
+        Formation::create([
+            'Name' => 'SWIFT',
+            'MotivaionName' => 'LES BASES DU LANGAGE',
+            'MotivaionBody' => 'Nouveau langage de programmation créé par Apple, Swift se présente comme une alternative à Objective-C, moderne et plus performante. Vous apprendrez dans cette formation à développer des applications Swift en environnement MacOS. Vous découvrirez les concepts de base de Swift et ses aspects novateurs.',
+            'objectifs' => 'Appréhender les concepts de base du langage Swift;
+            Créer un projet Swift;
+            Utiliser la Swift Standard Library',
+            'tp' => 'Exercices pratiques sous MacOS X et XCode 8.',
+            'formation_sub_categories_id' => 4
+        ]);
+        Formation::create([
+            'Name' => 'IPHONE/IPAD',
+            'MotivaionName' => 'DÉVELOPPER DES APPLICATIONS EN SWIFT/PERFECTIONNEMENT',
+            'MotivaionBody' => 'Vous découvrirez dans ce cours des concepts avancés de Swift, telle que la programmation fonctionnelle que vous appliquerez au développement mobile. Vous développerez dans ce cadre des tâches de background, utiliserez le Core Motion et mettrez en œuvre les accessoires, les extensions, les threads et les notifications.',
+            'objectifs' => 'Découvrir les aspects avancés de la programmation Swift;
+            Mettre en œuvre la programmation fonctionnelle;
+            Développer et contrôler des tâches de background;
+            Pratiquer le framework Core Motion et des capteurs;
+            Programmer des accessoires externes',
+            'tp' => 'Chaque chapitre donnera lieu à des exercices adaptés',
+            'formation_sub_categories_id' => 4
+        ]);
+        Formation::create([
+            'Name' => 'KOTLIN',
+            'MotivaionName' => 'DÉVELOPPER DES APPLICATIONS POUR ANDROID',
+            'MotivaionBody' => 'Vous découvrirez dans ce cours les fonctionnalités et les capacités de la plateforme Android dédiée au développement d\'applications mobiles. Avec le langage Kotlin, vous apprendrez à développer des applications tirant pleinement partie de cette plateforme.',
+            'objectifs' => 'Connaître l\'architecture Android.;
+            Maîtriser le cycle de développement sur cette plateforme.;
+            Développer des interfaces utilisateurs.;
+            Gérer la persistance des données.;
+            Exploiter les fonctionnalités d\'un smartphone Android.',
+            'tp' => null,
+            'formation_sub_categories_id' => 4
+        ]);
+        // Formation::create([
+        //     'Name' => '',
+        //     'MotivaionName' => '',
+        //     'MotivaionBody' => '',
+        //     'objectifs' => '',
+        //     'tp' => null,
+        //     'formation_sub_categories_id' => 4
         // ]);
+
+        //----------------------------------------sub-category 5 (3)         c3
+
+        Formation::create([
+            'Name' => 'ORACLE SQL',
+            'MotivaionName' => '',
+            'MotivaionBody' => 'Une formation pratique aux aspects essentiels, logique et syntaxe, du langage SQL. Ce cours vous apportera une méthode sûre d\'écriture de requêtes SQL complexes.',
+            'objectifs' => ' Comprendre le modèle relationnel.
+            savoir identifier les objets d\'une base de données oracle ./li>
+            interroger et classer les données d\'une table.
+            manipuler les données dans les tables de la base.
+            savoir restituer les données.',
+            'tp' => null,
+            'formation_sub_categories_id' => 5
+        ]);
+        Formation::create([
+            'Name' => 'MYSQL',
+            'MotivaionName' => 'ADMINISTRATION AVANCÉE',
+            'MotivaionBody' => 'Ce cours propose de vous rendre opérationnel sur un ensemble d\'aspects avancés de l\'administration MySQL tels que la configuration de plusieurs instances sur une même machine, la réplication et l\'architecture MySQL Cluster.',
+            'objectifs' => 'Installer plusieurs instances de MySQL sur un même serveur;
+            Connaître les meilleures pratiques pour améliorer le stockage, comme la compression de tables, la défragmentation;
+            Améliorer la sécurité en utilisant SSL pour chiffrer les connexions d\'utilisateurs;
+            Comprendre le principe de la réplication et la mettre en œuvre dans MySQL;
+            Mettre en place une architecture MySQL en cluster',
+            'tp' => null,
+            'formation_sub_categories_id' => 5
+        ]);
+        Formation::create([
+            'Name' => 'MARIADB',
+            'MotivaionName' => 'PRISE EN MAIN',
+            'MotivaionBody' => 'Un cours intensif qui vous permettra d\'acquérir toutes les compétences nécessaires à l\'utilisation efficace et fiable de la base de données MariaDB : la pratique du langage SQL, les objets de la base de données, la sécurité... Cette formation propose également une introduction à l\'administration.',
+            'objectifs' => null,
+            'tp' => null,
+            'formation_sub_categories_id' => 5
+        ]);
+        
 
     }
 }

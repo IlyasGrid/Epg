@@ -29,7 +29,7 @@
     </style>
 
     <main>
-        <form method="POST" action="/admin/formations/{{ $categorie->id }}" enctype="multipart/form-data">
+        <form method="POST" action="/admin/categories/{{ $categorie->id }}" enctype="multipart/form-data">
             @csrf
             @method('PUT')
             <h2> {{ $categorie->Name }} <span class="text-lowercase">edit form</span></h2>

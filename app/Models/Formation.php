@@ -24,4 +24,6 @@ class Formation extends Model
     {
         $this->hasMany(Formation_Tarification::class);
     }
+
+    protected $fillable=['Name', 'MotivaionName', 'MotivaionBody', 'objectifs', 'tp', 'formation_sub_categories_id'];
 }

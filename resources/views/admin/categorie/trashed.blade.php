@@ -9,7 +9,7 @@
             </div>
         </div>
         <div class="d-flex justify-content-around  p-2 mt-3">
-            <a href="/admin/formations/" class="btn btn-dark pl-5 pr-5">
+            <a href="/admin/categories/" class="btn btn-dark pl-5 pr-5">
                 show existed categories
             </a>
         </div>
@@ -21,7 +21,7 @@
                     <div class="card-body">
                         <h5 class="card-title d-flex justify-content-center m-3 text-uppercase">{{ $categorie->Name }}</h5>
                         <div class="d-flex justify-content-around  p-2 mt-3">
-                            <a href="/admin/formations/restore/{{ $categorie->id }}"
+                            <a href="/admin/categories/restore/{{ $categorie->id }}"
                                 class="btn btn-outline-secondary pl-5 pr-5">restore
                             </a>
                         </div>

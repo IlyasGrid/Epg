@@ -8,30 +8,34 @@
 
                 <div class="col-lg-6 zit">
                     <h2>FORMATION "{{ $formation->Name }}" <h4> {{ $formation->MotivaionName }} : </h4>
-                    </h2> 
+                    </h2>
 
                     <p>{{ $formation->MotivaionBody }}</p>
 
-                    <h4>Objectifs pédagogiques :</h4>
-                    @php
-                        $objectifs = explode(';', $formation->objectifs);
-                    @endphp
-                    <ul>
-                        @foreach ($objectifs as $objectif)
-                            <li>
-                                <i class="fa fa-chevron-circle-right"></i>
-                                {{ $objectif }}
-                            </li>
-                        @endforeach
+                    @unless ($formation->objectifs == null)
 
-                        @unless ($formation->tp == null)
-                            <p><span>Tp :</span> {{ $formation->tp }} </p>
-                        @endunless
-                    </ul>
+
+                        <h4>Objectifs pédagogiques :</h4>
+                        @php
+                            $objectifs = explode(';', $formation->objectifs);
+                        @endphp
+                        <ul>
+                            @foreach ($objectifs as $objectif)
+                                <li>
+                                    <i class="fa fa-chevron-circle-right"></i>
+                                    {{ $objectif }}
+                                </li>
+                            @endforeach
+
+                            @unless ($formation->tp == null)
+                                <p><span>Tp :</span> {{ $formation->tp }} </p>
+                            @endunless
+                        </ul>
+                    @endunless
                 </div>
 
                 <div class="col-lg-6 sora">
-                    <img src="../../../Pic/T5.png">
+                    <img src="../../../formation/img/default2.png"  alt="">
                 </div>
 
             </div>

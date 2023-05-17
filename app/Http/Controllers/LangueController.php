@@ -69,6 +69,10 @@ class LangueController extends Controller
     {
         return view('admin.index');
     }
+    public function admintest()
+    {
+        return view('admin.test');
+    }
 
     public function adminShow()
     {

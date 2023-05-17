@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('Name');
             $table->string('MotivaionName');
             $table->text('MotivaionBody');
-            $table->text('objectifs');
+            $table->text('objectifs')->nullable();
             $table->text('tp')->nullable();
             $table->softDeletes();
             $table->timestamps();
