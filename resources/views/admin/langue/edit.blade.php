@@ -59,7 +59,7 @@
             @enderror
             <div class="mb-6 form-group">
                 <label for="Motivation" class="inline-block text-lg mb-2">
-                    Langue Motivation
+                    Motivation
                 </label>
                 <textarea class="border border-gray-200 rounded p-2 w-full form-control" name="Motivation" rows="10"
                     placeholder="pourquoi cette langue ??">{{ $langue->Motivation }}</textarea>
@@ -70,8 +70,20 @@
 
             <div class="mb-6 form-group">
                 <label for="Raisons" class="inline-block text-lg mb-2">Raisons</label>
+
                 <input type="text" class="border border-gray-200 rounded p-2 w-full form-control" name="Raisons"
                     placeholder="separer les avec un '&'" value="{{ $langue->Raisons }}" />
+
+                {{-- <ul id="chapitres-list" class="list-group pl-5">
+                    <li class="list-group-item mb-2 mt-1">
+                        <input type="text" class="border border-gray-200 rounded p-2 w-full form-control"
+                            name="Raisons[]" value="{{ old('Raisons[]') }}" />
+                    </li>
+                </ul>
+                <div class="d-flex justify-content-center">
+                    <button class="add-chapitre-btn btn btn-outline-success" type="button">Add
+                        raison</button>
+                </div> --}}
             </div>
             @error('Raisons')
                 <p class="text-danger  ml-5  ">{{ $message }}</p>
@@ -85,7 +97,6 @@
                     placeholder="separer les avec un '&'" value="{{ $langue->Piece_frais }}" />
 
             </div>
-            {{-- @if ($langue->Conditions_Cherche_Emploi != null) --}}
             <div id="conditions-container">
                 <h3> Conditions </h2>
                     <div class="conditions-forms row">
@@ -119,7 +130,6 @@
                     </div>
 
             </div>
-            {{-- @endif --}}
             <div class="btn">
                 <div class="mb-6 form-group">
                     <button type="submit" class="btn btn-outline-info">
@@ -129,4 +139,22 @@
             </div>
         </form>
     </main>
+    <script defer>
+        var addChapitreButton = document.querySelector('.add-chapitre-btn');
+        var chapitresList = document.querySelector('#chapitres-list');
+
+        addChapitreButton.addEventListener('click', function() {
+            var newChapitreInput = document.createElement('input');
+            newChapitreInput.type = 'text';
+            newChapitreInput.classList.add('border', 'border-gray-200', 'rounded', 'p-2', 'w-full', 'form-control');
+            newChapitreInput.name = 'ModuleChapitre[]';
+            newChapitreInput.placeholder = 'program ModuleChapitre';
+
+            var newChapitreListItem = document.createElement('li');
+            newChapitreListItem.classList.add('list-style-none');
+            newChapitreListItem.appendChild(newChapitreInput);
+
+            chapitresList.appendChild(newChapitreListItem);
+        });
+    </script>
 </x-adminLayout>

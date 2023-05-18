@@ -37,9 +37,9 @@
                             @php
                                 $chapitres = explode(';', $formation->program->ModuleChapitre);
                             @endphp
-                            <ul id="chapitres-list">
+                            <ul id="chapitres-list" class="list-group pl-5">
                                 @foreach ($chapitres as $chapitre)
-                                    <li class="list-style-none mb-2 mt-1">
+                                    <li class="list-group-item mb-2 mt-1">
                                         <input type="text"
                                             class="border border-gray-200 rounded p-2 w-full form-control"
                                             name="ModuleChapitre[]" placeholder="program ModuleChapitre"

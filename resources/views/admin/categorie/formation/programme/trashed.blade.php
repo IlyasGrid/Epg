@@ -39,9 +39,9 @@
                             @php
                                 $chapitres = explode(';', $program->ModuleChapitre);
                             @endphp
-                        <ul>
+                        <ul class="list-group pl-5">
                             @foreach ($chapitres as $chapitre)
-                                <li class="list-style-none">{{ $chapitre }}</li>
+                                <li class="list-group-item">{{ $chapitre }}</li>
                             @endforeach
                         </ul>
                         </p>

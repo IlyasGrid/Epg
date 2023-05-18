@@ -30,8 +30,8 @@
                 {{-- <input type="text" class="border border-gray-200 rounded p-2 w-full form-control"
                     name="ModuleChapitre" value="{{ old('ModuleChapitre') }}" /> --}}
 
-                <ul id="chapitres-list">
-                    <li class="list-style-none mb-2 mt-1">
+                <ul id="chapitres-list" class="list-group pl-5">
+                    <li class="list-group-item mb-2 mt-1">
                         <input type="text" class="border border-gray-200 rounded p-2 w-full form-control"
                             name="ModuleChapitre[]" placeholder="program ModuleChapitre"
                             value="{{ old('ModuleChapitre[]') }}" />

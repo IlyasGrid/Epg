@@ -100,6 +100,13 @@ class LangueController extends Controller
             'Conditions_Formations' => 'nullable',
             'Conditions_Cherche_Emploi' => 'nullable',
         ]);
+
+        // $nonEmptyChapitres = array_filter($formFields['Raisons']);
+
+        // $implodedChapitres = implode('&', $nonEmptyChapitres);
+
+        // $formFields['Raisons'] = $implodedChapitres;
+
         Langue::create($formFields);
 
         return redirect()->action([LangueController::class, 'adminShow']);
