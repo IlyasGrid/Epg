@@ -59,6 +59,14 @@
                     </div>
                 </li>
             </ul>
+
+
+        </div>
+        <div>
+            <form action="{{ route('logout') }}" method="POST">
+                @csrf
+                <button class="btn btn-outline-light" type="submit">Logout</button>
+            </form>
         </div>
     </nav>
     <main class="container mt-4 ">

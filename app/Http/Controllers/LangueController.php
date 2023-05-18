@@ -75,15 +75,7 @@ class LangueController extends Controller
 
    
 
-    public function adminHome()
-    {
-        return view('admin.index');
-    }
 
-    public function admintest()
-    {
-        return view('admin.test');
-    }
 
     public function adminShow()
     {
