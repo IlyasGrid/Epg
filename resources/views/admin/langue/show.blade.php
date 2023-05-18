@@ -22,20 +22,20 @@
                 <div>
                     <div class="card-body">
                         <h5 class="card-title d-flex justify-content-center m-3 text-uppercase">{{ $langue->Name }}</h5>
-                        <p class="card-text"> {{ $langue->Motivation }} </p>
+                        <p class="card-text text-muted pl-3"> {{ $langue->Motivation }} </p>
                         {{-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> --}}
                         <div class="d-flex justify-content-around">
-                            <a href="/admin/langues/edit/{{ $langue->id }}" class="btn btn-primary pl-5 pr-5"> edit
+                            <a href="/admin/langues/edit/{{ $langue->id }}" class="btn btn-outline-info pl-5 pr-5"> edit
                             </a>
-                            <a href="/admin/langues/{{ $langue->id }}/tarification" class="btn btn-primary">show
+                            <a href="/admin/langues/{{ $langue->id }}/tarification" class="btn btn-outline-primary">show
                                 tarification</a>
-                            <a href="/admin/langues/{{ $langue->id }}/niveau" class="btn btn-primary">show
+                            <a href="/admin/langues/{{ $langue->id }}/niveau" class="btn btn-outline-primary">show
                                 niveaux</a>
                             <div>
                                 <form action="/admin/langues/{{ $langue->id }}" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                    <button type="submit" class="btn btn-outline-danger">Delete</button>
                                 </form>
                             </div>
                         </div>

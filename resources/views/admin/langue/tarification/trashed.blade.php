@@ -51,7 +51,7 @@
                     <div class="d-flex justify-content-around">
                         <div class="d-flex justify-content-around">
                             <a href="/admin/langues/{{ $langue->id }}/tarification/restore/{{ $tarif->id }}"
-                                class="btn btn-secondary">restore</a>
+                                class="btn btn-outline-secondary">restore</a>
                         </div>
                     </div>
                 </div>

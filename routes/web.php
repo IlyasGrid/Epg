@@ -4,7 +4,9 @@ use App\Http\Controllers\CategorieController;
 use App\Http\Controllers\DiplomeController;
 use App\Http\Controllers\FormationController;
 use App\Http\Controllers\LangueController;
+use App\Http\Controllers\ProgFormationController;
 use App\Http\Controllers\SubCategorieController;
+use App\Http\Controllers\TarifFormationController;
 use App\Models\Branche_Diplome;
 use App\Models\Diplome;
 use App\Models\Formation;
@@ -163,6 +165,28 @@ Route::group(['prefix' => 'admin'], function () {
                 Route::delete('/{id_formation}', [FormationController::class, 'destroy']);
                 Route::get('/trashed', [FormationController::class, 'trashed']);
                 Route::get('/restore/{id_formation}', [FormationController::class, 'restore']);
+                // tarification
+                Route::group(['prefix' => '{id_formation}/tarif'], function () {
+                    Route::get('/create', [TarifFormationController::class, 'create']);
+                    Route::get('/', [TarifFormationController::class, 'show']);
+                    Route::get('/edit/{id_tarif}', [TarifFormationController::class, 'edit']);
+                    Route::put('/{id_tarif}', [TarifFormationController::class, 'update']);
+                    Route::post('/', [TarifFormationController::class, 'store']);
+                    Route::delete('/{id_tarif}', [TarifFormationController::class, 'destroy']);
+                    Route::get('/trashed', [TarifFormationController::class, 'trashed']);
+                    Route::get('/restore/{id_tarif}', [TarifFormationController::class, 'restore']);
+                });
+                // programme
+                Route::group(['prefix' => '{id_formation}/programme'], function () {
+                    Route::get('/create', [ProgFormationController::class, 'create']);
+                    Route::get('/', [ProgFormationController::class, 'show']);
+                    Route::get('/edit/{id_programme}', [ProgFormationController::class, 'edit']);
+                    Route::put('/{id_programme}', [ProgFormationController::class, 'update']);
+                    Route::post('/', [ProgFormationController::class, 'store']);
+                    Route::delete('/{id_programme}', [ProgFormationController::class, 'destroy']);
+                    Route::get('/trashed', [ProgFormationController::class, 'trashed']);
+                    Route::get('/restore/{id_programme}', [ProgFormationController::class, 'restore']);
+                });
             });
         });
     });

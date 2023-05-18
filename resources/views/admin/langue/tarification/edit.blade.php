@@ -83,17 +83,10 @@
 
             <div class="btn">
                 <div class="mb-6 form-group">
-                    <button class="btn btn-primary">
+                    <button class="btn btn-outline-info">
                         Edit
                     </button>
                 </div>
-                {{-- <div>
-                    <form action="\" method="POST">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="btn btn-danger">Delete</button>
-                    </form>
-                </div> --}}
             </div>
         </form>
     </main>

@@ -104,7 +104,7 @@
 
             <div class="btn">
                 <div class="mb-6 form-group">
-                    <button class="btn btn-primary">
+                    <button class="btn btn-outline-info">
                         Edit
                     </button>
                 </div>

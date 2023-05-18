@@ -122,7 +122,7 @@
             {{-- @endif --}}
             <div class="btn">
                 <div class="mb-6 form-group">
-                    <button type="submit" class="btn btn-primary">
+                    <button type="submit" class="btn btn-outline-info">
                         Edit langue
                     </button>
                 </div>

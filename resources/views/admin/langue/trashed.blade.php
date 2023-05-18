@@ -24,7 +24,7 @@
                         <h5 class="card-title d-flex justify-content-center m-3 text-uppercase">{{ $langue->Name }}</h5>
                         <p class="card-text"> {{ $langue->Motivation }} </p>
                         <div class="d-flex justify-content-around">
-                            <a href="/admin/langues/restore/{{ $langue->id }}" class="btn btn-secondary pl-5 pr-5">
+                            <a href="/admin/langues/restore/{{ $langue->id }}" class="btn btn-outline-secondary pl-5 pr-5">
                                 restore
                             </a>
                         </div>

@@ -61,7 +61,7 @@
         </div>
 
         <div class="mb-6 form-group d-flex justify-content-center mt-5">
-            <button class="btn btn-primary">
+            <button class="btn btn-outline-success">
                 Create new tarif
             </button>
 

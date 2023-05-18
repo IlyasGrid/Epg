@@ -1,26 +1,5 @@
 <x-adminLayout>
-    {{-- <style>
-        form {
-            padding: 2em;
-            border-radius: 10px;
-            width: fit-content;
-            min-width: 50%;
-            margin-left: 20%;
-            margin-bottom: 5em;
-            background-color: rgba(128, 128, 128, 0.120)
-        }
 
-        h2 {
-            color: rgb(91, 3, 91);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            display: block;
-            font-weight: bold;
-            font-size: xx-large;
-            margin-bottom: 0.5em;
-            text-align: center;
-        }
-    </style> --}}
     <form class="form-container" method="POST" action="/admin/langues/{{ $id_langue }}/niveau" enctype="multipart/form-data">
         @csrf
         <h2> Langue add niveau</h2>
@@ -77,7 +56,7 @@
         @enderror
 
         <div class="mb-6 form-group">
-            <button class="btn btn-primary">
+            <button class="btn btn-outline-success">
                 Create niveau
             </button>
 

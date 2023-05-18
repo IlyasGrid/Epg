@@ -30,7 +30,7 @@
             </div>
         </div>
         <div class="d-flex justify-content-around  p-2 mt-3">
-            <a href="/admin/langues/{{ $langue->id }}/niveau" class="btn btn-dark pl-5 pr-5">
+            <a href="/admin/langues/{{ $langue->id }}/niveau" class="btn btn-outline-dark pl-5 pr-5">
                 back to niveaux
             </a>
         </div>
@@ -48,7 +48,7 @@
                     <div class="d-flex justify-content-around">
                         <div class="d-flex justify-content-around mt-5">
                             <a href="/admin/langues/{{ $langue->id }}/niveau/restore/{{ $niv->id }}"
-                                class="btn btn-secondary">restore</a>
+                                class="btn btn-outline-secondary">restore</a>
                         </div>
                     </div>
                 </div>

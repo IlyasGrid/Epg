@@ -46,14 +46,14 @@
                     <div class="d-flex justify-content-around">
                         <div class="d-flex justify-content-around">
                             <a href="/admin/langues/edit/{{ $langue->id }}/niveau/{{ $niv->id }}"
-                                class="btn btn-primary">edit</a>
+                                class="btn btn-outline-info">edit</a>
                         </div>
                         <div>
                             <form action="/admin/langues/{{ $langue->id }}/niveau/{{ $niv->id }}"
                                 method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-danger">Delete</button>
+                                <button type="submit" class="btn btn-outline-danger">Delete</button>
                             </form>
                         </div>
                     </div>

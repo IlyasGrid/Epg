@@ -33,15 +33,15 @@
                         </div>
                         {{-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> --}}
                         <div class="d-flex justify-content-around  p-2 mt-3">
-                            <a href="/admin/diplomes/edit/{{ $diplome->id }}" class="btn btn-primary pl-5 pr-5"> edit
+                            <a href="/admin/diplomes/edit/{{ $diplome->id }}" class="btn btn-outline-info pl-5 pr-5"> edit
                             </a>
-                            <a href="/admin/diplomes/{{ $diplome->id }}/branche" class="btn btn-primary">show
+                            <a href="/admin/diplomes/{{ $diplome->id }}/branche" class="btn btn-outline-primary">show
                                 branche(s)</a>
                             <div>
                                 <form action="/admin/diplomes/{{ $diplome->id }}" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                    <button type="submit" class="btn btn-outline-danger">Delete</button>
                                 </form>
                             </div>
                         </div>

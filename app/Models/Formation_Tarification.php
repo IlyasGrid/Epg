@@ -14,4 +14,6 @@ class Formation_Tarification extends Model
     {
         $this->belongsTo(Formation::class);
     }
+
+    protected $fillable = ['Name', 'Price', 'Type', 'Volume_Horraire', 'Duree_formation', 'Debut_formation', 'Deroulement', 'Horraire', 'Dernier_Delais_Inscription', 'repartition_heures', 'formations_id'];
 }
