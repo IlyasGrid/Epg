@@ -38,7 +38,7 @@
                     </li>
                 </ul>
                 <div class="d-flex justify-content-center">
-                    <button class="add-chapitre-btn btn btn-outline-success" type="button">Add
+                    <button class="add-chapitre-btn btn btn-outline-success" onclick="addObjectif( '#chapitres-list', 'ModuleChapitre[]', 'program ModuleChapitre');" type="button">Add
                         Chapitre</button>
                 </div>
 
@@ -56,22 +56,4 @@
 
         </div>
     </form>
-    <script defer>
-        var addChapitreButton = document.querySelector('.add-chapitre-btn');
-        var chapitresList = document.querySelector('#chapitres-list');
-
-        addChapitreButton.addEventListener('click', function() {
-            var newChapitreInput = document.createElement('input');
-            newChapitreInput.type = 'text';
-            newChapitreInput.classList.add('border', 'border-gray-200', 'rounded', 'p-2', 'w-full', 'form-control');
-            newChapitreInput.name = 'ModuleChapitre[]';
-            newChapitreInput.placeholder = 'program ModuleChapitre';
-
-            var newChapitreListItem = document.createElement('li');
-            newChapitreListItem.classList.add('list-style-none');
-            newChapitreListItem.appendChild(newChapitreInput);
-
-            chapitresList.appendChild(newChapitreListItem);
-        });
-    </script>
 </x-adminLayout>

@@ -4,9 +4,11 @@ use App\Http\Controllers\CategorieController;
 use App\Http\Controllers\DiplomeController;
 use App\Http\Controllers\FormationController;
 use App\Http\Controllers\LangueController;
+use App\Http\Controllers\NivLangueController;
 use App\Http\Controllers\ProgFormationController;
 use App\Http\Controllers\SubCategorieController;
 use App\Http\Controllers\TarifFormationController;
+use App\Http\Controllers\TarifLangueController;
 use App\Models\Branche_Diplome;
 use App\Models\Diplome;
 use App\Models\Formation;
@@ -80,6 +82,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/home', [LangueController::class, 'adminHome']);
 
     Route::group(['prefix' => 'langues'], function () {
+        
         Route::get('/', [LangueController::class, 'adminShow']);
         Route::get('/create', [LangueController::class, 'create']);
         Route::get('/edit/{id}', [LangueController::class, 'edit']);
@@ -90,24 +93,28 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/restore/{id}', [LangueController::class, 'restore']);
 
         // Tarification_Langue
-        Route::get('/{id_langue}/tarification/create', [LangueController::class, 'createTarification']);
-        Route::get('/{id_langue}/tarification', [LangueController::class, 'showTarification']);
-        Route::get('/edit/{id_langue}/tarification/{id_tarif}', [LangueController::class, 'editTarification']);
-        Route::put('/{id_langue}/tarification/{id_tarif}', [LangueController::class, 'updateTarification']);
-        Route::post('/{id_langue}/tarification', [LangueController::class, 'storeTarification']);
-        Route::delete('/{id_langue}/tarification/{id_tarif}', [LangueController::class, 'destroyTarification']);
-        Route::get('/{id_langue}/tarification/trashed', [LangueController::class, 'trashedTarification']);
-        Route::get('/{id_langue}/tarification/restore/{id}', [LangueController::class, 'restoreTarification']);
+        Route::group(['prefix' => '{id_langue}/tarification'], function () {
+            Route::get('/create', [TarifLangueController::class, 'create']);
+            Route::get('/', [TarifLangueController::class, 'show']);
+            Route::get('/edit/{id_tarif}', [TarifLangueController::class, 'edit']);
+            Route::put('/{id_tarif}', [TarifLangueController::class, 'update']);
+            Route::post('', [TarifLangueController::class, 'store']);
+            Route::delete('/{id_tarif}', [TarifLangueController::class, 'destroy']);
+            Route::get('/trashed', [TarifLangueController::class, 'trashed']);
+            Route::get('/restore/{id}', [TarifLangueController::class, 'restore']);
+        });
 
         // NIveau_langue
-        Route::get('/{id_langue}/niveau/create', [LangueController::class, 'createNiveau']);
-        Route::get('/{id_langue}/niveau', [LangueController::class, 'showNiveau']);
-        Route::get('/edit/{id_langue}/niveau/{id_niveau}', [LangueController::class, 'editNiveau']);
-        Route::put('/{id_langue}/niveau/{id_niveau}', [LangueController::class, 'updateNiveau']);
-        Route::post('/{id_langue}/niveau', [LangueController::class, 'storeNiveau']);
-        Route::delete('/{id_langue}/niveau/{id_niveau}', [LangueController::class, 'destroyNiveau']);
-        Route::get('/{id_langue}/niveau/trashed', [LangueController::class, 'trashedNiveau']);
-        Route::get('/{id_langue}/niveau/restore/{id}', [LangueController::class, 'restoreNiveau']);
+        Route::group(['prefix' => '{id_langue}/niveau'], function () {
+            Route::get('/create', [NivLangueController::class, 'create']);
+            Route::get('/', [NivLangueController::class, 'show']);
+            Route::get('/edit/{id_niveau}', [NivLangueController::class, 'edit']);
+            Route::put('/{id_niveau}', [NivLangueController::class, 'update']);
+            Route::post('', [NivLangueController::class, 'store']);
+            Route::delete('/{id_niveau}', [NivLangueController::class, 'destroy']);
+            Route::get('/trashed', [NivLangueController::class, 'trashed']);
+            Route::get('/restore/{id}', [NivLangueController::class, 'restore']);
+        });
     });
 
 

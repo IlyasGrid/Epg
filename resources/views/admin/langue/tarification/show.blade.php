@@ -38,7 +38,7 @@
                     {{-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> --}}
                     <div class="d-flex justify-content-around">
                         <div class="d-flex justify-content-around">
-                            <a href="/admin/langues/edit/{{ $langue->id }}/tarification/{{ $tarif->id }}"
+                            <a href="/admin/langues/{{ $langue->id }}/tarification/edit/{{ $tarif->id }}"
                                 class="btn btn-outline-info">edit</a>
                         </div>
                         <div>

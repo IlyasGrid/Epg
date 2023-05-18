@@ -30,7 +30,7 @@
 
             <div class="btn d-flex justify-content-center">
                 <div class="mb-6 form-group">
-                    <button class="btn btn-primary">
+                    <button class="btn btn-outline-info">
                         Edit
                     </button>
                 </div>

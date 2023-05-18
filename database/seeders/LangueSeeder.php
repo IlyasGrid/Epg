@@ -21,11 +21,14 @@ class LangueSeeder extends Seeder
             'Motivation' => ' le français est
             parmis les langue la plus parlée au monde , et pour les francophones tel que
             les marocain et les africains, la langue française est indisponsable..',
-            'Raisons' => '
-            une langue parlée dans le monde entier& une langue pour trouver un emploi&
-            la langue de la culture& une langue pour voyager& une langue pour étudier
-            dans les universités françaises& l’autre langue des relations
-            internationales& une langue pour s’ouvrir sur le monde& la langue de l’amour
+            'Raisons' => 'une langue parlée dans le monde entier;
+            une langue pour trouver un emploi;
+            la langue de la culture;
+            une langue pour voyager;
+            une langue pour étudier dans les universités françaises;
+            l’autre langue des relations internationales;
+            une langue pour s’ouvrir sur le monde;
+            la langue de l’amour
             et de l’esprit',
             'Piece_frais' => null,
             'Conditions_Etudes' => null,
@@ -36,10 +39,10 @@ class LangueSeeder extends Seeder
             'Name' => "anglais",
             'Subtitle' => 'la langue Anglaise - اللغــــة الإنجليزيـــة',
             'Motivation' => ' la langue anglaise est parmis les 3 langue les plus parlée à travers le monde, l’anglais est très répandu. Apprendre l\'anglais peut être une envie personelle ou un besoin pour les étudient et les personnes qui cherchent du travail.mais Il est certain que personne ne regrette jamais d\'avoir appris cette langue très riche.',
-            'Raisons' => ' est la langue de la communication
-            internationale& donne accès à davantage de contenus sur Internet et de
-            divertissements& rend le voyage plus accessible& peut vous rendre « plus
-            intelligent',
+            'Raisons' => ' est la langue de la communication internationale;
+            donne accès à davantage de contenus sur Internet et de divertissements;
+            rend le voyage plus accessible;
+            peut vous rendre « plus intelligent',
             'Piece_frais' => null,
             'Conditions_Etudes' => null,
             'Conditions_Formations' => null,
@@ -56,11 +59,17 @@ class LangueSeeder extends Seeder
             l\'allemand c\'est pour le travail. Il est certain que personne ne regrette
             jamais d\'avoir appris cette langue très riche.',
             'Raisons' => null,
-            'Piece_frais' => 'Copies CIN &2 Photos &50Dh
-            pour chaque livre &100Dh frais de copie',
-            'Conditions_Etudes' => 'Baccalauréat ou plus &Diplôme
-            d\'allemand B1 &Inscription dans une université ou une école supérieure en
-            Allemagne &Un document prouvant la capacité de l\'étudiant à financer ses
+            'Piece_frais' => 'Copies CIN ;
+            2 Photos ;
+            50Dh
+            pour chaque livre ;
+            100Dh frais de copie',
+            'Conditions_Etudes' => 'Baccalauréat ou plus ;
+            Diplôme
+            d\'allemand B1 ;
+            Inscription dans une université ou une école supérieure en
+            Allemagne ;
+            Un document prouvant la capacité de l\'étudiant à financer ses
             études, avec:
             <ul>
                 <li>Garantie financière d\'une personne résidant en Allemagne</li>
@@ -70,13 +79,15 @@ class LangueSeeder extends Seeder
                 </li>
             </ul>
             ',
-            'Conditions_Formations' => 'Baccalauréat ou diplôme de formation professionnelle &Diplôme
-            d\'allemand B1 &Un contrat de professionnalisation, que l\'étudiant obtient
-            après avoir contacté les entreprises allemandes',
-            'Conditions_Cherche_Emploi' => 'Diplômes académiques
-            (licence ou Master) &Qualifications professionnelles (Diplôme de formation
-            professionnelle) &Expériences professionnelles &Compte bancaire fermé
-            &Diplôme d\'allemand B1 &Adresse initiale (réservation d\'hôtel)',
+            'Conditions_Formations' => 'Baccalauréat ou diplôme de formation professionnelle ;
+            Diplômed \'allemand B1 ;
+            Un contrat de professionnalisation, que l\'étudiant obtient après avoir contacté les entreprises allemandes',
+            'Conditions_Cherche_Emploi' => 'Diplômes académiques (licence ou Master) ;
+            Qualifications professionnelles (Diplôme de formation professionnelle) ;
+            Expériences professionnelles ;
+            Compte bancaire fermé ;
+            Diplôme d\'allemand B1 ;
+            Adresse initiale (réservation d\'hôtel)',
         ]);
         // ==============================Tarification============================================
 

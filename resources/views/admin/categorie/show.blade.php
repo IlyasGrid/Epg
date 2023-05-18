@@ -23,16 +23,9 @@
                     <div class="card-body">
                         <h5 class="card-title d-flex justify-content-center m-3 pb-5 text-uppercase text-dark">{{ $categorie->Name }}
                         </h5>
-                        {{-- <ul class="list-group mb-5 mt-6">
-                            <h6 class="card-title text-capitalize text-info">subCategories:</h6>
-                            @foreach ($categorie->subCategories as $subCategorie)
-                                <li class="list-group-item">
-                                    <p class="card-text text-muted"> {{ $subCategorie->Name }} </p>
-                                </li>
-                            @endforeach
-                        </ul> --}}
+
                         <div class="d-flex justify-content-around">
-                            <a href="/admin/categories/edit/{{ $categorie->id }}" class="btn btn-outline-primary pl-5 pr-5">
+                            <a href="/admin/categories/edit/{{ $categorie->id }}" class="btn btn-outline-info pl-5 pr-5">
                                 edit Name
                             </a>
                             <a href="/admin/categories/{{ $categorie->id }}/subCategorie" class="btn btn-outline-primary">show

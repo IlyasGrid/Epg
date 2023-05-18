@@ -32,8 +32,6 @@
                             <label for="ModuleChapitre" class="inline-block text-lg mb-2">
                                 Chapitres :
                             </label>
-                            {{-- <input type="text" class="border border-gray-200 rounded p-2 w-full form-control"
-                                name="ModuleChapitre" placeholder="program ModuleChapitre" value="{{ $formation->program->ModuleChapitre }}" /> --}}
                             @php
                                 $chapitres = explode(';', $formation->program->ModuleChapitre);
                             @endphp
@@ -49,7 +47,7 @@
 
                             </ul>
                             <div class="d-flex justify-content-center">
-                                <button class="add-chapitre-btn btn btn-outline-success" type="button">Add
+                                <button class="add-chapitre-btn btn btn-outline-success" onclick="addObjectif( '#chapitres-list', 'ModuleChapitre[]', 'program ModuleChapitre');" type="button">Add
                                     Chapitre</button>
                             </div>
                             @error('ModuleChapitre')
@@ -66,30 +64,13 @@
 
             <div class="btn d-flex justify-content-center">
                 <div class="mb-6 form-group">
-                    <button class="btn btn-outline-primary">
+                    <button class="btn btn-outline-info">
                         Edit
                     </button>
                 </div>
             </div>
         </form>
     </main>
-    <script defer>
-        var addChapitreButton = document.querySelector('.add-chapitre-btn');
-        var chapitresList = document.querySelector('#chapitres-list');
 
-        addChapitreButton.addEventListener('click', function() {
-            var newChapitreInput = document.createElement('input');
-            newChapitreInput.type = 'text';
-            newChapitreInput.classList.add('border', 'border-gray-200', 'rounded', 'p-2', 'w-full', 'form-control');
-            newChapitreInput.name = 'ModuleChapitre[]';
-            newChapitreInput.placeholder = 'program ModuleChapitre';
-
-            var newChapitreListItem = document.createElement('li');
-            newChapitreListItem.classList.add('list-style-none');
-            newChapitreListItem.appendChild(newChapitreInput);
-
-            chapitresList.appendChild(newChapitreListItem);
-        });
-    </script>
 
 </x-adminLayout>

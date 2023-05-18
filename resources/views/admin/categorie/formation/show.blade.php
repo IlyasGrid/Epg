@@ -36,7 +36,16 @@
                             {{ $formation->MotivaionBody }}
                         </p>
                         </p>
-                        <p class="card-text max-char"><b>Objectifs :</b> {{ $formation->objectifs }} </p>
+                        <p class="card-text max-char"><b>Objectifs :</b>
+                            @php
+                                $objectifs = explode(';', $formation->objectifs);
+                            @endphp
+                            @foreach ($objectifs as $objectif)
+                                <ul class="list-group pl-5">
+                                    <li class="list-group-item mb-2 mt-1">{{$objectif}}</li>
+                                </ul>
+                            @endforeach
+                        </p>
                         @unless ($formation->tp == null)
                             <p class="card-text  max-char"><b>tp :</b> {{ $formation->tp }} </p>
                         @endunless

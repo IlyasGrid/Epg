@@ -45,7 +45,7 @@
                     </div>
                     <div class="d-flex justify-content-around">
                         <div class="d-flex justify-content-around">
-                            <a href="/admin/langues/edit/{{ $langue->id }}/niveau/{{ $niv->id }}"
+                            <a href="/admin/langues/{{ $langue->id }}/niveau/edit/{{ $niv->id }}"
                                 class="btn btn-outline-info">edit</a>
                         </div>
                         <div>

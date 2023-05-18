@@ -35,7 +35,9 @@
                 </div>
 
                 <div class="col-lg-6 sora">
-                    <img src="../../../formation/img/default2.png"  alt="">
+                    <img class="w-48 mr-6 mb-6"
+                    src="{{$formation->logo ? asset('storage/' . $formation->logo) : asset('/formation/img/default2.png')}}" alt="" />
+                    {{-- <img src="../../../formation/img/default2.png" alt=""> --}}
                 </div>
 
             </div>
@@ -45,15 +47,15 @@
     @unless (count($formation->tarifs) < 1)
         <div class="sam">
             <h1>Tarification et déroulement</h1>
-            <div class="popi ">
+            <div class="popi " style="margin: 0 15%;">
                 @foreach ($formation->tarifs as $tarif)
-                    <div class="yaya oma">
+                    <div class="yaya oma" style="margin: 3em;">
                         <h3 id="pack0">{{ $tarif->Name }}</h3>
                         <p class="money">
                             <span id="prix0" class="ntr_spn mad">{{ $tarif->Price }}</span> DH &#x2248;
                             <span id="prix00" class="ntr_spn euro"></span> €
                         </p>
-                        <ul>
+                        <ul class="mb-5">
                             <li>
                                 <i class="fa fa-chevron-circle-right"></i>
                                 <span class="khz">Type de formation <span>:</span> </span>
@@ -107,7 +109,7 @@
                                 </li>
                             @endunless
                         </ul>
-                        <div class="dIns">
+                        <div class="dIns mt-3">
                             <button type="button" onClick=eInscrire(0) class="Ins">
                                 <i class="fa fa-sign-in"></i>Inscrire
                             </button>

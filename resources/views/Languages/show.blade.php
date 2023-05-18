@@ -72,7 +72,7 @@
                         </p>
 
                         @php
-                            $reasons = explode('&', $langue->Raisons);
+                            $reasons = explode(';', $langue->Raisons);
                         @endphp
                         @unless (count($reasons) < 1)
                             @foreach ($reasons as $reason)
@@ -170,7 +170,7 @@
                             <h4 class="packs">Pièces et Frais à Fournir</h4>
 
                             @php
-                                $pieces = explode('&', $langue->Piece_frais);
+                                $pieces = explode(';', $langue->Piece_frais);
                             @endphp
                             @foreach ($pieces as $piece)
                                 <p>
@@ -193,7 +193,7 @@
                             <h4 class="packs">Conditions d'obtention d'un visa</h4>
                             <h6 class="">Etudes</h6>
                             @php
-                                $etudes = explode('&', $langue->Conditions_Etudes);
+                                $etudes = explode(';', $langue->Conditions_Etudes);
                             @endphp
                             @foreach ($etudes as $etude)
                                 <p>
@@ -203,7 +203,7 @@
 
                             <h6 class="">formation professionnelle</h6>
                             @php
-                                $formations = explode('&', $langue->Conditions_Formations);
+                                $formations = explode(';', $langue->Conditions_Formations);
                             @endphp
                             @foreach ($formations as $formation)
                                 <p>
@@ -212,7 +212,7 @@
                             @endforeach
                             <h6 class="">Recherche d'Emploi</h6>
                             @php
-                                $cherche_emplois = explode('&', $langue->Conditions_Cherche_Emploi);
+                                $cherche_emplois = explode(';', $langue->Conditions_Cherche_Emploi);
                             @endphp
                             @foreach ($cherche_emplois as $cherche_emploi)
                                 <p>

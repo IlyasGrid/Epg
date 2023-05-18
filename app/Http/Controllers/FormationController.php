@@ -44,6 +44,29 @@ class FormationController extends Controller
             'tp' => 'nullable'
         ]);
 
+
+        $nonEmptyObjectifs = array_filter($formFields['objectifs']);
+        $implodedObjectifs = implode(';', $nonEmptyObjectifs);
+
+        $formFields['objectifs'] = $implodedObjectifs;
+
+        if ($request->hasFile('logo')) {
+            $file = $request->file('logo');
+            $filename = $file->getClientOriginalName();
+
+            $file->storeAs('formations', $filename, 'public');
+            $formFields['logo'] = 'formations/' . $filename;
+        }
+
+        if ($request->hasFile('img')) {
+            $file = $request->file('img');
+            $filename = $file->getClientOriginalName();
+
+            $file->storeAs('formations', $filename, 'public');
+            $formFields['img'] = 'formations/' . $filename;
+        }
+
+
         if (empty($formFields['MotivaionName'])) {
             $formFields['MotivaionName'] = 'synthese';
         }
@@ -87,6 +110,7 @@ class FormationController extends Controller
 
         $formFields = $request;
 
+
         if ($formation) {
             $formFields = $request->validate([
                 'Name' => 'required',
@@ -95,9 +119,33 @@ class FormationController extends Controller
                 'objectifs' => 'nullable',
                 'tp' => 'nullable'
             ]);
+
+
+            $nonEmptyObjectifs = array_filter($formFields['objectifs']);
+            $implodedObjectifs = implode(';', $nonEmptyObjectifs);
+
+            $formFields['objectifs'] = $implodedObjectifs;
+
+            if ($request->hasFile('logo')) {
+                $file = $request->file('logo');
+                $filename = $file->getClientOriginalName();
+
+                $file->storeAs('formations', $filename, 'public');
+                $formFields['logo'] = 'formations/' . $filename;
+            }
+
+            if ($request->hasFile('img')) {
+                $file = $request->file('img');
+                $filename = $file->getClientOriginalName();
+
+                $file->storeAs('formations', $filename, 'public');
+                $formFields['img'] = 'formations/' . $filename;
+            }
+
             if (empty($formFields['MotivaionName'])) {
                 $formFields['MotivaionName'] = 'synthese';
             }
+
             $formation->update($formFields);
         }
 
@@ -125,7 +173,7 @@ class FormationController extends Controller
 
         $subCategorie->formations = Formation::onlyTrashed()->where('formation_sub_categories_id', '=', $id_subCategorie)->get();
 
-        return view("admin.categorie.formation.trashed", compact('subCategorie','categorie'));
+        return view("admin.categorie.formation.trashed", compact('subCategorie', 'categorie'));
     }
 
     public function restore($id_categorie, $id_subCategorie, $id)

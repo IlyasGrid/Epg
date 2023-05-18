@@ -17,7 +17,7 @@
 
 
         <div class="mt-5 form-group d-flex justify-content-center">
-            <button class="btn btn-outline-primary">
+            <button class="btn btn-outline-success">
                 Create Categorie
             </button>
 
