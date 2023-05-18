@@ -14,4 +14,5 @@ class Formation_Programme extends Model
     {
         $this->belongsTo(Formation::class);
     }
+    protected $fillable =['ModuleName','ModuleChapitre','formations_id'];
 }

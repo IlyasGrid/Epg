@@ -28,58 +28,58 @@ class FormationSeeder extends Seeder
             'tp' => null,
             'formation_sub_categories_id' => 1
         ]);
-        // Formation_Tarification::create([
-        //     'Name' => 'FORMATION ACCÉLÉRÉE',
-        //     'Price' => 3000,
-        //     'Type' => 'INDIVIDUEL',
-        //     'Volume_Horraire' => 24,
-        //     'Duree_formation' => null,
-        //     'Debut_formation' => 'DANS UN DÉLAIS DE 24 H APRÉS LA VALIDATION DE VOTRE INSCRIPTION',
-        //     'Deroulement' => null,
-        //     'Horraire' => 'FLEXIBLE SELON VOTRE DISPONIBILITÉ ET LA DISPONIBILITÉ DE L\'ENSEIGNANT',
-        //     'Dernier_Delais_Inscription' => null,
-        //     'repartition_heures' => 'VOUS POUVEZ TERMINER DANS UN DÉLAIS DE 3 JOURS OU BIEN RÉPARTIR VOTRE HEURES SELON VOTRE RYTHME, VOTRE ENGAGEMENT',
-        //     'formations_id' => 1
-        // ]);
-        // Formation_Tarification::create([
-        //     'Name' => 'FORMATION CONTINUE',
-        //     'Price' => 1000,
-        //     'Type' => 'INDIVIDUEL',
-        //     'Volume_Horraire' => 24,
-        //     'Duree_formation' => '3 Mois',
-        //     'Debut_formation' => 'DANS UN DÉLAIS DE 24 H APRÉS LA VALIDATION DE VOTRE INSCRIPTION',
-        //     'Deroulement' => 'UNE SÉANCE DE 2H PAR SEMAINE',
-        //     'Horraire' => 'À DÉTERMINER APRÈS LA FIN DE VOTRE INSCRIPTION',
-        //     'Dernier_Delais_Inscription' => null,
-        //     'repartition_heures' => null,
-        //     'formations_id' => 1
-        // ]);
-        // Formation_Tarification::create([
-        //     'Name' => 'FORMATION CONTINUE',
-        //     'Price' => 400,
-        //     'Type' => 'EN GROUPE',
-        //     'Volume_Horraire' => 24,
-        //     'Duree_formation' => null,
-        //     'Debut_formation' => 'LE 01/06/2023',
-        //     'Deroulement' => 'UNE SÉANCE DE 2H PAR SEMAINE',
-        //     'Horraire' => 'À DÉTERMINER APRÈS LA FIN DE VOTRE INSCRIPTION POUR S\'ADAPTER AUX EMPLOIS DE TEMPS DES INSCRITS',
-        //     'Dernier_Delais_Inscription' => 'LE 25/05/2023',
-        //     'repartition_heures' => null,
-        //     'formations_id' => 1
-        // ]);
-        // Formation_Tarification::create([
-        //     'Name' => 'FORMATION fghjk',
-        //     'Price' => 3000,
-        //     'Type' => 'INDIVIDUEL',
-        //     'Volume_Horraire' => 24,
-        //     'Duree_formation' => null,
-        //     'Debut_formation' => 'DANS UN DÉLAIS DE 24 H APRÉS LA VALIDATION DE VOTRE INSCRIPTION',
-        //     'Deroulement' => null,
-        //     'Horraire' => 'FLEXIBLE SELON VOTRE DISPONIBILITÉ ET LA DISPONIBILITÉ DE L\'ENSEIGNANT',
-        //     'Dernier_Delais_Inscription' => null,
-        //     'repartition_heures' => 'VOUS POUVEZ TERMINER DANS UN DÉLAIS DE 3 JOURS OU BIEN RÉPARTIR VOTRE HEURES SELON VOTRE RYTHME, VOTRE ENGAGEMENT',
-        //     'formations_id' => 1
-        // ]);
+        Formation_Tarification::create([
+            'Name' => 'FORMATION ACCÉLÉRÉE',
+            'Price' => 3000,
+            'Type' => 'INDIVIDUEL',
+            'Volume_Horraire' => 24,
+            'Duree_formation' => null,
+            'Debut_formation' => 'DANS UN DÉLAIS DE 24 H APRÉS LA VALIDATION DE VOTRE INSCRIPTION',
+            'Deroulement' => null,
+            'Horraire' => 'FLEXIBLE SELON VOTRE DISPONIBILITÉ ET LA DISPONIBILITÉ DE L\'ENSEIGNANT',
+            'Dernier_Delais_Inscription' => null,
+            'repartition_heures' => 'VOUS POUVEZ TERMINER DANS UN DÉLAIS DE 3 JOURS OU BIEN RÉPARTIR VOTRE HEURES SELON VOTRE RYTHME, VOTRE ENGAGEMENT',
+            'formations_id' => 1
+        ]);
+        Formation_Tarification::create([
+            'Name' => 'FORMATION CONTINUE',
+            'Price' => 1000,
+            'Type' => 'INDIVIDUEL',
+            'Volume_Horraire' => 24,
+            'Duree_formation' => '3 Mois',
+            'Debut_formation' => 'DANS UN DÉLAIS DE 24 H APRÉS LA VALIDATION DE VOTRE INSCRIPTION',
+            'Deroulement' => 'UNE SÉANCE DE 2H PAR SEMAINE',
+            'Horraire' => 'À DÉTERMINER APRÈS LA FIN DE VOTRE INSCRIPTION',
+            'Dernier_Delais_Inscription' => null,
+            'repartition_heures' => null,
+            'formations_id' => 1
+        ]);
+        Formation_Tarification::create([
+            'Name' => 'FORMATION CONTINUE',
+            'Price' => 400,
+            'Type' => 'EN GROUPE',
+            'Volume_Horraire' => 24,
+            'Duree_formation' => null,
+            'Debut_formation' => 'LE 01/06/2023',
+            'Deroulement' => 'UNE SÉANCE DE 2H PAR SEMAINE',
+            'Horraire' => 'À DÉTERMINER APRÈS LA FIN DE VOTRE INSCRIPTION POUR S\'ADAPTER AUX EMPLOIS DE TEMPS DES INSCRITS',
+            'Dernier_Delais_Inscription' => 'LE 25/05/2023',
+            'repartition_heures' => null,
+            'formations_id' => 1
+        ]);
+        Formation_Tarification::create([
+            'Name' => 'FORMATION fghjk',
+            'Price' => 3000,
+            'Type' => 'INDIVIDUEL',
+            'Volume_Horraire' => 24,
+            'Duree_formation' => null,
+            'Debut_formation' => 'DANS UN DÉLAIS DE 24 H APRÉS LA VALIDATION DE VOTRE INSCRIPTION',
+            'Deroulement' => null,
+            'Horraire' => 'FLEXIBLE SELON VOTRE DISPONIBILITÉ ET LA DISPONIBILITÉ DE L\'ENSEIGNANT',
+            'Dernier_Delais_Inscription' => null,
+            'repartition_heures' => 'VOUS POUVEZ TERMINER DANS UN DÉLAIS DE 3 JOURS OU BIEN RÉPARTIR VOTRE HEURES SELON VOTRE RYTHME, VOTRE ENGAGEMENT',
+            'formations_id' => 1
+        ]);
 
 
 
@@ -94,58 +94,58 @@ class FormationSeeder extends Seeder
             'tp' => null,
             'formation_sub_categories_id' => 1
         ]);
-        // Formation_Tarification::create([
-        //     'Name' => 'FORMATION ACCÉLÉRÉE',
-        //     'Price' => 3000,
-        //     'Type' => 'INDIVIDUEL',
-        //     'Volume_Horraire' => 24,
-        //     'Duree_formation' => null,
-        //     'Debut_formation' => 'DANS UN DÉLAIS DE 24 H APRÉS LA VALIDATION DE VOTRE INSCRIPTION',
-        //     'Deroulement' => null,
-        //     'Horraire' => 'FLEXIBLE SELON VOTRE DISPONIBILITÉ ET LA DISPONIBILITÉ DE L\'ENSEIGNANT',
-        //     'Dernier_Delais_Inscription' => null,
-        //     'repartition_heures' => 'VOUS POUVEZ TERMINER DANS UN DÉLAIS DE 3 JOURS OU BIEN RÉPARTIR VOTRE HEURES SELON VOTRE RYTHME, VOTRE ENGAGEMENT',
-        //     'formations_id' => 2
-        // ]);
-        // Formation_Tarification::create([
-        //     'Name' => 'FORMATION CONTINUE',
-        //     'Price' => 1000,
-        //     'Type' => 'INDIVIDUEL',
-        //     'Volume_Horraire' => 24,
-        //     'Duree_formation' => '3 Mois',
-        //     'Debut_formation' => 'DANS UN DÉLAIS DE 24 H APRÉS LA VALIDATION DE VOTRE INSCRIPTION',
-        //     'Deroulement' => 'UNE SÉANCE DE 2H PAR SEMAINE',
-        //     'Horraire' => 'À DÉTERMINER APRÈS LA FIN DE VOTRE INSCRIPTION',
-        //     'Dernier_Delais_Inscription' => null,
-        //     'repartition_heures' => null,
-        //     'formations_id' => 2
-        // ]);
-        // Formation_Tarification::create([
-        //     'Name' => 'FORMATION CONTINUE',
-        //     'Price' => 400,
-        //     'Type' => 'EN GROUPE',
-        //     'Volume_Horraire' => 24,
-        //     'Duree_formation' => null,
-        //     'Debut_formation' => 'LE 01/06/2023',
-        //     'Deroulement' => 'UNE SÉANCE DE 2H PAR SEMAINE',
-        //     'Horraire' => 'À DÉTERMINER APRÈS LA FIN DE VOTRE INSCRIPTION POUR S\'ADAPTER AUX EMPLOIS DE TEMPS DES INSCRITS',
-        //     'Dernier_Delais_Inscription' => 'LE 25/05/2023',
-        //     'repartition_heures' => null,
-        //     'formations_id' => 2
-        // ]);
-        // Formation_Tarification::create([
-        //     'Name' => 'FORMATION fghjk',
-        //     'Price' => 3000,
-        //     'Type' => 'INDIVIDUEL',
-        //     'Volume_Horraire' => 24,
-        //     'Duree_formation' => null,
-        //     'Debut_formation' => 'DANS UN DÉLAIS DE 24 H APRÉS LA VALIDATION DE VOTRE INSCRIPTION',
-        //     'Deroulement' => null,
-        //     'Horraire' => 'FLEXIBLE SELON VOTRE DISPONIBILITÉ ET LA DISPONIBILITÉ DE L\'ENSEIGNANT',
-        //     'Dernier_Delais_Inscription' => null,
-        //     'repartition_heures' => 'VOUS POUVEZ TERMINER DANS UN DÉLAIS DE 3 JOURS OU BIEN RÉPARTIR VOTRE HEURES SELON VOTRE RYTHME, VOTRE ENGAGEMENT',
-        //     'formations_id' => 2
-        // ]);
+        Formation_Tarification::create([
+            'Name' => 'FORMATION ACCÉLÉRÉE',
+            'Price' => 3000,
+            'Type' => 'INDIVIDUEL',
+            'Volume_Horraire' => 24,
+            'Duree_formation' => null,
+            'Debut_formation' => 'DANS UN DÉLAIS DE 24 H APRÉS LA VALIDATION DE VOTRE INSCRIPTION',
+            'Deroulement' => null,
+            'Horraire' => 'FLEXIBLE SELON VOTRE DISPONIBILITÉ ET LA DISPONIBILITÉ DE L\'ENSEIGNANT',
+            'Dernier_Delais_Inscription' => null,
+            'repartition_heures' => 'VOUS POUVEZ TERMINER DANS UN DÉLAIS DE 3 JOURS OU BIEN RÉPARTIR VOTRE HEURES SELON VOTRE RYTHME, VOTRE ENGAGEMENT',
+            'formations_id' => 2
+        ]);
+        Formation_Tarification::create([
+            'Name' => 'FORMATION CONTINUE',
+            'Price' => 1000,
+            'Type' => 'INDIVIDUEL',
+            'Volume_Horraire' => 24,
+            'Duree_formation' => '3 Mois',
+            'Debut_formation' => 'DANS UN DÉLAIS DE 24 H APRÉS LA VALIDATION DE VOTRE INSCRIPTION',
+            'Deroulement' => 'UNE SÉANCE DE 2H PAR SEMAINE',
+            'Horraire' => 'À DÉTERMINER APRÈS LA FIN DE VOTRE INSCRIPTION',
+            'Dernier_Delais_Inscription' => null,
+            'repartition_heures' => null,
+            'formations_id' => 2
+        ]);
+        Formation_Tarification::create([
+            'Name' => 'FORMATION CONTINUE',
+            'Price' => 400,
+            'Type' => 'EN GROUPE',
+            'Volume_Horraire' => 24,
+            'Duree_formation' => null,
+            'Debut_formation' => 'LE 01/06/2023',
+            'Deroulement' => 'UNE SÉANCE DE 2H PAR SEMAINE',
+            'Horraire' => 'À DÉTERMINER APRÈS LA FIN DE VOTRE INSCRIPTION POUR S\'ADAPTER AUX EMPLOIS DE TEMPS DES INSCRITS',
+            'Dernier_Delais_Inscription' => 'LE 25/05/2023',
+            'repartition_heures' => null,
+            'formations_id' => 2
+        ]);
+        Formation_Tarification::create([
+            'Name' => 'FORMATION fghjk',
+            'Price' => 3000,
+            'Type' => 'INDIVIDUEL',
+            'Volume_Horraire' => 24,
+            'Duree_formation' => null,
+            'Debut_formation' => 'DANS UN DÉLAIS DE 24 H APRÉS LA VALIDATION DE VOTRE INSCRIPTION',
+            'Deroulement' => null,
+            'Horraire' => 'FLEXIBLE SELON VOTRE DISPONIBILITÉ ET LA DISPONIBILITÉ DE L\'ENSEIGNANT',
+            'Dernier_Delais_Inscription' => null,
+            'repartition_heures' => 'VOUS POUVEZ TERMINER DANS UN DÉLAIS DE 3 JOURS OU BIEN RÉPARTIR VOTRE HEURES SELON VOTRE RYTHME, VOTRE ENGAGEMENT',
+            'formations_id' => 2
+        ]);
 
 
 
@@ -161,6 +161,60 @@ class FormationSeeder extends Seeder
             'tp' => null,
             'formation_sub_categories_id' => 1
         ]);
+        Formation_Tarification::create([
+            'Name' => 'FORMATION ACCÉLÉRÉE',
+            'Price' => 3000,
+            'Type' => 'INDIVIDUEL',
+            'Volume_Horraire' => 24,
+            'Duree_formation' => null,
+            'Debut_formation' => 'DANS UN DÉLAIS DE 24 H APRÉS LA VALIDATION DE VOTRE INSCRIPTION',
+            'Deroulement' => null,
+            'Horraire' => 'FLEXIBLE SELON VOTRE DISPONIBILITÉ ET LA DISPONIBILITÉ DE L\'ENSEIGNANT',
+            'Dernier_Delais_Inscription' => null,
+            'repartition_heures' => 'VOUS POUVEZ TERMINER DANS UN DÉLAIS DE 3 JOURS OU BIEN RÉPARTIR VOTRE HEURES SELON VOTRE RYTHME, VOTRE ENGAGEMENT',
+            'formations_id' => 3
+        ]);
+        Formation_Tarification::create([
+            'Name' => 'FORMATION CONTINUE',
+            'Price' => 1000,
+            'Type' => 'INDIVIDUEL',
+            'Volume_Horraire' => 24,
+            'Duree_formation' => '3 Mois',
+            'Debut_formation' => 'DANS UN DÉLAIS DE 24 H APRÉS LA VALIDATION DE VOTRE INSCRIPTION',
+            'Deroulement' => 'UNE SÉANCE DE 2H PAR SEMAINE',
+            'Horraire' => 'À DÉTERMINER APRÈS LA FIN DE VOTRE INSCRIPTION',
+            'Dernier_Delais_Inscription' => null,
+            'repartition_heures' => null,
+            'formations_id' => 3
+        ]);
+        Formation_Tarification::create([
+            'Name' => 'FORMATION CONTINUE',
+            'Price' => 400,
+            'Type' => 'EN GROUPE',
+            'Volume_Horraire' => 24,
+            'Duree_formation' => null,
+            'Debut_formation' => 'LE 01/06/2023',
+            'Deroulement' => 'UNE SÉANCE DE 2H PAR SEMAINE',
+            'Horraire' => 'À DÉTERMINER APRÈS LA FIN DE VOTRE INSCRIPTION POUR S\'ADAPTER AUX EMPLOIS DE TEMPS DES INSCRITS',
+            'Dernier_Delais_Inscription' => 'LE 25/05/2023',
+            'repartition_heures' => null,
+            'formations_id' => 3
+        ]);
+        Formation_Tarification::create([
+            'Name' => 'FORMATION fghjk',
+            'Price' => 3000,
+            'Type' => 'INDIVIDUEL',
+            'Volume_Horraire' => 24,
+            'Duree_formation' => null,
+            'Debut_formation' => 'DANS UN DÉLAIS DE 24 H APRÉS LA VALIDATION DE VOTRE INSCRIPTION',
+            'Deroulement' => null,
+            'Horraire' => 'FLEXIBLE SELON VOTRE DISPONIBILITÉ ET LA DISPONIBILITÉ DE L\'ENSEIGNANT',
+            'Dernier_Delais_Inscription' => null,
+            'repartition_heures' => 'VOUS POUVEZ TERMINER DANS UN DÉLAIS DE 3 JOURS OU BIEN RÉPARTIR VOTRE HEURES SELON VOTRE RYTHME, VOTRE ENGAGEMENT',
+            'formations_id' => 3
+        ]);
+
+
 
         Formation::create([
             'Name' => 'HTML5',
@@ -174,7 +228,58 @@ class FormationSeeder extends Seeder
             'tp' => null,
             'formation_sub_categories_id' => 1
         ]);
-
+        Formation_Tarification::create([
+            'Name' => 'FORMATION ACCÉLÉRÉE',
+            'Price' => 3000,
+            'Type' => 'INDIVIDUEL',
+            'Volume_Horraire' => 24,
+            'Duree_formation' => null,
+            'Debut_formation' => 'DANS UN DÉLAIS DE 24 H APRÉS LA VALIDATION DE VOTRE INSCRIPTION',
+            'Deroulement' => null,
+            'Horraire' => 'FLEXIBLE SELON VOTRE DISPONIBILITÉ ET LA DISPONIBILITÉ DE L\'ENSEIGNANT',
+            'Dernier_Delais_Inscription' => null,
+            'repartition_heures' => 'VOUS POUVEZ TERMINER DANS UN DÉLAIS DE 3 JOURS OU BIEN RÉPARTIR VOTRE HEURES SELON VOTRE RYTHME, VOTRE ENGAGEMENT',
+            'formations_id' => 4
+        ]);
+        Formation_Tarification::create([
+            'Name' => 'FORMATION CONTINUE',
+            'Price' => 1000,
+            'Type' => 'INDIVIDUEL',
+            'Volume_Horraire' => 24,
+            'Duree_formation' => '3 Mois',
+            'Debut_formation' => 'DANS UN DÉLAIS DE 24 H APRÉS LA VALIDATION DE VOTRE INSCRIPTION',
+            'Deroulement' => 'UNE SÉANCE DE 2H PAR SEMAINE',
+            'Horraire' => 'À DÉTERMINER APRÈS LA FIN DE VOTRE INSCRIPTION',
+            'Dernier_Delais_Inscription' => null,
+            'repartition_heures' => null,
+            'formations_id' => 4
+        ]);
+        Formation_Tarification::create([
+            'Name' => 'FORMATION CONTINUE',
+            'Price' => 400,
+            'Type' => 'EN GROUPE',
+            'Volume_Horraire' => 24,
+            'Duree_formation' => null,
+            'Debut_formation' => 'LE 01/06/2023',
+            'Deroulement' => 'UNE SÉANCE DE 2H PAR SEMAINE',
+            'Horraire' => 'À DÉTERMINER APRÈS LA FIN DE VOTRE INSCRIPTION POUR S\'ADAPTER AUX EMPLOIS DE TEMPS DES INSCRITS',
+            'Dernier_Delais_Inscription' => 'LE 25/05/2023',
+            'repartition_heures' => null,
+            'formations_id' => 4
+        ]);
+        Formation_Tarification::create([
+            'Name' => 'FORMATION fghjk',
+            'Price' => 3000,
+            'Type' => 'INDIVIDUEL',
+            'Volume_Horraire' => 24,
+            'Duree_formation' => null,
+            'Debut_formation' => 'DANS UN DÉLAIS DE 24 H APRÉS LA VALIDATION DE VOTRE INSCRIPTION',
+            'Deroulement' => null,
+            'Horraire' => 'FLEXIBLE SELON VOTRE DISPONIBILITÉ ET LA DISPONIBILITÉ DE L\'ENSEIGNANT',
+            'Dernier_Delais_Inscription' => null,
+            'repartition_heures' => 'VOUS POUVEZ TERMINER DANS UN DÉLAIS DE 3 JOURS OU BIEN RÉPARTIR VOTRE HEURES SELON VOTRE RYTHME, VOTRE ENGAGEMENT',
+            'formations_id' => 4
+        ]);
 
         Formation::create([
             'Name' => 'CSS3',

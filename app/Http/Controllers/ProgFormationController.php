@@ -43,6 +43,10 @@ class ProgFormationController extends Controller
             'ModuleChapitre' => 'required',
         ]);
 
+        $nonEmptyChapitres = array_filter($formFields['ModuleChapitre']);
+        $implodedChapitres = implode(';', $nonEmptyChapitres);
+
+        $formFields['ModuleChapitre'] = $implodedChapitres;
 
         Formation_Programme::create(array_merge($formFields, ['formations_id' => $id_formation]));
 
@@ -51,38 +55,39 @@ class ProgFormationController extends Controller
 
     public function edit($id_categorie, $id_subCategorie, $id_formation, $id_program)
     {
-        $categorie = FormationCategorie::where('id', '=', $id_categorie)->get();
+
+        $categorie = FormationCategorie::findOrFail($id_categorie)->get();
         $categorie = $categorie[0];
 
-        $subCategorie = FormationSubCategorie::where('id', '=', $id_subCategorie)->get();
+        $subCategorie = FormationSubCategorie::findOrFail($id_subCategorie)->get();
         $subCategorie = $subCategorie[0];
 
-        $formation  = Formation::where('id', '=', $id_formation);
+        $formation  = Formation::findOrFail($id_formation)->get();
         $formation = $formation[0];
 
 
-        $formation->programs  = Formation_Programme::where('id', '=', $id_formation)
-            ->where('formation_id', '=', $id_formation)
+        $formation->program  = Formation_Programme::where('id', '=', $id_formation)
+            ->where('formations_id', '=', $id_formation)
             ->get();
 
-        if ($formation->programs->isEmpty()) {
+        if ($formation->program->isEmpty()) {
             return redirect()->action([ProgFormationController::class, 'show'],  ['id_categorie' => $id_categorie, 'id_subCategorie' => $id_subCategorie]);
         }
-        $formation->programs = $formation->programs[0];
-        return view('admin.categorie.formation.programme.edit', compact('categorie', 'subCategorie','formation'));
+        $formation->program = $formation->program[0];
+        return view('admin.categorie.formation.programme.edit', compact('categorie', 'subCategorie', 'formation'));
     }
 
 
     public function update(Request $request, $id_categorie, $id_subCategorie, $id_formation, $id_program)
     {
 
-        $program = Formation_Programme::where('formation_id', '=', $id_formation)
+        $program = Formation_Programme::where('formations_id', '=', $id_formation)
             ->where('id', '=', $id_program)
             ->get();
 
 
         if ($program->isEmpty()) {
-            return redirect()->action([ProgFormationController::class, 'show'],  ['id_categorie' => $id_categorie, 'id_subCategorie' => $id_subCategorie,'id_formation'=>$id_formation]);
+            return redirect()->action([ProgFormationController::class, 'show'],  ['id_categorie' => $id_categorie, 'id_subCategorie' => $id_subCategorie, 'id_formation' => $id_formation]);
         }
         $program = $program[0];
 
@@ -93,22 +98,25 @@ class ProgFormationController extends Controller
                 'ModuleName' => 'required',
                 'ModuleChapitre' => 'required'
             ]);
+            $nonEmptyChapitres = array_filter($formFields['ModuleChapitre']);
+            $implodedChapitres = implode(';', $nonEmptyChapitres);
 
+            $formFields['ModuleChapitre'] = $implodedChapitres;
 
             $program->update($formFields);
         }
 
 
-        return redirect()->action([ProgFormationController::class, 'show'],  ['id_categorie' => $id_categorie, 'id_subCategorie' => $id_subCategorie,'id_formation'=>$id_formation]);
+        return redirect()->action([ProgFormationController::class, 'show'],  ['id_categorie' => $id_categorie, 'id_subCategorie' => $id_subCategorie, 'id_formation' => $id_formation]);
     }
 
 
-    public function destroy($id_subCategorie, $id_categorie, $id_formation,$id_program)
+    public function destroy($id_subCategorie, $id_categorie, $id_formation, $id_program)
     {
 
         $program = Formation_Programme::find($id_program);
         $program->delete();
-        return redirect()->action([ProgFormationController::class, 'show'], ['id_categorie' => $id_categorie, 'id_subCategorie' => $id_subCategorie,'id_formation'=>$id_formation]);
+        return redirect()->action([ProgFormationController::class, 'show'], ['id_categorie' => $id_categorie, 'id_subCategorie' => $id_subCategorie, 'id_formation' => $id_formation]);
     }
 
 
@@ -123,9 +131,9 @@ class ProgFormationController extends Controller
         $formation = Formation::findOrFail($id_formation);
 
 
-        $formation->programs = Formation_Programme::onlyTrashed()->where('formation_id', '=', $id_formation)->get();
+        $formation->programs = Formation_Programme::onlyTrashed()->where('formations_id', '=', $id_formation)->get();
 
-        return view("admin.categorie.formation.programme.trashed", compact('subCategorie', 'categorie','formation'));
+        return view("admin.categorie.formation.programme.trashed", compact('subCategorie', 'categorie', 'formation'));
     }
 
     public function restore($id_categorie, $id_subCategorie, $id_formation, $id)
@@ -134,6 +142,6 @@ class ProgFormationController extends Controller
         $program = Formation_Programme::withTrashed()->find($id);
         $program->restore();
 
-        return redirect()->action([ProgFormationController::class, 'trashed'],  ['id_categorie' => $id_categorie, 'id_subCategorie' => $id_subCategorie,'id_formation'=>$id_formation]);
+        return redirect()->action([ProgFormationController::class, 'trashed'],  ['id_categorie' => $id_categorie, 'id_subCategorie' => $id_subCategorie, 'id_formation' => $id_formation]);
     }
 }

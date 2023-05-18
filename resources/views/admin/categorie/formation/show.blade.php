@@ -49,11 +49,11 @@
                                 class="btn btn-outline-info">edit</a>
                         </div>
                         <div class="d-flex justify-content-around">
-                            <a href="/admin/categories/{{ $categorie->id }}/subCategorie/{{ $subCategorie->id }}/formation/{{ $formation->id }}"
+                            <a href="/admin/categories/{{ $categorie->id }}/subCategorie/{{ $subCategorie->id }}/formation/{{ $formation->id }}/programme"
                                 class="btn btn-outline-primary">show programme</a>
                         </div>
                         <div class="d-flex justify-content-around">
-                            <a href="/admin/categories/{{ $categorie->id }}/subCategorie/{{ $subCategorie->id }}/formation/{{ $formation->id }}"
+                            <a href="/admin/categories/{{ $categorie->id }}/subCategorie/{{ $subCategorie->id }}/formation/{{ $formation->id }}/tarif"
                                 class="btn btn-outline-primary">show tarifs</a>
                         </div>
                         <div>
@@ -62,7 +62,7 @@
                                 method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-danger">Delete</button>
+                                <button type="submit" class="btn btn-outline-danger">Delete</button>
                             </form>
                         </div>
                     </div>

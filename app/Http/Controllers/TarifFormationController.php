@@ -41,6 +41,7 @@ class TarifFormationController extends Controller
         $formFields = $request->validate([
             'Name' => 'required',
             'Type' => 'required',
+            'Price' => 'required',
             'Volume_Horraire' => 'required',
             'Duree_formation' => 'nullable',
             'Debut_formation' => 'required',
@@ -64,18 +65,19 @@ class TarifFormationController extends Controller
         $subCategorie = FormationSubCategorie::where('id', '=', $id_subCategorie)->get();
         $subCategorie = $subCategorie[0];
 
-        $formation  = Formation::where('id', '=', $id_formation);
+        $formation  = Formation::where('id', '=', $id_formation)->get();
         $formation = $formation[0];
 
 
-        $formation->tarifs  = Formation_Tarification::where('id', '=', $id_formation)
-            ->where('formation_id', '=', $id_formation)
+        $formation->tarif  = Formation_Tarification::where('id', '=', $id_tarif)
+            ->where('formations_id', '=', $id_formation)
             ->get();
 
-        if ($formation->tarifs->isEmpty()) {
-            return redirect()->action([TarifFormationController::class, 'show'],  ['id_categorie' => $id_categorie, 'id_subCategorie' => $id_subCategorie]);
+            // dd($formation->tarif);
+        if ($formation->tarif->isEmpty()) {
+            return redirect()->action([TarifFormationController::class, 'show'],  ['id_categorie' => $id_categorie, 'id_subCategorie' => $id_subCategorie,'id_formation'=>$id_formation]);
         }
-        $formation->tarifs = $formation->tarifs[0];
+        $formation->tarif = $formation->tarif[0];
         return view('admin.categorie.formation.tarification.edit', compact('categorie', 'subCategorie','formation'));
     }
 
@@ -83,7 +85,7 @@ class TarifFormationController extends Controller
     public function update(Request $request, $id_categorie, $id_subCategorie, $id_formation, $id_tarif)
     {
 
-        $tarif = Formation_Tarification::where('formation_id', '=', $id_formation)
+        $tarif = Formation_Tarification::where('formations_id', '=', $id_formation)
             ->where('id', '=', $id_tarif)
             ->get();
 
@@ -137,7 +139,7 @@ class TarifFormationController extends Controller
         $formation = Formation::findOrFail($id_formation);
 
 
-        $formation->tarifs = Formation_Tarification::onlyTrashed()->where('formation_id', '=', $id_formation)->get();
+        $formation->tarifs = Formation_Tarification::onlyTrashed()->where('formations_id', '=', $id_formation)->get();
 
         return view("admin.categorie.formation.tarification.trashed", compact('subCategorie', 'categorie','formation'));
     }
