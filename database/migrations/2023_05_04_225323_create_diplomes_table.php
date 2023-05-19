@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('diplomes', function (Blueprint $table) {
             $table->id();
             $table->char('Name')->unique();
+            $table->text('img')->nullable();
             $table->char('Prerequis', 50);
             $table->char('Duree', 10);
             $table->softDeletes();

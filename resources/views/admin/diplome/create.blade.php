@@ -24,6 +24,18 @@
         @error('Prerequis')
             <p class="text-danger  ml-5  ">{{ $message }}</p>
         @enderror
+
+        <div class="mb-6 form-group">
+            <label for="img" class="inline-block text-lg mb-2">
+                Image 
+            </label>
+            <input type="file" class="border border-gray-200 rounded p-2 w-full form-control" name="img" />
+
+            @error('img')
+                <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+            @enderror
+        </div>
+
         <div class="mb-6 form-group">
             <label for="Duree" class="inline-block text-lg mb-2">
                 Duree (en ANS)

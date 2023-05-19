@@ -16,6 +16,7 @@ return new class extends Migration
             $table->char('Name')->unique();
             $table->string('Subtitle', 50);
             $table->text('Motivation');
+            $table->text('img')->nullable();
             $table->text('Raisons')->nullable();
             $table->text('Piece_frais')->nullable();
             $table->text('Conditions_Etudes')->nullable();

@@ -17,5 +17,5 @@ class Diplome extends Model
         $this->hasMany(Branche_Diplome::class);
     }
 
-    protected $fillable = [ 'Name', 'Prerequis', 'Duree'];
+    protected $fillable = [ 'Name', 'Prerequis','img', 'Duree'];
 }

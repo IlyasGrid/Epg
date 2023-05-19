@@ -42,6 +42,19 @@
             @enderror
 
             <div class="mb-6 form-group">
+                <label for="img" class="inline-block text-lg mb-2">
+                    Image :
+                </label>
+                <input type="file" class="border border-gray-200 rounded p-2 w-full form-control"
+                    name="img" />
+
+                @error('img')
+                    <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+                @enderror
+            </div>
+
+
+            <div class="mb-6 form-group">
                 <label for="Raisons" class="inline-block text-lg mb-2">Raisons</label>
 
                 @php
@@ -101,9 +114,6 @@
                             <label for="Conditions_Etudes" class="inline-block text-lg mb-2">
                                 d' Etude
                             </label>
-                            {{-- <input type="text" class="border border-gray-200 rounded p-2 w-full form-control"
-                                name="Conditions_Etudes" placeholder="separer les avec un '&'"
-                                value="{{ $langue->Conditions_Etudes }}" /> --}}
 
                             @php
                                 $Conditions_Etudes = explode(';', $langue->Conditions_Etudes);
@@ -190,6 +200,7 @@
                     </div>
 
             </div>
+            
             <div class="btn d-flex justify-content-center">
                 <div class="mb-6 form-group">
                     <button type="submit" class="btn btn-outline-info">

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BrancheController;
 use App\Http\Controllers\CategorieController;
 use App\Http\Controllers\DiplomeController;
 use App\Http\Controllers\FormationController;
@@ -144,14 +145,17 @@ Route::middleware(['auth'])->group(function () {
             Route::get('/restore/{id}', [DiplomeController::class, 'restore']);
 
             // Branche
-            Route::get('/{id_diplome}/branche/create', [DiplomeController::class, 'createBranche']);
-            Route::get('/{id_diplome}/branche', [DiplomeController::class, 'showBranche']);
-            Route::get('/edit/{id_diplome}/branche/{id_branche}', [DiplomeController::class, 'editBranche']);
-            Route::put('/{id_diplome}/branche/{id_branche}', [DiplomeController::class, 'updateBranche']);
-            Route::post('/{id_diplome}/branche', [DiplomeController::class, 'storeBranche']);
-            Route::delete('/{id_diplome}/branche/{id_branche}', [DiplomeController::class, 'destroyBranche']);
-            Route::get('/{id_diplome}/branche/trashed', [DiplomeController::class, 'trashedBranche']);
-            Route::get('/{id_diplome}/branche/restore/{id}', [DiplomeController::class, 'restoreBranche']);
+            Route::group(['prefix' => '/{id_diplome}/branche'], function () {
+
+                Route::get('/create', [BrancheController::class, 'create']);
+                Route::get('/', [BrancheController::class, 'show']);
+                Route::get('/edit/{id_branche}', [BrancheController::class, 'edit']);
+                Route::put('/{id_branche}', [BrancheController::class, 'update']);
+                Route::post('', [BrancheController::class, 'store']);
+                Route::delete('/{id_branche}', [BrancheController::class, 'destroy']);
+                Route::get('/trashed', [BrancheController::class, 'trashed']);
+                Route::get('/restore/{id}', [BrancheController::class, 'restore']);
+            });
         });
 
 
@@ -213,6 +217,10 @@ Route::middleware(['auth'])->group(function () {
             });
         });
     });
+
+    Route::get('admin/{any}', function () {
+        return redirect()->route('dashboard');
+    })->where('any', '.*');
 });
 Route::fallback(function () {
     return view("error");

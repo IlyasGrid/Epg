@@ -50,8 +50,13 @@
                             <div
                                 class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
                                 <div class="service-icon mod">
-                                    <img class="" src="../Diplome/Pic/{{ $diplome->Name }}.jpg"
-                                        alt="master proffesionnel">
+                                    {{-- <img class="" src="../Diplome/Pic/{{ $diplome->Name }}.jpg"
+                                        alt="master proffesionnel"> --}}
+
+                                    <img class="w-48 mr-6 mb-6"
+                                        src="{{ $diplome->img ? asset('storage/' . $diplome->img) : asset('/Diplome/Pic/mm1.jpg') }}"
+                                        alt="" />
+
                                 </div>
                                 <h4 class="mb-3" style="text-transform: capitalize">{{ $diplome->Name }}</h4>
                                 <p class="m-0">cliquez ici pour voir les diplôme de <span

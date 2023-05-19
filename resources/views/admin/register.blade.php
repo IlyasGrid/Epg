@@ -11,10 +11,16 @@
                                 <label for="email" class="form-label">email</label>
                                 <input type="email" name="email" id="email" class="form-control" required>
                             </div>
+                            @error('email')
+                                <p class="text-danger  ml-5  ">{{ $message }}</p>
+                            @enderror
                             <div class="mb-3">
                                 <label for="password" class="form-label">Password</label>
                                 <input type="password" name="password" id="password" class="form-control" required>
                             </div>
+                            @error('password')
+                            <p class="text-danger  ml-5  ">{{ $message }}</p>
+                        @enderror
                             <div class="text-center">
                                 <button type="submit" class="btn btn-outline-primary">register</button>
                             </div>

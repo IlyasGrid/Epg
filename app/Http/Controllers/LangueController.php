@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Lang;
 use Illuminate\Validation\Rule;
 
- function filterAndImplode(&$formFields, $fieldName)
+function filterAndImplode(&$formFields, $fieldName)
 {
     if (isset($formFields[$fieldName])) {
         $nonEmptyValues = array_filter($formFields[$fieldName]);
@@ -73,7 +73,7 @@ class LangueController extends Controller
 
     // -------------------------------------admin-------------------------------------
 
-   
+
 
 
 
@@ -111,6 +111,15 @@ class LangueController extends Controller
         filterAndImplode($formFields, 'Conditions_Etudes');
         filterAndImplode($formFields, 'Conditions_Formations');
         filterAndImplode($formFields, 'Conditions_Cherche_Emploi');
+
+        if ($request->hasFile('img')) {
+            $file = $request->file('img');
+            $filename = $file->getClientOriginalName();
+
+            $file->storeAs('langues', $filename, 'public');
+            $formFields['img'] = 'langues/' . $filename;
+        }
+
 
         Langue::create($formFields);
 
@@ -152,6 +161,14 @@ class LangueController extends Controller
         filterAndImplode($formFields, 'Conditions_Formations');
         filterAndImplode($formFields, 'Conditions_Cherche_Emploi');
 
+        if ($request->hasFile('img')) {
+            $file = $request->file('img');
+            $filename = $file->getClientOriginalName();
+
+            $file->storeAs('langues', $filename, 'public');
+            $formFields['img'] = 'langues/' . $filename;
+        }
+
         $langue->update($formFields);
 
         return redirect()->action([LangueController::class, 'adminShow']);
@@ -177,6 +194,4 @@ class LangueController extends Controller
 
         return redirect()->action([LangueController::class, 'trashed']);
     }
-
-
 }

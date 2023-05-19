@@ -50,8 +50,12 @@
                     <div class="col-sm-12">
                         <div class="bee">
                             <div class="about-img">
-                                <img src='../langues/Img/{{ $langue->Name }}.jpg'
-                                    onerror="this.src='../langues/Img/langues.jpg';" alt="">
+                                {{-- <img src='../langues/Img/{{ $langue->Name }}.jpg'
+                                    onerror="this.src='../langues/Img/langues.jpg';" alt=""> --}}
+
+                                    <img class="w-48 mr-6 mb-6"
+                                    src="{{$langue->img ? asset('storage/' . $langue->img) : asset('/langues/img/langues.jpg')}}" alt="" />
+                                
                             </div>
                         </div>
                     </div>

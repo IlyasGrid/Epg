@@ -52,7 +52,7 @@
                             <p class="card-text"><b>Piece_a_fournis :</b> {{ $branche->Piece_a_fournis }} </p>
                         </div>
                         <div class="d-flex justify-content-around  p-2 mt-3">
-                            <a href="/admin/diplomes/edit/{{ $diplome->id }}/branche/{{ $branche->id }}"
+                            <a href="/admin/diplomes/{{ $diplome->id }}/branche/edit/{{ $branche->id }}"
                                 class="btn btn-outline-info pl-5 pr-5"> edit </a>
                             <a href="#" class="btn btn-outline-primary">show
                                 programme</a>

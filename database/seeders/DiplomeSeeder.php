@@ -16,31 +16,37 @@ class DiplomeSeeder extends Seeder
         Diplome::create([
             'Name'=>'qualification',
             'Prerequis'=>'NIVEAU COLLÉGE',
+            'img'=>'diplomes/qualification.jpg',
             'Duree'=>' 2 ANS'
         ]);
         Diplome::create([
-            'Name'=>'techncien',
+            'Name'=>'technicien',
             'Prerequis'=>'NIVEAU BAC',
+            'img'=>'diplomes/technicien.jpg',
             'Duree'=>' 2 ANS'
         ]);
         Diplome::create([
-            'Name'=>'techncien specialise',
+            'Name'=>'technicien spécialisé',
             'Prerequis'=>'BAC',
+            'img'=>'diplomes/technicien spécialisé.jpg',
             'Duree'=>' 2 ANS'
         ]);
         Diplome::create([
-            'Name'=>'techncien superieur',
+            'Name'=>'technicien supérieur',
             'Prerequis'=>'BAC',
+            'img'=>'diplomes/technicien supérieur.jpg',
             'Duree'=>' 2 ANS'
         ]);
         Diplome::create([
-            'Name'=>'license professionnelle',
+            'Name'=>'licence professionnelle',
             'Prerequis'=>'BAC+2',
+            'img'=>'diplomes/licence professionnelle.jpg',
             'Duree'=>' 1 ANS'
         ]);
         Diplome::create([
-            'Name'=>'master professionnelle',
+            'Name'=>'master professionnel',
             'Prerequis'=>'BAC+3',
+            'img'=>'diplomes/master professionnel.jpg',
             'Duree'=>' 2 ANS'
         ]);
     }

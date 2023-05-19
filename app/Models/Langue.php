@@ -19,5 +19,5 @@ class Langue extends Model
     }
 
 
-    protected $fillable = ['Name', 'Subtitle', 'Motivation', 'Raisons', 'Piece_frais', 'Conditions_Etudes', 'Conditions_Formations', 'Conditions_Cherche_Emploi'];
+    protected $fillable = ['Name', 'Subtitle', 'Motivation','img', 'Raisons', 'Piece_frais', 'Conditions_Etudes', 'Conditions_Formations', 'Conditions_Cherche_Emploi'];
 }

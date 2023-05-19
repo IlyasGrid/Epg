@@ -19,5 +19,5 @@ class Branche_Diplome extends Model
     {
         $this->hasOne(Programe_Branche::class);
     }
-    protected $fillable = ['Abreviation', 'Fullname', 'Motivation', 'Price_month', 'Price_year', 'Objectifs', 'Prerequis', 'Prespective_professionel', 'Piece_a_fournis', 'Diplome_id'];
+    protected $fillable = ['Abreviation', 'Fullname', 'Motivation','img', 'Price_month', 'Price_year', 'Objectifs', 'Prerequis', 'Prespective_professionel', 'Piece_a_fournis', 'Diplome_id'];
 }

@@ -1,31 +1,5 @@
 <x-adminLayout>
-    <style>
-        form {
-            padding: 2em;
-            border-radius: 10px;
-            width: fit-content;
-            min-width: 60vw;
-            height: fit-content;
-            background-color: #f5f5f5;
-        }
 
-        h2 {
-            color: rgb(91, 3, 91);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            display: block;
-            font-weight: bold;
-            font-size: xx-large;
-            margin-bottom: 0.5em;
-            text-align: center;
-        }
-
-        main,
-        .btn {
-            display: flex;
-            justify-content: space-around
-        }
-    </style>
 
     <main>
         <form method="POST" action="/admin/diplomes/{{ $diplome->id }}/branche/{{ $branche->id }}"

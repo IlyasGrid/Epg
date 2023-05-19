@@ -37,7 +37,6 @@
                 <div class="col-lg-6 sora">
                     <img class="w-48 mr-6 mb-6"
                     src="{{$formation->logo ? asset('storage/' . $formation->logo) : asset('/formation/img/default2.png')}}" alt="" />
-                    {{-- <img src="../../../formation/img/default2.png" alt=""> --}}
                 </div>
 
             </div>
