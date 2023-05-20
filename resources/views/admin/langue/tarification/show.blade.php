@@ -24,31 +24,26 @@
         </div>
     @else
         @foreach ($tarifs as $tarif)
-            <div class="card mb-3">
-                <div class="card-body">
-                    <h5 class="card-title text-centre" style="text-align: center;">
-                        {{ $tarif->Type }}</h5>
-                    <div class="d-flex justify-content-between ">
-                        <p class="card-text  p-3">Volume Horraire: <b>{{ $tarif->Volume_Horraire }} Séance(s) par
-                                semaine
-                                Semaine</b> </p>
-                        <p class="card-text  p-3">Duree: <b>{{ $tarif->Temps }}</b> </p>
-                        <p class="card-text  p-3">Prix: <b>{{ $tarif->Price }} DH</b> </p>
-                    </div>
-                    {{-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> --}}
+            <div class="card mb-5">
+                <h5 class="card-title card-header text-centre" style="text-align: center;">
+                    {{ $tarif->Type }}</h5>
+                <div class="m-3  text-muted">
+                    <p class="card-text  pl-3">Volume Horraire: <b>{{ $tarif->Volume_Horraire }} Séance(s) par Semaine</b> </p>
+                    <p class="card-text  pl-3">Duree: <b>{{ $tarif->Temps }}</b> </p>
+                    <p class="card-text  pl-3">Prix: <b>{{ $tarif->Price }} DH</b> </p>
+                </div>
+                <div class="d-flex justify-content-around mb-4">
                     <div class="d-flex justify-content-around">
-                        <div class="d-flex justify-content-around">
-                            <a href="/admin/langues/{{ $langue->id }}/tarification/edit/{{ $tarif->id }}"
-                                class="btn btn-outline-info">edit</a>
-                        </div>
-                        <div>
-                            <form action="/admin/langues/{{ $langue->id }}/tarification/{{ $tarif->id }}"
-                                method="POST">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-outline-danger">Delete</button>
-                            </form>
-                        </div>
+                        <a href="/admin/langues/{{ $langue->id }}/tarification/edit/{{ $tarif->id }}"
+                            class="btn btn-outline-info">edit</a>
+                    </div>
+                    <div>
+                        <form action="/admin/langues/{{ $langue->id }}/tarification/{{ $tarif->id }}"
+                            method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-outline-danger">Delete</button>
+                        </form>
                     </div>
                 </div>
             </div>

@@ -2,7 +2,8 @@
 
     <form class="form-container" method="POST" action="/admin/diplomes" enctype="multipart/form-data">
         @csrf
-        <h2> Diplome</h2>
+        <h2><span class="text-muted text-lowercase">create new</span> <a href="/admin/diplomes/"
+            class="text-reset text-decoration-none">Diplome</a></h2>
         <h1 class="text-danger"> </h1>
         <div class="mb-6 form-group form-group">
             <label for="Name" class="inline-block text-lg mb-2">Diplome Name</label>

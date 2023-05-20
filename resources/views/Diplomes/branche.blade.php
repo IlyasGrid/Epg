@@ -24,7 +24,7 @@
 
 
         <aside>
-            <h1 style="text-transform: uppercase">{{ $branche_info->Fullname }}</h1>
+            <h1 style="text-transform: uppercase">{{ $branche->Fullname }}</h1>
 
         </aside>
 
@@ -48,11 +48,11 @@
 
 
                         <div class="share clr_Orange">
-                            <h5 class="pfp">{{ $branche_info->Abreviation }}</h5>
+                            <h5 class="pfp">{{ $branche->Abreviation }}</h5>
 
                         </div>
-                        @if ($branche_info->Motivation != null)
-                            <p> {{ $branche_info->Motivation }}</p>
+                        @if ($branche->Motivation != null)
+                            <p> {{ $branche->Motivation }}</p>
                         @endif
                         <span> <a href="#ch" style=" font-weight: 900;">
                                 &#9886; Pré-inscription en ligne &#9887;</a>
@@ -70,18 +70,18 @@
                 <p class="tarifs">L'école Polytechnique des génies vous propose des cours en <span
                         class="clr_Orange">présentiel</span> ainsi des cours <span class="clr_Orange">à
                         distance</span> à des tarifs trés encourageants</p>
-                <p class="tarifs"><span class="clr_Orange">Frais d'inscription: </span> {{ $branche_info->Price_month }}
+                <p class="tarifs"><span class="clr_Orange">Frais d'inscription: </span> {{ $branche->Price_month }}
                 </p>
                 <table class="tarifs">
 
                     <tr class="clr">
-                        <td>Cours de jour <span class="clr_Orange">➨</span> {{ $branche_info->Price_month }} DH / Mois
-                            OU {{ $branche_info->Price_year }} Dhs/l'année si c'est
+                        <td>Cours de jour <span class="clr_Orange">➨</span> {{ $branche->Price_month }} DH / Mois
+                            OU {{ $branche->Price_year }} Dhs/l'année si c'est
                             payé en avance</td>
                     </tr>
                     <tr class="clr">
-                        <td>Cours du soir <span class="clr_Orange">➨</span> {{ $branche_info->Price_month }} DH / Mois
-                            OU {{ $branche_info->Price_year }} Dhs/l'année si c'est
+                        <td>Cours du soir <span class="clr_Orange">➨</span> {{ $branche->Price_month }} DH / Mois
+                            OU {{ $branche->Price_year }} Dhs/l'année si c'est
                             payé en avance</td>
                     </tr>
                 </table>
@@ -96,7 +96,7 @@
 
 
                 @php
-                    $prerequis = explode('&', $branche_info->Prerequis);
+                    $prerequis = explode('&', $branche->Prerequis);
                 @endphp
                 @unless (count($prerequis) <= 0)
                     @if (count($prerequis) > 1)
@@ -115,13 +115,45 @@
 
                 <div class="share clr_Orange">
                     <h5 class="pfp">Objectif:</h5>
-                    <p>{{ $branche_info->Objectifs }}</p>
+                    <p>{{ $branche->Objectifs }}</p>
                 </div>
 
 
+                @unless (count($branche->programs) <= 0)
+                    {{-- Programme --}}
+                    <div class="share clr_Orange ntr">
 
+                        <h5>Programme</h5>
+
+                    </div>
+                    @foreach ($branche->programs->groupBy('Annee') as $annee => $programs)
+                        <h5 class="trtd">{{ $annee }} année</h5>
+                        <table>
+                            @foreach ($programs as $key => $program)
+                                @php
+                                    $key += 1;
+                                    $numModule = $key;
+                                @endphp
+                                <tr class="item{{ $key % 2 === 0 ? ' clr' : '' }}">
+
+                                    <td class="mdl"> Module {{ $numModule }}</td>
+                                    <td>{{ $program->Name_module }}</td>
+                                </tr>
+                            @endforeach
+                        </table>
+                    @endforeach
+                    {{-- End Programme --}}
+                @endunless
+                @if (count($branche->programs) <= 0)
+                    <div class="share clr_Orange ntr">
+
+                        <h5>Programme</h5>
+                        <p>no programme yet</p>
+
+                    </div>
+                @endif
                 {{-- Programme --}}
-                <div class="share clr_Orange ntr">
+                {{-- <div class="share clr_Orange ntr">
 
                     <h5>Programme</h5>
 
@@ -361,15 +393,16 @@
 
                     </tr>
 
-                </table>
-                {{-- End Programme --}}
+                </table> --}}
 
-                @unless ($branche_info->Prespective_professionel == null)
+                {{--  End Programme --}}
+
+                @unless ($branche->Prespective_professionel == null)
                     <div class="share clr_Orange">
                         <h5 class="pfp">Perspectives Professionnelles</h5>
                         <ul>
                             @php
-                                $perspectives = explode('&', $branche_info->Prespective_professionel);
+                                $perspectives = explode('&', $branche->Prespective_professionel);
                             @endphp
                             @foreach ($perspectives as $perspective)
                                 <li><span>✦</span> {{ $perspective }}</li>
@@ -382,7 +415,6 @@
                 <div class="share clr_Orange">
 
                     <h5 class="pfp">Pièces à Fournir</h5>
-
                 </div>
 
                 <ul>

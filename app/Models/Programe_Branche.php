@@ -15,5 +15,5 @@ class Programe_Branche extends Model
     {
         $this->belongsTo(Branche_Diplome::class);
     }
-    protected $fillable = ['Num_module', 'Name_module', 'Annee',  'branche__diplomes_id'];
+    protected $fillable = [ 'Name_module', 'Annee',  'branche__diplomes_id'];
 }

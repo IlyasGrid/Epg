@@ -1,3 +1,6 @@
+{{-- @props(['isAdminAuthenticated']) --}}
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,57 +23,73 @@
             aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse d-flex justify-content-around" id="navbarNavDropdown">
-            <ul class="navbar-nav ">
-                <li class="nav-item active">
-                    <a class="nav-link" href="/admin/home">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="/admin/langues" id="navbarDropdownMenuLink"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Langues
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="/admin/langues">show</a>
-                        <a class="dropdown-item" href="/admin/langues/create">Create</a>
-                        <a class="dropdown-item" href="/admin/langues/trashed">show deleted</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Diplomes
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="/admin/diplomes">show</a>
-                        <a class="dropdown-item" href="/admin/diplomes/create">Create</a>
-                        <a class="dropdown-item" href="/admin/diplomes/trashed">show deleted</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Formations
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="/admin/categories">show</a>
-                        <a class="dropdown-item" href="/admin/categories/create">Create</a>
-                        <a class="dropdown-item" href="/admin/categories/trashed">show deleted</a>
-                    </div>
-                </li>
-            </ul>
+        @if (
+            !in_array(request()->route()->getName(),
+                ['register', 'login']))
+            <div class="collapse navbar-collapse d-flex justify-content-around" id="navbarNavDropdown">
 
+                <ul class="navbar-nav ">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/admin/dashboard">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="/admin/langues" id="navbarDropdownMenuLink"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Langues
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="/admin/langues">show</a>
+                            <a class="dropdown-item" href="/admin/langues/create">Create</a>
+                            <a class="dropdown-item" href="/admin/langues/trashed">show deleted</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="/admin/diplomes" id="navbarDropdownMenuLink"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Diplomes
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="/admin/diplomes">show</a>
+                            <a class="dropdown-item" href="/admin/diplomes/create">Create</a>
+                            <a class="dropdown-item" href="/admin/diplomes/trashed">show deleted</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="/admin/categories" id="navbarDropdownMenuLink"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Formations
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="/admin/categories">show</a>
+                            <a class="dropdown-item" href="/admin/categories/create">Create</a>
+                            <a class="dropdown-item" href="/admin/categories/trashed">show deleted</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="/admin/soutien" id="navbarDropdownMenuLink"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Soutien </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="/admin/soutien">show</a>
+                            <a class="dropdown-item" href="/admin/soutien/create">Create</a>
+                            <a class="dropdown-item" href="/admin/soutien/trashed">show deleted</a>
+                        </div>
+                    </li>
+                </ul>
 
-        </div>
-        <div>
-            <form action="{{ route('logout') }}" method="POST">
-                @csrf
-                <button class="btn btn-outline-light" type="submit">Logout</button>
-            </form>
-        </div>
+            </div>
+            <div>
+                <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <button class="btn btn-outline-light" type="submit">Logout</button>
+                </form>
+            </div>
+        @endif
     </nav>
     <main class="container mt-4 ">
+
         {{ $slot }}
+
+
     </main>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>

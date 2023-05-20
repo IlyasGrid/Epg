@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Branche_Diplome;
 use App\Models\Diplome;
+use App\Models\Programe_Branche;
 use Illuminate\Http\Request;
 
 class BrancheController extends Controller

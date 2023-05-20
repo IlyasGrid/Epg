@@ -1,81 +1,41 @@
-<div>
-    <!-- Francais query -->
-    INSERT INTO `langues`(`Name`, `Subtitle`, `Motivation`, `Raisons`) VALUES
-    ('français','la langue Française - اللغـــة الفرنسيـــة',' le français est
-    parmis les langue la plus parlée au monde , et pour les francophones tel que
-    les marocain et les africains, la langue française est indisponsable..','
-    une langue parlée dans le monde entier&, une langue pour trouver un emploi&,
-    la langue de la culture&, une langue pour voyager&, une langue pour étudier
-    dans les universités françaises&, l’autre langue des relations
-    internationales&, une langue pour s’ouvrir sur le monde&, la langue de
-    l’amour et de l’esprit& ');
-    INSERT INTO `langues`(`Name`, `Subtitle`, `Motivation`, `Raisons`) VALUES
-    ('anglais','la langue Anglaise - اللغــــة الإنجليزيـــة',' la langue
-    anglaise est parmis les 3 langue les plus parlée à travers le monde,
-    l’anglais est très répandu. Apprendre l\'anglais peut être une envie
-    personelle ou un besoin pour les étudient et les personnes qui cherchent du
-    travail.mais Il est certain que personne ne regrette jamais d\'avoir appris
-    cette langue très riche.',' est la langue de la communication
-    internationale& donne accès à davantage de contenus sur Internet et de
-    divertissements& rend le voyage plus accessible& peut vous rendre « plus
-    intelligent&');
-    INSERT INTO `langues`(`Name`, `Subtitle`, `Motivation`, `Piece_frais`,
-    `Conditions_Etudes`, `Conditions_Formations`, `Conditions_Cherche_Emploi`)
-    VALUES ( 'allemand','la langue Allemand - اللغـــة الألمانيــــة',' Il y a
-    de nombreuses raisons pour apprendre l\'allemand , et nous voulons vous
-    présenter les meilleures. Nous expliquons également comment apprendre
-    l’allemand avec quelques astuces simples et pratiques. Apprendre l\'allemand
-    peut être une envie personelle mais souvent les gens qui étudient
-    l\'allemand c\'est pour le travail. Il est certain que personne ne regrette
-    jamais d\'avoir appris cette langue très riche.','Copies CIN &2 Photos &50Dh
-    pour chaque livre &100Dh frais de copie','Baccalauréat ou plus &Diplôme
-    d\'allemand B1 &Inscription dans une université ou une école supérieure en
-    Allemagne &Un document prouvant la capacité de l\'étudiant à financer ses
-    études, avec:
-    <ul>
-        <li>Garantie financière d\'une personne résidant en Allemagne</li>
-        <li>
-            Un compte bancaire fermé ouvert dans une banque allemande pour 10
-            236 euros
-        </li>
-    </ul>
-    ', 'Baccalauréat ou diplôme de formation professionnelle &Diplôme
-    d\'allemand B1 &Un contrat de professionnalisation, que l\'étudiant obtient
-    après avoir contacté les entreprises allemandes ', 'Diplômes académiques
-    (licence ou Master) &Qualifications professionnelles (Diplôme de formation
-    professionnelle) &Expériences professionnelles &Compte bancaire fermé
-    &Diplôme d\'allemand B1 &Adresse initiale (réservation d\'hôtel)')
-</div>
-<div>
-    <!-- tarification Francais -->
-    INSERT INTO `tarification__langues`( `Type`, `Volume_Horraire`, `Temps`, `Price`, `langue_id`) VALUES ('COURS NORMALE','1 Séance par semaine','2h','200 dh',1);
-INSERT INTO `tarification__langues`( `Type`, `Volume_Horraire`, `Temps`, `Price`, `langue_id`) VALUES ('COURS DU SOIR','1 Séance par semaine','2h','200 dh',1);
-INSERT INTO `tarification__langues`( `Type`, `Volume_Horraire`, `Temps`, `Price`, `langue_id`) VALUES ('COURS ACCÉLÉRÉ','3 Séances par semaine','2h','500 dh',1);
-INSERT INTO `tarification__langues`( `Type`, `Volume_Horraire`, `Temps`, `Price`, `langue_id`) VALUES ('COURS DU SOIR ACCÉLÉRÉ','3 Séances par semaine','2h','500 dh',1);
-
-INSERT INTO `tarification__langues`( `Type`, `Volume_Horraire`, `Temps`, `Price`, `langue_id`) VALUES ('COURS NORMALE','1 Séance par semaine','2h','200 dh',2);
-INSERT INTO `tarification__langues`( `Type`, `Volume_Horraire`, `Temps`, `Price`, `langue_id`) VALUES ('COURS DU SOIR','1 Séance par semaine','2h','200 dh',2);
-INSERT INTO `tarification__langues`( `Type`, `Volume_Horraire`, `Temps`, `Price`, `langue_id`) VALUES ('COURS ACCÉLÉRÉ','3 Séances par semaine','2h','500 dh',2);
-INSERT INTO `tarification__langues`( `Type`, `Volume_Horraire`, `Temps`, `Price`, `langue_id`) VALUES ('COURS DU SOIR ACCÉLÉRÉ','3 Séances par semaine','2h','500 dh',2);
-
-INSERT INTO `tarification__langues`( `Type`, `Volume_Horraire`, `Temps`, `Price`, `langue_id`) VALUES ('COURS NORMALE','2 Séances par semaine','2h','300 dh',3);
-INSERT INTO `tarification__langues`( `Type`, `Volume_Horraire`, `Temps`, `Price`, `langue_id`) VALUES ('COURS DU SOIR','3 Séances par semaine','2h','500 dh',3);
-INSERT INTO `tarification__langues`( `Type`, `Volume_Horraire`, `Temps`, `Price`, `langue_id`) VALUES ('COURS ACCÉLÉRÉ','5 Séances par semaine','1h30','600 dh',3);
-INSERT INTO `tarification__langues`( `Type`, `Volume_Horraire`, `Temps`, `Price`, `langue_id`) VALUES ('COURS DU SOIR ACCÉLÉRÉ','10 Séances par semaine','1h30','1200 dh',3);
-</div>
-<p>
-Branche_Diplome::create([
-'Abreviation' => '',
-'Fullname' => '',
-'Motivation' => '',
-'Price_month' => ,
-'Price_year' => ,
-'Objectifs' => '',
-'Prerequis' => '',
-'Prespective_professionel' => null,
-'Piece_a_fournis' => '',
-'Diplome_id' => 5,
-]);
-</p>
-
-<h1>main project</h1>
+<h5 class="trtd">1ère année</h5>
+<table>
+    <tbody>
+        <tr>
+            <td class="mdl">MODULE 01</td>
+            <td>Métier et formation</td>
+        </tr>
+        <tr class="clr">
+            <td class="mdl">MODULE 02</td>
+            <td>L’entreprise et son environnement</td>
+        </tr>
+        <tr>
+            <td class="mdl">MODULE 03</td>
+            <td>Comptabilité générale, analytique et des sociétés</td>
+        </tr>
+        <tr class="clr">
+            <td class="mdl">MODULE 04</td>
+            <td>Gestion financière et budgétaire</td>
+        </tr>
+        <tr>
+            <td class="mdl">MODULE 05</td>
+            <td>Trésorerie</td>
+        </tr>
+        <tr class="clr">
+            <td class="mdl">MODULE 06</td>
+            <td>Fiscalité de l’entreprise</td>
+        </tr>
+        <tr>
+            <td class="mdl">MODULE 07</td>
+            <td>Gestion de production et de stocks</td>
+        </tr>
+        <tr class="clr">
+            <td class="mdl">MODULE 08</td>
+            <td>Marketing et Management</td>
+        </tr>
+        <tr>
+            <td class="mdl">MODULE 09</td>
+            <td>Techniques de banques et crédits</td>
+        </tr>
+    </tbody>
+</table>

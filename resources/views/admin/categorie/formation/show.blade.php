@@ -25,9 +25,9 @@
     @else
         @foreach ($subCategorie->formations as $formation)
             <div class="card mb-3">
-                <div class="card-body">
-                    <h5 class="card-title text-centre" style="text-align: center;">
+                    <h5 class="card-title card-header text-centre" style="text-align: center;">
                         {{ $formation->Name }}</h5>
+                        <div class="card-body">
 
 
                     <div class="text-muted">

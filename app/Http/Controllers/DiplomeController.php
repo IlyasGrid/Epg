@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Branche_Diplome;
 use App\Models\Diplome;
 use App\Models\Langue;
+use App\Models\Programe_Branche;
 use Illuminate\Contracts\Validation\Rule;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule as ValidationRule;
@@ -29,7 +30,13 @@ class DiplomeController extends Controller
     }
 
 
+    public function branche($diplome_name, $branche_name) {
 
+        $branche = Branche_Diplome::where('Fullname', '=', $branche_name)->first();
+        $branche->programs = Programe_Branche::where('branche__diplomes_id', '=', $branche->id)->get();
+
+        return view('Diplomes.branche', ['diplome_name' => $diplome_name, 'branche' => $branche]);
+    }
 
 
     // -------------------------------------admin-------------------------------------

@@ -1,10 +1,10 @@
 <x-adminLayout>
-    <h2><a href="/admin/langues/" class="text-decoration-none"> Langue {{ $langue->Name }} </a></h2>
+    <h2><span class="mb-5 text-muted text-capitalize">Langue</span> <a href="/admin/langues/" class="text-decoration-none text-reset">  {{ $langue->Name }} </a></h2>
 
-    <form class="form-container" method="POST" action="/admin/langues/{{ $id_langue }}/tarification"
+    <form class="form-container" method="POST" action="/admin/langues/{{ $langue->id }}/tarification"
         enctype="multipart/form-data">
         @csrf
-        <h2 class="mb-5"> Tarification edit</h2>
+        <h2 class="mb-5 text-muted text-capitalize">create Tarification</h2>
         <div>
             <div class="conditions-forms">
 
@@ -27,7 +27,7 @@
                         Volume horraire ( Séances par semaine )
                     </label>
                     <input type="number" class="border border-gray-200 rounded p-2 w-full form-control"
-                        name="Volume_Horraire" value="{{ old('Volume_Horraire') }}" />
+                        name="Volume_Horraire" placeholder="2 Séances par semaine, 3 Séances par semaine ...   " value="{{ old('Volume_Horraire') }}" />
 
                     @error('Volume_Horraire')
                         <p class="text-danger  ml-5  ">{{ $message }}</p>
@@ -39,7 +39,7 @@
                         Duree (en Heur)
                     </label>
                     <input type="text" class="border border-gray-200 rounded p-2 w-full form-control" name="Temps"
-                        placeholder="exemple : 1h30 ,2h ..." value="{{ old('Temps') }}" />
+                        placeholder="1h30 ,2h ..." value="{{ old('Temps') }}" />
 
                     @error('Temps')
                         <p class="text-danger  ml-5  ">{{ $message }}</p>
@@ -51,7 +51,7 @@
                         Prix (en DH)
                     </label>
                     <input type="number" class="border border-gray-200 rounded p-2 w-full form-control" name="Price"
-                        value="{{ old('Price') }}" />
+                        value="{{ old('Price') }}"  placeholder="1000 Dh ,700dh ...."/>
 
                     @error('Price')
                         <p class="text-danger  ml-5  ">{{ $message }}</p>

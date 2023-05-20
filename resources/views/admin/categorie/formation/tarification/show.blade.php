@@ -26,9 +26,10 @@
     @else
         @foreach ($formation->tarifs as $tarif)
             <div class="card mb-3">
-                <div class="card-body">
-                    <h5 class="card-title text-centre" style="text-align: center;">
+                    <h5 class="card-title card-header text-centre" style="text-align: center;">
                         {{ $tarif->Name }}</h5>
+                <div class="card-body">
+
                     <div class="text-muted">
 
                         <p class="card-text  max-char"><b>Price :</b> {{ $tarif->Price }} DH</p>

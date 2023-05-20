@@ -7,6 +7,8 @@ use App\Http\Controllers\FormationController;
 use App\Http\Controllers\LangueController;
 use App\Http\Controllers\NivLangueController;
 use App\Http\Controllers\ProgFormationController;
+use App\Http\Controllers\ProgramBrancheController;
+use App\Http\Controllers\SoutienController;
 use App\Http\Controllers\SubCategorieController;
 use App\Http\Controllers\TarifFormationController;
 use App\Http\Controllers\TarifLangueController;
@@ -15,6 +17,7 @@ use App\Models\Branche_Diplome;
 use App\Models\Diplome;
 use App\Models\Formation;
 use App\Models\Langue;
+use App\Models\Soutien;
 use App\Models\Tarification_Langue;
 use Illuminate\Database\Eloquent\Scope;
 use Illuminate\Support\Facades\Route;
@@ -31,15 +34,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::view('/', "index");
 Route::get('/', function () {
     $diplomes = Diplome::all();
-
     return view('index', compact('diplomes'));
 });
 Route::view('/test', "components.layout");
 Route::view('/contact.php', "contact");
-Route::view('/cours-soutien-informatique.php', "cours-soutien-informatique");
+// Route::view('/cours-soutien-informatique.php', "cours-soutien-informatique");
+Route::get('/cours-soutien-informatique.php', [SoutienController::class, 'index']);
 Route::view('/Bourse.php', "Bourse");
 Route::view('/A-propos.php', "A-propos");
 Route::view('/services.php', "services");
@@ -56,27 +58,19 @@ Route::get('/Documentations/{name}', function ($name) {
     ]);
 });
 
-// Route::group(['prefix' => 'Formations'], function () {
-//     Route::view('/', "Formations.index");
-// });
 
-Route::resource('/Languages', LangueController::class);
+Route::resource('/Languages', LangueController::class)->only(['index', 'show']);
 
 
-Route::resource('/Diplomes', DiplomeController::class);
-Route::resource('/Formations', CategorieController::class);
+Route::resource('/Diplomes', DiplomeController::class)->only(['index', 'show', 'branche']);
+Route::resource('/Formations', CategorieController::class)->only(['index', 'show']);
 
 Route::get('/Formations/{category}/{sub_category}/{formation}', [CategorieController::class, 'show']);
 
-Route::get('/Diplome/{diplome_name}/{branche_name}', function ($diplome_name, $branche_name) {
-
-    $branche = Branche_Diplome::where('Fullname', '=', $branche_name)->get();
-    $branche_info = $branche[0];
-    return view('Diplomes.branche', ['diplome_name' => $diplome_name, 'branche_info' => $branche_info]);
-});
+Route::get('/Diplome/{diplome_name}/{branche_name}', [DiplomeController::class, 'branche']);
 
 
-
+// ------------- admin ------------------
 
 
 Route::get('admin/register', [UserController::class, 'register'])->name('register');
@@ -155,9 +149,20 @@ Route::middleware(['auth'])->group(function () {
                 Route::delete('/{id_branche}', [BrancheController::class, 'destroy']);
                 Route::get('/trashed', [BrancheController::class, 'trashed']);
                 Route::get('/restore/{id}', [BrancheController::class, 'restore']);
+
+                Route::group(['prefix' => '/{id_branche}/program'], function () {
+
+                    Route::get('/create', [ProgramBrancheController::class, 'create']);
+                    Route::get('/', [ProgramBrancheController::class, 'show']);
+                    Route::get('/edit/{annee}', [ProgramBrancheController::class, 'edit']);
+                    Route::put('/{annee}', [ProgramBrancheController::class, 'update']);
+                    Route::post('/', [ProgramBrancheController::class, 'store']);
+                    Route::delete('/{annee}', [ProgramBrancheController::class, 'destroy']);
+                    Route::get('/trashed', [ProgramBrancheController::class, 'trashed']);
+                    Route::get('/restore/{annee}', [ProgramBrancheController::class, 'restore']);
+                });
             });
         });
-
 
 
         Route::group(['prefix' => 'categories'], function () {
@@ -216,11 +221,24 @@ Route::middleware(['auth'])->group(function () {
                 });
             });
         });
+
+        Route::group(['prefix' => 'soutien'], function () {
+
+            Route::get('/', [SoutienController::class, 'show']);
+            Route::get('/create', [SoutienController::class, 'create']);
+            Route::get('/edit/{type}', [SoutienController::class, 'edit']);
+            Route::put('/{type}', [SoutienController::class, 'update']);
+            Route::post('/', [SoutienController::class, 'store']);
+            Route::delete('/{type}', [SoutienController::class, 'destroy']);
+            Route::get('/trashed', [SoutienController::class, 'trashed']);
+            Route::get('/restore/{type}', [SoutienController::class, 'restore']);
+
+        });
     });
 
-    Route::get('admin/{any}', function () {
-        return redirect()->route('dashboard');
-    })->where('any', '.*');
+    // Route::get('admin/{any}', function () {
+    //     return redirect()->route('dashboard');
+    // })->where('any', '.*');
 });
 Route::fallback(function () {
     return view("error");

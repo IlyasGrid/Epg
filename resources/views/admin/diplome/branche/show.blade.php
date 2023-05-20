@@ -31,7 +31,7 @@
 
                 <div>
                     <div class="card-body">
-                        <h5 class="card-title d-flex justify-content-center  m-3 text-uppercase">
+                        <h5 class="card-title card-header  d-flex justify-content-center  p-3  mb-5 text-uppercase">
                             {{ $branche->Fullname }}
                             ({{ $branche->Abreviation }})
                         </h5>
@@ -54,7 +54,7 @@
                         <div class="d-flex justify-content-around  p-2 mt-3">
                             <a href="/admin/diplomes/{{ $diplome->id }}/branche/edit/{{ $branche->id }}"
                                 class="btn btn-outline-info pl-5 pr-5"> edit </a>
-                            <a href="#" class="btn btn-outline-primary">show
+                            <a href="/admin/diplomes/{{ $diplome->id }}/branche/{{$branche->id}}/program" class="btn btn-outline-primary">show
                                 programme</a>
                             <div>
                                 <form action="/admin/diplomes/{{ $diplome->id }}/branche/{{ $branche->id }}"

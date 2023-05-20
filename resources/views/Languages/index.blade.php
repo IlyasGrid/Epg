@@ -1,4 +1,25 @@
 <x-layoutlangues>
+    <style>
+        button.btn {
+            position: absolute;
+            background-color: #97c9bd;
+            border-radius: 16px;
+            bottom: 1px;
+            left: 65%;
+            width: 100px;
+        }
+
+        .bee {
+            position: relative;
+            width: 100%;
+            border: 2px solid blue;
+        }
+
+        .showing {
+            background: url('../langues/Img/langues.jpg') no-repeat center;
+            background-size: 100% 100%;
+        }
+    </style>
     <div class="langage showing"></div>
 
     <div class="notice">
@@ -60,6 +81,33 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="row">
+
+                    @foreach ($langues as $langue)
+                        <div class="col-sm-4 mt-2 mb-5">
+                            <div class="bee">
+                                <div class="about-img">
+                                    <a href="{{ $langue->Name }}">
+                                        <img class="w-48 mr-6 mb-6"
+                                            src="{{ $langue->img ? asset('storage/' . $langue->img) : asset('/langues/img/langues.jpg') }}"
+                                            alt="" />
+                                        <button class="btn">Voir Detail</button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+        {{-- <div class="row">
+            <div class="col-lg-12">
+                <div class="row">
                     <div class="col-sm-4">
                         <div class="bee">
                             <div class="about-img">
@@ -86,7 +134,9 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
+
+
     </div>
 
     <section class="blog"></section>

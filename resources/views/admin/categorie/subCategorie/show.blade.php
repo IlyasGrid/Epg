@@ -1,9 +1,10 @@
 <x-adminLayout>
 
-
-    <h2> <span class="text-muted text-capitalize"> </span><a href="/admin/categories/"
-            class="text-reset text-decoration-none">
-            {{ $categorie->Name }} </a> <span class="text-muted text-lowercase">subCategories</span>
+    <h2>
+        <a href="/admin/categories/" class="text-reset text-decoration-none">
+            {{ $categorie->Name }}
+        </a>
+        <span class="text-muted text-lowercase">subCategories</span>
     </h2>
     <div class="d-flex justify-content-around m-5 p-3 ">
         <a href="/admin/categories/{{ $categorie->id }}/subCategorie/create"
@@ -25,9 +26,10 @@
     @else
         @foreach ($categorie->subCategories as $subCategorie)
             <div class="card mb-3">
+                <h5 class="card-title card-header text-centre" style="text-align: center;">
+                    {{ $subCategorie->Name }}</h5>
                 <div class="card-body">
-                    <h5 class="card-title text-centre" style="text-align: center;">
-                        {{ $subCategorie->Name }}</h5>
+
                     <div class="d-flex justify-content-around">
                         <div class="d-flex justify-content-around">
                             <a href="/admin/categories/{{ $categorie->id }}/subCategorie/edit/{{ $subCategorie->id }}"

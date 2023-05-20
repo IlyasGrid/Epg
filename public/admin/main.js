@@ -14,3 +14,12 @@ function addObjectif(listId, inputName, placeholder) {
 
     objectifsList.appendChild(newObjectifListItem);
 }
+
+function clearInput(element) {
+    var input = element.previousElementSibling;
+    input.value = '';
+    input.focus();
+    
+    // var parentDiv = element.parentNode;
+    // parentDiv.parentNode.removeChild(parentDiv);
+  }

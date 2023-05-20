@@ -3,7 +3,3 @@ php artisan db:seed --class=Langue
  php artisan make:seeder LangueSeeder
  php artisan make:controller LangueController -r --model=Langue
 
-
- Un document prouvant la capacité de l'étudiant à financer ses études, avec: 
- -Garantie financière d'une personne résidant en Allemagne
--Un compte bancaire fermé ouvert dans une banque allemande pour 10 236 euros 

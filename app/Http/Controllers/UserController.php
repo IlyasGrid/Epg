@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -38,25 +39,30 @@ class UserController extends Controller
 
     public function login()
     {
+        // $isAdminAuthenticated = Auth::check();
+
+        // return view('admin.login')->with('isAdminAuthenticated', $isAdminAuthenticated);
         return view('admin.login');
     }
     public function register()
     {
+
         return view('admin.register');
     }
 
-    public function auth(Request $request) {
+    public function auth(Request $request)
+    {
 
         $formFields = $request->validate([
             'password' => 'required'
         ]);
 
-        
-        $user= User::first();
-        $formFields['email']=$user->email;
+
+        $user = User::first();
+        $formFields['email'] = $user->email;
         // $formFields['email']='ilyasgrid17@gmail.com';
 
-        if(auth()->attempt($formFields)) {
+        if (auth()->attempt($formFields)) {
             $request->session()->regenerate();
 
             return redirect()->route('dashboard');

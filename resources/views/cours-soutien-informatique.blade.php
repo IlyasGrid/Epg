@@ -49,32 +49,7 @@
         </div>
         </div>
     </section>
-    {{-- <section>
-        <div class="soutien showing"></div>
 
-        <div class="notice">
-            <h5>Cours de soutien en informatique !</h5>
-            <h3>Vous voulez réussir vos examens, vos projets informatique de stage ou de fin d’étude ?</h3>
-
-            <div class="discut">
-                <a href="tel:+212660777382" style="color: #fff;">(+212) 06 60 77 73 82 / (+212) 05 35 62 18 65</a>
-                <span> | </span>
-                <a href="#">Plus d'info</a>
-            </div>
-        </div>
-
-        <div class="social">
-            <span class="fa fa-dot-circle-o fo">
-                <span class="text">22, Rue Mohammed El Hayani, V.N Fès, 4éme Etage, Appt 20 Imm Hazzaz Fes -
-                    Maroc</span>
-            </span>
-            <span class="fa fa-dot-circle-o ft">
-                <span class="text">contact@epg.ma</span>
-            </span>
-        </div>
-        </div>
-        <div class="triangle-up"></div>
-    </section> --}}
 
     <!-- Content -->
     <div class="container">
@@ -145,25 +120,16 @@
                         <th class="inclus">Volume horaire</th>
                         <th class="inclus">Prix / mois</th>
                     </tr>
-                    <tr>
-                        <th class="inclus" rowspan="3">En groupe</th>
-                        <td>4</td>
-                        <td rowspan="4">2h par semaine</td>
-                        <td>200 Dh</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>300 Dh</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>400 Dh</td>
-                    </tr>
-                    <tr>
-                        <th class="inclus">Individuel</th>
-                        <td>1</td>
-                        <td>800 Dh</td>
-                    </tr>
+                    @foreach ($soutiens as $soutien)
+                        <tr>
+                            <th class="inclus" >{{$soutien->type}}</th>
+                            <td>{{$soutien->nbr_personne}}</td>
+                            <td >{{$soutien->volume_horraire}} par semaine</td>
+                            <td>{{$soutien->price}} Dh</td>
+                        </tr>
+                    @endforeach
+
+
                 </table>
             </div>
         </div>
