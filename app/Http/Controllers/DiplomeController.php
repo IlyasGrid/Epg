@@ -21,8 +21,8 @@ class DiplomeController extends Controller
     public function show($diplome_name)
     {
 
-        $diplome = Diplome::where('Name', '=', $diplome_name)->get('id');
-        $diplome_id = $diplome[0]->id;
+        $diplome = Diplome::where('Name', '=', $diplome_name)->first();
+        $diplome_id = $diplome->id;
 
         $branches = Branche_Diplome::where('Diplome_id', '=', $diplome_id)->get();
 
@@ -41,10 +41,7 @@ class DiplomeController extends Controller
 
     // -------------------------------------admin-------------------------------------
 
-    public function adminHome()
-    {
-        return view('admin.test');
-    }
+
 
     public function adminShow()
     {
@@ -68,7 +65,6 @@ class DiplomeController extends Controller
     {
         $diplome = Diplome::withTrashed()->find($id);
         $diplome->restore();
-
 
 
         return redirect()->action([DiplomeController::class, 'trashed'],);

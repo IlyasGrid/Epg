@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('programe__branches', function (Blueprint $table) {
             $table->id();
             $table->char('Name_module', 50);
-            $table->char('Annee', 20)->unique();
+            $table->char('Annee', 20);
             $table->softDeletes();
             $table->foreignId('branche__diplomes_id')
                 ->constrained()

@@ -6,7 +6,14 @@ use App\Models\Branche_Diplome;
 use App\Models\Diplome;
 use App\Models\Programe_Branche;
 use Illuminate\Http\Request;
-
+function filterAndImplode(&$formFields, $fieldName)
+{
+    if (isset($formFields[$fieldName])) {
+        $nonEmptyValues = array_filter($formFields[$fieldName]);
+        $implodedValues = implode(';', $nonEmptyValues);
+        $formFields[$fieldName] = $implodedValues;
+    }
+}
 class BrancheController extends Controller
 {
 
@@ -19,15 +26,14 @@ class BrancheController extends Controller
 
     public function edit($id_diplome, $id_tarif)
     {
-        $diplome = Diplome::where('id', '=', $id_diplome)->get();
-        $diplome = $diplome[0];
+        $diplome = Diplome::where('id', '=', $id_diplome)->first();
 
         $branche = Branche_Diplome::where('id', '=', $id_tarif)
             ->where('diplome_id', '=', $id_diplome)
             ->first();
 
         if (!$branche) {
-            return redirect()->action([diplomeController::class, 'showBranche'], ['id_diplome' => $id_diplome]);
+            return redirect()->action([BrancheController::class, 'show'], ['id_diplome' => $id_diplome]);
         }
 
         return view('admin.diplome.branche.edit', compact('diplome', 'branche'));
@@ -36,15 +42,13 @@ class BrancheController extends Controller
 
     public function update(Request $request, $id_diplome, $id_branche)
     {
-        $branche = Branche_Diplome::where('Diplome_id', '=', $id_diplome)
-            ->where('id', '=', $id_branche)
-            ->get();
+        $branche = Branche_Diplome::where('Diplome_id', $id_diplome)
+            ->where('id', $id_branche)
+            ->first();
 
-
-        if ($branche->isEmpty()) {
-            return redirect()->action([DiplomeController::class, 'showBranche'], ['id_diplome' => $id_diplome]);
+        if (!$branche) {
+            return redirect()->action([BrancheController::class, 'show'], ['id_diplome' => $id_diplome]);
         }
-        $branche = $branche[0];
 
         $formFields = $request;
 
@@ -61,13 +65,24 @@ class BrancheController extends Controller
                 "Piece_a_fournis" => "nullable"
             ]);
 
-            // dd($branche);
+            filterAndImplode($formFields, 'Objectifs');
+            filterAndImplode($formFields, 'Prerequis');
+            filterAndImplode($formFields, 'Prespective_professionel');
+            filterAndImplode($formFields, 'Piece_a_fournis');
+
+            if ($request->hasFile('img')) {
+                $file = $request->file('img');
+                $filename = $file->getClientOriginalName();
+    
+                $file->storeAs('diplomes/branches', $filename, 'public');
+                $formFields['img'] = 'diplomes/branches/' . $filename;
+            }
 
             $branche->update($formFields);
         }
 
 
-        return redirect()->action([DiplomeController::class, 'showBranche'], ['id_diplome' => $id_diplome]);
+        return redirect()->action([BrancheController::class, 'show'], ['id_diplome' => $id_diplome]);
     }
 
 
@@ -76,9 +91,7 @@ class BrancheController extends Controller
     public function create($id_diplome)
     {
         $diplome = Diplome::where('id', '=', $id_diplome)
-            ->get();
-        $diplome = $diplome[0];
-        // dd($diplome);
+            ->first();
         return view('admin.diplome.branche.create', ['diplome' => $diplome]);
     }
 
@@ -87,8 +100,7 @@ class BrancheController extends Controller
 
 
         $diplome = Diplome::where('id', '=', $id_diplome)
-            ->get();
-        $diplome = $diplome[0];
+            ->first();
         $formFields = $request;
         $formFields = $request->validate([
             "Abreviation" => "required",
@@ -101,11 +113,23 @@ class BrancheController extends Controller
             "Prespective_professionel" => "nullable",
             "Piece_a_fournis" => "nullable"
         ]);
-        // dd($diplome->id);
+
+        filterAndImplode($formFields, 'Objectifs');
+        filterAndImplode($formFields, 'Prerequis');
+        filterAndImplode($formFields, 'Prespective_professionel');
+        filterAndImplode($formFields, 'Piece_a_fournis');
+
+        if ($request->hasFile('img')) {
+            $file = $request->file('img');
+            $filename = $file->getClientOriginalName();
+
+            $file->storeAs('diplomes', $filename, 'public');
+            $formFields['img'] = 'diplomes' . $filename;
+        }
 
         Branche_Diplome::create(array_merge($formFields, ['Diplome_id' => $diplome->id]));
 
-        return redirect()->action([DiplomeController::class, 'showBranche'], ['id_diplome' => $diplome->id]);
+        return redirect()->action([BrancheController::class, 'show'], ['id_diplome' => $diplome->id]);
     }
 
 
@@ -116,10 +140,9 @@ class BrancheController extends Controller
 
 
         $diplome = Diplome::where('id', '=', $id_diplome)
-            ->get();
-        $diplome = $diplome[0];
+            ->first();
 
-        return redirect()->action([DiplomeController::class, 'showBranche'],  ['id_diplome' => $diplome->id]);
+        return redirect()->action([BrancheController::class, 'show'],  ['id_diplome' => $diplome->id]);
     }
 
 
@@ -139,6 +162,6 @@ class BrancheController extends Controller
         $branche = Branche_Diplome::withTrashed()->find($id);
         $branche->restore();
 
-        return redirect()->action([DiplomeController::class, 'trashedBranche'], ['id_diplome' => $id_diplome]);
+        return redirect()->action([BrancheController::class, 'trashed'], ['id_diplome' => $id_diplome]);
     }
 }

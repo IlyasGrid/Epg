@@ -19,18 +19,16 @@ class NivLangueController extends Controller
 
     public function edit($id_langue, $id_niveau)
     {
-        $langue = Langue::where('id', '=', $id_langue)->get();
-        $langue = $langue[0];
+        $langue = Langue::where('id', '=', $id_langue)->first();
 
         $niveau = Niveau_Langue::where('id', '=', $id_niveau)
             ->where('langue_id', '=', $id_langue)
-            ->get();
-        if ($niveau->isEmpty()) {
-            return redirect()->action([LangueController::class, 'showNiveau'], ['id_langue' => $id_langue]);
+            ->first();
+        if (!$niveau) {
+            return redirect()->action([NivLangueController::class, 'show'], ['id_langue' => $id_langue]);
         }
 
-        $niveau = $niveau[0];
-        return view('admin.langue.niveau.edit', compact('langue', 'niveau'));
+        return view('admin.langue.niveau.edit', compact('langue', ''));
     }
 
 
@@ -38,20 +36,19 @@ class NivLangueController extends Controller
     {
         $niveau = Niveau_Langue::where('langue_id', '=', $id_langue)
             ->where('id', '=', $id_niveau)
-            ->get();
+            ->first();
 
 
-        if ($niveau->isEmpty()) {
-            return redirect()->action([LangueController::class, 'showNiveau'], ['id_langue' => $id_langue]);
+        if (!$niveau) {
+            return redirect()->action([NivLangueController::class, 'show'], ['id_langue' => $id_langue]);
         }
 
-        $niveau = $niveau[0];
 
         $formFields = $request;
 
         if ($niveau) {
             $formFields = $request->validate([
-                'Niveau' => 'required',
+                '' => 'required',
                 'Duree_Cours_Normal' => 'required',
                 'Duree_Cours_Soir' => 'required',
                 'Duree_Cours_Accelerer' => 'required',
@@ -64,7 +61,7 @@ class NivLangueController extends Controller
         }
 
 
-        return redirect()->action([LangueController::class, 'showNiveau'], ['id_langue' => $id_langue]);
+        return redirect()->action([NivLangueController::class, 'show'], ['id_langue' => $id_langue]);
     }
 
 
@@ -88,13 +85,13 @@ class NivLangueController extends Controller
 
         Niveau_Langue::create(array_merge($formFields, ['langue_id' => $id_langue]));
 
-        return redirect()->action([LangueController::class, 'showNiveau'], ['id_langue' => $id_langue]);
+        return redirect()->action([NivLangueController::class, 'show'], ['id_langue' => $id_langue]);
     }
     public function destroy($id_langue, $id_niveau)
     {
         $niveau = Niveau_Langue::find($id_niveau);
         $niveau->delete();
-        return redirect()->action([LangueController::class, 'showNiveau'], ['id_langue' => $id_langue]);
+        return redirect()->action([NivLangueController::class, 'show'], ['id_langue' => $id_langue]);
     }
 
     public function trashed($id_langue)
@@ -115,6 +112,6 @@ class NivLangueController extends Controller
 
 
 
-        return redirect()->action([LangueController::class, 'trashedNiveau'], ['id_langue' => $id_langue]);
+        return redirect()->action([NivLangueController::class, 'trashed'], ['id_langue' => $id_langue]);
     }
 }

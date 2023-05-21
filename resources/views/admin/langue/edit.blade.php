@@ -1,8 +1,5 @@
 <x-adminLayout>
  
-    @unless (is_null($message))
-        <h3>{{ $message }}</h3>
-    @endunless
 
     <main>
         <form method="POST" action="/admin/langues/{{ $langue->id }}" enctype="multipart/form-data">

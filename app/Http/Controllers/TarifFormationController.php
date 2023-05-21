@@ -119,7 +119,7 @@ class TarifFormationController extends Controller
     }
 
 
-    public function destroy($id_subCategorie, $id_categorie, $id_formation,$id_tarif)
+    public function destroy($id_categorie, $id_subCategorie, $id_formation,$id_tarif)
     {
 
         $tarif = Formation_Tarification::find($id_tarif);

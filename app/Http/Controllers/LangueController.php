@@ -33,38 +33,31 @@ class LangueController extends Controller
     public function show($langueName)
     {
 
-        $langue = Langue::where('Name', '=', $langueName)->get();
+        $langue = Langue::where('Name', $langueName)->first();
 
-        if ($langue->count() > 0) {
-
-            $langue = $langue[0];
-
-
+        if ($langue) {
             // Tarif
-            $tarif = Tarification_Langue::where('langue_id', '=', $langue->id)->get();
-
-            if ($tarif->count() == 0) {
+            $tarif = Tarification_Langue::where('langue_id', $langue->id)->get();
+        
+            if ($tarif->isEmpty()) {
                 $courses = null;
                 $niveaux = null;
                 return view('Languages.show', compact('langue', 'courses', 'niveaux'));
             }
-
+        
             $courses = $tarif;
-
-
-            //  Niveau
-            $niveaux = Niveau_Langue::where('langue_id', '=', $langue->id)->get();
-            if ($niveaux->count() == 0) {
+        
+            // Niveau
+            $niveaux = Niveau_Langue::where('langue_id', $langue->id)->get();
+            if ($niveaux->isEmpty()) {
                 $niveaux = null;
             }
-
-
-
-
+        
             return view('Languages.show', compact('langue', 'courses', 'niveaux'));
         } else {
             return '<h1>not found</h1>';
         }
+        
     }
 
 
@@ -129,11 +122,9 @@ class LangueController extends Controller
 
     public function edit($id)
     {
-        $langue = Langue::where('id', '=', $id)->get();
-        $langue = $langue[0];
-        $message = null;
+        $langue = Langue::where('id', '=', $id)->first();
 
-        return view('admin.langue.edit', ['langue' => $langue, 'message' => $message]);
+        return view('admin.langue.edit', ['langue' => $langue]);
     }
 
 

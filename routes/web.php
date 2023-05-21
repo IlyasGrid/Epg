@@ -76,6 +76,18 @@ Route::get('/Diplome/{diplome_name}/{branche_name}', [DiplomeController::class, 
 Route::get('admin/register', [UserController::class, 'register'])->name('register');
 Route::post('admin/register', [UserController::class, 'storeAdmin'])->name('storeAdmin');
 
+// Show forgot password form
+// Route::get('/admin/forgot-password', [UserController::class, 'showForgotPasswordForm'])->name('admin.forgot-password');
+
+// // Send verification code
+// Route::post('/admin/send-verification-code',[UserController::class, 'sendVerificationCode'] )->name('admin.send-verification-code');
+
+// // Show reset password form
+// Route::get('/admin/reset-password',[UserController::class, 'showResetPasswordForm'] )->name('admin.reset-password');
+
+// // Reset password
+// Route::post('/admin/reset-password',[UserController::class, 'resetPassword'] )->name('admin.reset-password.post');
+
 Route::group(['middleware' => 'checkuser'], function () {
 
     Route::get('admin/login', [UserController::class, 'login'])->name('login');
@@ -86,6 +98,13 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('admin/dashboard', [UserController::class, 'show'])->name('dashboard');
     Route::post('admin/logout', [UserController::class, 'logout'])->name('logout');
+    Route::get('admin/changePwd', [UserController::class, 'changePwd'])->name('changePwd');
+    Route::post('admin/updatePwd', [UserController::class, 'updatePwd'])->name('updatePwd');
+
+
+
+
+
 
 
     Route::group(['prefix' => 'admin'], function () {
@@ -232,7 +251,6 @@ Route::middleware(['auth'])->group(function () {
             Route::delete('/{type}', [SoutienController::class, 'destroy']);
             Route::get('/trashed', [SoutienController::class, 'trashed']);
             Route::get('/restore/{type}', [SoutienController::class, 'restore']);
-
         });
     });
 

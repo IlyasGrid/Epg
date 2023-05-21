@@ -2,9 +2,9 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
-    <h2> <span class="text-muted text-capitalize"> </span><a href="/admin/diplomes/{{ $diplome->id }}/branche/"
+    <h2> <span class="text-muted text-capitalize"> </span><a href="/admin/diplomes/{{ $diplome->id }}/branche/{{$branche->id}}/program"
             class="text-reset text-decoration-none">
-            {{ $branche->Fullname }} </a> <span class="text-muted text-lowercase">programmes</span>
+            {{ $branche->Fullname }} </a> <span class="text-muted text-lowercase"> edit programme</span>
     </h2>
 
 
@@ -54,11 +54,9 @@
             </div>
         </div>
         <div class="mt-4 d-flex justify-content-center mb-3 align-items-center">
-            {{-- <a href="/admin/diplomes/{{ $diplome->id }}/branche/{{ $branche->id }}/program/"> --}}
             <button type="submit" class="btn btn-sm btn-outline-info pl-4 pr-4 p-2    add-program">
                 edit
             </button>
-            {{-- </a> --}}
         </div>
     </form>
 

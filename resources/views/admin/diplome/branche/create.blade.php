@@ -1,29 +1,9 @@
 <x-adminLayout>
-    {{-- <style>
-        form {
-            padding: 2em;
-            border-radius: 10px;
-            width: fit-content;
-            min-width: 50%;
-            margin-left: 20%;
-            margin-bottom: 5em;
-            background-color: rgba(128, 128, 128, 0.120)
-        }
 
-        h2 {
-            color: rgb(91, 3, 91);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            display: block;
-            font-weight: bold;
-            font-size: xx-large;
-            margin-bottom: 0.5em;
-            text-align: center;
-        }
-    </style> --}}
-    <form class="form-container" method="POST" action="/admin/diplomes/{{ $diplome->id }}/branche" enctype="multipart/form-data">
+    <form class="form-container" method="POST" action="/admin/diplomes/{{ $diplome->id }}/branche"
+        enctype="multipart/form-data">
         @csrf
-        <h2> Branche : {{ $diplome->Name }} </h2>
+        <h2> <span class="text-muted text-lowercase"> Branche </span> {{ $diplome->Name }} </h2>
 
         <div class="mb-6 form-group form-group">
             <label for="Fullname" class="inline-block text-lg mb-2">Branche Fullname</label>
@@ -42,6 +22,18 @@
         @error('Abreviation')
             <p class="text-danger  ml-5  ">{{ $message }}</p>
         @enderror
+
+
+        <div class="mb-6 form-group">
+            <label for="img" class="inline-block text-lg mb-2">
+                Image
+            </label>
+            <input type="file" class="border border-gray-200 rounded p-2 w-full form-control" name="img" />
+
+            @error('img')
+                <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+            @enderror
+        </div>
 
         <div class="mb-6 form-group">
             <label for="Motivation" class="inline-block text-lg mb-2">Motivation (optionel)</label>
@@ -78,18 +70,44 @@
 
 
         <div class="mb-6 form-group form-group">
-            <label for="Objectifs" class="inline-block text-lg mb-2">Branche Objectifs</label>
-            <input type="text" class="border border-gray-200 rounded p-2 w-full form-control" name="Objectifs"
-                placeholder="separer avec &" value="{{ old('Objectifs') }}" />
+
+
+            <label for="Objectifs" class="inline-block text-lg mb-2">
+                Objectifs :
+            </label>
+            <ul id="objectifs-list" class="list-group pl-5">
+                <li class="list-group-item mb-2 mt-1">
+                    <input type="text" class="border border-gray-200 rounded p-2 w-full form-control"
+                        placeholder="add reason (not necessary)" name="Objectifs[]" value="{{ old('Objectifs[]') }}" />
+                </li>
+            </ul>
+            <div class="d-flex justify-content-center">
+                <button class="add-chapitre-btn btn btn-outline-dark"
+                    onclick="addObjectif( '#objectifs-list', 'Objectifs[]', 'add reason (not necessary)');"
+                    type="button">Add</button>
+            </div>
+
         </div>
         @error('Objectifs')
             <p class="text-danger  ml-5  ">{{ $message }}</p>
         @enderror
 
         <div class="mb-6 form-group form-group">
-            <label for="Prerequis" class="inline-block text-lg mb-2">Branche Prerequis</label>
-            <input type="text" class="border border-gray-200 rounded p-2 w-full form-control" name="Prerequis"
-                placeholder="separer avec '&' si plusieur" value="{{ old('Prerequis') }}" />
+
+            <label for="Prerequis" class="inline-block text-lg mb-2">
+                Prerequis :
+            </label>
+            <ul id="Prerequis-list" class="list-group pl-5">
+                <li class="list-group-item mb-2 mt-1">
+                    <input type="text" class="border border-gray-200 rounded p-2 w-full form-control"
+                        placeholder="add reason (not necessary)" name="Prerequis[]" value="{{ old('Prerequis[]') }}" />
+                </li>
+            </ul>
+            <div class="d-flex justify-content-center">
+                <button class="add-chapitre-btn btn btn-outline-dark"
+                    onclick="addObjectif( '#Prerequis-list', 'Prerequis[]', 'add reason (not necessary)');"
+                    type="button">Add</button>
+            </div>
         </div>
         @error('Prerequis')
             <p class="text-danger  ml-5  ">{{ $message }}</p>
@@ -98,11 +116,22 @@
 
 
         <div class="mb-6 form-group form-group">
-            <label for="Prespective_professionel" class="inline-block text-lg mb-2">Branche
-                Prespective_professionel (optionel)</label>
-            <input type="text" class="border border-gray-200 rounded p-2 w-full form-control"
-                name="Prespective_professionel" placeholder="separer avec '&' si plusieur"
-                value="{{ old('Prespective_professionel') }}" />
+
+            <label for="Prespective_professionel" class="inline-block text-lg mb-2">
+                Prespective_professionel (optionel):
+            </label>
+            <ul id="Prespective_professionel-list" class="list-group pl-5">
+                <li class="list-group-item mb-2 mt-1">
+                    <input type="text" class="border border-gray-200 rounded p-2 w-full form-control"
+                        placeholder="add reason (not necessary)" name="Prespective_professionel[]"
+                        value="{{ old('Prespective_professionel[]') }}" />
+                </li>
+            </ul>
+            <div class="d-flex justify-content-center">
+                <button class="add-chapitre-btn btn btn-outline-dark"
+                    onclick="addObjectif( '#Prespective_professionel-list', 'Prespective_professionel[]', 'add reason (not necessary)');"
+                    type="button">Add</button>
+            </div>
         </div>
         @error('Prespective_professionel')
             <p class="text-danger  ml-5  ">{{ $message }}</p>
@@ -110,17 +139,30 @@
 
 
         <div class="mb-6 form-group">
+
             <label for="Piece_a_fournis" class="inline-block text-lg mb-2">
-                Piece_a_fournis (optionel)
+                Piece_a_fournis (optionel) :
             </label>
-            <input class="border border-gray-200 rounded p-2 w-full form-control" name="Piece_a_fournis" rows="10"
-                type="text" placeholder="separer avec '&' si plusieur" value="{{ old('Piece_a_fournis') }}" />
+            <ul id="Piece_a_fournis-list" class="list-group pl-5">
+                <li class="list-group-item mb-2 mt-1">
+                    <input type="text" class="border border-gray-200 rounded p-2 w-full form-control"
+                        placeholder="add reason (not necessary)" name="Piece_a_fournis[]"
+                        value="{{ old('Piece_a_fournis[]') }}" />
+                </li>
+            </ul>
+            <div class="d-flex justify-content-center">
+                <button class="add-chapitre-btn btn btn-outline-dark"
+                    onclick="addObjectif( '#Piece_a_fournis-list', 'Piece_a_fournis[]', 'add reason (not necessary)');"
+                    type="button">Add</button>
+            </div>
         </div>
         @error('Piece_a_fournis')
             <p class="text-danger  ml-5  ">{{ $message }}</p>
         @enderror
+
+
         <div class="mt-5 form-group d-flex justify-content-center">
-            <button class="btn btn-primary">
+            <button class="btn btn-outline-success">
                 Create branche
             </button>
 

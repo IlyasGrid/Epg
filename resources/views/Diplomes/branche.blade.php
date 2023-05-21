@@ -96,7 +96,7 @@
 
 
                 @php
-                    $prerequis = explode('&', $branche->Prerequis);
+                    $prerequis = explode(';', $branche->Prerequis);
                 @endphp
                 @unless (count($prerequis) <= 0)
                     @if (count($prerequis) > 1)
@@ -115,7 +115,19 @@
 
                 <div class="share clr_Orange">
                     <h5 class="pfp">Objectif:</h5>
-                    <p>{{ $branche->Objectifs }}</p>
+                    @php
+                        $objectifs = explode(';', $branche->Objectifs);
+                    @endphp
+                    @unless (count($objectifs) <= 0)
+                        <ul>
+                            @foreach ($objectifs as $objectif)
+                                <li><span>✦</span> {{ $objectif }}
+                                </li>
+                            @endforeach
+                        </ul>
+                    @endunless
+
+                    {{-- <p>{{ $branche->Objectifs }}</p> --}}
                 </div>
 
 
@@ -402,7 +414,7 @@
                         <h5 class="pfp">Perspectives Professionnelles</h5>
                         <ul>
                             @php
-                                $perspectives = explode('&', $branche->Prespective_professionel);
+                                $perspectives = explode(';', $branche->Prespective_professionel);
                             @endphp
                             @foreach ($perspectives as $perspective)
                                 <li><span>✦</span> {{ $perspective }}</li>

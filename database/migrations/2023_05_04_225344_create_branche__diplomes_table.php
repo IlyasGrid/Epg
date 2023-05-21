@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->char('Abreviation', 10);
             $table->char('Fullname', 150);
+            $table->text('img')->nullable();
             $table->text('Motivation')->nullable();
             $table->integer('Price_month');
             $table->integer('Price_year');

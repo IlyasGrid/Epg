@@ -1,5 +1,0 @@
-php artisan make:model Langue -m
-php artisan db:seed --class=Langue              
- php artisan make:seeder LangueSeeder
- php artisan make:controller LangueController -r --model=Langue
-

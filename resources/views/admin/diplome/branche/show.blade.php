@@ -1,9 +1,5 @@
 <x-adminLayout>
 
-    {{-- <div class="d-flex justify-content-around m-5 p-3 ">
-        <a href="/admin/diplomes/{{ $diplome->id }}/branche/create" class="btn btn-outline-success align-self-start">create
-            new Branche</a>
-    </div> --}}
 
     <h2> <span class="text-muted text-capitalize">diplome </span><a href="/admin/diplomes/"
             class="text-reset text-decoration-none">
@@ -13,7 +9,7 @@
         <a href="/admin/diplomes/{{ $diplome->id }}/branche/create" class="btn btn-outline-success align-self-start">create
             new branche</a>
         <a href="/admin/diplomes/{{ $diplome->id }}/branche/trashed"
-            class="btn btn btn-outline-outline-secondary align-self-start">show
+            class="btn btn btn-outline-secondary align-self-start">show
             deleted branche</a>
     </div>
 

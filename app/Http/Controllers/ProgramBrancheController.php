@@ -76,14 +76,16 @@ class ProgramBrancheController extends Controller
 
         $diplome = Diplome::findOrFail($id_diplome)->first();
 
-        $branche = Branche_Diplome::findOrFail($id_branche)->first();
+        $branche = Branche_Diplome::findOrFail($id_branche);
 
 
         $branche->annee = $annee;
+
         $branche->program  = Programe_Branche::where('Annee', '=', $annee)
             ->where('branche__diplomes_id', '=', $branche->id)
             ->get();
 
+        // dd($branche->program);
         return view('admin.diplome.branche.program.edit', compact('diplome', 'branche'));
     }
 
@@ -158,7 +160,7 @@ class ProgramBrancheController extends Controller
     {
 
         $programs = Programe_Branche::onlyTrashed()->where('Annee', '=', $annee)->get();
-        
+
         foreach ($programs as $key => $program) {
             $program->restore();
         }

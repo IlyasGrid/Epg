@@ -44,7 +44,7 @@
                             <input type="text" class="border border-gray-200 rounded p-2 w-full form-control"
                                 maxlength="2" name="Niveau" value="{{ $niveau->Niveau }}" />
 
-                            @error('Nivaeu')
+                            @error('Niveau')
                                 <p class="text-danger  ml-5  ">{{ $message }}</p>
                             @enderror
                         </div>
