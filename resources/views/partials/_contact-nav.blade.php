@@ -59,16 +59,10 @@
                     <span class="more">Plus </span><span class="sr-only">Toggle Dropdown</span>
                 </a>
                 <div class="dropdown-menu" id="navDrop" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/Diplomes/qualification/">Qualification</a>
-                    <a class="dropdown-item" href="/Diplomes/technicien/">Technicien</a>
-                    <a class="dropdown-item"
-                        href="/Diplome/technicien specialise/TECHNICIEN SPÉCIALISÉ EN DÉVELOPPEMENT INFORMATIQUE">Technicien
-                        Spécialisé</a>
-                    <a class="dropdown-item" href="/Diplomes/techncien superieur/">Technicien Supérieur</a>
-                    <a class="dropdown-item dropdown-header" href="/Diplomes/license professionnelle/">Licence
-                        Professionnelle</a>
-                    <a class="dropdown-item dropdown-header" href="/Diplomes/master professionnelle/">Master
-                        Professionnel</a>
+                    @foreach ($diplomes as $diplome)
+                        <a class="dropdown-item text-capitalize"
+                            href="/Diplomes/{{ $diplome->Name }}/">{{ $diplome->Name }}</a>
+                    @endforeach
                 </div>
             </li>
             <li class="nav-item btn-group">
@@ -82,25 +76,12 @@
 
                 </a>
                 <div class="dropdown-menu" id="navDrop" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/Formations\Technologies-web.php">Technologies Web</a>
-                    <a class="dropdown-item" href="/Formations\Développement-logiciel.php">Développement
-                        Logiciel</a>
-                    <a class="dropdown-item" href="/Formations\Messagerie-travail-collaboratif.php">Messagerie,
-                        Travail Collaboratif</a>
-                    <a class="dropdown-item" href="/Formations\SGBD.php">Système de Gestion de Base de Données</a>
-                    <a class="dropdown-item" href="/Formations\Big-Data-Intelligence-Artificielle.php">Big Data,
-                        Intelligence Artificielle</a>
-                    <a class="dropdown-item" href="/Formations\Gestion-de-projet.php">Gestion de Projet</a>
-                    <a class="dropdown-item" href="/Formations\Cybersécurité.php">Cybersécurité</a>
-                    <a class="dropdown-item" href="/Formations\Bureautique.php">Bureautique</a>
-                    <a class="dropdown-item dropdown-header" href="/Formations\Pao-Cao-graph.php">Pao, Cao,
-                        Graphisme, Multimédia</a>
-                    <a class="dropdown-item dropdown-header" href="/Formations\Réseaux-infor.php">Réseaux
-                        Informatique</a>
-                    <a class="dropdown-item dropdown-header"
-                        href="/Formations\Virtualisation-Cloud-Devops.php">Virtualisation, Cloud, Devops</a>
-                    <a class="dropdown-item dropdown-header" href="/Formations\Systèmes-d'exploitation.php">Systémes
-                        D'exploitation</a>
+
+                    @foreach ($categories as $categorie)
+                        <a class="dropdown-item text-capitalize"
+                            href="/Formations/{{ $categorie->Name }}/">{{ $categorie->Name }}</a>
+                    @endforeach
+
                 </div>
             </li>
             <li class="nav-item btn-group">
@@ -111,13 +92,10 @@
                     <span class="more">Plus </span><span class="sr-only">Toggle Dropdown</span>
                 </a>
                 <div class="dropdown-menu" id="navDrop" aria-labelledby="navbarDropdown">
-                    {{-- @foreach ($langues as $langue)
+                    @foreach ($langues as $langue)
                         <a class="dropdown-item" href="/Languages/{{ $langue->Name }}"><span
                                 style="text-transform: uppercase">{{ $langue->Name }}</span></a>
-                    @endforeach --}}
-                    <a class="dropdown-item" href="/Languages/allemand">Allemend</a>
-                    <a class="dropdown-item" href="/Languages/anglais">Anglais</a>
-                    <a class="dropdown-item" href="/Languages/">+others</a>
+                    @endforeach
                 </div>
             </li>
 

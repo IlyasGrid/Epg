@@ -1,4 +1,4 @@
-<x-layout>
+<x-Layout>
     <link rel="stylesheet" href="Index/service.css" />
     <link rel="stylesheet" href="Index/service.css" />
     <link rel="stylesheet" href="Index/Biblo.css" />
@@ -139,4 +139,4 @@
 
 
     <script src="Index/Js.js"></script>
-</x-layout>
+</x-Layout>

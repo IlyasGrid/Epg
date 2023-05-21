@@ -1,4 +1,4 @@
-<x-layout>
+<x-Layout>
     <link rel="stylesheet" href="Index/service.css" />
     <link rel="stylesheet" href="Index/Biblo.css" />
     <section class="background-image">
@@ -157,4 +157,4 @@
         </div>
     </div>
 
-    </x-layoutlangues>
+</x-Layout>

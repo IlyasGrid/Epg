@@ -1,4 +1,4 @@
-<x-layout>
+<x-Layout>
     <link rel="stylesheet" href="../Index/service.css" />
     <section class="background-image">
         <style>
@@ -231,4 +231,4 @@
 
     </div>
 
-</x-layout>
+</x-Layout>

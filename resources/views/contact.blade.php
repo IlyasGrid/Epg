@@ -1,4 +1,4 @@
-<x-layout>
+<x-Layout>
     <link rel="stylesheet" href="Index/service.css" />
     <link rel="stylesheet" href="Index/Biblo.css" />
     <section class="background-image">
@@ -150,4 +150,4 @@
     <section class="blog"></section>
     <script defer src="js/main2.js"></script>
 
-</x-layout>
+</x-Layout>

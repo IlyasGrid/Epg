@@ -38,14 +38,36 @@ class CategorieController extends Controller
     }
 
 
-    public function show($category, $sub_category, $formation)
+    public function show($category, $sub_category = null, $formation = null)
     {
-        $formation = Formation::where('Name', $formation)->firstOrFail();
+        if (!$formation && !$sub_category) {
 
-        $formation->programmes = Formation_Programme::where('formations_id', $formation->id)->get();
-        $formation->tarifs = Formation_Tarification::where('formations_id', $formation->id)->get();
+            $category = FormationCategorie::where('Name', $category)->firstOrFail();
 
-        return view("Formations.show", compact('formation'));
+            // dd($category);
+
+
+            $subCategories = FormationSubCategorie::where('formation_categories_id', $category->id)->get();
+
+            foreach ($subCategories as $subCategory) {
+                $formations = Formation::where('formation_sub_categories_id', $subCategory->id)->get();
+
+                $subCategory->formations = $formations;
+            }
+
+            $category->subCategories = $subCategories;
+
+
+            return view('Formations.onecategorieshow', ['category' => $category]);
+
+        } else {
+            $formation = Formation::where('Name', $formation)->firstOrFail();
+
+            $formation->programmes = Formation_Programme::where('formations_id', $formation->id)->get();
+            $formation->tarifs = Formation_Tarification::where('formations_id', $formation->id)->get();
+
+            return view("Formations.show", compact('formation'));
+        }
     }
 
 
@@ -124,6 +146,4 @@ class CategorieController extends Controller
 
         return redirect()->action([CategorieController::class, 'trashed']);
     }
-
-    
 }

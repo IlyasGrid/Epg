@@ -1,4 +1,4 @@
-<x-layout>
+<x-Layout>
     <section>
         <style>
             section>section:after {
@@ -82,4 +82,4 @@
                 <div class="col-lg-2"></div>
             </div>
         </div>
-</x-layout>
+</x-Layout>

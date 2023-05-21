@@ -22,12 +22,15 @@
 </head>
 
 <body>
+
+
+
+
     @include('partials._contact-nav')
 
     @include('partials._social-media')
 
     <section>
-        {{-- <section style="min-height: 100vh"> --}}
         {{ $slot }}
     </section>
 

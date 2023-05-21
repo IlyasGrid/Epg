@@ -1,4 +1,4 @@
-<x-layoutlangues>
+<x-Layoutlangues>
     <style>
         button.btn {
             position: absolute;
@@ -142,4 +142,4 @@
     <section class="blog"></section>
 
 
-</x-layoutlangues>
+</x-Layoutlangues>

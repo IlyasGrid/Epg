@@ -1,4 +1,4 @@
-<x-layout>
+<x-Layout>
     <link rel="stylesheet" href="/Formation/formStyle.css">
     <link rel="stylesheet" href="/formation/style.css">
 
@@ -388,4 +388,4 @@
 
 
 
-</x-layout>
+</x-Layout>

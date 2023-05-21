@@ -1,4 +1,4 @@
-<x-layout>
+<x-Layout>
     <section>
         <style>
             /* section>section:after {
@@ -770,4 +770,4 @@
 
     </div>
 
-</x-layout>
+</x-Layout>

@@ -45,6 +45,7 @@ Route::get('/cours-soutien-informatique.php', [SoutienController::class, 'index'
 Route::view('/Bourse.php', "Bourse");
 Route::view('/A-propos.php', "A-propos");
 Route::view('/services.php', "services");
+Route::view('/test', "test");
 
 
 Route::get('/Documentations/{name}', function ($name) {

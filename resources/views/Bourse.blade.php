@@ -1,4 +1,4 @@
-<x-layout>
+<x-Layout>
     <!-- origin Stylesheet -->
     <link rel="stylesheet" href="/Diplome/metate.css" />
     <link rel="stylesheet" href="/Index/Biblo.css" />
@@ -64,4 +64,4 @@
 
     </div>
 
-</x-layout>
+</x-Layout>

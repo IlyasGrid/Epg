@@ -1,4 +1,4 @@
-<x-layout>
+<x-Layout>
     <section>
         <style>
             section>section:after {
@@ -77,4 +77,4 @@
         @endforeach
 
     </div>
-</x-layout>
+</x-Layout>

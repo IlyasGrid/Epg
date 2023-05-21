@@ -1,4 +1,7 @@
 <div class="item">
+
+
+
     <div class="row">
         <div class="lg-12">
             <img src="/Diplome/Pic/border.png" alt="Ecole polytechnique des génies" />

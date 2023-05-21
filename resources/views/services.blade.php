@@ -1,4 +1,4 @@
-<x-layout>
+<x-Layout>
 
 
     <section style="min-height: 100vh ; " class="background-image">
@@ -337,4 +337,4 @@
 
     <script defer src="Index/main.js"></script>
 
-</x-layout>
+</x-Layout>
