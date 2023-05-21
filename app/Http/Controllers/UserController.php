@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\MailNotify;
 use App\Models\User;
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
@@ -111,17 +112,11 @@ class UserController extends Controller
     }
 
 
-    // public function showForgotPasswordForm()
-    // {
-    //     return view('admin.forgot_password');
-    // }
 
-    // Send verification code
+
+
     // public function sendVerificationCode(Request $request)
     // {
-
-
-    //     // $email = $request->email;
     //     $user = User::first();
 
     //     if (!$user) {
@@ -135,50 +130,51 @@ class UserController extends Controller
     //     $user->verification_code = $verificationCode;
     //     $user->save();
 
-    //     // Send email with verification code
-    //     // Replace the email content and subject with your own
-    //     Mail::raw("Your verification code is: $verificationCode", function ($message) use ($email) {
-    //         $message->to($email)->subject('Forgot Password - Verification Code');
-    //     });
+    //     Mail::to($email)->send(new MailNotify($verificationCode));
 
-    //     Session::put('status', 'verification');
-    //     return redirect()->route('login');
+    //     return redirect()->action([UserController::class, 'show']);
     // }
 
-    // // Show reset password form
-    // public function showResetPasswordForm()
-    // {
-    //     if (Session::get('status') !== 'verification') {
-    //         return redirect()->route('login');
-    //     }
 
-    //     return view('admin.reset_password');
+    // public function verifyCodeForm()
+    // {
+    //     return view('admin.verifyCodeForm');
     // }
 
-    // // Reset password
-    // public function resetPassword(Request $request)
-    // {
-    //     if (Session::get('status') !== 'verification') {
-    //         return redirect()->route('login');
-    //     }
 
+    // public function verificationCode(Request $request)
+    // {
     //     $request->validate([
-    //         'verification_code' => 'required|digits:6',
-    //         'new_password' => 'required|min:6|confirmed',
+    //         'Code' => 'required',
     //     ]);
 
-    //     $user = User::where('verification_code', $request->verification_code)->first();
+    //     $user = User::first();
 
-    //     if (!$user) {
-    //         return redirect()->back()->withErrors(['verification_code' => 'Invalid verification code']);
+    //     if ($user->verification_code == $request->Code) {
+    //         dd('suiii');
     //     }
 
-    //     // Update the password
-    //     $user->password = Hash::make($request->new_password);
-    //     $user->verification_code = null;
-    //     $user->save();
+    //     return view('admin.resetpassword');
+    // }
 
-    //     Session::put('status', 'password-reset');
-    //     return redirect()->route('login');
+
+    // public function resetpasswordView()
+    // {
+    //     return view('admin.resetpassord');
+    // }
+    // public function resetpassword(Request $request)
+    // {
+    //     $admin = User::first();
+
+    //     $request->validate([
+    //         'new_password' => 'required|min:8',
+    //     ]);
+
+
+    //     $password = Hash::make($request->new_password);
+
+    //     $admin->update(['password' => $password]);
+
+    //     return redirect()->action([UserController::class, 'show']);
     // }
 }

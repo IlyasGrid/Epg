@@ -1,4 +1,4 @@
-<x-adminlayout>
+<x-adminLayout>
     <div class="container">
         <div class="row d-flex justify-content-center mt-5">
             <div class="col-lg-4 col-md-6 col-sm-8">
@@ -30,4 +30,4 @@
             </div>
         </div>
     </div>
-</x-adminlayout>
+</x-adminLayout>

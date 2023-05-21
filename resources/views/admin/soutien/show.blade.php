@@ -1,4 +1,4 @@
-<x-adminlayout>
+<x-adminLayout>
     @if (count($soutiens) < 1)
         <div class="container d-flex align-items-center justify-content-center w-100">
             <div class="text-center">
@@ -49,4 +49,4 @@
             </div>
         @endforeach
     @endif
-</x-adminlayout>
+</x-adminLayout>

@@ -8,17 +8,6 @@
 
     </h2>
 
-    {{-- <h2> <span class="text-muted text-capitalize">diplome </span><a href="/admin/diplomes/"
-            class="text-reset text-decoration-none">
-            {{ $diplome->Name }} </a> <span class="text-muted text-lowercase">branches</span>
-    </h2>
-    <div class="d-flex justify-content-around m-5 p-3 ">
-        <a href="/admin/diplomes/{{ $diplome->id }}/branche/create" class="btn btn-success align-self-start">create
-            new branche</a>
-        <a href="/admin/diplomes/{{ $diplome->id }}/branche/trashed"
-            class="btn btn btn-outline-secondary align-self-start">show
-            deleted branche</a>
-    </div> --}}
 
     @if (count($branches) < 1)
         <div class="container d-flex align-items-center justify-content-center w-100">

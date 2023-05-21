@@ -77,17 +77,17 @@ Route::get('/Diplome/{diplome_name}/{branche_name}', [DiplomeController::class, 
 Route::get('admin/register', [UserController::class, 'register'])->name('register');
 Route::post('admin/register', [UserController::class, 'storeAdmin'])->name('storeAdmin');
 
-// Show forgot password form
-// Route::get('/admin/forgot-password', [UserController::class, 'showForgotPasswordForm'])->name('admin.forgot-password');
 
-// // Send verification code
+// Send verification code
 // Route::post('/admin/send-verification-code',[UserController::class, 'sendVerificationCode'] )->name('admin.send-verification-code');
+// Route::get('/admin/verifyCodeForm', [UserController::class, 'verifyCodeForm'])->name('verifyCodeForm');
+// Route::post('/admin/verificationCode', [UserController::class, 'verificationCode'])->name('verificationCode');
 
-// // Show reset password form
-// Route::get('/admin/reset-password',[UserController::class, 'showResetPasswordForm'] )->name('admin.reset-password');
+// Route::get('/admin/restpassword', [UserController::class, 'resetpasswordView'])->name('resetpasswordView');
+// Route::post('/admin/restpassword', [UserController::class, 'restpassword'])->name('restpassword');
 
-// // Reset password
-// Route::post('/admin/reset-password',[UserController::class, 'resetPassword'] )->name('admin.reset-password.post');
+
+
 
 Route::group(['middleware' => 'checkuser'], function () {
 

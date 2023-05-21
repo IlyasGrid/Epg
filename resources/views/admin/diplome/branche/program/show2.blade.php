@@ -1,4 +1,4 @@
-<x-adminlayout>
+<x-adminLayout>
 
 
     <h2> <span class="text-muted text-capitalize"> </span><a href="/admin/diplomes/{{ $diplome->id }}/branche/"
@@ -158,4 +158,4 @@
 
 
 
-</x-adminlayout>
+</x-adminLayout>
