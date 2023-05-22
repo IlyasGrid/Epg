@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BourseController;
 use App\Http\Controllers\BrancheController;
 use App\Http\Controllers\CategorieController;
 use App\Http\Controllers\DiplomeController;
@@ -42,7 +43,9 @@ Route::view('/test', "components.layout");
 Route::view('/contact.php', "contact");
 // Route::view('/cours-soutien-informatique.php', "cours-soutien-informatique");
 Route::get('/cours-soutien-informatique.php', [SoutienController::class, 'index']);
-Route::view('/Bourse.php', "Bourse");
+// Route::view('/Bourse.php', "Bourse");
+Route::get('/Bourse.php', [BourseController::class, 'index']);
+
 Route::view('/A-propos.php', "A-propos");
 Route::view('/services.php', "services");
 Route::view('/test', "test");
@@ -252,6 +255,19 @@ Route::middleware(['auth'])->group(function () {
             Route::delete('/{type}', [SoutienController::class, 'destroy']);
             Route::get('/trashed', [SoutienController::class, 'trashed']);
             Route::get('/restore/{type}', [SoutienController::class, 'restore']);
+        });
+
+
+        Route::group(['prefix' => 'bourse'], function () {
+
+            Route::get('/', [BourseController::class, 'show']);
+            // Route::get('/create', [BourseController::class, 'create']);
+            Route::get('/edit/{id}', [BourseController::class, 'edit']);
+            Route::put('/{id}', [BourseController::class, 'update']);
+            // Route::post('/', [BourseController::class, 'store']);
+            // Route::delete('/{id}', [BourseController::class, 'destroy']);
+            // Route::get('/trashed', [BourseController::class, 'trashed']);
+            // Route::get('/restore/{id}', [BourseController::class, 'restore']);
         });
     });
 

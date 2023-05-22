@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('branche__diplomes', function (Blueprint $table) {
             $table->id();
             $table->char('Abreviation', 10);
-            $table->char('Fullname', 150);
+            $table->string('Fullname');
             $table->text('img')->nullable();
             $table->text('Motivation')->nullable();
             $table->integer('Price_month');

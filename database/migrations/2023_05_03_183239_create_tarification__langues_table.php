@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('tarification__langues', function (Blueprint $table) {
             $table->id();
-            $table->char('Type', 100);
+            $table->string('Type');
             $table->integer('Volume_Horraire');
-            $table->char('Temps', 10);
+            $table->string('Temps');
             $table->integer('Price');
             $table->softDeletes();
             $table->foreignId('langue_id')

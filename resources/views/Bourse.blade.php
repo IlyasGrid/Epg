@@ -1,4 +1,7 @@
 <x-Layout>
+
+
+
     <!-- origin Stylesheet -->
     <link rel="stylesheet" href="/Diplome/metate.css" />
     <link rel="stylesheet" href="/Index/Biblo.css" />
@@ -33,29 +36,34 @@
                 <h1 class="br">المنحـــة الدراسيـــة</h1>
                 <h2 class="br1"> La Bourse d'étude</h2>
                 <div class="minha">
-                    <p>رغبة منا في مساعدة الطلاب لتحقيق حلمهم الدراسي ولكي يحصلوا على فرص عمل تناسب طموحاتهم </p>
-                    <p>ارتأت المؤسسة تقديم منح دراسية بتخفيضات تصل الى غاية 90% لمصاريف الدراسة</p>
-                    <p> يتم البث في قبول او رفض المنحة او القيمة المناسبة للتخفيض من طرف لجنة متخصصة بعد دراسة
-                        مستوفية
-                        لملف المترشح والوثائق المرفقة</p>
+                    @if ($bourse == null)
+                        <h2 class="text-danger text-capitalize m-5 p-5"> Nothing to show</h2>
+                    @else
+                        <p>{{ $bourse->text }}</p>
 
-                    <ul>
-                        <h3>على المترشح ان يدلي بكافة الوثائق المرفقة </h3>
-                        <li>
-                            <ul>
-                                <li>
-                                <li> شهادة الدخل للمرشح او شهادة الدخل للاب والام او شهادة عدم العمل للاب والام
-                                </li>
-                                <li>شهادة السكنى</li>
-                            </ul>
-                        </li>
-                        <li>ملئ الاستمارات المطلوبة مع تقديم شرح مفصل عن أسباب طلب المنحة</li>
-                        <li><a href="Documentations/Minha.pdf" target="blank">اضغط هنا لتحميل الاستمارات
-                                المطلوبة</a>
-                        </li>
-                    </ul>
-                    </p>
+                        <ul>
+                            <h3>على المترشح ان يدلي بكافة الوثائق المرفقة </h3>
+                            <li>
+                                <ul>
+
+                                    @php
+                                        $conditions = explode(';', $bourse->conditions);
+                                    @endphp
+                                    @forelse ($conditions as $condition)
+                                        <li>{{ $condition }}</li>
+                                    @empty
+                                       {{-- <li> <h4 class="text-danger">no condition found</h4></li> --}}
+                                    @endforelse
+                                </ul>
+                            </li>
+                            <li>ملئ الاستمارات المطلوبة مع تقديم شرح مفصل عن أسباب طلب المنحة</li>
+                            <li><a href="Documentations/Minha.pdf" target="blank">اضغط هنا لتحميل الاستمارات
+                                    المطلوبة</a>
+                            </li>
+                        </ul>
+                        </p>
                 </div>
+                @endif
             </div>
 
             <div class="col-lg-2"></div>

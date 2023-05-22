@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('formation__tarifications', function (Blueprint $table) {
             $table->id();
-            $table->char('Name', 100);
+            $table->string('Name');
             $table->integer('Price');
-            $table->char('Type', 100);
+            $table->string('Type');
             $table->integer('Volume_Horraire');
             $table->string('Duree_formation')->nullable();
             $table->string('Debut_formation');

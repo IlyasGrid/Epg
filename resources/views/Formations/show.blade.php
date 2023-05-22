@@ -36,7 +36,8 @@
 
                 <div class="col-lg-6 sora">
                     <img class="w-48 mr-6 mb-6"
-                    src="{{$formation->logo ? asset('storage/' . $formation->logo) : asset('/formation/img/default2.png')}}" alt="" />
+                        src="{{ $formation->logo ? asset('storage/' . $formation->logo) : asset('/formation/img/default2.png') }}"
+                        alt="" />
                 </div>
 
             </div>
@@ -47,12 +48,15 @@
         <div class="sam">
             <h1>Tarification et déroulement</h1>
             <div class="popi " style="margin: 0 15%;">
-                @foreach ($formation->tarifs as $tarif)
+                @foreach ($formation->tarifs as $key => $tarif)
+                    @php
+                        $key += 1;
+                    @endphp
                     <div class="yaya oma" style="margin: 3em;">
                         <h3 id="pack0">{{ $tarif->Name }}</h3>
                         <p class="money">
                             <span id="prix0" class="ntr_spn mad">{{ $tarif->Price }}</span> DH &#x2248;
-                            <span id="prix00" class="ntr_spn euro"></span> €
+                            <span id="prix00" class="ntr_spn euro">{{ $tarif->Price * 0.11 }}</span> €
                         </p>
                         <ul class="mb-5">
                             <li>
@@ -109,7 +113,7 @@
                             @endunless
                         </ul>
                         <div class="dIns mt-3">
-                            <button type="button" onClick=eInscrire(0) class="Ins">
+                            <button type="button" onClick="eInscrire('{{ $key }}')" class="Ins">
                                 <i class="fa fa-sign-in"></i>Inscrire
                             </button>
                         </div>
@@ -226,10 +230,13 @@
 
                 <div class="row">
 
-                    @foreach ($formation->programmes as $programme)
+                    @foreach ($formation->programmes as $key => $programme)
+                        @php
+                            $key += 1;
+                        @endphp
                         <div class="col-lg-6">
                             <div class="box">
-                                <h4><span class="dec">1</span> {{ $programme->ModuleName }} :</h4>
+                                <h4><span class="dec">{{ $key }}</span> {{ $programme->ModuleName }} :</h4>
                                 @php
                                     $chapitres = explode(';', $programme->ModuleChapitre);
                                 @endphp
@@ -385,6 +392,49 @@
     </div>
 
     <section class="blog"></section>
+
+    <script defer>
+        function eClose() {
+            var mdl = document.getElementById('myModal');
+            mdl.style.display = "none";
+        }
+
+        function eInscrire(n) {
+            var mdl = document.getElementById('myModal');
+            mdl.style.display = "block";
+
+            mdl.style.display = "block";
+            var dbut = document.getElementById('date_debut1').textContent,
+                dure = document.getElementById('dure' + n).textContent,
+                dt_us = new Date(Intl.DateTimeFormat('en-GB').format(new Date(dbut)));
+
+            if (!dure.includes('jour')) {
+                dfin = Intl.DateTimeFormat('en-GB').format(new Date(dt_us.getFullYear(), dt_us.getMonth() + dure.substring(
+                    0, 1) * 1));
+            } else {
+                dfin = 'à déterminer';
+                dbut = 'à déterminer';
+            }
+
+            if (document.URL.includes("/Formation/")) {
+                nomformation = document.getElementById('zhr').children[0].children[0].children[0].children[0].textContent;
+            } else nomformation = document.getElementById('zhr').children[0].children[0].children[1].children[0]
+                .textContent;
+
+            var data = {
+                fortn: nomformation,
+                price: document.getElementById('prix' + n).textContent,
+                dt_db: dbut,
+                types: document.getElementById('type' + n).textContent,
+                duree: dure,
+                packs: document.getElementById('pack' + n).textContent,
+                dt_fn: dfin,
+            };
+            sessionStorage.setItem('data', JSON.stringify(data));
+            sessionStorage.setItem('prix', document.getElementById('prix0' + n).textContent);
+        }
+    </script>
+
 
 
 

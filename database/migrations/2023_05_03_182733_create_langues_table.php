@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('langues', function (Blueprint $table) {
             $table->id();
-            $table->char('Name')->unique();
-            $table->string('Subtitle', 50);
+            $table->string('Name')->unique();
+            $table->string('Subtitle');
             $table->text('Motivation');
             $table->text('img')->nullable();
             $table->text('Raisons')->nullable();

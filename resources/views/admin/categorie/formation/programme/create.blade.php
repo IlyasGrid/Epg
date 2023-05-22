@@ -27,8 +27,6 @@
                 <label for="ModuleChapitre" class="inline-block text-lg mb-2">
                     Chapitre
                 </label>
-                {{-- <input type="text" class="border border-gray-200 rounded p-2 w-full form-control"
-                    name="ModuleChapitre" value="{{ old('ModuleChapitre') }}" /> --}}
 
                 <ul id="chapitres-list" class="list-group pl-5">
                     <li class="list-group-item mb-2 mt-1">
@@ -38,7 +36,7 @@
                     </li>
                 </ul>
                 <div class="d-flex justify-content-center">
-                    <button class="add-chapitre-btn btn btn-outline-success" onclick="addObjectif( '#chapitres-list', 'ModuleChapitre[]', 'program ModuleChapitre');" type="button">Add
+                    <button class="add-chapitre-btn btn btn-outline-dark" onclick="addObjectif( '#chapitres-list', 'ModuleChapitre[]', 'program ModuleChapitre');" type="button">Add
                         Chapitre</button>
                 </div>
 

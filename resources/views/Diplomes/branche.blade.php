@@ -70,7 +70,7 @@
                 <p class="tarifs">L'école Polytechnique des génies vous propose des cours en <span
                         class="clr_Orange">présentiel</span> ainsi des cours <span class="clr_Orange">à
                         distance</span> à des tarifs trés encourageants</p>
-                <p class="tarifs"><span class="clr_Orange">Frais d'inscription: </span> {{ $branche->Price_month }}
+                <p class="tarifs"><span class="clr_Orange">Frais d'inscription: </span> {{ $branche->Price_month }} DH
                 </p>
                 <table class="tarifs">
 
@@ -121,13 +121,24 @@
                     @unless (count($objectifs) <= 0)
                         <ul>
                             @foreach ($objectifs as $objectif)
-                                <li><span>✦</span> {{ $objectif }}
+                                <li>
+                                    @php
+                                        $subobjectifs = explode('#', $objectif);
+                                    @endphp
+                                    <ul>
+                                        @foreach ($subobjectifs as $key => $subobjectif)
+                                            @if ($key == 0)
+                                                {{ $subobjectif }}
+                                            @else
+                                                <li> <span>✦</span>{{ $subobjectif }}</li>
+                                            @endif
+                                        @endforeach
+                                    </ul>
                                 </li>
                             @endforeach
                         </ul>
                     @endunless
 
-                    {{-- <p>{{ $branche->Objectifs }}</p> --}}
                 </div>
 
 
@@ -138,17 +149,25 @@
                         <h5>Programme</h5>
 
                     </div>
+                    @php
+                        $numModule = 0;
+                    @endphp
                     @foreach ($branche->programs->groupBy('Annee') as $annee => $programs)
-                        <h5 class="trtd">{{ $annee }} année</h5>
-                        <table>
+                        @if (count($branche->programs->groupBy('Annee')) < 2)
+                            <h5 class="trtd"> Modules</h5>
+                        @else
+                            <h5 class="trtd">{{ $annee }} année</h5>
+                        @endif
+                        <table class="mb-5">
+
                             @foreach ($programs as $key => $program)
                                 @php
-                                    $key += 1;
-                                    $numModule = $key;
+                                    $numModule += 1;
+                                    $paddedNumModule = str_pad($numModule, 2, '0', STR_PAD_LEFT);
                                 @endphp
-                                <tr class="item{{ $key % 2 === 0 ? ' clr' : '' }}">
+                                <tr class="item{{ $key % 2 === 1 ? ' clr' : '' }}">
 
-                                    <td class="mdl"> Module {{ $numModule }}</td>
+                                    <td class="mdl"> Module {{ $paddedNumModule }}</td>
                                     <td>{{ $program->Name_module }}</td>
                                 </tr>
                             @endforeach
@@ -164,248 +183,8 @@
 
                     </div>
                 @endif
-                {{-- Programme --}}
-                {{-- <div class="share clr_Orange ntr">
 
-                    <h5>Programme</h5>
 
-                </div>
-
-                <table>
-
-                    <tr>
-
-                        <td class="mdl">TDI 01</td>
-
-                        <td>Métier et formation</td>
-
-                    </tr>
-
-                    <tr class="clr">
-
-                        <td class="mdl">TDI 02</td>
-
-                        <td>L’entreprise et son Environnement</td>
-
-                    </tr>
-
-                    <tr>
-
-                        <td class="mdl">TDI 03</td>
-
-                        <td>Notions de Mathématiques Appliquées à l'informatique</td>
-
-                    </tr>
-
-                    <tr class="clr">
-
-                        <td class="mdl">TDI 04</td>
-
-                        <td>Gestion du Temps</td>
-
-                    </tr>
-
-                    <tr>
-
-                        <td class="mdl">TDI 05</td>
-
-                        <td>Veille Technologique</td>
-
-                    </tr>
-
-                    <tr class="clr">
-
-                        <td class="mdl">TDI 06</td>
-
-                        <td>Production de Documents</td>
-
-                    </tr>
-
-                    <tr>
-
-                        <td class="mdl">TDI 07</td>
-
-                        <td>Communication Interpersonnelle</td>
-
-                    </tr>
-
-                    <tr class="clr">
-
-                        <td class="mdl">TDI 08</td>
-
-                        <td>Logiciels d’Application</td>
-
-                    </tr>
-
-                    <tr>
-
-                        <td class="mdl">TDI 09</td>
-
-                        <td>Programmation Événementielle</td>
-
-                    </tr>
-
-                    <tr class="clr">
-
-                        <td class="mdl">TDI 10</td>
-
-                        <td>Techniques de Programmation Structurée</td>
-
-                    </tr>
-
-                    <tr>
-
-                        <td class="mdl">TDI 11</td>
-
-                        <td>Langage de Programmation Structurée</td>
-
-                    </tr>
-
-                    <tr class="clr">
-
-                        <td class="mdl">TDI 12</td>
-
-                        <td>Programmation Orientée Objet</td>
-
-                    </tr>
-
-                    <tr>
-
-                        <td class="mdl">TDI 13</td>
-
-                        <td>Conception et Modélisation d’un Système d’Information</td>
-
-                    </tr>
-
-                    <tr class="clr">
-
-                        <td class="mdl">TDI 14</td>
-
-                        <td>Installation d’un Poste Informatique</td>
-
-                    </tr>
-
-                    <tr>
-
-                        <td class="mdl">TDI 15</td>
-
-                        <td>Communication en Anglais dans un Contexte de Travail</td>
-
-                    </tr>
-
-                    <tr class="clr">
-
-                        <td class="mdl">TDI 16</td>
-
-                        <td>Assistance Technique à la Clientèle</td>
-
-                    </tr>
-
-                    <tr>
-
-                        <td class="mdl">TDI 17</td>
-
-                        <td>Soutien Technique en Milieu de Travail (Stage I)</td>
-
-                    </tr>
-
-                    <tr class="clr">
-
-                        <td class="mdl">TDI 18</td>
-
-                        <td>Système de Gestion de Base de Données I</td>
-
-                    </tr>
-
-                    <tr>
-
-                        <td class="mdl">TDI 19</td>
-
-                        <td>Analyse et Conception Orientée Objet</td>
-
-                    </tr>
-
-                    <tr class="clr">
-
-                        <td class="mdl">TDI 20</td>
-
-                        <td>Programmation Client-Serveur</td>
-
-                    </tr>
-
-                    <tr>
-
-                        <td class="mdl">TDI 21</td>
-
-                        <td>Déploiement d’Application</td>
-
-                    </tr>
-
-                    <tr class="clr">
-
-                        <td class="mdl">TDI 22</td>
-
-                        <td>Introduction aux Réseaux Informatiques</td>
-
-                    </tr>
-
-                    <tr>
-
-                        <td class="mdl">TDI 23</td>
-
-                        <td>Système de Gestion de base de Données II</td>
-
-                    </tr>
-
-                    <tr class="clr">
-
-                        <td class="mdl">TDI 24</td>
-
-                        <td>Applications Hypermédias</td>
-
-                    </tr>
-
-                    <tr>
-
-                        <td class="mdl">TDI 25</td>
-
-                        <td>Programmation de Sites Web Dynamiques</td>
-
-                    </tr>
-
-                    <tr class="clr">
-
-                        <td class="mdl">TDI 26</td>
-
-                        <td>Initiation à la Gestion de Projets Informatiques</td>
-
-                    </tr>
-
-                    <tr>
-
-                        <td class="mdl">TDI 27</td>
-
-                        <td>Projet de Conception de Fin d’Études</td>
-
-                    </tr>
-
-                    <tr class="clr">
-
-                        <td class="mdl">TDI 28</td>
-
-                        <td>Recherche d’Emploi</td>
-
-                    </tr>
-
-                    <tr>
-
-                        <td class="mdl">TDI 29</td>
-
-                        <td>Intégration au Milieu de Travail (Stage II)</td>
-
-                    </tr>
-
-                </table> --}}
 
                 {{--  End Programme --}}
 
@@ -423,30 +202,41 @@
                     </div>
                 @endunless
 
+                @unless ($branche->Piece_a_fournis == null)
+                    <div class="share clr_Orange">
 
-                <div class="share clr_Orange">
+                        <h5 class="pfp">Pièces à Fournir</h5>
+                    </div>
 
-                    <h5 class="pfp">Pièces à Fournir</h5>
-                </div>
+                    <ul>
+                        @php
+                            $pieces = explode(';', $branche->Piece_a_fournis);
+                        @endphp
+                        @foreach ($pieces as $piece)
+                            <li><span>✦</span> {{ $piece }}</li>
+                            @if ($piece == 'Réglement Intérieur légalisée')
+                                <li><span>&#10022;</span> 07 Réglement Intérieur légalisée <a
+                                        href="../../Documentations/Réglement-Intérieur.pdf" target="_blank">Télécharger
+                                        ICI</a>
+                                </li>
+                            @endif
+                        @endforeach
 
-                <ul>
+                        {{-- <li><span>&#10022;</span> 01 Copies CIN Légalisées</li>
 
-                    <li><span>&#10022;</span> 01 Copies CIN Légalisées</li>
+                        <li><span>&#10022;</span> 02 Copies d'attestation du baccalaureat Légalisées</li>
 
-                    <li><span>&#10022;</span> 02 Copies d'attestation du baccalaureat Légalisées</li>
+                        <li><span>&#10022;</span> 03 Extrait d'Acte de Naissance</li>
 
-                    <li><span>&#10022;</span> 03 Extrait d'Acte de Naissance</li>
+                        <li><span>&#10022;</span> 04 Photos</li>
 
-                    <li><span>&#10022;</span> 04 Photos</li>
+                        <li><span>&#10022;</span> 05 Enveloppe a4.</li>
 
-                    <li><span>&#10022;</span> 05 Enveloppe a4.</li>
+                        <li><span>&#10022;</span> 06 Enveloppes Timbrées.</li> --}}
 
-                    <li><span>&#10022;</span> 06 Enveloppes Timbrées.</li>
 
-                    <li><span>&#10022;</span> 07 Réglement Intérieur légalisée <a
-                            href="../../Documentations/Réglement-Intérieur.pdf" target="_blank">Télécharger ICI</a>
-                    </li>
-                </ul>
+                    </ul>
+                @endunless
 
                 {{-- stop  --}}
                 <div class="share ntr clr_Orange">

@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('diplomes', function (Blueprint $table) {
             $table->id();
-            $table->char('Name')->unique();
+            $table->string('Name')->unique();
             $table->text('img')->nullable();
-            $table->char('Prerequis', 50);
-            $table->char('Duree', 10);
+            $table->string('Prerequis');
+            $table->string('Duree');
             $table->softDeletes();
         });
     }

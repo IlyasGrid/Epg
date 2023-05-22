@@ -35,7 +35,7 @@ class ProgramBrancheController extends Controller
 
         $formFields = $request;
         $formFields = $request->validate([
-            'Annee' => ['required', Rule::unique('programe__branches', 'Annee')],
+            'Annee' => 'required',
             'Name_module' => 'required',
         ]);
 

@@ -74,6 +74,14 @@
                             <a class="dropdown-item" href="/admin/soutien/trashed">show deleted</a>
                         </div>
                     </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link " href="/admin/bourse"    aria-haspopup="true" aria-expanded="false">Bourse </a>
+                        {{-- <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="/admin/bourse">show</a>
+                            <a class="dropdown-item" href="/admin/bourse/create">Create</a>
+                            <a class="dropdown-item" href="/admin/bourse/trashed">show deleted</a>
+                        </div> --}}
+                    </li>
                 </ul>
 
             </div>

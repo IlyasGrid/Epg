@@ -2,7 +2,7 @@
 
 
     <h2>
-        <a href="/admin/langues/" class="text-reset text-decoration-none">
+        <a href="/admin/soutien/" class="text-reset text-decoration-none">
             Soutien </a>
     </h2>
     <div class="d-flex justify-content-around m-5 p-3 ">
