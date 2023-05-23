@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="/admin/style.css">
     <script defer src="/admin/main.js"></script>
+    <link rel="icon" href="favicon.ico" />
+
 </head>
 
 <body>

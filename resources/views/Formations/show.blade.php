@@ -1,7 +1,11 @@
 <x-Layout>
     <link rel="stylesheet" href="/Formation/formStyle.css">
     <link rel="stylesheet" href="/formation/style.css">
-
+    <style>
+        .no-break {
+            break-inside: avoid;
+        }
+    </style>
     <section id="zhr" class="mt-5">
         <div class="container">
             <div class="row">
@@ -228,13 +232,14 @@
                     <h2 class="khalil">Programme de formation</h2>
                 </div>
 
-                <div class="row">
+                <div class="row "style="align-items: center">
 
                     @foreach ($formation->programmes as $key => $programme)
                         @php
                             $key += 1;
                         @endphp
-                        <div class="col-lg-6">
+                        {{-- style="height: fit-content;" --}}
+                        <div class="col-lg-6 no-break" >
                             <div class="box">
                                 <h4><span class="dec">{{ $key }}</span> {{ $programme->ModuleName }} :</h4>
                                 @php
