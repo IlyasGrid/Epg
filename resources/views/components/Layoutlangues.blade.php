@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="../Index/Biblo.css" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-    <link rel="icon" href="../portail/favicon.ico" />
+    <link rel="icon" href="favicon.ico" />
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-154922762-1"></script>
 

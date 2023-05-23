@@ -120,16 +120,26 @@
                         <th class="inclus">Volume horaire</th>
                         <th class="inclus">Prix / mois</th>
                     </tr>
-                    @foreach ($soutiens as $soutien)
+                    {{-- @foreach ($soutiens as $soutien)
                         <tr>
                             <th class="inclus" >{{$soutien->type}}</th>
                             <td>{{$soutien->nbr_personne}}</td>
                             <td >{{$soutien->volume_horraire}} par semaine</td>
                             <td>{{$soutien->price}} Dh</td>
                         </tr>
+                    @endforeach --}}
+                    @foreach ($soutiens->groupBy('type') as $type => $soutien)
+                        @foreach ($soutien as $tarif)
+                            <tr>
+
+                                <th class="inclus">{{ $type }}
+                                </th>
+                                <td>{{ $tarif->nbr_personne }}</td>
+                                <td>{{ $tarif->volume_horraire }} par semaine</td>
+                                <td>{{ $tarif->price }} Dh</td>
+                            </tr>
+                        @endforeach
                     @endforeach
-
-
                 </table>
             </div>
         </div>

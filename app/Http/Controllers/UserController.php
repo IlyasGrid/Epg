@@ -48,7 +48,10 @@ class UserController extends Controller
     }
     public function register()
     {
-
+        $admin = User::first();
+        if ($admin) {
+            return  redirect()->route('login');
+        }
         return view('admin.register');
     }
 

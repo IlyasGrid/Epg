@@ -42,7 +42,7 @@
                         <p>{{ $bourse->text }}</p>
 
                         <ul>
-                            <h3>على المترشح ان يدلي بكافة الوثائق المرفقة </h3>
+                            <h3 class="mt-5 mb-3">على المترشح ان يدلي بكافة الوثائق المرفقة </h3>
                             <li>
                                 <ul>
 
@@ -50,7 +50,7 @@
                                         $conditions = explode(';', $bourse->conditions);
                                     @endphp
                                     @forelse ($conditions as $condition)
-                                        <li>{{ $condition }}</li>
+                                        <li class="mb-4">{{ $condition }}</li>
                                     @empty
                                        {{-- <li> <h4 class="text-danger">no condition found</h4></li> --}}
                                     @endforelse
