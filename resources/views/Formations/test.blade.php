@@ -1,6 +1,14 @@
-{{-- {{dd($categories)}} --}}
 <x-Layout>
     <link rel="stylesheet" href="/formation/style.css">
+    <style>
+        .maxchar {
+            display: block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 100%;
+        }
+    </style>
     <section class="section visit-section mt-5 ">
         <div class="container mt-5">
 
@@ -22,7 +30,15 @@
                                     </a>
                                     <div>
                                         <p class="dih"><strong class="upp">{{ $formation->Name }}:
-                                            </strong>{{ $formation->MotivaionBody }}</p>
+                                            </strong>
+                                            <span>
+                                                @php
+                                                    $text = $formation->MotivaionBody;
+                                                    $text = substr($text, 0, 100);
+                                                @endphp
+                                                {{ $text }}..
+                                            </span>
+                                        </p>
                                         <h3><a href="{{ $category->Name }}/{{ $subCategory->Name }}/{{ $formation->Name }}"
                                                 class="dokha" style="color: #ff1d25;">lire la suite</a></h3>
                                     </div>

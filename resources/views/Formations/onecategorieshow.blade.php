@@ -21,7 +21,7 @@
                                 <div>
                                     <p class="dih"><strong class="upp">{{ $formation->Name }}:
                                         </strong>{{ $formation->MotivaionBody }}</p>
-                                    <h3><a href="{{ $category->Name }}/{{ $subCategory->Name }}/{{ $formation->Name }}"
+                                    <h3><a href="{{ $subCategory->Name }}/{{ $formation->Name }}"
                                             class="dokha" style="color: #ff1d25;">lire la suite</a></h3>
                                 </div>
                             </div>

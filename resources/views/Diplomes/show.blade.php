@@ -11,6 +11,8 @@
                 padding-bottom: 15%;
                 position: absolute;
             }
+
+
         </style>
         <div class="xe xep lpil"></div>
         <img src="/Diplome/Pic/border.png" alt="">
@@ -36,10 +38,9 @@
 
                         <div class="col-md-4">
 
-                            {{-- <img src="\Diplome\Pic\mm1.jpg" alt="..." style="border-radius: 10px;"> --}}
                             <img class="w-48 mr-6 mb-6"
-                            src="{{ $branche->img ? asset('storage/' . $branche->img) : asset('/Diplome/Pic/mm1.jpg') }}"
-                            alt="" />
+                                src="{{ $branche->img ? asset('storage/' . $branche->img) : asset('/Diplome/Pic/mm1.jpg') }}"
+                                alt="" />
 
                         </div>
 
@@ -62,7 +63,7 @@
                                             $text = substr($text, 0, 150);
                                         @endphp
                                     @endif
-                                    <p>{{ $text }}...</p>
+                                <p>{{ $text }}...</p>
                                 </p>
 
                             </div>
