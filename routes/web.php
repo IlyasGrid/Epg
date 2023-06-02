@@ -101,7 +101,7 @@ Route::group(['middleware' => 'checkuser'], function () {
 Route::middleware(['auth'])->group(function () {
 
     Route::get('admin/dashboard', [UserController::class, 'show'])->name('dashboard');
-    Route::post('admin/logout', [UserController::class, 'logout'])->name('logout');
+    Route::get('admin/logout', [UserController::class, 'logout'])->name('logout');
     Route::get('admin/changePwd', [UserController::class, 'changePwd'])->name('changePwd');
     Route::post('admin/updatePwd', [UserController::class, 'updatePwd'])->name('updatePwd');
 

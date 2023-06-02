@@ -1,16 +1,24 @@
 <x-adminLayout>
 
-    <main>
+    <header>
+        <h2>
+            <a href="/admin/soutien/" class="text-reset text-decoration-none text-capitalize">
+                Soutien </a>
+        </h2>
+        <h4>
+            <span class="text-muted text-capitalize"> edit Tarification </span>
+        </h4>
+    </header>
+    <div class="h-10"></div>
+    <section class=" cntnt">
         <form method="POST" class="form" action="/admin/soutien/{{ $soutien->id }}" enctype="multipart/form-data">
             @csrf
             @method('PUT')
-            <h2>
-                <span class="text-muted text-capitalize"> <a href="/admin/soutien"> Tarification </a> </span>
-            </h2>
+
 
             <div>
                 <div class="d-flex justify-content-around">
-                    <div class=" conditions-forms conatiner m-3 border p-3">
+                    <div class=" conditions-forms conatiner w-100 m-3 border p-3">
                         <div class="mb-6 form-group">
                             <label for="type" class="inline-block text-lg mb-2">
                                 type
@@ -67,5 +75,5 @@
                 </div>
             </div>
         </form>
-    </main>
+    </section>
 </x-adminLayout>

@@ -1,8 +1,9 @@
 <x-adminLayout>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
-    <h2> <span class="text-muted text-capitalize"> </span><a href="/admin/diplomes/{{ $diplome->id }}/branche/{{$branche->id}}/program"
+    <h2> <span class="text-muted text-capitalize"> </span><a
+            href="/admin/diplomes/{{ $diplome->id }}/branche/{{ $branche->id }}/program"
             class="text-reset text-decoration-none">
             {{ $branche->Fullname }} </a> <span class="text-muted text-lowercase"> edit programme</span>
     </h2>
@@ -34,9 +35,10 @@
                                 <input type="text" class="border border-gray-200 rounded p-2 w-full form-control"
                                     name="Name_module[]" placeholder="program Name_module"
                                     value="{{ $program->Name_module }}" />
-                                        <button class="btn btn-outline-danger clear-btn ml-5" type="button" onclick="clearInput(this)" title="Clear input">
-                                          <i class="fas fa-times-circle"></i>
-                                        </button>
+                                <button class="btn btn-outline-danger clear-btn ml-5" type="button"
+                                    onclick="clearInput(this)" title="Clear input">
+                                    <i class="fas fa-times-circle"></i>
+                                </button>
                             </li>
                         @endforeach
 

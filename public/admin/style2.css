@@ -1,0 +1,31 @@
+main, main.main-content {
+    position: relative;
+    left: 5%;
+    width: 75%;
+    height: fit-content;
+}
+
+header{
+    width: 100%;
+    position: relative;
+    z-index: 9999;
+    background-color: #f8f9fa;
+    top: 0em;
+    margin-top: 3rem;
+}
+
+.card{
+    border: none !important; 
+    border-radius: 2rem !important; 
+    padding: 0 !important;
+    overflow: hidden;
+}
+.card-header{
+    background-color: rgba(100, 148, 237, 0.356) !important;
+}
+.form-container{
+    padding: 5em 3em 0em 4em;
+    background: #d3d3d329;
+    border-radius: 2rem;
+    width: 100%;
+}

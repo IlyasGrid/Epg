@@ -1,4 +1,5 @@
 <x-adminLayout>
+    
         <h2 class="text-capitalize"> Create new  language</h2>
 
     <form class="form-container p-5" method="POST" action="/admin/langues" enctype="multipart/form-data">

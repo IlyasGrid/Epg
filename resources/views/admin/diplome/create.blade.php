@@ -1,10 +1,13 @@
 <x-adminLayout>
 
+    <header class="mb-5">
+        <h2> <a href="/admin/diplomes/"
+            class="text-reset text-decoration-none text-capitalize">Diplome</a></h2>
+           <h4> <span class="text-muted text-capitalize">create</span></h4>
+    </header>
     <form class="form-container" method="POST" action="/admin/diplomes" enctype="multipart/form-data">
         @csrf
-        <h2><span class="text-muted text-lowercase">create new</span> <a href="/admin/diplomes/"
-            class="text-reset text-decoration-none">Diplome</a></h2>
-        <h1 class="text-danger"> </h1>
+
         <div class="mb-6 form-group form-group">
             <label for="Name" class="inline-block text-lg mb-2">Diplome Name</label>
             <input type="text" class="border border-gray-200 rounded p-2 w-full form-control" name="Name"
@@ -42,7 +45,7 @@
                 Duree (en ANS)
             </label>
             <input class="border border-gray-200 rounded p-2 w-full form-control" name="Duree" rows="10"
-                placeholder="2 ans ,1 ans..." value="{{ old('Duree') }}">"
+                placeholder="2 ans ,1 ans..." value="{{ old('Duree') }}">
         </div>
         @error('Duree')
             <p class="text-danger  ml-5  ">{{ $message }}</p>
@@ -51,7 +54,7 @@
 
 
         <div class="mt-5 form-group d-flex justify-content-center">
-            <button class="btn btn-primary">
+            <button class="btn btn-outline-primary">
                 Create diplome
             </button>
 

@@ -1,7 +1,6 @@
 <x-adminLayout>
 
 
-    <main>
         <form method="POST" action="/admin/diplomes/{{ $diplome->id }}/branche/{{ $branche->id }}"
             enctype="multipart/form-data">
             @csrf
@@ -193,5 +192,5 @@
                 </div>
             </div>
         </form>
-    </main>
+
 </x-adminLayout>

@@ -1,6 +1,5 @@
 <x-adminLayout>
 
-    <main>
         <form method="POST" action="/admin/diplomes/{{ $diplome->id }}" enctype="multipart/form-data">
             @csrf
             @method('PUT')
@@ -59,5 +58,5 @@
                 </div>
             </div>
         </form>
-    </main>
+
 </x-adminLayout>

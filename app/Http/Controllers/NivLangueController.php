@@ -68,7 +68,8 @@ class NivLangueController extends Controller
 
     public function create($id_langue)
     {
-        return view('admin.langue.niveau.create', ['id_langue' => $id_langue]);
+        $langue = Langue::findorfail($id_langue);
+        return view('admin.langue.niveau.create', ['id_langue' => $id_langue,'langue'=>$langue]);
     }
 
     public function store(Request $request, $id_langue)

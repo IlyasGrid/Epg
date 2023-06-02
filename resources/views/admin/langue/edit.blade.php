@@ -1,7 +1,6 @@
 <x-adminLayout>
  
 
-    <main>
         <form method="POST" action="/admin/langues/{{ $langue->id }}" enctype="multipart/form-data">
             @csrf
             @method('PUT')
@@ -206,5 +205,5 @@
                 </div>
             </div>
         </form>
-    </main>
+
 </x-adminLayout>

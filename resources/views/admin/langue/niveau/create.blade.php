@@ -1,13 +1,17 @@
 <x-adminLayout>
-
-    <form class="form-container" method="POST" action="/admin/langues/{{ $id_langue }}/niveau" enctype="multipart/form-data">
+    <header>
+        <h2> <a href="/admin/langues/" class="text-decoration-none text-reset text-capitalize"> {{ $langue->Name }} </a></h2>
+        <h4 class="mb-5 text-muted text-lowercase">create Niveau</h4>
+    </header>
+    <form class="form-container" method="POST" action="/admin/langues/{{ $id_langue }}/niveau"
+        enctype="multipart/form-data">
         @csrf
-        <h2> Langue add niveau</h2>
         <h1 class="text-danger"> </h1>
         <div class="mb-6 form-group form-group">
             <label for="Niveau" class="inline-block text-lg mb-2">Niveau Name</label>
-            <input type="text" placeholder="A1,A2 ...." class="border border-gray-200 rounded p-2 w-full form-control"
-                maxlength="2" name="Niveau" value="{{ old('Niveau') }}" />
+            <input type="text" placeholder="A1,A2 ...."
+                class="border border-gray-200 rounded p-2 w-full form-control" maxlength="2" name="Niveau"
+                value="{{ old('Niveau') }}" />
 
 
         </div>

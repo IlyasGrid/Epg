@@ -8,25 +8,9 @@ function addObjectif(listId, inputName, placeholder) {
     newObjectifInput.name = inputName;
     newObjectifInput.placeholder = placeholder;
 
-    var button = document.createElement('button');
-    button.classList.add('btn' ,'btn-outline-danger','clear-btn','ml-5');
-    button.setAttribute('type','button');
-    button.setAttribute('title','Clear input');
-    button.setAttribute('onclick','clearInput(this)');
-
-    var icon = document.createElement('i');
-    icon.classList.add('fas','fa-times-circle');
-
-    
-
-
     var newObjectifListItem = document.createElement('li');
-    newObjectifListItem.classList.add('list-group-item', 'mt-1' ,'mb-2','d-flex','justify-content-around');
-
-    button.appendChild(icon);
-
+    newObjectifListItem.classList.add('list-group-item', 'mt-1' ,'mb-2');
     newObjectifListItem.appendChild(newObjectifInput);
-    newObjectifListItem.appendChild(button);
 
     objectifsList.appendChild(newObjectifListItem);
 }

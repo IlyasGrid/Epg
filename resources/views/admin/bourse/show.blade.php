@@ -1,17 +1,13 @@
 <x-adminLayout>
 
-
+<header>
     <h2>
         <a href="/admin/bourse/" class="text-reset text-decoration-none">
             Bourse </a>
     </h2>
-    {{-- <div class="d-flex justify-content-around m-5 p-3 ">
-        <a href="/admin/bourse/create" class="btn btn-outline-success align-self-start">create
-            new bourse</a>
-        <a href="/admin/bourse/trashed" class="btn btn btn-outline-secondary align-self-start">show
-            deleted bourse</a>
-    </div> --}}
+</header>
 
+<section class="mt-5">
     @if (!$bourse)
         <div class="container d-flex align-items-center justify-content-center w-100">
             <div class="text-center">
@@ -41,14 +37,9 @@
                 <div class="d-flex justify-content-around">
                     <a href="/admin/bourse/edit/{{ $bourse->id }}" class="btn btn-outline-info">edit</a>
                 </div>
-                {{-- <div>
-                    <form action="/admin/bourse/{{ $bourse->id }}" method="POST">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="btn btn-outline-danger">Delete</button>
-                    </form>
-                </div> --}}
+
             </div>
         </div>
     @endif
+</section>
 </x-adminLayout>
